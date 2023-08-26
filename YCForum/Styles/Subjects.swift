@@ -17,3 +17,8 @@ enum Subject: String, CaseIterable {
         rawValue.capitalized
     }
 }
+extension Subject: Identifiable {
+    var id: RawValue {
+        rawValue
+    }
+}

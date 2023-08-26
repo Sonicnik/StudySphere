@@ -8,7 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7A14ED6F2A99FB1E00835B76 /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A14ED6E2A99FB1E00835B76 /* Subjects.swift */; };
-		7A14ED732A9A006900835B76 /* SubjectPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A14ED722A9A006900835B76 /* SubjectPicker.swift */; };
+		7A14ED772A9A07EE00835B76 /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A14ED762A9A07EE00835B76 /* Format.swift */; };
+		7A14ED792A9A0B5D00835B76 /* SubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A14ED782A9A0B5D00835B76 /* SubjectView.swift */; };
+		7A14ED7B2A9A0E6B00835B76 /* FormatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A14ED7A2A9A0E6B00835B76 /* FormatView.swift */; };
 		7A568DBA2A58F46200F907CA /* YCForumApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A568DB92A58F46200F907CA /* YCForumApp.swift */; };
 		7A568DBE2A58F46200F907CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A568DBD2A58F46200F907CA /* Assets.xcassets */; };
 		7A568DC12A58F46200F907CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A568DC02A58F46200F907CA /* Preview Assets.xcassets */; };
@@ -25,7 +27,9 @@
 
 /* Begin PBXFileReference section */
 		7A14ED6E2A99FB1E00835B76 /* Subjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
-		7A14ED722A9A006900835B76 /* SubjectPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectPicker.swift; sourceTree = "<group>"; };
+		7A14ED762A9A07EE00835B76 /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
+		7A14ED782A9A0B5D00835B76 /* SubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectView.swift; sourceTree = "<group>"; };
+		7A14ED7A2A9A0E6B00835B76 /* FormatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatView.swift; sourceTree = "<group>"; };
 		7A568DB62A58F46200F907CA /* YCForum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YCForum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A568DB92A58F46200F907CA /* YCForumApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YCForumApp.swift; sourceTree = "<group>"; };
 		7A568DBD2A58F46200F907CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -96,9 +100,10 @@
 				7A568DD32A59007600F907CA /* EditView.swift */,
 				7A568DC82A58F53C00F907CA /* MainPage.swift */,
 				7AFECE742A5AA4B900256CA2 /* NewSheet.swift */,
-				7A14ED722A9A006900835B76 /* SubjectPicker.swift */,
+				7A14ED782A9A0B5D00835B76 /* SubjectView.swift */,
 				7A568DD52A59016B00F907CA /* ThemePicker.swift */,
 				7A568DD72A5901A300F907CA /* ThemeView.swift */,
+				7A14ED7A2A9A0E6B00835B76 /* FormatView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -106,6 +111,7 @@
 		7A568DCA2A58F5DF00F907CA /* Styles */ = {
 			isa = PBXGroup;
 			children = (
+				7A14ED762A9A07EE00835B76 /* Format.swift */,
 				7A568DCB2A58F5FA00F907CA /* PageStyle.swift */,
 				7A14ED6E2A99FB1E00835B76 /* Subjects.swift */,
 				7A568DCF2A58FBB300F907CA /* Theme.swift */,
@@ -185,12 +191,14 @@
 			files = (
 				7A568DBA2A58F46200F907CA /* YCForumApp.swift in Sources */,
 				7A568DD22A58FCF700F907CA /* DetailView.swift in Sources */,
+				7A14ED772A9A07EE00835B76 /* Format.swift in Sources */,
 				7A568DCC2A58F5FA00F907CA /* PageStyle.swift in Sources */,
 				7A14ED6F2A99FB1E00835B76 /* Subjects.swift in Sources */,
-				7A14ED732A9A006900835B76 /* SubjectPicker.swift in Sources */,
 				7A568DD02A58FBB300F907CA /* Theme.swift in Sources */,
+				7A14ED7B2A9A0E6B00835B76 /* FormatView.swift in Sources */,
 				7A568DD42A59007600F907CA /* EditView.swift in Sources */,
 				7A568DD62A59016B00F907CA /* ThemePicker.swift in Sources */,
+				7A14ED792A9A0B5D00835B76 /* SubjectView.swift in Sources */,
 				7A568DCE2A58FAF000F907CA /* CardView.swift in Sources */,
 				7A568DD82A5901A300F907CA /* ThemeView.swift in Sources */,
 				7AFECE752A5AA4B900256CA2 /* NewSheet.swift in Sources */,

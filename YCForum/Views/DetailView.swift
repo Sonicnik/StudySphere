@@ -19,14 +19,25 @@ struct DetailView: View {
             
             Section(header: Text("Details")) {
                 HStack {
-                    Label("Publisher", systemImage: "person")
+                    Label("Type of Work:", systemImage: "square.dashed.inset.filled")
                     Spacer()
-                    Text(info.publisher)
+                    Text(info.format.name)
                         .padding(.trailing)
                         
                 }
                 .padding()
                 .accessibilityElement(children: .combine)
+                
+                
+                HStack {
+                    Label("Subject:", systemImage: "slider.horizontal.below.square.filled.and.square")
+                    Spacer()
+                    Text(info.subject.name)
+                        .padding(.trailing)
+                }
+                .padding()
+                .accessibilityElement(children: .combine)
+                
                 
                 VStack {
                     
@@ -55,7 +66,7 @@ struct DetailView: View {
         .sheet(isPresented: $isPresentingEditView) {
             NavigationStack {
                 DetailEditView(info: $editingInfo)
-                    .navigationTitle("NeedToChange")
+                    .navigationTitle(info.subject.name)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Cancel") {

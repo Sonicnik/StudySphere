@@ -14,9 +14,7 @@ struct DetailEditView: View {
         Form {
             Section(header: Text("Details")) {
                 
-                TextField("Publisher", text: $info.publisher)
-                
-                ThemePicker(selectTheme: $info.theme)
+                ThemePicker(selectTheme: $info.theme, selectSubject: $info.subject, selectFormat: $info.format)
             }
 
             Section(header: Text("Notes")) {

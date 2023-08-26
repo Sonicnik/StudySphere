@@ -9,8 +9,22 @@ import SwiftUI
 
 struct ThemePicker: View {
     @Binding var selectTheme: Theme
+    @Binding var selectSubject: Subject
+    @Binding var selectFormat: Format
     
     var body: some View {
+        Picker("Subject", selection: $selectSubject){
+            ForEach(Subject.allCases) { subject in
+                SubjectView(subject: subject)
+                    .tag(subject)
+            }
+        }
+        Picker("Format", selection: $selectFormat){
+            ForEach(Format.allCases) { format in
+                FormatView(format: format)
+                    .tag(format)
+            }
+        }
         Picker("Theme", selection: $selectTheme) {
             ForEach(Theme.allCases) { theme in
                 ThemeView(theme: theme)
@@ -18,11 +32,12 @@ struct ThemePicker: View {
             }
         }
         .pickerStyle(.navigationLink)
+        
     }
 }
 
 struct ThemePicker_Previews: PreviewProvider {
     static var previews: some View {
-        ThemePicker(selectTheme: .constant(.periwinkle))
+        ThemePicker(selectTheme: .constant(.periwinkle), selectSubject: .constant(.MATH), selectFormat: .constant(.Exam))
     }
 }
