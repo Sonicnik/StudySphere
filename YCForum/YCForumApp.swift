@@ -9,9 +9,10 @@ import SwiftUI
 
 @main
 struct YCForumApp: App {
+    @State private var info = PageInfo.sampleData
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            Mainpage(info: $info)
         }
     }
 }
