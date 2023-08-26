@@ -11,4 +11,9 @@ enum Subject: String, CaseIterable {
     case MATH
     case Chinese
     case English
+    
+    //Create a name variable within the subject to display on different pages as string title 
+    var name: String {
+        rawValue.capitalized
+    }
 }

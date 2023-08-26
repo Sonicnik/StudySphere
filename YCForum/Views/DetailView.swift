@@ -16,6 +16,7 @@ struct DetailView: View {
     
     var body: some View {
         List {
+            
             Section(header: Text("Details")) {
                 HStack {
                     Label("Publisher", systemImage: "person")
@@ -43,7 +44,8 @@ struct DetailView: View {
                 .padding()
             }
         }
-        .navigationTitle(info.title)
+        //pass the subject name on using .name variable
+        .navigationTitle(info.subject.name)
         .toolbar {
             Button("Edit") {
                 isPresentingEditView = true
@@ -53,7 +55,7 @@ struct DetailView: View {
         .sheet(isPresented: $isPresentingEditView) {
             NavigationStack {
                 DetailEditView(info: $editingInfo)
-                    .navigationTitle(info.title)
+                    .navigationTitle("NeedToChange")
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Cancel") {

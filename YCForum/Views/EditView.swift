@@ -13,7 +13,6 @@ struct DetailEditView: View {
     var body: some View {
         Form {
             Section(header: Text("Details")) {
-                TextField("Title", text: $info.title)
                 
                 TextField("Publisher", text: $info.publisher)
                 

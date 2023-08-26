@@ -11,7 +11,7 @@ struct CardView: View {
     let info: PageInfo
     var body: some View {
         VStack(alignment: .leading) {
-            Text(info.title)
+            Text("NeedToChange")
                 .font(.headline)
                 .accessibilityAddTraits(.isHeader)
             Spacer()
