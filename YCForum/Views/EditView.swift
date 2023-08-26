@@ -15,13 +15,17 @@ struct DetailEditView: View {
             Section(header: Text("Details")) {
                 TextField("Title", text: $info.title)
                 
-                TextField("Publisher or Name of the student", text: $info.publisher)
+                TextField("Publisher", text: $info.publisher)
                 
                 ThemePicker(selection: $info.theme)
             }
 
-            Section(header: Text("Explanation")) {
-                TextField("Explanation", text: $info.detail)
+            Section(header: Text("Notes")) {
+            // Switched to textEditor for the drop of text boxes to display all of the texts at once.
+                TextEditor(text: $info.detail)
+                    .frame(minHeight: 40) // Set a minimum height for the TextEditor
+                    .lineLimit(nil)       // Allow unlimited lines
+                    .multilineTextAlignment(.leading) // Left-align the text
             }
                 
                 
