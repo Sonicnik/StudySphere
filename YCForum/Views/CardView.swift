@@ -11,11 +11,14 @@ struct CardView: View {
     let info: PageInfo
     var body: some View {
         VStack(alignment: .leading) {
-            Text(info.subject.name)
-                .font(.headline)
+            HStack {
+                Text(info.subject.name)
+                    .font(.headline)
                 .accessibilityAddTraits(.isHeader)
-            Spacer()
-            Text(info.format.name)
+                Spacer()
+                Text(info.format.name)
+            }
+            
             Spacer()
             Text(info.detail)
                 .font(.subheadline)
