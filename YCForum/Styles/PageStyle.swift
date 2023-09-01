@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct PageInfo: Identifiable {
+struct PageInfo: Identifiable, Codable {
     let id: UUID
     var subject: Subject
     var format: Format

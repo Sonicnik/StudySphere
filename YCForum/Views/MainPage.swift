@@ -9,7 +9,9 @@ import SwiftUI
 
 struct Mainpage: View {
     @Binding var info: [PageInfo]
+    @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewEditView = false
+    let saveAction: () -> ()
     
     var body: some View {
         NavigationStack {
@@ -35,11 +37,14 @@ struct Mainpage: View {
         .sheet(isPresented: $isPresentingNewEditView) {
             NewSheet(infos: $info, isPresentingNewEditView: $isPresentingNewEditView)
         }
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive { saveAction() }
+        }
     }
 }
 
 struct Mainpage_Previews: PreviewProvider {
     static var previews: some View {
-        Mainpage(info: .constant(PageInfo.sampleData))
+        Mainpage(info: .constant(PageInfo.sampleData), saveAction: {})
     }
 }

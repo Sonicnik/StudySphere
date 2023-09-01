@@ -9,10 +9,29 @@ import SwiftUI
 
 @main
 struct YCForumApp: App {
-    @State private var info = PageInfo.sampleData
+    
+    @StateObject private var info = storeData()
+    
     var body: some Scene {
         WindowGroup {
-            Mainpage(info: $info)
+            Mainpage(info: $info.info){
+                Task {
+                    do {
+                        try await info.save(infos: info.info)
+                    } catch {
+                        fatalError(error.localizedDescription)
+                    }
+                }
+            }
+            
+            .task {
+                do {
+                    try await info.load()
+                } catch {
+                    fatalError(error.localizedDescription)
+                }
+            }
         }
+        
     }
 }

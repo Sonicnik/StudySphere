@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum Subject: String, CaseIterable {
+enum Subject: String, CaseIterable, Codable {
     case MATH
     case Chinese
     case English

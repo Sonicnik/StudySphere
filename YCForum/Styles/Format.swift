@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-enum Format: String, CaseIterable {
+enum Format: String, CaseIterable, Codable {
     case Homework
     case Exam
     case Test
@@ -18,7 +18,7 @@ enum Format: String, CaseIterable {
     
 }
 
-extension Format: Identifiable{
+extension Format: Identifiable {
     var id:RawValue{
         rawValue
     }

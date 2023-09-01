@@ -22,6 +22,7 @@
 		7A568DD42A59007600F907CA /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A568DD32A59007600F907CA /* EditView.swift */; };
 		7A568DD62A59016B00F907CA /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A568DD52A59016B00F907CA /* ThemePicker.swift */; };
 		7A568DD82A5901A300F907CA /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A568DD72A5901A300F907CA /* ThemeView.swift */; };
+		7AB2A3562AA196E5003722E9 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2A3552AA196E5003722E9 /* SaveData.swift */; };
 		7AFECE752A5AA4B900256CA2 /* NewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFECE742A5AA4B900256CA2 /* NewSheet.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		7A568DD32A59007600F907CA /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		7A568DD52A59016B00F907CA /* ThemePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePicker.swift; sourceTree = "<group>"; };
 		7A568DD72A5901A300F907CA /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
+		7AB2A3552AA196E5003722E9 /* SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
 		7AFECE742A5AA4B900256CA2 /* NewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -75,6 +77,7 @@
 		7A568DB82A58F46200F907CA /* YCForum */ = {
 			isa = PBXGroup;
 			children = (
+				7AB2A3542AA196CD003722E9 /* Functions */,
 				7A568DCA2A58F5DF00F907CA /* Styles */,
 				7A568DC72A58F52600F907CA /* Views */,
 				7A568DB92A58F46200F907CA /* YCForumApp.swift */,
@@ -117,6 +120,14 @@
 				7A568DCF2A58FBB300F907CA /* Theme.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		7AB2A3542AA196CD003722E9 /* Functions */ = {
+			isa = PBXGroup;
+			children = (
+				7AB2A3552AA196E5003722E9 /* SaveData.swift */,
+			);
+			path = Functions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -203,6 +214,7 @@
 				7A568DD82A5901A300F907CA /* ThemeView.swift in Sources */,
 				7AFECE752A5AA4B900256CA2 /* NewSheet.swift in Sources */,
 				7A568DC92A58F53C00F907CA /* MainPage.swift in Sources */,
+				7AB2A3562AA196E5003722E9 /* SaveData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
