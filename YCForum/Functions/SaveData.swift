@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+@MainActor
 class storeData: ObservableObject {
     @Published var info: [PageInfo] = []
     
