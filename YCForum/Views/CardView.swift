@@ -8,20 +8,33 @@
 import SwiftUI
 
 struct CardView: View {
+    
     let info: PageInfo
+    
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 Text(info.subject.name)
                     .font(.headline)
+                    .fontWeight(.bold)
                 .accessibilityAddTraits(.isHeader)
                 Spacer()
                 Text(info.format.name)
+                    .font(.subheadline)
+                    .fontWeight(.bold)
+            }
+            .padding()
+            
+            Text(info.duedate.formatted(date: .abbreviated, time: .shortened))
+                .padding()
+            
+            HStack {
+                Spacer()
+                Text(info.detail)
+                    .font(.body)
+                Spacer()
             }
             
-            Spacer()
-            Text(info.detail)
-                .font(.subheadline)
         }
         .padding()
         .foregroundColor(info.theme.accentColor)

@@ -14,7 +14,12 @@ struct DetailEditView: View {
         Form {
             Section(header: Text("Details")) {
                 
+            
                 ThemePicker(selectTheme: $info.theme, selectSubject: $info.subject, selectFormat: $info.format)
+                datePicker(selectedDate: $info.duedate)
+                
+                
+                
             }
 
             Section(header: Text("Notes")) {

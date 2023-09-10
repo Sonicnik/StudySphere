@@ -17,13 +17,13 @@ struct DetailView: View {
     var body: some View {
         List {
             
-            Section(header: Text("Details")) {
+            Section(header: Text("Section")) {
                 HStack {
                     Label("Type of Work:", systemImage: "square.dashed.inset.filled")
                     Spacer()
                     Text(info.format.name)
                         .padding(.trailing)
-                        
+                    
                 }
                 .padding()
                 .accessibilityElement(children: .combine)
@@ -37,7 +37,27 @@ struct DetailView: View {
                 }
                 .padding()
                 .accessibilityElement(children: .combine)
+            }
                 
+            Section(header: Text("Time & Date")) {
+                HStack {
+                    Label("Due Date:", systemImage: "calendar.badge.exclamationmark")
+                    Spacer()
+                    Text(info.duedate.formatted(date: .abbreviated, time: .omitted))
+                        .padding(.trailing)
+                }
+                .padding()
+                
+                HStack {
+                    Label("Due Time:", systemImage: "clock.badge.exclamationmark")
+                    Spacer()
+                    Text(info.duedate.formatted(date: .omitted, time: .shortened))
+                        .padding(.trailing)
+                }
+                .padding()
+            }
+            
+            Section(header: Text("Description")) {
                 
                 VStack {
                     
