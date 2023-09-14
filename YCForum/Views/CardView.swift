@@ -14,26 +14,28 @@ struct CardView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
-                Text(info.subject.name)
+                Text(info.subject.name + " - " + info.format.name)
                     .font(.headline)
                     .fontWeight(.bold)
-                .accessibilityAddTraits(.isHeader)
+                    .padding(.leading)
+                    .accessibilityAddTraits(.isHeader)
+                
+                
                 Spacer()
-                Text(info.format.name)
-                    .font(.subheadline)
-                    .fontWeight(.bold)
+                Text(info.duedate.formatted(date: .abbreviated, time: .omitted))
+                    .padding()
+                
             }
-            .padding()
+            .padding(.bottom)
             
-            Text(info.duedate.formatted(date: .abbreviated, time: .omitted))
-                .padding()
+                        
             
-            HStack {
-                Spacer()
-                Text(info.detail)
-                    .font(.body)
-                Spacer()
-            }
+            Text(info.detail)
+                .font(.footnote)
+                .multilineTextAlignment(.leading)
+                .padding(.leading)
+            
+                .padding(.bottom)
             
         }
         .padding()

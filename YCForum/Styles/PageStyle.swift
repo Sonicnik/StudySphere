@@ -43,7 +43,7 @@ extension PageInfo {
                  theme: .lavender,
                  duedate: Date()),
         PageInfo(subject: .English,
-                 format: .Homework,
+                 format: .HW,
                  detail: "Writing a reflection",
                  theme: .sky,
                  duedate: Date()),
