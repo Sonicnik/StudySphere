@@ -20,8 +20,6 @@ struct Mainpage: View {
                     CardView(info: info)
                 }
                 
-                
-                
                 .listRowBackground(info.theme.mainColor)
             }
             .listStyle(InsetGroupedListStyle())
