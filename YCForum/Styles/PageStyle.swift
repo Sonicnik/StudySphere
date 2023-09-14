@@ -39,17 +39,17 @@ extension PageInfo {
     [
         PageInfo(subject: .Chinese,
                  format: .Exam,
-                 detail: "Network is very slow in the campus, which limites our working efficiency.",
+                 detail: "Paper 1 for 90mins",
                  theme: .lavender,
                  duedate: Date()),
         PageInfo(subject: .English,
                  format: .Homework,
-                 detail: "Most of the students still believe that the old time table with longer time for each class is better than the current one",
+                 detail: "Writing a reflection",
                  theme: .sky,
                  duedate: Date()),
         PageInfo(subject: .MATH,
                  format: .Test,
-                 detail: "The quality of food hasn't changed even though the price increases very semester, which doesn't make sense at all.",
+                 detail: "Unit1-3",
                  theme: .indigo,
                  duedate: Date())]
 }

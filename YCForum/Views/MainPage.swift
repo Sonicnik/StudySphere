@@ -24,6 +24,7 @@ struct Mainpage: View {
                 
                 .listRowBackground(info.theme.mainColor)
             }
+            .listStyle(InsetGroupedListStyle())
             .navigationTitle("All")
             .toolbar {
                 Button(action: {

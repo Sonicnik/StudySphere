@@ -25,7 +25,7 @@ struct CardView: View {
             }
             .padding()
             
-            Text(info.duedate.formatted(date: .abbreviated, time: .shortened))
+            Text(info.duedate.formatted(date: .abbreviated, time: .omitted))
                 .padding()
             
             HStack {
