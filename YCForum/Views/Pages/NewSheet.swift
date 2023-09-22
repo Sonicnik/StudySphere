@@ -27,7 +27,9 @@ struct NewSheet: View {
                         }
                     }
                 }
+                .navigationTitle("More Work 😤")
         }
+        
     }
 }
 
