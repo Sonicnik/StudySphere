@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ThemePicker: View {
+struct PickerView: View {
     @Binding var selectTheme: Theme
     @Binding var selectSubject: Subject
     @Binding var selectFormat: Format
@@ -38,6 +38,6 @@ struct ThemePicker: View {
 
 struct ThemePicker_Previews: PreviewProvider {
     static var previews: some View {
-        ThemePicker(selectTheme: .constant(.periwinkle), selectSubject: .constant(.MATH), selectFormat: .constant(.Exam))
+        PickerView(selectTheme: .constant(.periwinkle), selectSubject: .constant(.MATH), selectFormat: .constant(.Exam))
     }
 }

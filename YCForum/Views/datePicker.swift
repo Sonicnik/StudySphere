@@ -13,7 +13,7 @@ struct datePicker: View {
     @State private var dueDates = Date()
     
     var body: some View {
-        DatePicker("Due Date:", selection: $selectedDate)
+        DatePicker("Due Date", selection: $selectedDate)
             .accentColor(Color.blue)
     }
 }

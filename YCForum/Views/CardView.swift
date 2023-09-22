@@ -14,16 +14,18 @@ struct CardView: View {
     var body: some View {
         VStack(alignment: .leading) {
             HStack {
+                Image(systemName: info.isDone ? "checkmark.circle" : "circle")
+                
                 Text(info.subject.name + " - " + info.format.name)
-                    .font(.headline)
+                    .font(.title3)
                     .fontWeight(.bold)
                     .padding(.leading)
                     .accessibilityAddTraits(.isHeader)
-                
-                
                 Spacer()
+                
                 Text(info.duedate.formatted(date: .abbreviated, time: .omitted))
-                    .padding()
+                    .font(.headline)
+                    .padding(.horizontal)
                 
             }
             .padding(.bottom)
@@ -33,10 +35,8 @@ struct CardView: View {
             Text(info.detail)
                 .font(.footnote)
                 .multilineTextAlignment(.leading)
-                .padding(.leading)
-            
-                .padding(.bottom)
-            
+                .padding([.leading, .bottom, .trailing])
+                        
         }
         .padding()
         .foregroundColor(info.theme.accentColor)

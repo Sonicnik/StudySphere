@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct YCForumApp: App {
+struct Agenda: App {
     
     @StateObject private var info = storeData()
     

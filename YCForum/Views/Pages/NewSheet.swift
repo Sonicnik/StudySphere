@@ -13,7 +13,7 @@ struct NewSheet: View {
     @Binding var isPresentingNewEditView : Bool
     var body: some View {
         NavigationStack {
-            DetailEditView(info: $newPage)
+            EditPage(info: $newPage)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Dismiss") {

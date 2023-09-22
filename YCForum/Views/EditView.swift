@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct DetailEditView: View {
+struct EditPage: View {
     @Binding var info: PageInfo
     
     var body: some View {
@@ -15,7 +15,7 @@ struct DetailEditView: View {
             Section(header: Text("Details")) {
                 
             
-                ThemePicker(selectTheme: $info.theme, selectSubject: $info.subject, selectFormat: $info.format)
+                PickerView(selectTheme: $info.theme, selectSubject: $info.subject, selectFormat: $info.format)
                 datePicker(selectedDate: $info.duedate)
                 
                 
@@ -37,6 +37,6 @@ struct DetailEditView: View {
 
 struct DetailEditView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailEditView(info: .constant(PageInfo.sampleData[0]))
+        EditPage(info: .constant(PageInfo.sampleData[0]))
     }
 }

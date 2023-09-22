@@ -85,7 +85,7 @@ struct DetailView: View {
         }
         .sheet(isPresented: $isPresentingEditView) {
             NavigationStack {
-                DetailEditView(info: $editingInfo)
+                EditPage(info: $editingInfo)
                     .navigationTitle(info.subject.name)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
