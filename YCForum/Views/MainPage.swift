@@ -16,15 +16,16 @@ struct Mainpage: View {
     var body: some View {
         NavigationStack {
             List{
-                ForEach(info) { info in
-                    Section{
-                        NavigationLink(destination: DetailView(info: $info)) {
-                            CardView(info: info)
-                        }
-                        
-                        .listRowBackground(info.theme.mainColor)
+                ForEach($info) {$info in
+                    NavigationLink(destination: DetailView(info: $info)) {
+                        CardView(info: info)
                     }
+                        
+                    .listRowBackground(info.theme.mainColor)
+                    
                 }
+                .onDelete(perform: deleteItem)
+                .onMove(perform: moveItem)
             }
                 
                 
@@ -32,6 +33,7 @@ struct Mainpage: View {
             .listStyle(InsetGroupedListStyle())
             .navigationTitle("All")
             .toolbar {
+                EditButton()
                 Button(action: {
                     isPresentingNewEditView = true
                 }) {
