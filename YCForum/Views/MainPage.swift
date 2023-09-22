@@ -17,7 +17,7 @@ struct Mainpage: View {
         NavigationStack {
             Group {
                 if info.isEmpty{
-                    Text("No Items")
+                    EmptyView(isPresentingNewEditView: $isPresentingNewEditView)
                 } else {
                     
                     List{
