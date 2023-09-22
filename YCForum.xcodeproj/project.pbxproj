@@ -36,7 +36,7 @@
 		7A568DB92A58F46200F907CA /* Agenda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agenda.swift; sourceTree = "<group>"; };
 		7A568DBD2A58F46200F907CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A568DC02A58F46200F907CA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		7A568DC82A58F53C00F907CA /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPage.swift; sourceTree = "<group>"; };
+		7A568DC82A58F53C00F907CA /* MainPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainPage.swift; path = ../MainPage.swift; sourceTree = "<group>"; };
 		7A568DCB2A58F5FA00F907CA /* PageStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStyle.swift; sourceTree = "<group>"; };
 		7A568DCD2A58FAF000F907CA /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		7A568DCF2A58FBB300F907CA /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };

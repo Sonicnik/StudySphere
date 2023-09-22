@@ -16,11 +16,14 @@ struct Mainpage: View {
     var body: some View {
         NavigationStack {
             List($info) { $info in
-                NavigationLink(destination: DetailView(info: $info)) {
-                    CardView(info: info)
+                Section{
+                    NavigationLink(destination: DetailView(info: $info)) {
+                        CardView(info: info)
+                    }
+                    
+                    .listRowBackground(info.theme.mainColor)
                 }
                 
-                .listRowBackground(info.theme.mainColor)
             }
             .listStyle(InsetGroupedListStyle())
             .navigationTitle("All")
