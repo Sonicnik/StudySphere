@@ -16,6 +16,21 @@ struct DetailView: View {
     
     var body: some View {
         List {
+            Section(header: Text("🦾")) {
+                HStack {
+                    Button (action: {
+                        info.isDone.toggle()
+                    }) {
+                        Label("Done?", systemImage: info.isDone ? "checkmark.circle.fill" : "circle")
+                    }
+                    
+                    Spacer()
+                    Text(info.isDone ? "Lets Go!!😎": "Almost there! 🤯")
+                        .padding(.trailing)
+                    
+                }
+                .padding()
+            }
             
             Section(header: Text("Section")) {
                 HStack {
@@ -69,7 +84,9 @@ struct DetailView: View {
                         Text(info.detail)
                             .font(.body)
                             .multilineTextAlignment(.leading)
+                        
                             .padding()
+                        Spacer()
                     }
                 }
                 .padding()
