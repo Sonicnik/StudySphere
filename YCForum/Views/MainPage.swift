@@ -15,33 +15,42 @@ struct Mainpage: View {
     
     var body: some View {
         NavigationStack {
-            List{
-                ForEach($info) {$info in
-                    NavigationLink(destination: DetailView(info: $info)) {
-                        CardView(info: info)
-                    }
-                        
-                    .listRowBackground(info.theme.mainColor)
+            Group {
+                if info.isEmpty{
+                    Text("No Items")
+                } else {
                     
+                    List{
+                        ForEach($info) {$info in
+                            NavigationLink(destination: DetailView(info: $info)) {
+                                CardView(info: info)
+                            }
+                            
+                            .listRowBackground(info.theme.mainColor)
+                            
+                        }
+                        .onDelete(perform: deleteItem)
+                        .onMove(perform: moveItem)
+                    }
+                    
+                    
+                    
+                    .listStyle(InsetGroupedListStyle())
                 }
-                .onDelete(perform: deleteItem)
-                .onMove(perform: moveItem)
+                
             }
-                
-                
-            
-            .listStyle(InsetGroupedListStyle())
-            .navigationTitle("All")
+            .navigationTitle("ALL")
             .toolbar {
-                EditButton()
-                Button(action: {
-                    isPresentingNewEditView = true
-                }) {
-                    Image(systemName: "plus")
-                }
-                .accessibilityLabel("New Suggestion")
+                    EditButton()
+                    Button(action: {
+                        isPresentingNewEditView = true
+                    }) {
+                        Image(systemName: "plus")
+                    }
+                    .accessibilityLabel("New Suggestion")
             }
         }
+        
         .sheet(isPresented: $isPresentingNewEditView) {
             NewSheet(infos: $info, isPresentingNewEditView: $isPresentingNewEditView)
         }
