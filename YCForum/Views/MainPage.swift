@@ -15,16 +15,20 @@ struct Mainpage: View {
     
     var body: some View {
         NavigationStack {
-            List($info) { $info in
-                Section{
-                    NavigationLink(destination: DetailView(info: $info)) {
-                        CardView(info: info)
+            List{
+                ForEach(info) { info in
+                    Section{
+                        NavigationLink(destination: DetailView(info: $info)) {
+                            CardView(info: info)
+                        }
+                        
+                        .listRowBackground(info.theme.mainColor)
                     }
-                    
-                    .listRowBackground(info.theme.mainColor)
                 }
-                
             }
+                
+                
+            
             .listStyle(InsetGroupedListStyle())
             .navigationTitle("All")
             .toolbar {
@@ -42,6 +46,7 @@ struct Mainpage: View {
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { saveAction() }
         }
+        
     }
 }
 
