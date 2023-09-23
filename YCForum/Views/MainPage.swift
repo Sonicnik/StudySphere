@@ -47,7 +47,7 @@ struct Mainpage: View {
                     }) {
                         Image(systemName: "plus")
                     }
-                    .accessibilityLabel("New Suggestion")
+                    .accessibilityLabel("New")
             }
         }
         

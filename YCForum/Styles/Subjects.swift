@@ -11,6 +11,11 @@ enum Subject: String, CaseIterable, Codable {
     case MATH
     case Chinese
     case English
+    case Physics
+    case CS
+    case Economics
+    case Chemistry
+    
     
     //Create a name variable within the subject to display on different pages as string title 
     var name: String {
