@@ -11,6 +11,8 @@ struct NewSheet: View {
     @State private var newPage = PageInfo.emptyPage
     @Binding var infos: [PageInfo]
     @Binding var isPresentingNewEditView : Bool
+    let notificationMag = NotificationManager.instance
+    
     var body: some View {
         NavigationStack {
             EditPage(info: $newPage)
@@ -24,6 +26,10 @@ struct NewSheet: View {
                         Button("Post") {
                             infos.append(newPage)
                             isPresentingNewEditView = false
+//                            notificationMag.scheduleNotification(for: newPage,
+//                                                                 at: newPage.duedate,
+//                                                                 subtitle: "\(newPage.subject) \(newPage.format)'s due date is just at the corner!!",
+//                                                                 identifier: newPage.id)
                         }
                     }
                 }

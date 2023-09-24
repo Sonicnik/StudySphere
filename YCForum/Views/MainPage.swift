@@ -21,10 +21,7 @@ struct Mainpage: View {
                     VStack {
                         EmptyView(isPresentingNewEditView: $isPresentingNewEditView)
                         
-                        Button ("schedule Notification"){
-                            notificationManag.scheduleNotification()
-                        }
-                    }
+                                            }
                     
                 } else {
                     

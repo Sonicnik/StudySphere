@@ -8,7 +8,7 @@
 import Foundation
 
 struct PageInfo: Identifiable, Codable {
-    let id: UUID
+    let id: String
     var subject: Subject
     var format: Format
     var detail: String
@@ -17,7 +17,7 @@ struct PageInfo: Identifiable, Codable {
     var isDone: Bool
     
     
-    init(id: UUID = UUID(), subject: Subject, format: Format, detail: String, theme: Theme, duedate: Date, isDone: Bool){
+    init(id: String = UUID().uuidString, subject: Subject, format: Format, detail: String, theme: Theme, duedate: Date, isDone: Bool){
         self.id = id
         self.subject = subject
         self.format = format
