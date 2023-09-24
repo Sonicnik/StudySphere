@@ -15,6 +15,7 @@ enum Subject: String, CaseIterable, Codable {
     case CS
     case Economics
     case Chemistry
+    case Business
     
     
     //Create a name variable within the subject to display on different pages as string title 

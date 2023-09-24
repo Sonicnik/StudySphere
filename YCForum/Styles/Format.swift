@@ -8,7 +8,7 @@
 import SwiftUI
 
 enum Format: String, CaseIterable, Codable {
-    case HW
+    case Homework
     case Exam
     case Test
     case Project

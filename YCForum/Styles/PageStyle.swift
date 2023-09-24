@@ -47,7 +47,7 @@ extension PageInfo {
                  isDone: false),
                  
         PageInfo(subject: .English,
-                 format: .HW,
+                 format: .Homework,
                  detail: "Writing a reflection",
                  theme: .sky,
                  duedate: Date(),

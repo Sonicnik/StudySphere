@@ -34,7 +34,7 @@ struct DetailView: View {
             
             Section(header: Text("Section")) {
                 HStack {
-                    Label("Type of Work:", systemImage: "square.dashed.inset.filled")
+                    Label("Type", systemImage: "square.dashed.inset.filled")
                     Spacer()
                     Text(info.format.name)
                         .padding(.trailing)
@@ -45,7 +45,7 @@ struct DetailView: View {
                 
                 
                 HStack {
-                    Label("Subject:", systemImage: "slider.horizontal.below.square.filled.and.square")
+                    Label("Subject", systemImage: "slider.horizontal.below.square.filled.and.square")
                     Spacer()
                     Text(info.subject.name)
                         .padding(.trailing)
@@ -56,7 +56,7 @@ struct DetailView: View {
                 
             Section(header: Text("Time & Date")) {
                 HStack {
-                    Label("Due Date:", systemImage: "calendar.badge.exclamationmark")
+                    Label("Due Date", systemImage: "calendar.badge.exclamationmark")
                     Spacer()
                     Text(info.duedate.formatted(date: .abbreviated, time: .omitted))
                         .padding(.trailing)
@@ -64,7 +64,7 @@ struct DetailView: View {
                 .padding()
                 
                 HStack {
-                    Label("Due Time:", systemImage: "clock.badge.exclamationmark")
+                    Label("Due Time", systemImage: "clock.badge.exclamationmark")
                     Spacer()
                     Text(info.duedate.formatted(date: .omitted, time: .shortened))
                         .padding(.trailing)
