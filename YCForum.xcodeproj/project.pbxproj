@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7A05D83A2ABDA49D00BE37C9 /* MainFunc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A05D8392ABDA49D00BE37C9 /* MainFunc.swift */; };
+		7A0615162ABFD3EF00779D31 /* Notificaton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0615152ABFD3EF00779D31 /* Notificaton.swift */; };
 		7A14ED6F2A99FB1E00835B76 /* Subjects.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A14ED6E2A99FB1E00835B76 /* Subjects.swift */; };
 		7A14ED772A9A07EE00835B76 /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A14ED762A9A07EE00835B76 /* Format.swift */; };
 		7A14ED792A9A0B5D00835B76 /* SubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A14ED782A9A0B5D00835B76 /* SubjectView.swift */; };
@@ -31,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		7A05D8392ABDA49D00BE37C9 /* MainFunc.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFunc.swift; sourceTree = "<group>"; };
+		7A0615152ABFD3EF00779D31 /* Notificaton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notificaton.swift; sourceTree = "<group>"; };
 		7A14ED6E2A99FB1E00835B76 /* Subjects.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Subjects.swift; sourceTree = "<group>"; };
 		7A14ED762A9A07EE00835B76 /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
 		7A14ED782A9A0B5D00835B76 /* SubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectView.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 			children = (
 				7AB2A3552AA196E5003722E9 /* SaveData.swift */,
 				7A05D8392ABDA49D00BE37C9 /* MainFunc.swift */,
+				7A0615152ABFD3EF00779D31 /* Notificaton.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -233,6 +236,7 @@
 				7A14ED792A9A0B5D00835B76 /* SubjectView.swift in Sources */,
 				7A568DCE2A58FAF000F907CA /* CardView.swift in Sources */,
 				7A568DD82A5901A300F907CA /* ThemeView.swift in Sources */,
+				7A0615162ABFD3EF00779D31 /* Notificaton.swift in Sources */,
 				7AFECE752A5AA4B900256CA2 /* NewSheet.swift in Sources */,
 				7A568DC92A58F53C00F907CA /* MainPage.swift in Sources */,
 				7AB2A3562AA196E5003722E9 /* SaveData.swift in Sources */,

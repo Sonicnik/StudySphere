@@ -12,12 +12,20 @@ struct Mainpage: View {
     @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewEditView = false
     let saveAction: () -> ()
+    let notificationManag = NotificationManager.instance
     
     var body: some View {
         NavigationStack {
             Group {
                 if info.isEmpty{
-                    EmptyView(isPresentingNewEditView: $isPresentingNewEditView)
+                    VStack {
+                        EmptyView(isPresentingNewEditView: $isPresentingNewEditView)
+                        
+                        Button ("schedule Notification"){
+                            notificationManag.scheduleNotification()
+                        }
+                    }
+                    
                 } else {
                     
                     List{
@@ -57,6 +65,14 @@ struct Mainpage: View {
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { saveAction() }
         }
+        
+        .onAppear {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+                notificationManag.requestAuthorization()
+                
+            }
+        }
+        
         
     }
 }
