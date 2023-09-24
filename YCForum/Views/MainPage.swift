@@ -27,7 +27,7 @@ struct Mainpage: View {
                     
                     List{
                         ForEach($info) {$info in
-                            NavigationLink(destination: DetailView(info: $info)) {
+                            NavigationLink(destination: DetailPage(info: $info)) {
                                 CardView(info: info)
                             }
                             

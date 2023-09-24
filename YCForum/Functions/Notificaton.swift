@@ -26,39 +26,45 @@ class NotificationManager {
     }
     
     func scheduleNotification(for work: PageInfo, at duedate: Date, subtitle description: String, identifier id: String) {
-        
-        //what to push in the notification
-        let content = UNMutableNotificationContent()
-        content.title = "There's more work😱"
-        content.body = description
-        content.sound = .default
-        
-        
-        //Trigger of the notification
-        let calendar = Calendar.current
-        let components = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: duedate)
+        // Calculate the adjusted due date (one day before the original due date)
+        let oneDayInSeconds: TimeInterval = 24 * 60 * 60 // One day in seconds
+        let adjustedDueDate = duedate.addingTimeInterval(-oneDayInSeconds)
 
-        // Create a calendar trigger to schedule the notification at the due date and time
-        let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
+        // Calculate the time interval between the adjusted due date and the current time
+        let currentTime = Date()
+        let timeUntilAdjustedDueDate = adjustedDueDate.timeIntervalSince(currentTime)
 
-        
-        //push request
-        let request = UNNotificationRequest(identifier: id,
-                                            content: content,
-                                            trigger: trigger)
-        
-        UNUserNotificationCenter.current().add(request) { error in
-                    if let error = error {
-                        print("Error scheduling notification: \(error)")
-                    }
+        // Check if the adjusted due date is still in the future
+        if timeUntilAdjustedDueDate > 0 {
+            // Create content for the notification
+            let content = UNMutableNotificationContent()
+            content.title = "Due Date Coming😱"
+            content.body = description
+            content.sound = .default
+
+            // Create a calendar trigger for the adjusted due date
+            let calendar = Calendar.current
+            let components = calendar.dateComponents([.year, .month, .day, .hour, .minute], from: adjustedDueDate)
+            let trigger = UNCalendarNotificationTrigger(dateMatching: components, repeats: false)
+
+            // Schedule the notification with the adjusted due date and provided identifier
+            let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
+
+            UNUserNotificationCenter.current().add(request) { error in
+                if let error = error {
+                    print("Error scheduling notification: \(error)")
                 }
-        
+            }
+        }
     }
+
     //func to update notification time
-    func updateDueDate(forWork work: PageInfo, newDueDate: Date, subtitle description: String, identifier id: String) {
+    func updateDueDate(for work: PageInfo, newDueDate: Date, subtitle description: String, identifier id: String) {
         let currentTime = Date()
         let newDueDate = work.duedate
-        let timeUntilNewDueDate = newDueDate.timeIntervalSince(currentTime)
+        let oneDayInSeconds: TimeInterval = 24 * 60 * 60 // One day in seconds
+        let adjustedDueDate = newDueDate.addingTimeInterval(-oneDayInSeconds)
+        let timeUntilNewDueDate = adjustedDueDate.timeIntervalSince(currentTime)
 
         
         UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: [id])

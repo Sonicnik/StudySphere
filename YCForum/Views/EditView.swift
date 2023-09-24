@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EditPage: View {
+struct EditView: View {
     @Binding var info: PageInfo
     
     var body: some View {
@@ -37,6 +37,6 @@ struct EditPage: View {
 
 struct DetailEditView_Previews: PreviewProvider {
     static var previews: some View {
-        EditPage(info: .constant(PageInfo.sampleData[0]))
+        EditView(info: .constant(PageInfo.sampleData[0]))
     }
 }

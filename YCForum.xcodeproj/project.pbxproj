@@ -20,7 +20,7 @@
 		7A568DCC2A58F5FA00F907CA /* PageStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A568DCB2A58F5FA00F907CA /* PageStyle.swift */; };
 		7A568DCE2A58FAF000F907CA /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A568DCD2A58FAF000F907CA /* CardView.swift */; };
 		7A568DD02A58FBB300F907CA /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A568DCF2A58FBB300F907CA /* Theme.swift */; };
-		7A568DD22A58FCF700F907CA /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A568DD12A58FCF700F907CA /* DetailView.swift */; };
+		7A568DD22A58FCF700F907CA /* DetailPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A568DD12A58FCF700F907CA /* DetailPage.swift */; };
 		7A568DD42A59007600F907CA /* EditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A568DD32A59007600F907CA /* EditView.swift */; };
 		7A568DD62A59016B00F907CA /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A568DD52A59016B00F907CA /* PickerView.swift */; };
 		7A568DD82A5901A300F907CA /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A568DD72A5901A300F907CA /* ThemeView.swift */; };
@@ -45,7 +45,7 @@
 		7A568DCB2A58F5FA00F907CA /* PageStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageStyle.swift; sourceTree = "<group>"; };
 		7A568DCD2A58FAF000F907CA /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		7A568DCF2A58FBB300F907CA /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
-		7A568DD12A58FCF700F907CA /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		7A568DD12A58FCF700F907CA /* DetailPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPage.swift; sourceTree = "<group>"; };
 		7A568DD32A59007600F907CA /* EditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditView.swift; sourceTree = "<group>"; };
 		7A568DD52A59016B00F907CA /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		7A568DD72A5901A300F907CA /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
@@ -108,7 +108,6 @@
 			isa = PBXGroup;
 			children = (
 				7A568DCD2A58FAF000F907CA /* CardView.swift */,
-				7A568DD12A58FCF700F907CA /* DetailView.swift */,
 				7A568DD32A59007600F907CA /* EditView.swift */,
 				7A14ED782A9A0B5D00835B76 /* SubjectView.swift */,
 				7A568DD52A59016B00F907CA /* PickerView.swift */,
@@ -136,6 +135,7 @@
 			children = (
 				7AFECE742A5AA4B900256CA2 /* NewSheet.swift */,
 				7A568DC82A58F53C00F907CA /* MainPage.swift */,
+				7A568DD12A58FCF700F907CA /* DetailPage.swift */,
 			);
 			name = Pages;
 			path = Views/Pages;
@@ -222,7 +222,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A568DBA2A58F46200F907CA /* Agenda.swift in Sources */,
-				7A568DD22A58FCF700F907CA /* DetailView.swift in Sources */,
+				7A568DD22A58FCF700F907CA /* DetailPage.swift in Sources */,
 				7A14ED772A9A07EE00835B76 /* Format.swift in Sources */,
 				7A05D83A2ABDA49D00BE37C9 /* MainFunc.swift in Sources */,
 				7A568DCC2A58F5FA00F907CA /* PageStyle.swift in Sources */,

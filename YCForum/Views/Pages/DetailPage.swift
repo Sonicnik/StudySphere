@@ -7,10 +7,12 @@
 
 import SwiftUI
 
-struct DetailView: View {
+struct DetailPage: View {
     @Binding var info: PageInfo
     
     @State private var editingInfo = PageInfo.emptyPage
+    
+    let notificationMag = NotificationManager.instance
     
     @State private var isPresentingEditView = false
     
@@ -20,6 +22,10 @@ struct DetailView: View {
                 HStack {
                     Button (action: {
                         info.isDone.toggle()
+                        notificationMag.updateDueDate(for: editingInfo,
+                                                      newDueDate: editingInfo.duedate,
+                                                      subtitle: "Your \(editingInfo.subject)'s \(editingInfo.format) is marked done and due tomorrow, double check if you finished the work.",
+                                                      identifier: editingInfo.id)
                     }) {
                         Label("Done?", systemImage: info.isDone ? "checkmark.circle.fill" : "circle")
                     }
@@ -102,7 +108,7 @@ struct DetailView: View {
         }
         .sheet(isPresented: $isPresentingEditView) {
             NavigationStack {
-                EditPage(info: $editingInfo)
+                EditView(info: $editingInfo)
                     .navigationTitle(info.subject.name)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
@@ -114,6 +120,11 @@ struct DetailView: View {
                             Button("Done") {
                                 isPresentingEditView = false
                                 info = editingInfo
+                                notificationMag.updateDueDate(for: editingInfo,
+                                                              newDueDate: editingInfo.duedate,
+                                                              subtitle: "Your \(editingInfo.subject)'s \(editingInfo.format) is due tomorrow!!",
+                                                              identifier: editingInfo.id)
+                                
                             }
                         }
                     }
@@ -125,7 +136,7 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            DetailView(info: .constant(PageInfo.sampleData[0]))
+            DetailPage(info: .constant(PageInfo.sampleData[0]))
         }
     }
 }
