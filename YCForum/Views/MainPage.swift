@@ -15,13 +15,14 @@ struct Mainpage: View {
     let notificationManag = NotificationManager.instance
     
     var body: some View {
+        
         NavigationStack {
             Group {
                 if info.isEmpty{
                     VStack {
                         EmptyView(isPresentingNewEditView: $isPresentingNewEditView)
                         
-                                            }
+                    }
                     
                 } else {
                     
@@ -46,13 +47,13 @@ struct Mainpage: View {
             }
             .navigationTitle("ALL")
             .toolbar {
-                    EditButton()
-                    Button(action: {
-                        isPresentingNewEditView = true
-                    }) {
-                        Image(systemName: "plus")
-                    }
-                    .accessibilityLabel("New")
+                EditButton()
+                Button(action: {
+                    isPresentingNewEditView = true
+                }) {
+                    Image(systemName: "plus")
+                }
+                .accessibilityLabel("New")
             }
         }
         
@@ -69,10 +70,11 @@ struct Mainpage: View {
                 
             }
         }
-        
-        
     }
+    
+    
 }
+
 
 struct Mainpage_Previews: PreviewProvider {
     static var previews: some View {

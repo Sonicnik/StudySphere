@@ -14,23 +14,7 @@ struct Agenda: App {
     
     var body: some Scene {
         WindowGroup {
-            Mainpage(info: $info.info){
-                Task {
-                    do {
-                        try await info.save(infos: info.info)
-                    } catch {
-                        fatalError(error.localizedDescription)
-                    }
-                }
-            }
-            
-            .task {
-                do {
-                    try await info.load()
-                } catch {
-                    fatalError(error.localizedDescription)
-                }
-            }
+            Container()
         }
         
     }
