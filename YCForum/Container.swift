@@ -36,7 +36,7 @@ struct Container: View {
             
             
             
-            SettingView()
+            SettingPage()
                 .tabItem(){
                     Image(systemName: "house")
                     Text("Setting")

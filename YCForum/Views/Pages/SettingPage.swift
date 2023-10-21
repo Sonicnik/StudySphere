@@ -7,7 +7,9 @@
 
 import SwiftUI
 
-struct SettingView: View {
+struct SettingPage: View {
+    @Binding var period: [PeriodInfo]
+    
     var body: some View {
         Text("This is the setting view")
     }
@@ -15,6 +17,6 @@ struct SettingView: View {
 
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingView()
+        SettingPage(period: .constant(PeriodInfo.samplePeriods))
     }
 }
