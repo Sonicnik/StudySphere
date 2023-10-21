@@ -36,7 +36,7 @@ struct Container: View {
             
             
             
-            SettingPage()
+            SettingPage(period: .constant(PeriodInfo.samplePeriods))
                 .tabItem(){
                     Image(systemName: "house")
                     Text("Setting")

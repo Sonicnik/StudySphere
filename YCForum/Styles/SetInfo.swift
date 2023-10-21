@@ -8,7 +8,7 @@
 import Foundation
 
 
-struct PeriodInfo: Identifiable {
+struct PeriodInfo: Identifiable, Codable {
     let id: String
     var startTime: Int
     var endTime: Int
