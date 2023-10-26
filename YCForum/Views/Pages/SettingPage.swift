@@ -11,7 +11,23 @@ struct SettingPage: View {
     @Binding var period: [PeriodInfo]
     
     var body: some View {
-        Text("This is the setting view")
+        
+        NavigationStack {
+            List{
+                Section(header: Text("Avaliable Time")) {
+                    ForEach($period) {$period in
+                        TimeView(period: period)
+                    }
+                }
+                
+                Section(header: Text("Subjects")) {
+                    
+                }
+            }
+            .navigationTitle("Setting Page")
+        }
+        
+        
     }
 }
 
