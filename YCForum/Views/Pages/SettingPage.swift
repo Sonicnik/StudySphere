@@ -15,7 +15,9 @@ struct SettingPage: View {
         NavigationStack {
             List{
                 Section(header: Text("Avaliable Time")) {
-                    TimeView(period: period)
+                    ForEach(period) { period in
+                        TimeView(period: period)
+                    }
                     
                 }
                 

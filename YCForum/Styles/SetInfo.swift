@@ -27,8 +27,6 @@ extension PeriodInfo {
     [
         
         PeriodInfo(startTime: 7, endTime: 9, dayAt: 1),
-        PeriodInfo(startTime: 12, endTime: 15, dayAt: 6),
-        PeriodInfo(startTime: 16, endTime: 18, dayAt: 7)
 
     ]
 }
