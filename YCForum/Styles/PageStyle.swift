@@ -18,7 +18,7 @@ struct PageInfo: Identifiable, Codable {
     var isHidden: Bool
     
     
-    init(id: String = UUID().uuidString, subject: Subject, format: Format, detail: String, theme: Theme, duedate: Date, isDone: Bool){
+    init(id: String = UUID().uuidString, subject: Subject, format: Format, detail: String, theme: Theme, duedate: Date, isDone: Bool, isHidden: Bool){
         self.id = id
         self.subject = subject
         self.format = format
@@ -26,13 +26,13 @@ struct PageInfo: Identifiable, Codable {
         self.theme = theme
         self.duedate = duedate
         self.isDone = isDone
-        self.isHidden = false
+        self.isHidden = isHidden
     }
 }
 
 extension PageInfo {
     static var emptyPage: PageInfo {
-        PageInfo(subject: .MATH, format: .Exam, detail:"", theme: .sky, duedate: Date(), isDone: false)
+        PageInfo(subject: .MATH, format: .Exam, detail:"", theme: .sky, duedate: Date(), isDone: false, isHidden: false)
     }
 
 }
@@ -46,19 +46,22 @@ extension PageInfo {
                  detail: "Paper 1 for 90mins",
                  theme: .lavender,
                  duedate: Date(),
-                 isDone: false),
+                 isDone: false,
+                 isHidden: false),
                  
         PageInfo(subject: .English,
                  format: .Homework,
                  detail: "Writing a reflection",
                  theme: .sky,
                  duedate: Date(),
-                 isDone: true),
+                 isDone: true,
+                 isHidden: false),
         
         PageInfo(subject: .MATH,
                  format: .Test,
                  detail: "Unit1-3",
                  theme: .indigo,
                  duedate: Date(),
-                 isDone: false)]
+                 isDone: false,
+                 isHidden: false)]
 }
