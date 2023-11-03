@@ -15,6 +15,7 @@ struct PageInfo: Identifiable, Codable {
     var theme: Theme
     var duedate: Date
     var isDone: Bool
+    var isHidden: Bool
     
     
     init(id: String = UUID().uuidString, subject: Subject, format: Format, detail: String, theme: Theme, duedate: Date, isDone: Bool){
@@ -25,6 +26,7 @@ struct PageInfo: Identifiable, Codable {
         self.theme = theme
         self.duedate = duedate
         self.isDone = isDone
+        self.isHidden = false
     }
 }
 

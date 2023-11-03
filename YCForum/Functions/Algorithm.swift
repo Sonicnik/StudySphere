@@ -3,38 +3,38 @@
 //  YCForum
 //
 //  Created by Sonic Liu on 30/10/2023.
-//
-
-import SwiftUI
+import Foundation
 
 extension PageInfo {
-    func scheduleTasks(_ tasks: [Task], availableTimePerDay: Int) -> [String] {
-        var scheduledTasks: [String] = []
-        
-        let sortedTasks = tasks.sorted { (task1, task2) in
-            if task1.dueDate == task2.dueDate {
-                return task1.priority > task2.priority
+    static func scheduleTasks( tasks: [PageInfo]) -> [PageInfo] {
+//        var scheduledTasks: [PageInfo] = []
+        var sortedTasks = tasks
+
+        var i = sortedTasks.count - 1
+            while(i > 0) {
+                var j = 0
+                while(j < i) {
+                    if sortedTasks[j].duedate > sortedTasks[j + 1].duedate {
+                        sortedTasks.swapAt(j, j + 1)
+                    }
+                    j += 1
+                }
+                i -= 1
             }
-            return task1.dueDate < task2.dueDate
-        }
-        
-        var remainingTime = availableTimePerDay
-        
-        for task in sortedTasks {
-            if remainingTime >= task.estimatedTime {
-                scheduledTasks.append("\(task.name) - Due: \(task.dueDate)")
-                remainingTime -= task.estimatedTime
-            } else {
-                // Not enough time in the current day, check the next day
-                // You can implement a logic to check multiple days if needed
-                continue
-            }
-        }
-        
-        if scheduledTasks.isEmpty {
-            scheduledTasks.append("No tasks scheduled for today.")
-        }
-        
-        return scheduledTasks
+//
+//        var remainingTime = availableTimePerDay
+
+//        for task in sortedTasks {
+//            if remainingTime >= task.estimatedTime {
+//                scheduledTasks.append(task)
+//                remainingTime -= task.estimatedTime
+//            } else {
+//                // Not enough time in the current day, check the next day
+//                // You can implement a logic to check multiple days if needed
+//                continue
+//            }
+//        }
+
+        return sortedTasks
     }
 }

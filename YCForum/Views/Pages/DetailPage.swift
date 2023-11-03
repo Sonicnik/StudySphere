@@ -19,24 +19,38 @@ struct DetailPage: View {
     var body: some View {
         List {
             Section(header: Text("🦾")) {
-                HStack {
-                    Button (action: {
-                        info.isDone.toggle()
-                        notificationMag.updateDueDate(for: editingInfo,
-                                                      newDueDate: editingInfo.duedate,
-                                                      subtitle: "Your \(editingInfo.subject)'s \(editingInfo.format) is marked done and due tomorrow, double check if you finished the work.",
-                                                      identifier: editingInfo.id)
-                    }) {
-                        Label("Done?", systemImage: info.isDone ? "checkmark.circle.fill" : "circle")
+                
+                    HStack {
+                        Button (action: {
+                            info.isDone.toggle()
+                            notificationMag.updateDueDate(for: editingInfo,
+                                                          newDueDate: editingInfo.duedate,
+                                                          subtitle: "Your \(editingInfo.subject)'s \(editingInfo.format) is marked done and due tomorrow, double check if you finished the work.",
+                                                          identifier: editingInfo.id)
+                        }) {
+                            Label("Done?", systemImage: info.isDone ? "checkmark.circle.fill" : "circle")
+                        }
+                        
+                        Spacer()
+                        Text(info.isDone ? "Lets Go!!😎": "Almost there! 🤯")
+                            .padding(.trailing)
+                        
                     }
+                    .padding()
                     
-                    Spacer()
-                    Text(info.isDone ? "Lets Go!!😎": "Almost there! 🤯")
-                        .padding(.trailing)
+                    HStack {
+                        Label("Work is for", systemImage: info.isHidden ? "checkmark.circle.fill" : "circle")
+                        
+                        
+                        Spacer()
+                        Text(info.isDone ? "Lets Go!!😎": "Almost there! 🤯")
+                            .padding(.trailing)
+                    }
+                    .padding()
                     
-                }
-                .padding()
+                
             }
+            
             
             Section(header: Text("Section")) {
                 HStack {

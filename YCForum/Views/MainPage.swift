@@ -19,24 +19,28 @@ struct Mainpage: View {
         NavigationStack {
             Group {
                 if info.isEmpty{
-                    VStack {
-                        EmptyView(isPresentingNewEditView: $isPresentingNewEditView)
-                        
-                    }
+
+                    //EmptyView(isPresentingNewEditView: $isPresentingNewEditView)
+
+
                     
                 } else {
                     
                     List{
+                        
+
                         ForEach($info) {$info in
                             NavigationLink(destination: DetailPage(info: $info)) {
                                 CardView(info: info)
+                                
                             }
                             
+                            .onAppear(perform: sortData)
                             .listRowBackground(info.theme.mainColor)
                             
                         }
                         .onDelete(perform: deleteItem)
-                        .onMove(perform: moveItem)
+                        
                     }
                     
                     
