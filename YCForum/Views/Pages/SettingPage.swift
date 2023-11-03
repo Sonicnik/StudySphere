@@ -15,9 +15,8 @@ struct SettingPage: View {
         NavigationStack {
             List{
                 Section(header: Text("Avaliable Time")) {
-                    ForEach($period) {$period in
-                        TimeView(period: period)
-                    }
+                    TimeView(period: period)
+                    
                 }
                 
                 Section(header: Text("Subjects")) {
