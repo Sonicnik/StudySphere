@@ -16,7 +16,8 @@ extension Mainpage {
     }
     
     func sortData(avaible time: String){
-        var timeLeft = Int(time)
+//        // The time passed on is in hours so convert into minutes first
+//        var timeLeft = (Int(time) ?? 0)*60
         // First loop used to organize the lists
         
         var i = info.count - 1
@@ -31,7 +32,16 @@ extension Mainpage {
             i -= 1
         }
         // Second Loop used to organize the available time for the scheduled task.
-        var i = info.count - 1
+//        i = info.count - 1
+//        while(i > 0) {
+//            if timeLeft > info[i].eTime{
+//                timeLeft = timeLeft - info[i].eTime
+//            } else if timeLeft < info[i].eTime{
+//                info[i].isHidden = true
+//            }
+//            i -= 1
+//
+//        }
         
     }
 }
