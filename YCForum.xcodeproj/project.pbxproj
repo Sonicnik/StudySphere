@@ -29,7 +29,9 @@
 		7A995AE52AE3701000A29AE8 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A995AE42AE3701000A29AE8 /* Container.swift */; };
 		7A995AE72AE3711E00A29AE8 /* SettingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A995AE62AE3711E00A29AE8 /* SettingPage.swift */; };
 		7A995AEC2AE37A0D00A29AE8 /* Setinfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A995AEB2AE37A0D00A29AE8 /* Setinfo.swift */; };
-		7A995AEE2AE3F41700A29AE8 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A995AED2AE3F41700A29AE8 /* TimeView.swift */; };
+		7A995AEE2AE3F41700A29AE8 /* TimeSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A995AED2AE3F41700A29AE8 /* TimeSelectorView.swift */; };
+		7AA2BA392AF4FF4800FEC478 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2BA382AF4FF4800FEC478 /* TimeView.swift */; };
+		7AA2BA3B2AF50CFD00FEC478 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2BA3A2AF50CFD00FEC478 /* Settings.swift */; };
 		7AB2A3562AA196E5003722E9 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2A3552AA196E5003722E9 /* SaveData.swift */; };
 		7ADFC3C02ABDBB0100732D5B /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADFC3BF2ABDBB0100732D5B /* EmptyView.swift */; };
 		7AF5871D2AAD68D100D2071B /* datePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF5871C2AAD68D100D2071B /* datePicker.swift */; };
@@ -60,7 +62,9 @@
 		7A995AE42AE3701000A29AE8 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		7A995AE62AE3711E00A29AE8 /* SettingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPage.swift; sourceTree = "<group>"; };
 		7A995AEB2AE37A0D00A29AE8 /* Setinfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setinfo.swift; sourceTree = "<group>"; };
-		7A995AED2AE3F41700A29AE8 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
+		7A995AED2AE3F41700A29AE8 /* TimeSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeSelectorView.swift; sourceTree = "<group>"; };
+		7AA2BA382AF4FF4800FEC478 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
+		7AA2BA3A2AF50CFD00FEC478 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		7AB2A3552AA196E5003722E9 /* SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
 		7ADFC3BF2ABDBB0100732D5B /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		7AF5871C2AAD68D100D2071B /* datePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datePicker.swift; sourceTree = "<group>"; };
@@ -129,15 +133,9 @@
 		7A568DC72A58F52600F907CA /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				7A568DCD2A58FAF000F907CA /* CardView.swift */,
-				7A568DD32A59007600F907CA /* EditView.swift */,
-				7A14ED782A9A0B5D00835B76 /* SubjectView.swift */,
-				7A568DD52A59016B00F907CA /* PickerView.swift */,
-				7A568DD72A5901A300F907CA /* ThemeView.swift */,
-				7A14ED7A2A9A0E6B00835B76 /* FormatView.swift */,
-				7AF5871C2AAD68D100D2071B /* datePicker.swift */,
+				7AA2BA332AF4FE1F00FEC478 /* SettingPageView */,
+				7AA2BA322AF4FDF900FEC478 /* MainpageView */,
 				7ADFC3BF2ABDBB0100732D5B /* EmptyView.swift */,
-				7A995AED2AE3F41700A29AE8 /* TimeView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -147,6 +145,7 @@
 			children = (
 				7A14ED762A9A07EE00835B76 /* Format.swift */,
 				7A568DCB2A58F5FA00F907CA /* PageStyle.swift */,
+				7AA2BA3A2AF50CFD00FEC478 /* Settings.swift */,
 				7A995AEB2AE37A0D00A29AE8 /* Setinfo.swift */,
 				7A14ED6E2A99FB1E00835B76 /* Subjects.swift */,
 				7A568DCF2A58FBB300F907CA /* Theme.swift */,
@@ -164,6 +163,29 @@
 			);
 			name = Pages;
 			path = Views/Pages;
+			sourceTree = "<group>";
+		};
+		7AA2BA322AF4FDF900FEC478 /* MainpageView */ = {
+			isa = PBXGroup;
+			children = (
+				7A568DCD2A58FAF000F907CA /* CardView.swift */,
+				7A568DD32A59007600F907CA /* EditView.swift */,
+				7A14ED782A9A0B5D00835B76 /* SubjectView.swift */,
+				7A568DD52A59016B00F907CA /* PickerView.swift */,
+				7A568DD72A5901A300F907CA /* ThemeView.swift */,
+				7A14ED7A2A9A0E6B00835B76 /* FormatView.swift */,
+				7AF5871C2AAD68D100D2071B /* datePicker.swift */,
+			);
+			path = MainpageView;
+			sourceTree = "<group>";
+		};
+		7AA2BA332AF4FE1F00FEC478 /* SettingPageView */ = {
+			isa = PBXGroup;
+			children = (
+				7A995AED2AE3F41700A29AE8 /* TimeSelectorView.swift */,
+				7AA2BA382AF4FF4800FEC478 /* TimeView.swift */,
+			);
+			path = SettingPageView;
 			sourceTree = "<group>";
 		};
 		7AB2A3542AA196CD003722E9 /* Functions */ = {
@@ -250,6 +272,8 @@
 			files = (
 				7A568DBA2A58F46200F907CA /* Agenda.swift in Sources */,
 				7A2351A72AEFD632000C62D8 /* Algorithm.swift in Sources */,
+				7AA2BA3B2AF50CFD00FEC478 /* Settings.swift in Sources */,
+				7AA2BA392AF4FF4800FEC478 /* TimeView.swift in Sources */,
 				7A568DD22A58FCF700F907CA /* DetailPage.swift in Sources */,
 				7A14ED772A9A07EE00835B76 /* Format.swift in Sources */,
 				7A995AE72AE3711E00A29AE8 /* SettingPage.swift in Sources */,
@@ -268,7 +292,7 @@
 				7A995AEC2AE37A0D00A29AE8 /* Setinfo.swift in Sources */,
 				7A0615162ABFD3EF00779D31 /* Notificaton.swift in Sources */,
 				7AFECE752A5AA4B900256CA2 /* NewSheet.swift in Sources */,
-				7A995AEE2AE3F41700A29AE8 /* TimeView.swift in Sources */,
+				7A995AEE2AE3F41700A29AE8 /* TimeSelectorView.swift in Sources */,
 				7A995AE52AE3701000A29AE8 /* Container.swift in Sources */,
 				7A568DC92A58F53C00F907CA /* MainPage.swift in Sources */,
 				7AB2A3562AA196E5003722E9 /* SaveData.swift in Sources */,

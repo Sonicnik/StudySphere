@@ -7,35 +7,33 @@
 
 import SwiftUI
 
-struct TimeView: View {
-    @State var avaliableTime: String = "1"
+struct TimeSelectorView: View {
+    @Binding var avaliableTime: String
     
-    
-    let period: PeriodInfo
     
     var body: some View {
         
         
-        HStack {
-            Text("Number of hours per day")
-            Spacer()
+        VStack {
+            Text("Number of hours per day: \(avaliableTime)")
+                .padding()
             
-            Picker("Avaliable Time",selection: $avaliableTime){
+            Picker("Avaliable Time", selection: $avaliableTime){
                     Text("1").tag("1")
                     Text("2").tag("2")
                     Text("3").tag("3")
                     Text("4").tag("4")
                     Text("5").tag("5")
                     Text("6").tag("6")
-                    Text("7").tag("7")
             }
             .pickerStyle(.wheel)
         }
+        
     }
 }
 
-struct TimeView_Previews: PreviewProvider {
+struct TimeSelectorView_Previews: PreviewProvider {
     static var previews: some View {
-        TimeView(period: PeriodInfo.samplePeriods[0])
+        TimeSelectorView(avaliableTime: .constant("1"))
     }
 }

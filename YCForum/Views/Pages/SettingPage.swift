@@ -9,31 +9,32 @@ import SwiftUI
 
 struct SettingPage: View {
     @Binding var period: [PeriodInfo]
+    @State var avaliableTime: String
     
     var body: some View {
         
-        NavigationStack {
+        NavigationView {
             List{
                 Section(header: Text("Avaliable Time")) {
-                    ForEach(period) { period in
-                        TimeView(period: period)
+                    NavigationLink(destination:TimeSelectorView(avaliableTime: $avaliableTime)) {
+                        TimeView(avaliableTime: $avaliableTime)
+                        
                     }
-                    
                 }
-                
+                                   
                 Section(header: Text("Subjects")) {
-                    
+                        
                 }
             }
-            .navigationTitle("Setting Page")
+            .navigationTitle("Setting")
         }
         
-        
     }
+                                   
 }
 
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingPage(period: .constant(PeriodInfo.samplePeriods))
+        SettingPage(period: .constant(PeriodInfo.samplePeriods), avaliableTime: "1")
     }
 }

@@ -15,7 +15,9 @@ extension Mainpage {
         info.move(fromOffsets: source, toOffset: destination)
     }
     
-    func sortData(){
+    func sortData(avaible time: String){
+        var timeLeft = Int(time)
+        // First loop used to organize the lists
         var i = info.count - 1
         while(i > 0) {
             var j = 0
@@ -27,5 +29,8 @@ extension Mainpage {
             }
             i -= 1
         }
+        // Second Loop used to organize the available time for the scheduled task.
+        var i = info.count - 1
+        
     }
 }
