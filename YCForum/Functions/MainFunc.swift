@@ -18,6 +18,7 @@ extension Mainpage {
     func sortData(avaible time: String){
         var timeLeft = Int(time)
         // First loop used to organize the lists
+        
         var i = info.count - 1
         while(i > 0) {
             var j = 0
