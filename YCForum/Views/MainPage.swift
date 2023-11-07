@@ -20,16 +20,16 @@ struct Mainpage: View {
             
             Group {
                 if info.isEmpty{
-
+                    
                     EmptyView(isPresentingNewEditView: $isPresentingNewEditView)
-
-
+                    
+                    
                     
                 } else {
                     
                     List{
                         
-
+                        
                         ForEach($info) {$info in
                             NavigationLink(destination: DetailPage(info: $info)) {
                                 CardView(info: info)
@@ -39,39 +39,39 @@ struct Mainpage: View {
                             
                             .onAppear(perform: {
                                 sortData(avaible: "1")
-<<<<<<< HEAD
+                                
                             })
                             .listRowBackground(info.theme.mainColor)
-=======
-                                
                             
-                                
-                            })
-                            .listRowBackground(subjectColor(subject: info.subjects))
->>>>>>> ColorsForCardView
                             
-                        }
-                        .onDelete(perform: deleteItem)
+                            
+                            
+                        })
+                        .listRowBackground(subjectColor(subject: info.subjects))
+                        
                         
                     }
+                    .onDelete(perform: deleteItem)
                     
-                    
-                    
-                    .listStyle(InsetGroupedListStyle())
                 }
                 
+                
+                
+                    .listStyle(InsetGroupedListStyle())
             }
-            .navigationTitle("TASKS")
-            .toolbar {
-                EditButton()
-                Button(action: {
-                    isPresentingNewEditView = true
-                }) {
-                    Image(systemName: "plus")
-                }
-                .accessibilityLabel("New")
-            }
+            
         }
+        .navigationTitle("TASKS")
+        .toolbar {
+            EditButton()
+            Button(action: {
+                isPresentingNewEditView = true
+            }) {
+                Image(systemName: "plus")
+            }
+            .accessibilityLabel("New")
+        }
+        
         
         .sheet(isPresented: $isPresentingNewEditView) {
             NewSheet(infos: $info, isPresentingNewEditView: $isPresentingNewEditView)

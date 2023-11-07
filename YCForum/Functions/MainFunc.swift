@@ -43,8 +43,8 @@ extension Mainpage {
 
         }
         print(info)
-<<<<<<< HEAD
-=======
+
+
     }
     
     func subjectColor(subject: Subject) -> Color{
@@ -77,6 +77,6 @@ extension Mainpage {
         }
         
         return color.mainColor
->>>>>>> ColorsForCardView
+
     }
 }

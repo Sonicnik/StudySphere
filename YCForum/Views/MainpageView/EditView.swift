@@ -22,11 +22,11 @@ struct EditView: View {
             
             Section(header: Text("Estimated Time")) {
                 timeSelectionPicker(eTime: $info.eTime)
-=======
+
                 PickerView(selectTheme: $info.theme, selectSubject: $info.subjects, selectFormat: $info.formats)
                 datePicker(selectedDate: $info.duedate)
                 
->>>>>>> ColorsForCardView
+
             }
             
             Section(header: Text("Estimated Time")) {

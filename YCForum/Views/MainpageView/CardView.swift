@@ -58,10 +58,8 @@ extension CardView {
         return texts
         
     }
-<<<<<<< HEAD
-=======
+
     
->>>>>>> ColorsForCardView
 }
 
 struct CardView_Previews: PreviewProvider {
