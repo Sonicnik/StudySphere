@@ -13,6 +13,8 @@ struct PickerView: View {
     @Binding var selectFormat: Format
     
     var body: some View {
+        
+        
         Picker("Subject", selection: $selectSubject){
             ForEach(Subject.allCases) { subject in
                 SubjectView(subject: subject)
@@ -32,6 +34,8 @@ struct PickerView: View {
             }
         }
         .pickerStyle(.navigationLink)
+        
+        
         
     }
 }

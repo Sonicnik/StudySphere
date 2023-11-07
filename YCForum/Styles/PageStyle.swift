@@ -49,7 +49,7 @@ extension PageInfo {
                  theme: .lavender,
                  duedate: Date(),
                  isDone: false,
-                 isHidden: false,
+                 isHidden: true,
                  eTime: 60),
                  
         PageInfo(subject: .English,

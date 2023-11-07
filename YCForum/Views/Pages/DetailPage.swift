@@ -39,11 +39,11 @@ struct DetailPage: View {
                     .padding()
                     
                     HStack {
-                        Label("Work is for", systemImage: info.isHidden ? "checkmark.circle.fill" : "circle")
+                        Label("Work is", systemImage: "chart.bar.doc.horizontal.fill")
                         
                         
                         Spacer()
-                        Text(info.isDone ? "Lets Go!!😎": "Almost there! 🤯")
+                        Text(info.isHidden ? "Not for today (Chill bro)": "Needs to be finished Today!!")
                             .padding(.trailing)
                     }
                     .padding()
@@ -92,12 +92,12 @@ struct DetailPage: View {
                 .padding()
             }
             
-            Section(header: Text("Description")) {
+            Section(header: Text("Details")) {
                 
                 VStack {
                     
                     HStack {
-                        Label("Explanantion", systemImage: "rectangle.and.pencil.and.ellipsis")
+                        Label("Notes", systemImage: "rectangle.and.pencil.and.ellipsis")
                         Spacer()
                     }
                     HStack {

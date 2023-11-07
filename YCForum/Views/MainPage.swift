@@ -35,7 +35,9 @@ struct Mainpage: View {
                                 
                             }
                             
-                            .onAppear(perform: sortData)
+                            .onAppear(perform: {
+                                sortData(avaible: "1")
+                            })
                             .listRowBackground(info.theme.mainColor)
                             
                         }
