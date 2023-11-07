@@ -17,6 +17,7 @@ struct Mainpage: View {
     var body: some View {
         
         NavigationStack {
+            
             Group {
                 if info.isEmpty{
 
