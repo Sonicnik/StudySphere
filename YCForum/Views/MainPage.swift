@@ -61,7 +61,7 @@ struct Mainpage: View {
                 }
                 
             }
-            .navigationTitle("ALL")
+            .navigationTitle("TASKS")
             .toolbar {
                 EditButton()
                 Button(action: {
