@@ -17,7 +17,7 @@ struct CardView: View {
                 Image(systemName: info.isDone ? "checkmark.circle.fill" : "circle")
                     .font(.title)
                 
-                Text(info.subject.name + " - " + info.format.name)
+                Text(info.subjects.name + " - " + info.formats.name)
                     .font(.title3)
                     .fontWeight(.bold)
                     .padding(.leading)
@@ -40,7 +40,7 @@ struct CardView: View {
                         
         }
         .padding()
-        .foregroundColor(info.theme.accentColor)
+        .foregroundColor(info.isHidden ? Color(.gray) : info.theme.accentColor)
     }
 }
 
@@ -58,6 +58,10 @@ extension CardView {
         return texts
         
     }
+<<<<<<< HEAD
+=======
+    
+>>>>>>> ColorsForCardView
 }
 
 struct CardView_Previews: PreviewProvider {

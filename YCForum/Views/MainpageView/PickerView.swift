@@ -27,13 +27,8 @@ struct PickerView: View {
                     .tag(format)
             }
         }
-        Picker("Theme", selection: $selectTheme) {
-            ForEach(Theme.allCases) { theme in
-                ThemeView(theme: theme)
-                    .tag(theme)
-            }
-        }
-        .pickerStyle(.navigationLink)
+        
+        
         
         
         

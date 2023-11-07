@@ -43,5 +43,40 @@ extension Mainpage {
 
         }
         print(info)
+<<<<<<< HEAD
+=======
+    }
+    
+    func subjectColor(subject: Subject) -> Color{
+        var color: Theme = .bubblegum
+        
+        switch subject{
+        case .Economics:
+            color = .navy
+            
+        case .Business:
+            color = .indigo
+            
+        case .Chemistry:
+            color = .oxblood
+            
+        case .CS:
+            color = .magenta
+            
+        case .MATH:
+            color = .seafoam
+            
+        case .Physics:
+            color = .bubblegum
+            
+        case .Chinese:
+            color = .tan
+            
+        case .English:
+            color = .oxblood
+        }
+        
+        return color.mainColor
+>>>>>>> ColorsForCardView
     }
 }

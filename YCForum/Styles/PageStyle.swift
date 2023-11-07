@@ -9,8 +9,8 @@ import Foundation
 
 struct PageInfo: Identifiable, Codable {
     let id: String
-    var subject: Subject
-    var format: Format
+    var subjects: Subject
+    var formats: Format
     var detail: String
     var theme: Theme
     var duedate: Date
@@ -19,10 +19,10 @@ struct PageInfo: Identifiable, Codable {
     var eTime: Int
     
     
-    init(id: String = UUID().uuidString, subject: Subject, format: Format, detail: String, theme: Theme, duedate: Date, isDone: Bool, isHidden: Bool, eTime: Int){
+    init(id: String = UUID().uuidString, subjects: Subject, formats: Format, detail: String, theme: Theme, duedate: Date, isDone: Bool, isHidden: Bool, eTime: Int){
         self.id = id
-        self.subject = subject
-        self.format = format
+        self.subjects = subjects
+        self.formats = formats
         self.detail = detail
         self.theme = theme
         self.duedate = duedate
@@ -34,7 +34,7 @@ struct PageInfo: Identifiable, Codable {
 
 extension PageInfo {
     static var emptyPage: PageInfo {
-        PageInfo(subject: .MATH, format: .Exam, detail:"", theme: .sky, duedate: Date(), isDone: false, isHidden: false, eTime: 0)
+        PageInfo(subjects: .MATH, formats: .Exam, detail:"", theme: .sky, duedate: Date(), isDone: false, isHidden: false, eTime: 0)
     }
 
 }
@@ -43,8 +43,8 @@ extension PageInfo {
 extension PageInfo {
     static let sampleData: [PageInfo] =
     [
-        PageInfo(subject: .Chinese,
-                 format: .Exam,
+        PageInfo(subjects: .Chinese,
+                 formats: .Exam,
                  detail: "Paper 1 for 90mins",
                  theme: .lavender,
                  duedate: Date(),
@@ -52,8 +52,8 @@ extension PageInfo {
                  isHidden: true,
                  eTime: 60),
                  
-        PageInfo(subject: .English,
-                 format: .Homework,
+        PageInfo(subjects: .English,
+                 formats: .Homework,
                  detail: "Writing a reflection",
                  theme: .sky,
                  duedate: Date(),
@@ -61,8 +61,8 @@ extension PageInfo {
                  isHidden: false,
                  eTime: 45),
         
-        PageInfo(subject: .MATH,
-                 format: .Test,
+        PageInfo(subjects: .MATH,
+                 formats: .Test,
                  detail: "Unit1-3",
                  theme: .indigo,
                  duedate: Date(),

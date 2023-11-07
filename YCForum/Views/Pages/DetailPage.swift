@@ -25,7 +25,7 @@ struct DetailPage: View {
                             info.isDone.toggle()
                             notificationMag.updateDueDate(for: editingInfo,
                                                           newDueDate: editingInfo.duedate,
-                                                          subtitle: "Your \(editingInfo.subject)'s \(editingInfo.format) is marked done and due tomorrow, double check if you finished the work.",
+                                                          subtitle: "Your \(editingInfo.subjects)'s \(editingInfo.formats) is marked done and due tomorrow, double check if you finished the work.",
                                                           identifier: editingInfo.id)
                         }) {
                             Label("Done?", systemImage: info.isDone ? "checkmark.circle.fill" : "circle")
@@ -56,7 +56,7 @@ struct DetailPage: View {
                 HStack {
                     Label("Type", systemImage: "square.dashed.inset.filled")
                     Spacer()
-                    Text(info.format.name)
+                    Text(info.formats.name)
                         .padding(.trailing)
                     
                 }
@@ -67,7 +67,7 @@ struct DetailPage: View {
                 HStack {
                     Label("Subject", systemImage: "slider.horizontal.below.square.filled.and.square")
                     Spacer()
-                    Text(info.subject.name)
+                    Text(info.subjects.name)
                         .padding(.trailing)
                 }
                 .padding()
@@ -113,7 +113,7 @@ struct DetailPage: View {
             }
         }
         //pass the subject name on using .name variable
-        .navigationTitle(info.subject.name)
+        .navigationTitle(info.subjects.name)
         .toolbar {
             Button("Edit") {
                 isPresentingEditView = true
@@ -123,7 +123,7 @@ struct DetailPage: View {
         .sheet(isPresented: $isPresentingEditView) {
             NavigationStack {
                 EditView(info: $editingInfo)
-                    .navigationTitle(info.subject.name)
+                    .navigationTitle(info.subjects.name)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Cancel") {
@@ -136,7 +136,7 @@ struct DetailPage: View {
                                 info = editingInfo
                                 notificationMag.updateDueDate(for: editingInfo,
                                                               newDueDate: editingInfo.duedate,
-                                                              subtitle: "Your \(editingInfo.subject)'s \(editingInfo.format) is due tomorrow!!",
+                                                              subtitle: "Your \(editingInfo.subjects)'s \(editingInfo.formats) is due tomorrow!!",
                                                               identifier: editingInfo.id)
                                 
                             }
