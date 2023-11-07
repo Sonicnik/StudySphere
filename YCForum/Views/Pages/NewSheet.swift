@@ -37,7 +37,7 @@ struct NewSheet: View {
                         }
                     }
                 }
-                .navigationTitle("More Work 😤")
+                .navigationTitle("Add More Work 😤")
         }
         
     }
