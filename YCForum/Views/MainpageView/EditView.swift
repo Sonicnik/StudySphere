@@ -15,8 +15,7 @@ struct EditView: View {
             Section(header: Text("Details")) {
                 
                 
-<<<<<<< HEAD
-                PickerView(selectTheme: $info.theme, selectSubject: $info.subject, selectFormat: $info.format)
+                PickerView(selectTheme: $info.theme, selectSubject: $info.subjects, selectFormat: $info.formats)
                 datePicker(selectedDate: $info.duedate)
                 
             }
@@ -28,6 +27,10 @@ struct EditView: View {
                 datePicker(selectedDate: $info.duedate)
                 
 >>>>>>> ColorsForCardView
+            }
+            
+            Section(header: Text("Estimated Time")) {
+                timeSelectionPicker(eTime: $info.eTime)
             }
             
             Section(header: Text("Estimated Time")) {
