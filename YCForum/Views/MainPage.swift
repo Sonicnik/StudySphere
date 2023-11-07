@@ -33,10 +33,16 @@ struct Mainpage: View {
                             NavigationLink(destination: DetailPage(info: $info)) {
                                 CardView(info: info)
                                 
+                                
                             }
                             
-                            .onAppear(perform: sortData)
-                            .listRowBackground(info.theme.mainColor)
+                            .onAppear(perform: {
+                                sortData(avaible: "1")
+                                
+                            
+                                
+                            })
+                            .listRowBackground(subjectColor(subject: info.subjects))
                             
                         }
                         .onDelete(perform: deleteItem)

@@ -16,8 +16,8 @@ extension Mainpage {
     }
     
     func sortData(avaible time: String){
-//        // The time passed on is in hours so convert into minutes first
-//        var timeLeft = (Int(time) ?? 0)*60
+        // The time passed on is in hours so convert into minutes first
+        var timeLeft = (Int(time) ?? 0)*60
         // First loop used to organize the lists
         
         var i = info.count - 1
@@ -31,17 +31,49 @@ extension Mainpage {
             }
             i -= 1
         }
-        // Second Loop used to organize the available time for the scheduled task.
-//        i = info.count - 1
-//        while(i > 0) {
-//            if timeLeft > info[i].eTime{
-//                timeLeft = timeLeft - info[i].eTime
-//            } else if timeLeft < info[i].eTime{
-//                info[i].isHidden = true
-//            }
-//            i -= 1
-//
-//        }
+        //Second Loop used to organize the available time for the scheduled task.
+        i = info.count - 1
+        while(i > 0) {
+            if timeLeft > info[i].eTime{
+                timeLeft = timeLeft - info[i].eTime
+            } else if timeLeft < info[i].eTime{
+                info[i].isHidden = true
+            }
+            i -= 1
+
+        }
+        print(info)
+    }
+    
+    func subjectColor(subject: Subject) -> Color{
+        var color: Theme = .bubblegum
         
+        switch subject{
+        case .Economics:
+            color = .navy
+            
+        case .Business:
+            color = .indigo
+            
+        case .Chemistry:
+            color = .oxblood
+            
+        case .CS:
+            color = .magenta
+            
+        case .MATH:
+            color = .seafoam
+            
+        case .Physics:
+            color = .bubblegum
+            
+        case .Chinese:
+            color = .tan
+            
+        case .English:
+            color = .oxblood
+        }
+        
+        return color.mainColor
     }
 }

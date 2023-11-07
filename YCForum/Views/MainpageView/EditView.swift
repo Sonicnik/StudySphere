@@ -14,12 +14,14 @@ struct EditView: View {
         Form {
             Section(header: Text("Details")) {
                 
-            
-                PickerView(selectTheme: $info.theme, selectSubject: $info.subject, selectFormat: $info.format)
+                
+                PickerView(selectTheme: $info.theme, selectSubject: $info.subjects, selectFormat: $info.formats)
                 datePicker(selectedDate: $info.duedate)
                 
-                
-                
+            }
+            
+            Section(header: Text("Estimated Time")) {
+                timeSelectionPicker(eTime: $info.eTime)
             }
 
             Section(header: Text("Notes")) {

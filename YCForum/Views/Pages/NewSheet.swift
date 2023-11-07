@@ -32,7 +32,7 @@ struct NewSheet: View {
                             isPresentingNewEditView = false
                             notificationMag.scheduleNotification(for: newPage,
                                                                  at: newPage.duedate,
-                                                                 subtitle: "\(newPage.subject) \(newPage.format)'s due date is just at the corner!!",
+                                                                 subtitle: "\(newPage.subjects) \(newPage.formats)'s due date is just at the corner!!",
                                                                  identifier: newPage.id)
                         }
                     }

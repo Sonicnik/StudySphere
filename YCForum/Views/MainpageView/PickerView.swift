@@ -13,6 +13,8 @@ struct PickerView: View {
     @Binding var selectFormat: Format
     
     var body: some View {
+        
+        
         Picker("Subject", selection: $selectSubject){
             ForEach(Subject.allCases) { subject in
                 SubjectView(subject: subject)
@@ -25,13 +27,8 @@ struct PickerView: View {
                     .tag(format)
             }
         }
-        Picker("Theme", selection: $selectTheme) {
-            ForEach(Theme.allCases) { theme in
-                ThemeView(theme: theme)
-                    .tag(theme)
-            }
-        }
-        .pickerStyle(.navigationLink)
+        
+        
         
     }
 }

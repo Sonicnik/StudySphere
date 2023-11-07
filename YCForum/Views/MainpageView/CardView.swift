@@ -17,7 +17,7 @@ struct CardView: View {
                 Image(systemName: info.isDone ? "checkmark.circle.fill" : "circle")
                     .font(.title)
                 
-                Text(info.subject.name + " - " + info.format.name)
+                Text(info.subjects.name + " - " + info.formats.name)
                     .font(.title3)
                     .fontWeight(.bold)
                     .padding(.leading)
@@ -33,15 +33,32 @@ struct CardView: View {
             
                         
             
-            Text(info.detail)
+            Text("Estimated Time: " + calculatedTime(eTime: info.eTime))
                 .font(.footnote)
                 .multilineTextAlignment(.leading)
                 .padding([.leading, .bottom, .trailing])
                         
         }
         .padding()
-        .foregroundColor(info.theme.accentColor)
+        .foregroundColor(info.isHidden ? Color(.gray) : info.theme.accentColor)
     }
+}
+
+extension CardView {
+    func calculatedTime(eTime time: Int)-> String{
+        let min = time%60
+        let hour = (time-min)/60
+        
+        let min2 = String(min)
+        let hour2 = String(hour)
+        
+        let texts = "\(hour2) hours \(min2) minutes"
+        
+        
+        return texts
+        
+    }
+    
 }
 
 struct CardView_Previews: PreviewProvider {
