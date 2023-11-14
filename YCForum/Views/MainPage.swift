@@ -20,16 +20,16 @@ struct Mainpage: View {
             
             Group {
                 if info.isEmpty{
-                    
+
                     EmptyView(isPresentingNewEditView: $isPresentingNewEditView)
-                    
-                    
+
+
                     
                 } else {
                     
                     List{
                         
-                        
+
                         ForEach($info) {$info in
                             NavigationLink(destination: DetailPage(info: $info)) {
                                 CardView(info: info)
@@ -40,38 +40,33 @@ struct Mainpage: View {
                             .onAppear(perform: {
                                 sortData(avaible: "1")
                                 
+                            
+                                
                             })
-                            .listRowBackground(info.theme.mainColor)
+                            .listRowBackground(subjectColor(subject: info.subjects))
                             
-                            
-                            
-                            
-                        })
-                        .listRowBackground(subjectColor(subject: info.subjects))
-                        
+                        }
+                        .onDelete(perform: deleteItem)
                         
                     }
-                    .onDelete(perform: deleteItem)
                     
+                    
+                    
+                    .listStyle(InsetGroupedListStyle())
                 }
                 
-                
-                
-                    .listStyle(InsetGroupedListStyle())
             }
-            
-        }
-        .navigationTitle("TASKS")
-        .toolbar {
-            EditButton()
-            Button(action: {
-                isPresentingNewEditView = true
-            }) {
-                Image(systemName: "plus")
+            .navigationTitle("All")
+            .toolbar {
+                EditButton()
+                Button(action: {
+                    isPresentingNewEditView = true
+                }) {
+                    Image(systemName: "plus")
+                }
+                .accessibilityLabel("New")
             }
-            .accessibilityLabel("New")
         }
-        
         
         .sheet(isPresented: $isPresentingNewEditView) {
             NewSheet(infos: $info, isPresentingNewEditView: $isPresentingNewEditView)
@@ -97,3 +92,4 @@ struct Mainpage_Previews: PreviewProvider {
         Mainpage(info: .constant(PageInfo.sampleData), saveAction: {})
     }
 }
+
