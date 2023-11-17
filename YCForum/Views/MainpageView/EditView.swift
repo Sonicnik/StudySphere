@@ -12,28 +12,16 @@ struct EditView: View {
     
     var body: some View {
         Form {
-            Section(header: Text("Details")) {
-                
-                
-                PickerView(selectTheme: $info.theme, selectSubject: $info.subjects, selectFormat: $info.formats)
-                datePicker(selectedDate: $info.duedate)
-                
-            }
-            
-            Section(header: Text("Estimated Time")) {
-                timeSelectionPicker(eTime: $info.eTime)
+            Section(header: Text("Info ")) {
 
                 PickerView(selectTheme: $info.theme, selectSubject: $info.subjects, selectFormat: $info.formats)
                 datePicker(selectedDate: $info.duedate)
                 
-
+                
+                
             }
             
-            Section(header: Text("Estimated Time")) {
-                timeSelectionPicker(eTime: $info.eTime)
-            }
-            
-            Section(header: Text("Estimated Time")) {
+            Section(header: Text("Time Estimated")) {
                 timeSelectionPicker(eTime: $info.eTime)
             }
 
