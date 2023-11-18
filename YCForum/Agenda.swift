@@ -5,6 +5,8 @@
 //  Created by Sonic Liu on 8/7/2023.
 //
 
+// StudySphere - Agenda(1.1)
+
 import SwiftUI
 
 @main
