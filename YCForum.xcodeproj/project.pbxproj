@@ -28,6 +28,7 @@
 		7A58AD762AF7CA55002F3C44 /* timeSelectionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A58AD752AF7CA55002F3C44 /* timeSelectionPicker.swift */; };
 		7A599A4A2B08578700D87AAD /* SetSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A599A492B08578700D87AAD /* SetSubject.swift */; };
 		7A599A4E2B08587800D87AAD /* SelectionOFSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A599A4D2B08587800D87AAD /* SelectionOFSubject.swift */; };
+		7A599A502B08672600D87AAD /* SaveSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A599A4F2B08672600D87AAD /* SaveSettings.swift */; };
 		7A995AE52AE3701000A29AE8 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A995AE42AE3701000A29AE8 /* Container.swift */; };
 		7A995AE72AE3711E00A29AE8 /* SettingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A995AE62AE3711E00A29AE8 /* SettingPage.swift */; };
 		7A995AEC2AE37A0D00A29AE8 /* Setinfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A995AEB2AE37A0D00A29AE8 /* Setinfo.swift */; };
@@ -63,6 +64,7 @@
 		7A58AD752AF7CA55002F3C44 /* timeSelectionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeSelectionPicker.swift; sourceTree = "<group>"; };
 		7A599A492B08578700D87AAD /* SetSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSubject.swift; sourceTree = "<group>"; };
 		7A599A4D2B08587800D87AAD /* SelectionOFSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionOFSubject.swift; sourceTree = "<group>"; };
+		7A599A4F2B08672600D87AAD /* SaveSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveSettings.swift; sourceTree = "<group>"; };
 		7A995AE42AE3701000A29AE8 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		7A995AE62AE3711E00A29AE8 /* SettingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPage.swift; sourceTree = "<group>"; };
 		7A995AEB2AE37A0D00A29AE8 /* Setinfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setinfo.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 			isa = PBXGroup;
 			children = (
 				7AB2A3552AA196E5003722E9 /* SaveData.swift */,
+				7A599A4F2B08672600D87AAD /* SaveSettings.swift */,
 				7A05D8392ABDA49D00BE37C9 /* MainFunc.swift */,
 				7A0615152ABFD3EF00779D31 /* Notificaton.swift */,
 			);
@@ -308,6 +311,7 @@
 				7A568DD42A59007600F907CA /* EditView.swift in Sources */,
 				7ADFC3C02ABDBB0100732D5B /* EmptyView.swift in Sources */,
 				7A568DD62A59016B00F907CA /* PickerView.swift in Sources */,
+				7A599A502B08672600D87AAD /* SaveSettings.swift in Sources */,
 				7A14ED792A9A0B5D00835B76 /* SubjectView.swift in Sources */,
 				7A58AD762AF7CA55002F3C44 /* timeSelectionPicker.swift in Sources */,
 				7A568DCE2A58FAF000F907CA /* CardView.swift in Sources */,

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct SetSubject: View {
+    @Binding var selectedSubjects: Set<Subject>
+    
     var body: some View {
         
         HStack {
@@ -21,5 +23,5 @@ struct SetSubject: View {
 }
 
 #Preview {
-    SetSubject()
+    SetSubject(selectedSubjects: .constant([.Business, .CS, .Chemistry]))
 }

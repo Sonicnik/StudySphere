@@ -10,30 +10,27 @@ import SwiftUI
 struct SettingPage: View {
     @Binding var period: [PeriodInfo]
     @State var avaliableTime: String
+    @Binding var selectedSubject: Set<Subject>
     
     var body: some View {
-        
         NavigationView {
-            List{
+            List {
                 Section(header: Text("Basics")) {
-                    NavigationLink(destination:TimeSelectorView(avaliableTime: $avaliableTime)) {
+                    NavigationLink(destination: TimeSelectorView(avaliableTime: $avaliableTime)) {
                         TimeView(avaliableTime: $avaliableTime)
-                        
                     }
                     
-                    
-                    
+                    NavigationLink(destination: SelectionOFSubject(selectedSubjects: $selectedSubject)){
+                        SetSubject(selectedSubjects: $selectedSubject)
+                    }
                 }
             }
-            .navigationTitle("Setting")
         }
-        
     }
-                                   
 }
 
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingPage(period: .constant(PeriodInfo.samplePeriods), avaliableTime: "1")
+        SettingPage(period: .constant(PeriodInfo.samplePeriods), avaliableTime: "1", selectedSubject: .constant([.Business, .Chemistry, .Chinese, .Economics, .MATH, .Physics]))
     }
 }

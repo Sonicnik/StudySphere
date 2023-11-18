@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct Agenda: App {
     
-    @StateObject private var info = storeData()
+    @StateObject private var info = storePageInfo()
     
     var body: some Scene {
         WindowGroup {

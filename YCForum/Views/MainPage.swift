@@ -11,6 +11,7 @@ struct Mainpage: View {
     @Binding var info: [PageInfo]
     @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewEditView = false
+    @Binding var avaliableSubject: Set<Subject>
     let saveAction: () -> ()
     let notificationManag = NotificationManager.instance
     
@@ -69,7 +70,7 @@ struct Mainpage: View {
         }
         
         .sheet(isPresented: $isPresentingNewEditView) {
-            NewSheet(infos: $info, isPresentingNewEditView: $isPresentingNewEditView)
+            NewSheet(infos: $info, isPresentingNewEditView: $isPresentingNewEditView, avaliableSubject: $avaliableSubject)
         }
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { saveAction() }
@@ -89,7 +90,7 @@ struct Mainpage: View {
 
 struct Mainpage_Previews: PreviewProvider {
     static var previews: some View {
-        Mainpage(info: .constant(PageInfo.sampleData), saveAction: {})
+        Mainpage(info: .constant(PageInfo.sampleData), avaliableSubject: .constant([.Business, .Chemistry]), saveAction: {})
     }
 }
 

@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct Container: View {
-    @StateObject private var info = storeData()
+    @StateObject private var info = storePageInfo()
+    @StateObject private var selectedSubject = SaveSettings()
     
     var body: some View {
         TabView {
-            Mainpage(info: $info.info){
+            Mainpage(info: $info.info, avaliableSubject: $selectedSubject.selectedSubjects) {
                 Task {
                     do {
                         try await info.save(infos: info.info)
@@ -33,16 +34,17 @@ struct Container: View {
                 Text("Today's")
             }
             
-            
-            
-            
-            SettingPage(period: .constant(PeriodInfo.samplePeriods), avaliableTime: "1")
-                .tabItem(){
-                    Image(systemName: "house")
-                    Text("Setting")
-                }
+            SettingPage(period: .constant(PeriodInfo.samplePeriods),
+                        avaliableTime: "1",
+                        selectedSubject: $selectedSubject.selectedSubjects)
+            .tabItem() {
+                Image(systemName: "house")
+                Text("Setting")
+            }
         }
     }
+    
+    
 }
 
 struct Container_Previews: PreviewProvider {

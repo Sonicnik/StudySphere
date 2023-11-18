@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SelectionOFSubject: View {
-    @State private var selectedSubjects: Set<Subject> = []
-    
+    @Binding var selectedSubjects: Set<Subject>
+
     var body: some View {
         NavigationStack {
             Section(header: Text("Selections")) {
@@ -39,8 +39,11 @@ struct SelectionOFSubject: View {
         }
         
     }
+    
+    
+    
 }
 
 #Preview {
-    SelectionOFSubject()
+    SelectionOFSubject(selectedSubjects: .constant([.Business,.Chemistry]))
 }

@@ -14,12 +14,14 @@ struct NewSheet: View {
     
     @Binding var isPresentingNewEditView : Bool
     
+    @Binding var avaliableSubject: Set<Subject>
+    
     let notificationMag = NotificationManager.instance
     
     
     var body: some View {
         NavigationStack {
-            EditView(info: $newPage)
+            EditView(info: $newPage, avaliableSubject: $avaliableSubject)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Dismiss") {
@@ -45,6 +47,6 @@ struct NewSheet: View {
 
 struct NewSheet_Previews: PreviewProvider {
     static var previews: some View {
-        NewSheet(infos: .constant(PageInfo.sampleData), isPresentingNewEditView: .constant(true))
+        NewSheet(infos: .constant(PageInfo.sampleData), isPresentingNewEditView: .constant(true), avaliableSubject: .constant([.Business, .Chemistry]))
     }
 }

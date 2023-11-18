@@ -9,12 +9,13 @@ import SwiftUI
 
 struct EditView: View {
     @Binding var info: PageInfo
+    @Binding var avaliableSubject: Set<Subject>
     
     var body: some View {
         Form {
             Section(header: Text("Info ")) {
 
-                PickerView(selectTheme: $info.theme, selectSubject: $info.subjects, selectFormat: $info.formats)
+                PickerView(selectTheme: $info.theme, selectSubject: $info.subjects, selectFormat: $info.formats, avaliableSubject: $avaliableSubject)
                 datePicker(selectedDate: $info.duedate)
                 
                 
@@ -40,6 +41,6 @@ struct EditView: View {
 
 struct DetailEditView_Previews: PreviewProvider {
     static var previews: some View {
-        EditView(info: .constant(PageInfo.sampleData[0]))
+        EditView(info: .constant(PageInfo.sampleData[0]), avaliableSubject: .constant([.Business, .Chemistry, .Economics]))
     }
 }

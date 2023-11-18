@@ -16,6 +16,8 @@ struct DetailPage: View {
     
     @State private var isPresentingEditView = false
     
+    @Binding var avaliableSubject: Set<Subject>
+    
     var body: some View {
         List {
             Section(header: Text("🦾")) {
@@ -122,7 +124,7 @@ struct DetailPage: View {
         }
         .sheet(isPresented: $isPresentingEditView) {
             NavigationStack {
-                EditView(info: $editingInfo)
+                EditView(info: $editingInfo, avaliableSubject: $avaliableSubject)
                     .navigationTitle(info.subjects.name)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
@@ -150,7 +152,7 @@ struct DetailPage: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            DetailPage(info: .constant(PageInfo.sampleData[0]))
+            DetailPage(info: .constant(PageInfo.sampleData[0]), avaliableSubject: .constant([.Business, .Chinese, .Economics]))
         }
     }
 }

@@ -8,8 +8,9 @@
 import SwiftUI
 
 @MainActor
-class storeData: ObservableObject {
+class storePageInfo: ObservableObject {
     @Published var info: [PageInfo] = []
+    
     
     private static func fetchDirectory() throws -> URL {
         try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
