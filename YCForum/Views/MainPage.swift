@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct Mainpage: View {
+    @StateObject private var stores = storePageInfo()
     @Binding var info: [PageInfo]
     @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewEditView = false
@@ -50,7 +51,7 @@ struct Mainpage: View {
                         .onChange(of: info) { _ in
                             Task {
                                 do {
-                                    try await SaveInfo(infos: info)
+                                    try await stores.SaveInfo(infos: info)
                                 } catch {
                                     // Handle errors appropriately
                                     print("Failed to save info: \(error)")

@@ -42,8 +42,5 @@ class storePageInfo: ObservableObject {
         }
         let info = try await task.value
         self.info = info
-        // Implement the loading logic here
-        // Example using UserDefaults
-        guard let data = UserDefaults.standard.data(forKey: "info") else { return }
     }
 }

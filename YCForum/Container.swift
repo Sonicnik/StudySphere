@@ -13,17 +13,20 @@ struct Container: View {
     
     var body: some View {
         TabView {
-            Mainpage(info: $info.info, avaliableSubject: $selectedSubject.selectedSubjects){ }
+            Mainpage(info: $info.info, avaliableSubject: $selectedSubject.selectedSubjects){
+            
+            }
+            
             .tabItem {
                 Image(systemName: "tray.full")
                 Text("Today's")
             }
-
+            
             SettingPage(period: .constant([]), avaliableTime: "1", selectedSubject: $selectedSubject.selectedSubjects)
-            .tabItem {
-                Image(systemName: "gear")
-                Text("Settings")
-            }
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }
         }
         .onAppear {
             Task {
@@ -31,7 +34,7 @@ struct Container: View {
                     try await info.LoadInfo()
                 } catch {
                     // Handle errors appropriately
-                    print("Failed to load info: \(error)")
+                    fatalError().localizedDescription
                 }
             }
         }

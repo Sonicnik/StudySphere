@@ -24,9 +24,14 @@ class SaveSettings: ObservableObject {
 
     // Method to load settings
     func loadSettings() {
-        let encodedData = try? JSONEncoder().encode(Array(selectedSubjects))
-        UserDefaults.standard.set(encodedData, forKey: "selectedSubjects")
-        
         guard let data = UserDefaults.standard.data(forKey: "selectedSubjects") else { return }
+        do {
+            let subjects = try JSONDecoder().decode([Subject].self, from: data)
+            selectedSubjects = Set(subjects)
+        } catch {
+            fatalError()
+        }
+        
+
     }
 }
