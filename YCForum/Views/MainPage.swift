@@ -22,7 +22,7 @@ struct Mainpage: View {
             Group {
                 if info.isEmpty{
                     
-                    EmptyView(isPresentingNewEditView: $isPresentingNewEditView)
+ //                   EmptyView(isPresentingNewEditView: $isPresentingNewEditView)
                     
                 } else {
                     
@@ -36,6 +36,7 @@ struct Mainpage: View {
                                 
                             }
                             
+                            
                             .onAppear(perform: {
                                 sortData(avaible: "1")
                                 
@@ -46,8 +47,22 @@ struct Mainpage: View {
                             
                         }
                         .onDelete(perform: deleteItem)
+                        .onChange(of: info) { _ in
+                            Task {
+                                do {
+                                    try await SaveInfo(infos: info)
+                                } catch {
+                                    // Handle errors appropriately
+                                    print("Failed to save info: \(error)")
+                                }
+                            }
+                        }
+
+
                         
                     }
+                    
+                    
                     
                     
                     

@@ -10,17 +10,28 @@ import SwiftUI
 @MainActor
 class storePageInfo: ObservableObject {
     @Published var info: [PageInfo] = []
-    
-    
     private static func fetchDirectory() throws -> URL {
         try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
             .appendingPathComponent("info.data")
     }
     
-    
-// Load function for fetching the data stored within the url
-    
-    func load() async throws {
+
+    // Method to save data
+    func SaveInfo(infos:[PageInfo]) async throws {
+        let task = Task {
+            let data = try JSONEncoder().encode(infos)
+            let outfile = try Self.fetchDirectory()
+            try data.write(to: outfile)
+        }
+        _ = try await task.value
+        // Implement the saving logic here
+        // Example using UserDefaults
+        let data = try JSONEncoder().encode(info)
+        UserDefaults.standard.set(data, forKey: "info")
+    }
+
+    // Method to load data
+    func LoadInfo() async throws {
         let task = Task<[PageInfo], Error> {
             let directory = try Self.fetchDirectory()
             guard let data = try? Data(contentsOf: directory) else {
@@ -31,15 +42,8 @@ class storePageInfo: ObservableObject {
         }
         let info = try await task.value
         self.info = info
-
-    }
-    
-    func save(infos: [PageInfo]) async throws {
-        let task = Task {
-            let data = try JSONEncoder().encode(infos)
-            let outfile = try Self.fetchDirectory()
-            try data.write(to: outfile)
-        }
-        _ = try await task.value
+        // Implement the loading logic here
+        // Example using UserDefaults
+        guard let data = UserDefaults.standard.data(forKey: "info") else { return }
     }
 }
