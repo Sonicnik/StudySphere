@@ -21,10 +21,8 @@ struct Mainpage: View {
             
             Group {
                 if info.isEmpty{
-
-                    EmptyView(isPresentingNewEditView: $isPresentingNewEditView)
-
-
+                    
+                    
                     
                 } else {
                     
@@ -32,7 +30,7 @@ struct Mainpage: View {
                         
 
                         ForEach($info) {$info in
-                            NavigationLink(destination: DetailPage(info: $info)) {
+                            NavigationLink(destination: DetailPage(info: $info, avaliableSubject: $avaliableSubject)) {
                                 CardView(info: info)
                                 
                                 
