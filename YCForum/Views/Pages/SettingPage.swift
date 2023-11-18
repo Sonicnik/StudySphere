@@ -15,15 +15,14 @@ struct SettingPage: View {
         
         NavigationView {
             List{
-                Section(header: Text("Avaliable Time")) {
+                Section(header: Text("Basics")) {
                     NavigationLink(destination:TimeSelectorView(avaliableTime: $avaliableTime)) {
                         TimeView(avaliableTime: $avaliableTime)
                         
                     }
-                }
-                                   
-                Section(header: Text("Subjects")) {
-                        
+                    
+                    
+                    
                 }
             }
             .navigationTitle("Setting")
