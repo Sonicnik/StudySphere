@@ -52,13 +52,13 @@ extension Mainpage {
         
         switch subject{
         case .Economics:
-            color = .navy
+            color = .purple
             
         case .Business:
             color = .indigo
             
         case .Chemistry:
-            color = .oxblood
+            color = .periwinkle
             
         case .CS:
             color = .magenta
@@ -67,13 +67,13 @@ extension Mainpage {
             color = .seafoam
             
         case .Physics:
-            color = .bubblegum
+            color = .sky
             
         case .Chinese:
             color = .tan
             
         case .English:
-            color = .oxblood
+            color = .teal
         }
         
         return color.mainColor

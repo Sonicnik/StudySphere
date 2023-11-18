@@ -12,29 +12,28 @@ struct SelectionOFSubject: View {
 
     var body: some View {
         NavigationStack {
-            Section(header: Text("Selections")) {
-                    List(Subject.allCases, id: \.self) { subject in
-                        HStack {
-                            Text(subject.name)
-                                .padding(.leading)
-                            
-                            Spacer()
-                            
-                            if selectedSubjects.contains(subject) {
-                                Button("Hide") {
-                                    selectedSubjects.remove(subject)
-                                }
-                                .padding(.trailing)
-                            } else {
-                                Button("Select") {
-                                    selectedSubjects.insert(subject)
-                                }
-                                .padding(.trailing)
-                            }
+            List(Subject.allCases, id: \.self) { subject in
+                HStack {
+                    Text(subject.name)
+                        .padding(.leading)
+                    
+                    Spacer()
+                    
+                    if selectedSubjects.contains(subject) {
+                        Button("Hide") {
+                            selectedSubjects.remove(subject)
                         }
+                        .padding(.trailing)
+                    } else {
+                        Button("Select") {
+                            selectedSubjects.insert(subject)
+                        }
+                        .padding(.trailing)
                     }
-                
+                }
             }
+            
+            
             .navigationBarTitle(Text("Selected Subjects"), displayMode: .inline)
         }
         
