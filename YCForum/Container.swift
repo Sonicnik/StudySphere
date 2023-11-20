@@ -13,38 +13,32 @@ struct Container: View {
     
     var body: some View {
         TabView {
-            Mainpage(info: $info.info, avaliableSubject: $selectedSubject.selectedSubjects) {
-                Task {
-                    do {
-                        try await info.save(infos: info.info)
-                    } catch {
-                        fatalError(error.localizedDescription)
-                    }
-                }
+            Mainpage(info: $info.info, avaliableSubject: $selectedSubject.selectedSubjects){
+            
             }
-            .task {
-                do {
-                    try await info.load()
-                } catch {
-                    fatalError(error.localizedDescription)
-                }
-            }
-            .tabItem() {
+            
+            .tabItem {
                 Image(systemName: "tray.full")
                 Text("Today's")
             }
             
-            SettingPage(period: .constant(PeriodInfo.samplePeriods),
-                        avaliableTime: "1",
-                        selectedSubject: $selectedSubject.selectedSubjects)
-            .tabItem() {
-                Image(systemName: "house")
-                Text("Setting")
+            SettingPage(period: .constant([]), avaliableTime: "1", selectedSubject: $selectedSubject.selectedSubjects)
+                .tabItem {
+                    Image(systemName: "gear")
+                    Text("Settings")
+                }
+        }
+        .onAppear {
+            Task {
+                do {
+                    try await info.LoadInfo()
+                } catch {
+                    // Handle errors appropriately
+                    fatalError().localizedDescription
+                }
             }
         }
     }
-    
-    
 }
 
 struct Container_Previews: PreviewProvider {

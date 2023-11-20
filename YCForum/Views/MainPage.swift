@@ -4,10 +4,11 @@
 //
 //  Created by Sonic Liu on 4/7/2023.
 //
-
+//
 import SwiftUI
 
 struct Mainpage: View {
+    @StateObject private var stores = storePageInfo()
     @Binding var info: [PageInfo]
     @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewEditView = false
@@ -36,6 +37,7 @@ struct Mainpage: View {
                                 
                             }
                             
+                            
                             .onAppear(perform: {
                                 sortData(avaible: "1")
                                 
@@ -46,8 +48,22 @@ struct Mainpage: View {
                             
                         }
                         .onDelete(perform: deleteItem)
+                        .onChange(of: info) { _ in
+                            Task {
+                                do {
+                                    try await stores.SaveInfo(infos: info)
+                                } catch {
+                                    // Handle errors appropriately
+                                    print("Failed to save info: \(error)")
+                                }
+                            }
+                        }
+
+
                         
                     }
+                    
+                    
                     
                     
                     
