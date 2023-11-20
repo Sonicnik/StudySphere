@@ -23,7 +23,7 @@ struct Mainpage: View {
             Group {
                 if info.isEmpty{
                     
- //                   EmptyView(isPresentingNewEditView: $isPresentingNewEditView)
+                    EmptyView(isPresentingNewEditView: $isPresentingNewEditView)
                     
                 } else {
                     
