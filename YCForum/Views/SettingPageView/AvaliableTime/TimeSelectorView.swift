@@ -30,10 +30,10 @@ struct TimeSelectorView: View {
                 .pickerStyle(.wheel)
                 Spacer()
             }
-            .navigationBarTitle(Text("Selected Hours"), displayMode: .inline)
         }
-        
+         .navigationBarTitle(Text("Selected Hours"), displayMode: .inline)
     }
+        
 }
 
 struct TimeSelectorView_Previews: PreviewProvider {

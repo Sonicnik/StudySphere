@@ -9,7 +9,13 @@ import SwiftUI
 
 struct BioView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        HStack {
+            Text("About US")
+            Spacer()
+        }
+        .accentColor(.blue)
+        .padding()
+
     }
 }
 

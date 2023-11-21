@@ -36,6 +36,8 @@
 		7AA2BA392AF4FF4800FEC478 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2BA382AF4FF4800FEC478 /* TimeView.swift */; };
 		7AA2BA3B2AF50CFD00FEC478 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2BA3A2AF50CFD00FEC478 /* Settings.swift */; };
 		7AB2A3562AA196E5003722E9 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2A3552AA196E5003722E9 /* SaveData.swift */; };
+		7AC6ED3C2B0CC95C00FF43DC /* BioPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC6ED3B2B0CC95C00FF43DC /* BioPage.swift */; };
+		7AC6ED3E2B0CCF2100FF43DC /* BioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC6ED3D2B0CCF2100FF43DC /* BioView.swift */; };
 		7ADFC3C02ABDBB0100732D5B /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADFC3BF2ABDBB0100732D5B /* EmptyView.swift */; };
 		7AF5871D2AAD68D100D2071B /* datePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF5871C2AAD68D100D2071B /* datePicker.swift */; };
 		7AFECE752A5AA4B900256CA2 /* NewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFECE742A5AA4B900256CA2 /* NewSheet.swift */; };
@@ -72,6 +74,8 @@
 		7AA2BA382AF4FF4800FEC478 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		7AA2BA3A2AF50CFD00FEC478 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		7AB2A3552AA196E5003722E9 /* SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
+		7AC6ED3B2B0CC95C00FF43DC /* BioPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioPage.swift; sourceTree = "<group>"; };
+		7AC6ED3D2B0CCF2100FF43DC /* BioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioView.swift; sourceTree = "<group>"; };
 		7ADFC3BF2ABDBB0100732D5B /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
 		7AF5871C2AAD68D100D2071B /* datePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datePicker.swift; sourceTree = "<group>"; };
 		7AFECE742A5AA4B900256CA2 /* NewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSheet.swift; sourceTree = "<group>"; };
@@ -207,6 +211,7 @@
 		7AA2BA332AF4FE1F00FEC478 /* SettingPageView */ = {
 			isa = PBXGroup;
 			children = (
+				7AC6ED382B0CC93F00FF43DC /* BIO */,
 				7A599A4B2B08579200D87AAD /* AvaliableTime */,
 				7A599A4C2B08579C00D87AAD /* ChoiceOfSubject */,
 			);
@@ -222,6 +227,23 @@
 				7A0615152ABFD3EF00779D31 /* Notificaton.swift */,
 			);
 			path = Functions;
+			sourceTree = "<group>";
+		};
+		7AC6ED382B0CC93F00FF43DC /* BIO */ = {
+			isa = PBXGroup;
+			children = (
+				7AC6ED3F2B0CD50900FF43DC /* EmailSend */,
+				7AC6ED3B2B0CC95C00FF43DC /* BioPage.swift */,
+				7AC6ED3D2B0CCF2100FF43DC /* BioView.swift */,
+			);
+			path = BIO;
+			sourceTree = "<group>";
+		};
+		7AC6ED3F2B0CD50900FF43DC /* EmailSend */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = EmailSend;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +326,7 @@
 				7A05D83A2ABDA49D00BE37C9 /* MainFunc.swift in Sources */,
 				7A568DCC2A58F5FA00F907CA /* PageStyle.swift in Sources */,
 				7A14ED6F2A99FB1E00835B76 /* Subjects.swift in Sources */,
+				7AC6ED3C2B0CC95C00FF43DC /* BioPage.swift in Sources */,
 				7A568DD02A58FBB300F907CA /* Theme.swift in Sources */,
 				7A599A4E2B08587800D87AAD /* SelectionOFSubject.swift in Sources */,
 				7A14ED7B2A9A0E6B00835B76 /* FormatView.swift in Sources */,
@@ -312,6 +335,7 @@
 				7ADFC3C02ABDBB0100732D5B /* EmptyView.swift in Sources */,
 				7A568DD62A59016B00F907CA /* PickerView.swift in Sources */,
 				7A599A502B08672600D87AAD /* SaveSettings.swift in Sources */,
+				7AC6ED3E2B0CCF2100FF43DC /* BioView.swift in Sources */,
 				7A14ED792A9A0B5D00835B76 /* SubjectView.swift in Sources */,
 				7A58AD762AF7CA55002F3C44 /* timeSelectionPicker.swift in Sources */,
 				7A568DCE2A58FAF000F907CA /* CardView.swift in Sources */,

@@ -15,7 +15,7 @@ struct TimeView: View {
             Text("Avaliable Time")
             Spacer()
             Text(avaliableTime)
-            Image(systemName: "chevron.right")
+            
         }
         .accentColor(.blue)
         .padding()

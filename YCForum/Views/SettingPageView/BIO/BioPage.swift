@@ -9,6 +9,7 @@ import SwiftUI
 
 struct BioPage: View {
     let DefaultURL = URL(string: "https://github.com/Sonicnik/StudySphere")!
+    let DefaultEmail = URL(string: "200037618@hkstudent.ycis.com")!
     
     
     var body: some View {
@@ -34,11 +35,18 @@ struct BioPage: View {
                     
                 }
                 
+                Section(header: Text("Problems")) {
+                    Text("Feel free to contact us!")
+                    
+                    Text("Our Email📧: 200037618@hkstudent.ycis.com")
+                }
+                
                 
                 
             }
-            .navigationBarTitle(Text("Who are we?"), displayMode: .inline)
         }
+        .navigationBarTitle(Text("Who are we?"), displayMode: .inline)
+
         
         
     }

@@ -15,7 +15,6 @@ struct SetSubject: View {
         HStack {
             Text("Subjects")
             Spacer()
-            Image(systemName: "chevron.right")
         }
         .accentColor(.blue)
         .padding()

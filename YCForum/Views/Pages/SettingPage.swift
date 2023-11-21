@@ -24,6 +24,13 @@ struct SettingPage: View {
                         SetSubject(selectedSubjects: $selectedSubject)
                     }
                 }
+                
+                Section(header: Text("INFO")) {
+                    NavigationLink(destination: BioPage()) {
+                        BioView()
+                    }
+                }
+                
             }
             .navigationTitle(Text("Settings"))
         }
