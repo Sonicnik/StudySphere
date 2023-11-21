@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TimeSelectorView: View {
     @Binding var avaliableTime: String
-    
+    let defaults = UserDefaults.standard
     
     var body: some View {
         
@@ -30,11 +30,21 @@ struct TimeSelectorView: View {
                 .pickerStyle(.wheel)
                 Spacer()
             }
-            .navigationBarTitle(Text("Selected Hours"), displayMode: .inline)
+            .onDisappear(perform: {
+                SaveAvaliableTime()
+            })
+            
         }
-        
+         .navigationBarTitle(Text("Selected Hours"), displayMode: .inline)
     }
+    
+    func SaveAvaliableTime() {
+        defaults.set(avaliableTime, forKey: "AvaliableTime")
+    }
+        
 }
+
+
 
 struct TimeSelectorView_Previews: PreviewProvider {
     static var previews: some View {
