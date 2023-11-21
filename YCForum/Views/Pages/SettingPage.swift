@@ -25,12 +25,13 @@ struct SettingPage: View {
                     }
                 }
             }
+            .navigationTitle(Text("Settings"))
         }
     }
 }
 
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingPage(period: .constant(PeriodInfo.samplePeriods), avaliableTime: "1", selectedSubject: .constant([.Business, .Chemistry, .Chinese, .Economics, .MATH, .Physics]))
+        SettingPage(period: .constant(PeriodInfo.samplePeriods), avaliableTime: "1", selectedSubject: .constant([.BM, .Chemistry, .Chinese, .Economics, .Mathematics, .Physics]))
     }
 }

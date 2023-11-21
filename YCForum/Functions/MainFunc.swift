@@ -54,7 +54,7 @@ extension Mainpage {
         case .Economics:
             color = .purple
             
-        case .Business:
+        case .BM:
             color = .indigo
             
         case .Chemistry:
@@ -63,7 +63,7 @@ extension Mainpage {
         case .CS:
             color = .magenta
             
-        case .MATH:
+        case .Mathematics:
             color = .seafoam
             
         case .Physics:
@@ -74,6 +74,30 @@ extension Mainpage {
             
         case .English:
             color = .teal
+            
+        case .VA:
+            color = .buttercup
+            
+        case .DT:
+            color = .sky
+            
+        case .Psychology:
+            color = .magenta
+            
+        case .ESS:
+            color = .navy
+            
+        case .TOK:
+            color = .poppy
+            
+        case .CAS:
+            color = .periwinkle
+            
+        case .EE:
+            color = .tan
+            
+        case .Biology:
+            color = .oxblood
         }
         
         return color.mainColor

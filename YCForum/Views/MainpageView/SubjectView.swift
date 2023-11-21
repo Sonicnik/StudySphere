@@ -19,6 +19,6 @@ struct SubjectView: View {
 
 struct SubjectView_Previews: PreviewProvider {
     static var previews: some View {
-        SubjectView(subject: .MATH)
+        SubjectView(subject: .Mathematics)
     }
 }

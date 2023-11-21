@@ -47,6 +47,6 @@ struct NewSheet: View {
 
 struct NewSheet_Previews: PreviewProvider {
     static var previews: some View {
-        NewSheet(infos: .constant(PageInfo.sampleData), isPresentingNewEditView: .constant(true), avaliableSubject: .constant([.Business, .Chemistry]))
+        NewSheet(infos: .constant(PageInfo.sampleData), isPresentingNewEditView: .constant(true), avaliableSubject: .constant([.BM, .Chemistry]))
     }
 }

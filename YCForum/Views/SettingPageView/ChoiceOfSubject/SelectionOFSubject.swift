@@ -44,5 +44,5 @@ struct SelectionOFSubject: View {
 }
 
 #Preview {
-    SelectionOFSubject(selectedSubjects: .constant([.Business,.Chemistry]))
+    SelectionOFSubject(selectedSubjects: .constant([.BM,.Chemistry]))
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 @MainActor
 class storePageInfo: ObservableObject {
-    @Published var info: [PageInfo] = []
+    @Published var infoData: [PageInfo] = []
     private static func fetchDirectory() throws -> URL {
         try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
             .appendingPathComponent("info.data")
@@ -26,7 +26,7 @@ class storePageInfo: ObservableObject {
         _ = try await task.value
         // Implement the saving logic here
         // Example using UserDefaults
-        let data = try JSONEncoder().encode(info)
+        let data = try JSONEncoder().encode(infoData)
         UserDefaults.standard.set(data, forKey: "info")
     }
 
@@ -41,6 +41,6 @@ class storePageInfo: ObservableObject {
             return pageInfo
         }
         let info = try await task.value
-        self.info = info
+        self.infoData = info
     }
 }

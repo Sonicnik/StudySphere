@@ -8,12 +8,12 @@
 import SwiftUI
 
 struct Container: View {
-    @StateObject private var info = storePageInfo()
+    @StateObject private var infoss = storePageInfo()
     @StateObject private var selectedSubject = SaveSettings()
     
     var body: some View {
         TabView {
-            Mainpage(info: $info.info, avaliableSubject: $selectedSubject.selectedSubjects){
+            Mainpage(info: $infoss.infoData, avaliableSubject: $selectedSubject.selectedSubjects){
             
             }
             
@@ -31,10 +31,10 @@ struct Container: View {
         .onAppear {
             Task {
                 do {
-                    try await info.LoadInfo()
+                    try await infoss.LoadInfo()
                 } catch {
                     // Handle errors appropriately
-                    fatalError().localizedDescription
+                    print("Error loading data: \(error.localizedDescription)")
                 }
             }
         }
