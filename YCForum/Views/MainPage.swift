@@ -15,6 +15,7 @@ struct Mainpage: View {
     @Binding var avaliableSubject: Set<Subject>
     let saveAction: () -> ()
     let notificationManag = NotificationManager.instance
+    let defaults = UserDefaults.standard
     
     var body: some View {
         

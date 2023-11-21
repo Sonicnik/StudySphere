@@ -16,8 +16,11 @@ extension Mainpage {
     }
     
     func sortData(avaible time: String){
+        let avaliableTime = defaults.value(forKey: "AvaliableTime")
+        
         // The time passed on is in hours so convert into minutes first
-        var timeLeft = (Int(time) ?? 0)*60
+        var timeLeft = (Int(avaliableTime as! String) ?? 0)*60
+        print(timeLeft)
         // First loop used to organize the lists
         
         var i = info.count - 1
@@ -35,6 +38,7 @@ extension Mainpage {
         i = info.count - 1
         while(i > 0) {
             if timeLeft > info[i].eTime{
+                info[i].isHidden = false
                 timeLeft = timeLeft - info[i].eTime
             } else if timeLeft < info[i].eTime{
                 info[i].isHidden = true
