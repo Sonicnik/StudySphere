@@ -23,5 +23,5 @@ struct SetSubject: View {
 }
 
 #Preview {
-    SetSubject(selectedSubjects: .constant([.Business, .CS, .Chemistry]))
+    SetSubject(selectedSubjects: .constant([.BM, .CS, .Chemistry]))
 }

@@ -41,6 +41,6 @@ struct EditView: View {
 
 struct DetailEditView_Previews: PreviewProvider {
     static var previews: some View {
-        EditView(info: .constant(PageInfo.sampleData[0]), avaliableSubject: .constant([.Business, .Chemistry, .Economics]))
+        EditView(info: .constant(PageInfo.sampleData[0]), avaliableSubject: .constant([.BM, .Chemistry, .Economics]))
     }
 }

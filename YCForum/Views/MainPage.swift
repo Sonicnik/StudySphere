@@ -104,7 +104,7 @@ struct Mainpage: View {
 
 struct Mainpage_Previews: PreviewProvider {
     static var previews: some View {
-        Mainpage(info: .constant(PageInfo.sampleData), avaliableSubject: .constant([.Business, .Chemistry]), saveAction: {})
+        Mainpage(info: .constant(PageInfo.sampleData), avaliableSubject: .constant([.BM, .Chemistry]), saveAction: {})
     }
 }
 

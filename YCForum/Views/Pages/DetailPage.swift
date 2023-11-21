@@ -34,7 +34,7 @@ struct DetailPage: View {
                         }
                         
                         Spacer()
-                        Text(info.isDone ? "Lets Go!!😎": "Almost there! 🤯")
+                        Text(info.isDone ? "Let's Go!!😎": "Almost there! 🤯")
                             .padding(.trailing)
                         
                     }
@@ -45,7 +45,7 @@ struct DetailPage: View {
                         
                         
                         Spacer()
-                        Text(info.isHidden ? "Not for today (Chill bro)": "Needs to be finished Today!!")
+                        Text(info.isHidden ? "Not for today (Chill bro)": "Needed to be finished Today!!")
                             .padding(.trailing)
                     }
                     .padding()
@@ -152,7 +152,7 @@ struct DetailPage: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            DetailPage(info: .constant(PageInfo.sampleData[0]), avaliableSubject: .constant([.Business, .Chinese, .Economics]))
+            DetailPage(info: .constant(PageInfo.sampleData[0]), avaliableSubject: .constant([.BM, .Chinese, .Economics]))
         }
     }
 }
