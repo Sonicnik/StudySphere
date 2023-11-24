@@ -17,7 +17,7 @@ struct CardView: View {
                 Image(systemName: info.isDone ? "checkmark.circle.fill" : "circle")
                     .font(.title)
                 
-                Text(info.subjects.name + " - " + info.formats.name)
+                Text(info.title + " - " + info.subjects.name)
                     .font(.title3)
                     .fontWeight(.bold)
                     .padding(.leading)

@@ -9,6 +9,7 @@ import Foundation
 
 struct PageInfo: Identifiable, Codable, Equatable {
     let id: String
+    var title: String
     var subjects: Subject
     var formats: Format
     var detail: String
@@ -19,8 +20,18 @@ struct PageInfo: Identifiable, Codable, Equatable {
     var eTime: Int
     
     
-    init(id: String = UUID().uuidString, subjects: Subject, formats: Format, detail: String, theme: Theme, duedate: Date, isDone: Bool, isHidden: Bool, eTime: Int){
+    init(id: String = UUID().uuidString,
+         title: String,
+         subjects: Subject,
+         formats: Format,
+         detail: String,
+         theme: Theme,
+         duedate: Date,
+         isDone: Bool,
+         isHidden: Bool,
+         eTime: Int){
         self.id = id
+        self.title = title
         self.subjects = subjects
         self.formats = formats
         self.detail = detail
@@ -34,7 +45,7 @@ struct PageInfo: Identifiable, Codable, Equatable {
 
 extension PageInfo {
     static var emptyPage: PageInfo {
-        PageInfo(subjects: .Mathematics, formats: .Exam, detail:"", theme: .sky, duedate: Date(), isDone: false, isHidden: false, eTime: 0)
+        PageInfo(title: "", subjects: .Mathematics, formats: .Exam, detail:"", theme: .sky, duedate: Date(), isDone: false, isHidden: false, eTime: 0)
     }
 
 }
@@ -43,25 +54,28 @@ extension PageInfo {
 extension PageInfo {
     static let sampleData: [PageInfo] =
     [
-        PageInfo(subjects: .Chinese,
+        PageInfo(title: "Paper 1 Revision",
+                 subjects: .Chinese,
                  formats: .Exam,
-                 detail: "Paper 1 for 90mins",
+                 detail: "90mins",
                  theme: .lavender,
                  duedate: Date(),
                  isDone: false,
                  isHidden: true,
                  eTime: 60),
                  
-        PageInfo(subjects: .English,
+        PageInfo(title:"Writing a reflection",
+                 subjects: .English,
                  formats: .Homework,
-                 detail: "Writing a reflection",
+                 detail: " ",
                  theme: .sky,
                  duedate: Date(),
                  isDone: true,
                  isHidden: false,
                  eTime: 45),
         
-        PageInfo(subjects: .Mathematics,
+        PageInfo(title:"Test Revision",
+                 subjects: .Mathematics,
                  formats: .Test,
                  detail: "Unit1-3",
                  theme: .indigo,

@@ -115,7 +115,7 @@ struct DetailPage: View {
             }
         }
         //pass the subject name on using .name variable
-        .navigationTitle(info.subjects.name)
+        .navigationTitle(info.title)
         .toolbar {
             Button("Edit") {
                 isPresentingEditView = true

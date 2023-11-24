@@ -14,7 +14,11 @@ struct EditView: View {
     var body: some View {
         Form {
             Section(header: Text("Info ")) {
-
+                
+                TextField("Enter the title", text: $info.title)
+                
+                
+                
                 PickerView(selectTheme: $info.theme, selectSubject: $info.subjects, selectFormat: $info.formats, avaliableSubject: $avaliableSubject)
                 datePicker(selectedDate: $info.duedate)
                 
