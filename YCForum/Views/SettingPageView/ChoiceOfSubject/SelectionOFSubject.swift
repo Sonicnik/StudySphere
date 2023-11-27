@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct SelectionOFSubject: View {
+    
     @Binding var selectedSubjects: Set<Subject>
+    @StateObject var saveSettings = SaveSettings()
 
     var body: some View {
         NavigationStack {
@@ -22,14 +24,16 @@ struct SelectionOFSubject: View {
                         
                         Spacer()
                         
-                        if selectedSubjects.contains(subject) {
+                        if saveSettings.selectedSubject.contains(subject) {
                             Button("Hide") {
-                                selectedSubjects.remove(subject)
+                                saveSettings.selectedSubject.remove(subject)
+                                saveSettings.saveSettings()
                             }
                             .padding(.trailing)
                         } else {
                             Button("Select") {
-                                selectedSubjects.insert(subject)
+                                saveSettings.selectedSubject.insert(subject)
+                                saveSettings.saveSettings()
                             }
                             .padding(.trailing)
                         }
@@ -41,6 +45,12 @@ struct SelectionOFSubject: View {
             
         }
         .navigationBarTitle(Text("Selected Subjects"), displayMode: .inline)
+        .onAppear{
+            saveSettings.loadSettings()
+        }
+        .onDisappear {
+            saveSettings.saveSettings() // Save settings when the view disappears
+        }
         
     }
     

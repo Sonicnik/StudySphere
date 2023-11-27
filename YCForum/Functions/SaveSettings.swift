@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-import SwiftUI
-
 
 
 class SaveSettings: ObservableObject {
@@ -29,7 +27,7 @@ class SaveSettings: ObservableObject {
             let subjects = try JSONDecoder().decode([Subject].self, from: data)
             selectedSubjects = Set(subjects)
         } catch {
-            fatalError()
+            selectedSubjects = []
         }
         
 
