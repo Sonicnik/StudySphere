@@ -102,6 +102,8 @@ extension Mainpage {
             
         case .Biology:
             color = .oxblood
+        case .noChoice:
+            color = .sky
         }
         
         return color.mainColor

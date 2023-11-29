@@ -9,30 +9,29 @@ import SwiftUI
 
 struct SelectionOFSubject: View {
     
-    @Binding var selectedSubjects: Set<Subject>
-    @StateObject var saveSettings = SaveSettings()
-
+    @ObservedObject var saveSettings = SaveSettings()
+    
     var body: some View {
         NavigationStack {
             
             VStack {
                 Text("Set your subject choice!")
-                List(Subject.allCases, id: \.self) { subject in
+                List(Subject.allCases, id: \.self) { subjectIB in
                     HStack {
-                        Text(subject.name)
+                        Text(subjectIB.name)
                             .padding(.leading)
                         
                         Spacer()
                         
-                        if saveSettings.selectedSubject.contains(subject) {
+                        if saveSettings.selectedSubject.contains(subjectIB) {
                             Button("Hide") {
-                                saveSettings.selectedSubject.remove(subject)
+                                saveSettings.selectedSubject.remove(subjectIB)
                                 saveSettings.saveSettings()
                             }
                             .padding(.trailing)
                         } else {
                             Button("Select") {
-                                saveSettings.selectedSubject.insert(subject)
+                                saveSettings.selectedSubject.insert(subjectIB)
                                 saveSettings.saveSettings()
                             }
                             .padding(.trailing)
@@ -59,5 +58,5 @@ struct SelectionOFSubject: View {
 }
 
 #Preview {
-    SelectionOFSubject(selectedSubjects: .constant([.BM,.Chemistry]))
+    SelectionOFSubject()
 }

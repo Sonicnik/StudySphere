@@ -20,7 +20,7 @@ struct SettingPage: View {
                         TimeView(avaliableTime: $avaliableTime)
                     }
                     
-                    NavigationLink(destination: SelectionOFSubject(selectedSubjects: $selectedSubject)){
+                    NavigationLink(destination: SelectionOFSubject()){
                         SetSubject(selectedSubjects: $selectedSubject)
                     }
                 }

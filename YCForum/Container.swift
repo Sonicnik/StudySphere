@@ -12,19 +12,22 @@ import SwiftUI
 struct Container: View {
     @StateObject private var infoss = storePageInfo()
     @StateObject private var selectedSubject = SaveSettings()
+    private var times = "1"
+    let defaults = UserDefaults.standard
     
     var body: some View {
         TabView {
-            Mainpage(info: $infoss.infoData, avaliableSubject: $selectedSubject.selectedSubjects){
+            Mainpage(info: $infoss.infoData, avaliableSubject: $selectedSubject.selectedSubject){
             
             }
+            
             
             .tabItem {
                 Image(systemName: "tray.full")
                 Text("Today's")
             }
             
-            SettingPage(period: .constant([]), avaliableTime: "1", selectedSubject: $selectedSubject.selectedSubjects)
+            SettingPage(period: .constant([]), avaliableTime: "1", selectedSubject: $selectedSubject.selectedSubject)
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
@@ -39,6 +42,8 @@ struct Container: View {
                     print("Error loading data: \(error.localizedDescription)")
                 }
             }
+            
+            
         }
     }
 }
