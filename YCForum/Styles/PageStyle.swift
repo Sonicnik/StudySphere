@@ -45,7 +45,7 @@ struct PageInfo: Identifiable, Codable, Equatable {
 
 extension PageInfo {
     static var emptyPage: PageInfo {
-        PageInfo(title: "", subjects: .Mathematics, formats: .Exam, detail:"", theme: .sky, duedate: Date(), isDone: false, isHidden: false, eTime: 0)
+        PageInfo(title: "", subjects: .noChoice, formats: .Exam, detail:"", theme: .sky, duedate: Date(), isDone: false, isHidden: false, eTime: 0)
     }
 
 }

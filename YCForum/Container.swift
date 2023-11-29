@@ -1,28 +1,33 @@
+
+//  Created by Sonic Liu on 21/10/2023.
 //
-//  Container.swift
+//  SelectionOFSubject.swift
 //  YCForum
 //
-//  Created by Sonic Liu on 21/10/2023.
+//  Created by Sonic Liu on 18/11/2023.
 //
 
 import SwiftUI
 
 struct Container: View {
     @StateObject private var infoss = storePageInfo()
-    @StateObject private var selectedSubject = SaveSettings()
+    @ObservedObject var saveSettings = SaveSettings()
+    private var times = "1"
+    let defaults = UserDefaults.standard
     
     var body: some View {
         TabView {
-            Mainpage(info: $infoss.infoData, avaliableSubject: $selectedSubject.selectedSubjects){
+            Mainpage(info: $infoss.infoData, selectedSubject: $saveSettings.selectedSubject){
             
             }
+            
             
             .tabItem {
                 Image(systemName: "tray.full")
                 Text("Today's")
             }
             
-            SettingPage(period: .constant([]), avaliableTime: "1", selectedSubject: $selectedSubject.selectedSubjects)
+            SettingPage(period: .constant([]), avaliableTime: "1", selectedSubject: $saveSettings.selectedSubject)
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
@@ -37,6 +42,8 @@ struct Container: View {
                     print("Error loading data: \(error.localizedDescription)")
                 }
             }
+            
+            
         }
     }
 }

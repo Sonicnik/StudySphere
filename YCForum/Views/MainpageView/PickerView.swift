@@ -11,13 +11,13 @@ struct PickerView: View {
     @Binding var selectTheme: Theme
     @Binding var selectSubject: Subject
     @Binding var selectFormat: Format
-    @Binding var avaliableSubject: Set<Subject>
+    @Binding var selectedSubject: Set<Subject>
     
     var body: some View {
         
         
         Picker("Subject", selection: $selectSubject){
-            ForEach(Array(avaliableSubject), id: \.self) { subject in
+            ForEach(Array(selectedSubject), id: \.self) { subject in
                 Text(subject.name).tag(subject)
             }
         }
@@ -37,6 +37,6 @@ struct PickerView: View {
 
 struct ThemePicker_Previews: PreviewProvider {
     static var previews: some View {
-        PickerView(selectTheme: .constant(.periwinkle), selectSubject: .constant(.Mathematics), selectFormat: .constant(.Exam), avaliableSubject: .constant([.BM,.Chinese,.Economics,.English]))
+        PickerView(selectTheme: .constant(.periwinkle), selectSubject: .constant(.Mathematics), selectFormat: .constant(.Exam), selectedSubject: .constant([.BM,.Chinese,.Economics,.English]))
     }
 }
