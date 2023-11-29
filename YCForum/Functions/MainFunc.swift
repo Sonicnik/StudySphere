@@ -17,9 +17,14 @@ extension Mainpage {
     
     func sortData(avaible time: String){
         let avaliableTime = defaults.value(forKey: "AvaliableTime")
-        
+        var timeLeft: Int = 0
+        if avaliableTime == nil {
+            timeLeft = 60
+        } else {
+            timeLeft = (Int(avaliableTime as! String) ?? 0)*60
+        }
         // The time passed on is in hours so convert into minutes first
-        var timeLeft = (Int(avaliableTime as! String) ?? 0)*60
+        
         print(timeLeft)
         // First loop used to organize the lists
         

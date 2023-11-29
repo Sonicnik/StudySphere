@@ -14,14 +14,14 @@ struct NewSheet: View {
     
     @Binding var isPresentingNewEditView : Bool
     
-    @Binding var avaliableSubject: Set<Subject>
+    @Binding var selectedSubject: Set<Subject>
     
     let notificationMag = NotificationManager.instance
     
     
     var body: some View {
         NavigationStack {
-            EditView(info: $newPage, avaliableSubject: $avaliableSubject)
+            EditView(info: $newPage, selectedSubject: $selectedSubject)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
                         Button("Dismiss") {
@@ -39,12 +39,12 @@ struct NewSheet: View {
                                                                      identifier: newPage.id)
                             } else if newPage.subjects == .noChoice {
                                 // Show an alert if subject isn't chosen
-                                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-                                    let alertController = UIAlertController(title: "Subject Required", message: "Please select a subject before posting.", preferredStyle: .alert)
-                                    alertController.addAction(UIAlertAction(title: "OK", style: .default))
-                                    
-                                    windowScene.windows.first?.rootViewController?.present(alertController, animated: true, completion: nil)
-                                }
+//                                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
+//                                    let alertController = UIAlertController(title: "Subject Required", message: "Please select a subject before posting.", preferredStyle: .alert)
+//                                    alertController.addAction(UIAlertAction(title: "OK", style: .default))
+//                                    
+//                                    windowScene.windows.first?.rootViewController?.present(alertController, animated: true, completion: nil)
+//                                }
                             }
                             
                             
@@ -59,6 +59,6 @@ struct NewSheet: View {
 
 struct NewSheet_Previews: PreviewProvider {
     static var previews: some View {
-        NewSheet(infos: .constant(PageInfo.sampleData), isPresentingNewEditView: .constant(true), avaliableSubject: .constant([.BM, .Chemistry]))
+        NewSheet(infos: .constant(PageInfo.sampleData), isPresentingNewEditView: .constant(true), selectedSubject: .constant([.BM, .Chemistry]))
     }
 }

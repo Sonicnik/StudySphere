@@ -11,13 +11,13 @@ import SwiftUI
 
 struct Container: View {
     @StateObject private var infoss = storePageInfo()
-    @StateObject private var selectedSubject = SaveSettings()
+    @ObservedObject var saveSettings = SaveSettings()
     private var times = "1"
     let defaults = UserDefaults.standard
     
     var body: some View {
         TabView {
-            Mainpage(info: $infoss.infoData, avaliableSubject: $selectedSubject.selectedSubject){
+            Mainpage(info: $infoss.infoData, selectedSubject: $saveSettings.selectedSubject){
             
             }
             
@@ -27,7 +27,7 @@ struct Container: View {
                 Text("Today's")
             }
             
-            SettingPage(period: .constant([]), avaliableTime: "1", selectedSubject: $selectedSubject.selectedSubject)
+            SettingPage(period: .constant([]), avaliableTime: "1", selectedSubject: $saveSettings.selectedSubject)
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")
