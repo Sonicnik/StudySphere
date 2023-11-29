@@ -59,6 +59,16 @@ struct Mainpage: View {
                                 }
                             }
                         }
+                        .onDisappear( perform: {
+                            Task {
+                                do {
+                                    try await stores.SaveInfo(infos: info)
+                                } catch {
+                                    // Handle errors appropriately
+                                    print("Failed to save info: \(error)")
+                                }
+                            }
+                        })
 
 
                         

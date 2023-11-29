@@ -10,26 +10,27 @@ import SwiftUI
 
 
 class SaveSettings: ObservableObject {
-    @Published var selectedSubjects: Set<Subject> = []
+    @Published var selectedSubjects: Set<Subject> = [.noChoice]
 
-    // Method to save settings
-    func saveSettings() {
+    init() {
+        loadSettings()
+    }
+
+    // Method to load settings
+    func loadSettings() {
         if let savedData = UserDefaults.standard.data(forKey: "selectedSubjects"),
            let loadedSubjects = try? JSONDecoder().decode([Subject].self, from: savedData) {
             selectedSubjects = Set(loadedSubjects)
         }
     }
 
-    // Method to load settings
-    func loadSettings() {
-        guard let data = UserDefaults.standard.data(forKey: "selectedSubjects") else { return }
+    // Method to save settings
+    func saveSettings() {
         do {
-            let subjects = try JSONDecoder().decode([Subject].self, from: data)
-            selectedSubjects = Set(subjects)
+            let data = try JSONEncoder().encode(Array(selectedSubjects))
+            UserDefaults.standard.set(data, forKey: "selectedSubjects")
         } catch {
-            selectedSubjects = []
+            print("Failed to save subjects")
         }
-        
-
     }
 }
