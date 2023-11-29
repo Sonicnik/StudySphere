@@ -17,7 +17,7 @@ struct Container: View {
     
     var body: some View {
         TabView {
-            Mainpage(info: $infoss.infoData, avaliableSubject: $selectedSubject.selectedSubjects){
+            Mainpage(info: $infoss.infoData, avaliableSubject: $selectedSubject.selectedSubject){
             
             }
             
@@ -27,7 +27,7 @@ struct Container: View {
                 Text("Today's")
             }
             
-            SettingPage(period: .constant([]), avaliableTime: "1", selectedSubject: $selectedSubject.selectedSubjects)
+            SettingPage(period: .constant([]), avaliableTime: "1", selectedSubject: $selectedSubject.selectedSubject)
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")

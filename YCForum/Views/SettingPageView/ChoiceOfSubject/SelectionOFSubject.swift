@@ -23,15 +23,15 @@ struct SelectionOFSubject: View {
                         
                         Spacer()
                         
-                        if saveSettings.selectedSubjects.contains(subjectIB) {
+                        if saveSettings.selectedSubject.contains(subjectIB) {
                             Button("Hide") {
-                                saveSettings.selectedSubjects.remove(subjectIB)
+                                saveSettings.selectedSubject.remove(subjectIB)
                                 saveSettings.saveSettings()
                             }
                             .padding(.trailing)
                         } else {
                             Button("Select") {
-                                saveSettings.selectedSubjects.insert(subjectIB)
+                                saveSettings.selectedSubject.insert(subjectIB)
                                 saveSettings.saveSettings()
                             }
                             .padding(.trailing)
