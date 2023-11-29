@@ -12,7 +12,8 @@ struct Mainpage: View {
     @Binding var info: [PageInfo]
     @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewEditView = false
-    @Binding var avaliableSubject: Set<Subject>
+    @Binding var selectedSubject: Set<Subject>
+    @ObservedObject var saveSettings = SaveSettings()
     let saveAction: () -> ()
     let notificationManag = NotificationManager.instance
     let defaults = UserDefaults.standard
@@ -32,7 +33,7 @@ struct Mainpage: View {
                         
 
                         ForEach($info) {$info in
-                            NavigationLink(destination: DetailPage(info: $info, avaliableSubject: $avaliableSubject)) {
+                            NavigationLink(destination: DetailPage(info: $info, selectedSubject: $saveSettings.selectedSubject)) {
                                 CardView(info: info)
                                 
                                 
@@ -48,6 +49,7 @@ struct Mainpage: View {
                             .listRowBackground(subjectColor(subject: info.subjects))
                             
                         }
+                        
                         .onDelete(perform: deleteItem)
                         .onChange(of: info) { _ in
                             Task {
@@ -95,7 +97,7 @@ struct Mainpage: View {
         }
         
         .sheet(isPresented: $isPresentingNewEditView) {
-            NewSheet(infos: $info, isPresentingNewEditView: $isPresentingNewEditView, avaliableSubject: $avaliableSubject)
+            NewSheet(infos: $info, isPresentingNewEditView: $isPresentingNewEditView, selectedSubject: $saveSettings.selectedSubject)
         }
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { saveAction() }
@@ -104,8 +106,10 @@ struct Mainpage: View {
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 notificationManag.requestAuthorization()
-                
             }
+            
+            saveSettings.loadSettings()
+            print(saveSettings.selectedSubject)
         }
     }
     
@@ -115,7 +119,7 @@ struct Mainpage: View {
 
 struct Mainpage_Previews: PreviewProvider {
     static var previews: some View {
-        Mainpage(info: .constant(PageInfo.sampleData), avaliableSubject: .constant([.BM, .Chemistry]), saveAction: {})
+        Mainpage(info: .constant(PageInfo.sampleData), selectedSubject: .constant([.BM, .Chemistry]), saveAction: {})
     }
 }
 

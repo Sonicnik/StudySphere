@@ -26,6 +26,7 @@ class SaveSettings: ObservableObject {
 
     // Method to save settings
     func saveSettings() {
+        
         do {
             let data = try JSONEncoder().encode(Array(selectedSubject))
             UserDefaults.standard.set(data, forKey: "selectedSubjects")
