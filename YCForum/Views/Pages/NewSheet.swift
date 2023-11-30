@@ -10,6 +10,8 @@ import SwiftUI
 struct NewSheet: View {
     @State private var newPage = PageInfo.emptyPage
     
+    @State var subjectError: Bool = false
+    
     @Binding var infos: [PageInfo]
     
     @Binding var isPresentingNewEditView : Bool
@@ -38,16 +40,15 @@ struct NewSheet: View {
                                                                      subtitle: "\(newPage.subjects) \(newPage.formats)'s due date is just at the corner!!",
                                                                      identifier: newPage.id)
                             } else if newPage.subjects == .noChoice {
-                                // Show an alert if subject isn't chosen
-//                                if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene {
-//                                    let alertController = UIAlertController(title: "Subject Required", message: "Please select a subject before posting.", preferredStyle: .alert)
-//                                    alertController.addAction(UIAlertAction(title: "OK", style: .default))
-//                                    
-//                                    windowScene.windows.first?.rootViewController?.present(alertController, animated: true, completion: nil)
-//                                }
+                                subjectError = true
+                               
                             }
                             
                             
+                        }
+                        .alert(isPresented: $subjectError){
+                            Alert(title: Text("Subject Required"),
+                                  dismissButton: .default(Text("OK")))
                         }
                     }
                 }

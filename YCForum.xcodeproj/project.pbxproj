@@ -39,6 +39,7 @@
 		7AC6ED3C2B0CC95C00FF43DC /* BioPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC6ED3B2B0CC95C00FF43DC /* BioPage.swift */; };
 		7AC6ED3E2B0CCF2100FF43DC /* BioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC6ED3D2B0CCF2100FF43DC /* BioView.swift */; };
 		7ADFC3C02ABDBB0100732D5B /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADFC3BF2ABDBB0100732D5B /* EmptyView.swift */; };
+		7AEACC0C2B18471000387C6E /* choiceOfSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEACC0B2B18471000387C6E /* choiceOfSubject.swift */; };
 		7AF5871D2AAD68D100D2071B /* datePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF5871C2AAD68D100D2071B /* datePicker.swift */; };
 		7AFECE752A5AA4B900256CA2 /* NewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFECE742A5AA4B900256CA2 /* NewSheet.swift */; };
 /* End PBXBuildFile section */
@@ -77,6 +78,7 @@
 		7AC6ED3B2B0CC95C00FF43DC /* BioPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioPage.swift; sourceTree = "<group>"; };
 		7AC6ED3D2B0CCF2100FF43DC /* BioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioView.swift; sourceTree = "<group>"; };
 		7ADFC3BF2ABDBB0100732D5B /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		7AEACC0B2B18471000387C6E /* choiceOfSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = choiceOfSubject.swift; sourceTree = "<group>"; };
 		7AF5871C2AAD68D100D2071B /* datePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datePicker.swift; sourceTree = "<group>"; };
 		7AFECE742A5AA4B900256CA2 /* NewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -143,6 +145,8 @@
 		7A568DC72A58F52600F907CA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7AEACC0D2B185E6B00387C6E /* Introduction */,
+				7AEACC0A2B1846FA00387C6E /* InAppNotification */,
 				7AA2BA332AF4FE1F00FEC478 /* SettingPageView */,
 				7AA2BA322AF4FDF900FEC478 /* MainpageView */,
 				7ADFC3BF2ABDBB0100732D5B /* EmptyView.swift */,
@@ -246,6 +250,21 @@
 			path = EmailSend;
 			sourceTree = "<group>";
 		};
+		7AEACC0A2B1846FA00387C6E /* InAppNotification */ = {
+			isa = PBXGroup;
+			children = (
+				7AEACC0B2B18471000387C6E /* choiceOfSubject.swift */,
+			);
+			path = InAppNotification;
+			sourceTree = "<group>";
+		};
+		7AEACC0D2B185E6B00387C6E /* Introduction */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Introduction;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -317,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AEACC0C2B18471000387C6E /* choiceOfSubject.swift in Sources */,
 				7A568DBA2A58F46200F907CA /* Agenda.swift in Sources */,
 				7AA2BA3B2AF50CFD00FEC478 /* Settings.swift in Sources */,
 				7AA2BA392AF4FF4800FEC478 /* TimeView.swift in Sources */,
@@ -477,10 +497,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"YCForum/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Y3FSZSGKX5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Study Sphere";
@@ -499,6 +521,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.elo.YCForum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = StudySphere_Profile;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -512,10 +535,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"YCForum/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Y3FSZSGKX5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Study Sphere";
@@ -534,6 +559,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.elo.YCForum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = StudySphere_Profile;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
