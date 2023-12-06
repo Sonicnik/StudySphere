@@ -13,6 +13,7 @@ struct Mainpage: View {
     @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewEditView = false
     @Binding var selectedSubject: Set<Subject>
+    @Binding var preIntro: Bool
     @ObservedObject var saveSettings = SaveSettings()
     let saveAction: () -> ()
     let notificationManag = NotificationManager.instance
@@ -25,7 +26,12 @@ struct Mainpage: View {
             Group {
                 if info.isEmpty{
                     
-                    EmptyView(isPresentingNewEditView: $isPresentingNewEditView)
+                    VStack {
+                        EmptyView(isPresentingNewEditView: $isPresentingNewEditView)
+                        Button("Don't know what to do?") {
+                            preIntro = true
+                        }
+                    }
                     
                 } else {
                     
@@ -119,7 +125,9 @@ struct Mainpage: View {
 
 struct Mainpage_Previews: PreviewProvider {
     static var previews: some View {
-        Mainpage(info: .constant(PageInfo.sampleData), selectedSubject: .constant([.BM, .Chemistry]), saveAction: {})
+        Mainpage(info: .constant(PageInfo.sampleData), 
+                 selectedSubject: .constant([.BM, .Chemistry]),
+                 preIntro: .constant(false), saveAction: {})
     }
 }
 
