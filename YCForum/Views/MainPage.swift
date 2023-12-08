@@ -35,58 +35,75 @@ struct Mainpage: View {
                     
                 } else {
                     
-                    List{
-                        
+                    VStack {
+                        List{
+                            
 
-                        ForEach($info) {$info in
-                            NavigationLink(destination: DetailPage(info: $info, selectedSubject: $saveSettings.selectedSubject)) {
-                                CardView(info: info)
+                            ForEach($info) {$info in
+                                NavigationLink(destination: DetailPage(info: $info, selectedSubject: $saveSettings.selectedSubject)) {
+                                    CardView(info: info)
+                                    
+                                    
+                                }
                                 
+                                
+                                .onAppear(perform: {
+                                    sortData(avaible: "1")
+                                    
+                                
+                                    
+                                })
+                                .listRowBackground(subjectColor(subject: info.subjects))
                                 
                             }
                             
-                            
-                            .onAppear(perform: {
-                                sortData(avaible: "1")
-                                
-                            
-                                
+                            .onDelete(perform: deleteItem)
+                            .onChange(of: info) { _ in
+                                Task {
+                                    do {
+                                        try await stores.SaveInfo(infos: info)
+                                    } catch {
+                                        // Handle errors appropriately
+                                        print("Failed to save info: \(error)")
+                                    }
+                                }
+                            }
+                            .onDisappear( perform: {
+                                Task {
+                                    do {
+                                        try await stores.SaveInfo(infos: info)
+                                    } catch {
+                                        // Handle errors appropriately
+                                        print("Failed to save info: \(error)")
+                                    }
+                                }
                             })
-                            .listRowBackground(subjectColor(subject: info.subjects))
+
+
                             
                         }
+                        .listStyle(InsetGroupedListStyle())
                         
-                        .onDelete(perform: deleteItem)
-                        .onChange(of: info) { _ in
-                            Task {
-                                do {
-                                    try await stores.SaveInfo(infos: info)
-                                } catch {
-                                    // Handle errors appropriately
-                                    print("Failed to save info: \(error)")
-                                }
-                            }
+                        Spacer()
+                        
+                        Button {
+                            isPresentingNewEditView = true
+                        } label: {
+                            Text("Add Works 🤛")
+                                .foregroundColor(.white)
+                                .font(.headline)
+                                .frame(height: 55)
+                                .frame(maxWidth: .infinity)
+                                .background(Color.accentColor)
+                                .cornerRadius(10)
                         }
-                        .onDisappear( perform: {
-                            Task {
-                                do {
-                                    try await stores.SaveInfo(infos: info)
-                                } catch {
-                                    // Handle errors appropriately
-                                    print("Failed to save info: \(error)")
-                                }
-                            }
-                        })
-
-
-                        
+                        .padding(.horizontal, 50)
                     }
                     
                     
                     
                     
                     
-                    .listStyle(InsetGroupedListStyle())
                 }
                 
             }
