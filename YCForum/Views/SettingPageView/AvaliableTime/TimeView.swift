@@ -12,7 +12,7 @@ struct TimeView: View {
     
     var body: some View {
         HStack {
-            Text("Avaliable Time")
+            Text("Working hours per day")
             Spacer()
             Text(avaliableTime)
             

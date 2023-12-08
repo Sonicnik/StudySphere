@@ -13,6 +13,7 @@ struct Container: View {
     @StateObject private var infoss = storePageInfo()
     @ObservedObject var saveSettings = SaveSettings()
     @State var preIntro = false
+    @State private var showIntroDelayed = false
     let defaults = UserDefaults.standard
     
     var body: some View {
@@ -43,7 +44,19 @@ struct Container: View {
                 }
             }
             
-            preIntro = defaults.bool(forKey: "preIntro")
+            let storedVersion = defaults.string(forKey: "appVersion")
+            let currentVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String ?? ""
+            
+            if let storedVersion = storedVersion, storedVersion == currentVersion {
+                preIntro = false
+            } else {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    preIntro = true
+                }
+                defaults.set(currentVersion, forKey: "appVersion")
+            }
+            
+            
             
         }
         

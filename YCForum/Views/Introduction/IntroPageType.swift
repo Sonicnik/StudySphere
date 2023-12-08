@@ -17,7 +17,7 @@ struct introPageType: Identifiable, Equatable {
     static var sampleIntroPage = introPageType(name: "Example", description: "Description will appear in here", imageUrl: "LaunchScreen", tag: 0)
     
     static var PreIntroPage: [introPageType] =  [
-        introPageType(name: "page1", description: "aaa", imageUrl: "LaunchScreen", tag: 0),
+        introPageType(name: "Welcome to StudySphere!", description: "aaa", imageUrl: "IntroPage", tag: 0),
         introPageType(name: "page2", description: "bbb", imageUrl: "LaunchScreen", tag: 1),
         introPageType(name: "page3", description: "ccc", imageUrl: "LaunchScreen", tag: 2)
     ]
