@@ -94,7 +94,7 @@ extension Mainpage {
             color = .magenta
             
         case .ESS:
-            color = .navy
+            color = .sky
             
         case .TOK:
             color = .poppy
@@ -109,6 +109,10 @@ extension Mainpage {
             color = .oxblood
         case .noChoice:
             color = .sky
+        case .History:
+            color = .bubblegum
+        case .Geography:
+            color = .magenta
         }
         
         return color.mainColor

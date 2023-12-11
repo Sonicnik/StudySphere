@@ -15,28 +15,36 @@ struct CardView: View {
         VStack(alignment: .leading) {
             HStack {
                 Image(systemName: info.isDone ? "checkmark.circle.fill" : "circle")
-                    .font(.title)
+                    .font(.title2)
                 
-                Text(info.title + " - " + info.subjects.name)
-                    .font(.title3)
-                    .fontWeight(.bold)
+                Text(shortenString(info.title))
+                    .font(.title2)
+                    .fontWeight(.black)
                     .padding(.leading)
                     .accessibilityAddTraits(.isHeader)
-                Spacer()
                 
-                Text(info.duedate.formatted(date: .abbreviated, time: .omitted))
-                    .font(.headline)
-                    .padding(.horizontal)
+                
                 
             }
-            .padding(.bottom)
+            .padding(.top)
             
-                        
+            //+ " - " + info.subjects.name
+            Text(info.subjects.name + " - " + info.formats.name)
+                .font(.callout)
+                .fontWeight(.medium)
+                .accessibilityAddTraits(.isHeader)
+                .padding()
             
-            Text("Estimated Time: " + calculatedTime(eTime: info.eTime))
-                .font(.footnote)
-                .multilineTextAlignment(.leading)
-                .padding([.leading, .bottom, .trailing])
+            HStack {
+                Text("Est Time: " + calculatedTime(eTime: info.eTime))
+                    .font(.caption2)
+                    .multilineTextAlignment(.leading)
+                Text(info.duedate.formatted(date: .abbreviated, time: .omitted))
+                    .font(.caption2)
+                    .padding(.horizontal)
+                }
+            .padding([.leading, .bottom, .trailing])
+
                         
         }
         .padding()
@@ -52,11 +60,18 @@ extension CardView {
         let min2 = String(min)
         let hour2 = String(hour)
         
-        let texts = "\(hour2) hours \(min2) minutes"
-        
-        
+        let texts = "\(hour2) h \(min2) min"
         return texts
         
+    }
+    
+    func shortenString(_ input: String) -> String {
+        if input.count > 10 {
+            let shortenedString = String(input.prefix(20)) + "..."
+            return shortenedString
+        } else {
+            return input
+        }
     }
 
     
