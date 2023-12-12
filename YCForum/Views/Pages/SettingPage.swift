@@ -11,6 +11,7 @@ struct SettingPage: View {
     @Binding var period: [PeriodInfo]
     @State var avaliableTime: String
     @Binding var selectedSubject: Set<Subject>
+    @Binding var preIntro: Bool
     
     var body: some View {
         NavigationView {
@@ -29,6 +30,11 @@ struct SettingPage: View {
                     NavigationLink(destination: BioPage()) {
                         BioView()
                     }
+                    
+                    Button("Introduction Page") {
+                        preIntro = true
+                    }
+                    .padding()
                 }
                 
             }
@@ -39,6 +45,6 @@ struct SettingPage: View {
 
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingPage(period: .constant(PeriodInfo.samplePeriods), avaliableTime: "1", selectedSubject: .constant([.BM, .Chemistry, .Chinese, .Economics, .Mathematics, .Physics]))
+        SettingPage(period: .constant(PeriodInfo.samplePeriods), avaliableTime: "1", selectedSubject: .constant([.BM, .Chemistry, .Chinese, .Economics, .Mathematics, .Physics]), preIntro: .constant(false))
     }
 }

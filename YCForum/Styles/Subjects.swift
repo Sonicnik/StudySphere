@@ -21,9 +21,11 @@ enum Subject: String, CaseIterable, Codable {
     case Psychology
     case ESS = "Environmental Social Science"
     case TOK = "Theory of Knowledge"
-    case CAS = "Creativity, Activity, Service"
+    case CAS = "C A S"
     case EE = "Extended Essay"
     case Biology
+    case History
+    case Geography
     case noChoice = "Please select a subject"
     
     

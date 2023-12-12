@@ -115,7 +115,7 @@ struct DetailPage: View {
             }
         }
         //pass the subject name on using .name variable
-        .navigationTitle(info.title)
+        .navigationTitle(info.subjects.name + "-" + info.formats.name)
         .toolbar {
             Button("Edit") {
                 isPresentingEditView = true
@@ -145,6 +145,18 @@ struct DetailPage: View {
                         }
                     }
             }
+        }
+    }
+}
+
+extension DetailPage {
+    func shortenString(_ input: String) -> String {
+        if input.count > 10 {
+            let shortenedString = String(input.prefix(10)) + "..."
+            print(shortenedString)
+            return shortenedString
+        } else {
+            return input
         }
     }
 }
