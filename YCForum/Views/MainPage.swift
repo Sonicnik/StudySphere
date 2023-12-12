@@ -130,7 +130,7 @@ struct Mainpage: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 notificationManag.requestAuthorization()
             }
-            notificationManag.sendDailyNotificationForUnfinishedWork()
+            notificationManag.sendDailyNotificationForUnfinishedWork(info)
             saveSettings.loadSettings()
             print(saveSettings.selectedSubject)
         }
