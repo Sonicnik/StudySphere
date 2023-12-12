@@ -64,7 +64,7 @@ extension Mainpage {
             color = .purple
             
         case .BM:
-            color = .indigo
+            color = .bubblegum
             
         case .Chemistry:
             color = .periwinkle
@@ -106,7 +106,7 @@ extension Mainpage {
             color = .tan
             
         case .Biology:
-            color = .oxblood
+            color = .seafoam
         case .noChoice:
             color = .sky
         case .History:

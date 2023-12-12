@@ -93,39 +93,3 @@ class NotificationManager {
 }
 
 
-extension NotificationManager {
-    func scheduleDailyNotificationForUnfinishedWork() {
-            let content = UNMutableNotificationContent()
-            content.title = "Unfinished Work Reminder"
-            content.body = "You still have tasks to be finished today."
-
-            var dateComponents = Calendar.current.dateComponents([.hour, .minute], from: Date())
-            dateComponents.hour = 21 // 9 PM
-            dateComponents.minute = 0
-
-            let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-
-            UNUserNotificationCenter.current().removePendingNotificationRequests(withIdentifiers: ["dailyReminder"])
-
-            let request = UNNotificationRequest(identifier: "dailyReminder", content: content, trigger: trigger)
-
-            UNUserNotificationCenter.current().add(request) { error in
-                if let error = error {
-                    print("Error scheduling daily notification: \(error)")
-                }
-            }
-        }
-    
-    func sendDailyNotificationForUnfinishedWork() {
-            let today = Calendar.current.startOfDay(for: Date())
-            
-            let unfinishedWork = PageInfo.sampleData.filter { pageInfo in
-                let pageInfoDate = Calendar.current.startOfDay(for: pageInfo.duedate)
-                return pageInfoDate == today && !pageInfo.isDone && !pageInfo.isHidden
-            }
-            
-            if !unfinishedWork.isEmpty {
-                scheduleDailyNotificationForUnfinishedWork()
-            }
-        }
-}

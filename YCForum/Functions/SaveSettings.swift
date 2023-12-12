@@ -23,7 +23,6 @@ class SaveSettings: ObservableObject {
             selectedSubject = Set(loadedSubjects)
         }
     }
-
     // Method to save settings
     func saveSettings() {
         
