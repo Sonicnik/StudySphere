@@ -20,6 +20,7 @@ struct introPages: View {
                 VStack {
                     Spacer()
                     introPageView(introPage: page)
+                
                     Spacer()
                     
                     if page == pages.last {
@@ -33,6 +34,7 @@ struct introPages: View {
                     Spacer()
                 }
                 .tag(page.tag)
+                .padding()
             }
             
         }

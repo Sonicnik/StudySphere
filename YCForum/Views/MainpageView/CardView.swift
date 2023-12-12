@@ -67,7 +67,7 @@ extension CardView {
     
     func shortenString(_ input: String) -> String {
         if input.count > 10 {
-            let shortenedString = String(input.prefix(20)) + "..."
+            let shortenedString = String(input.prefix(10)) + "..."
             return shortenedString
         } else {
             return input

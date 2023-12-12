@@ -29,6 +29,7 @@ struct introPageView: View {
             
             Text(introPage.description)
                 .font(.subheadline)
+                .padding()
         }
     }
 }
