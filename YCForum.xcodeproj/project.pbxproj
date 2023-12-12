@@ -14,6 +14,7 @@
 		7A14ED772A9A07EE00835B76 /* Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A14ED762A9A07EE00835B76 /* Format.swift */; };
 		7A14ED792A9A0B5D00835B76 /* SubjectView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A14ED782A9A0B5D00835B76 /* SubjectView.swift */; };
 		7A14ED7B2A9A0E6B00835B76 /* FormatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A14ED7A2A9A0E6B00835B76 /* FormatView.swift */; };
+		7A1E1A202B26B6020032F631 /* HiddenNotificationTrigger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1E1A1F2B26B6020032F631 /* HiddenNotificationTrigger.swift */; };
 		7A568DBA2A58F46200F907CA /* Agenda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A568DB92A58F46200F907CA /* Agenda.swift */; };
 		7A568DBE2A58F46200F907CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A568DBD2A58F46200F907CA /* Assets.xcassets */; };
 		7A568DC12A58F46200F907CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A568DC02A58F46200F907CA /* Preview Assets.xcassets */; };
@@ -39,6 +40,10 @@
 		7AC6ED3C2B0CC95C00FF43DC /* BioPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC6ED3B2B0CC95C00FF43DC /* BioPage.swift */; };
 		7AC6ED3E2B0CCF2100FF43DC /* BioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC6ED3D2B0CCF2100FF43DC /* BioView.swift */; };
 		7ADFC3C02ABDBB0100732D5B /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADFC3BF2ABDBB0100732D5B /* EmptyView.swift */; };
+		7AEACC0C2B18471000387C6E /* choiceOfSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEACC0B2B18471000387C6E /* choiceOfSubject.swift */; };
+		7AEACC112B18622D00387C6E /* IntroPageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEACC102B18622D00387C6E /* IntroPageType.swift */; };
+		7AEACC152B18669F00387C6E /* IntroPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEACC142B18669F00387C6E /* IntroPageView.swift */; };
+		7AEACC172B1868D500387C6E /* introPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEACC162B1868D500387C6E /* introPages.swift */; };
 		7AF5871D2AAD68D100D2071B /* datePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF5871C2AAD68D100D2071B /* datePicker.swift */; };
 		7AFECE752A5AA4B900256CA2 /* NewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFECE742A5AA4B900256CA2 /* NewSheet.swift */; };
 /* End PBXBuildFile section */
@@ -51,6 +56,7 @@
 		7A14ED762A9A07EE00835B76 /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
 		7A14ED782A9A0B5D00835B76 /* SubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectView.swift; sourceTree = "<group>"; };
 		7A14ED7A2A9A0E6B00835B76 /* FormatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatView.swift; sourceTree = "<group>"; };
+		7A1E1A1F2B26B6020032F631 /* HiddenNotificationTrigger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HiddenNotificationTrigger.swift; sourceTree = "<group>"; };
 		7A568DB62A58F46200F907CA /* YCForum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YCForum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A568DB92A58F46200F907CA /* Agenda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agenda.swift; sourceTree = "<group>"; };
 		7A568DBD2A58F46200F907CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -77,6 +83,10 @@
 		7AC6ED3B2B0CC95C00FF43DC /* BioPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioPage.swift; sourceTree = "<group>"; };
 		7AC6ED3D2B0CCF2100FF43DC /* BioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioView.swift; sourceTree = "<group>"; };
 		7ADFC3BF2ABDBB0100732D5B /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
+		7AEACC0B2B18471000387C6E /* choiceOfSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = choiceOfSubject.swift; sourceTree = "<group>"; };
+		7AEACC102B18622D00387C6E /* IntroPageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageType.swift; sourceTree = "<group>"; };
+		7AEACC142B18669F00387C6E /* IntroPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageView.swift; sourceTree = "<group>"; };
+		7AEACC162B1868D500387C6E /* introPages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = introPages.swift; sourceTree = "<group>"; };
 		7AF5871C2AAD68D100D2071B /* datePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datePicker.swift; sourceTree = "<group>"; };
 		7AFECE742A5AA4B900256CA2 /* NewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -98,6 +108,15 @@
 				7A1257FA2AC03849007D371E /* Launch Screen.storyboard */,
 			);
 			path = Other;
+			sourceTree = "<group>";
+		};
+		7A1E1A1E2B26B5E10032F631 /* Notifi */ = {
+			isa = PBXGroup;
+			children = (
+				7A0615152ABFD3EF00779D31 /* Notificaton.swift */,
+				7A1E1A1F2B26B6020032F631 /* HiddenNotificationTrigger.swift */,
+			);
+			path = Notifi;
 			sourceTree = "<group>";
 		};
 		7A568DAD2A58F46200F907CA = {
@@ -143,6 +162,8 @@
 		7A568DC72A58F52600F907CA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				7AEACC0D2B185E6B00387C6E /* Introduction */,
+				7AEACC0A2B1846FA00387C6E /* InAppNotification */,
 				7AA2BA332AF4FE1F00FEC478 /* SettingPageView */,
 				7AA2BA322AF4FDF900FEC478 /* MainpageView */,
 				7ADFC3BF2ABDBB0100732D5B /* EmptyView.swift */,
@@ -155,7 +176,6 @@
 			children = (
 				7A14ED762A9A07EE00835B76 /* Format.swift */,
 				7A568DCB2A58F5FA00F907CA /* PageStyle.swift */,
-				7AA2BA3A2AF50CFD00FEC478 /* Settings.swift */,
 				7A995AEB2AE37A0D00A29AE8 /* Setinfo.swift */,
 				7A14ED6E2A99FB1E00835B76 /* Subjects.swift */,
 				7A568DCF2A58FBB300F907CA /* Theme.swift */,
@@ -224,7 +244,8 @@
 				7AB2A3552AA196E5003722E9 /* SaveData.swift */,
 				7A599A4F2B08672600D87AAD /* SaveSettings.swift */,
 				7A05D8392ABDA49D00BE37C9 /* MainFunc.swift */,
-				7A0615152ABFD3EF00779D31 /* Notificaton.swift */,
+				7A1E1A1E2B26B5E10032F631 /* Notifi */,
+				7AA2BA3A2AF50CFD00FEC478 /* Settings.swift */,
 			);
 			path = Functions;
 			sourceTree = "<group>";
@@ -244,6 +265,24 @@
 			children = (
 			);
 			path = EmailSend;
+			sourceTree = "<group>";
+		};
+		7AEACC0A2B1846FA00387C6E /* InAppNotification */ = {
+			isa = PBXGroup;
+			children = (
+				7AEACC0B2B18471000387C6E /* choiceOfSubject.swift */,
+			);
+			path = InAppNotification;
+			sourceTree = "<group>";
+		};
+		7AEACC0D2B185E6B00387C6E /* Introduction */ = {
+			isa = PBXGroup;
+			children = (
+				7AEACC102B18622D00387C6E /* IntroPageType.swift */,
+				7AEACC142B18669F00387C6E /* IntroPageView.swift */,
+				7AEACC162B1868D500387C6E /* introPages.swift */,
+			);
+			path = Introduction;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -317,9 +356,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AEACC0C2B18471000387C6E /* choiceOfSubject.swift in Sources */,
 				7A568DBA2A58F46200F907CA /* Agenda.swift in Sources */,
 				7AA2BA3B2AF50CFD00FEC478 /* Settings.swift in Sources */,
 				7AA2BA392AF4FF4800FEC478 /* TimeView.swift in Sources */,
+				7AEACC152B18669F00387C6E /* IntroPageView.swift in Sources */,
 				7A568DD22A58FCF700F907CA /* DetailPage.swift in Sources */,
 				7A14ED772A9A07EE00835B76 /* Format.swift in Sources */,
 				7A995AE72AE3711E00A29AE8 /* SettingPage.swift in Sources */,
@@ -332,9 +373,11 @@
 				7A14ED7B2A9A0E6B00835B76 /* FormatView.swift in Sources */,
 				7AF5871D2AAD68D100D2071B /* datePicker.swift in Sources */,
 				7A568DD42A59007600F907CA /* EditView.swift in Sources */,
+				7AEACC112B18622D00387C6E /* IntroPageType.swift in Sources */,
 				7ADFC3C02ABDBB0100732D5B /* EmptyView.swift in Sources */,
 				7A568DD62A59016B00F907CA /* PickerView.swift in Sources */,
 				7A599A502B08672600D87AAD /* SaveSettings.swift in Sources */,
+				7A1E1A202B26B6020032F631 /* HiddenNotificationTrigger.swift in Sources */,
 				7AC6ED3E2B0CCF2100FF43DC /* BioView.swift in Sources */,
 				7A14ED792A9A0B5D00835B76 /* SubjectView.swift in Sources */,
 				7A58AD762AF7CA55002F3C44 /* timeSelectionPicker.swift in Sources */,
@@ -344,6 +387,7 @@
 				7A0615162ABFD3EF00779D31 /* Notificaton.swift in Sources */,
 				7AFECE752A5AA4B900256CA2 /* NewSheet.swift in Sources */,
 				7A995AEE2AE3F41700A29AE8 /* TimeSelectorView.swift in Sources */,
+				7AEACC172B1868D500387C6E /* introPages.swift in Sources */,
 				7A995AE52AE3701000A29AE8 /* Container.swift in Sources */,
 				7A599A4A2B08578700D87AAD /* SetSubject.swift in Sources */,
 				7A568DC92A58F53C00F907CA /* MainPage.swift in Sources */,
@@ -477,10 +521,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"YCForum/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Y3FSZSGKX5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Study Sphere";
@@ -495,10 +541,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.elo.YCForum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = StudySphere_Profile;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -512,10 +559,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"YCForum/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
+				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Y3FSZSGKX5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Study Sphere";
@@ -530,10 +579,11 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.elo.YCForum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				"PROVISIONING_PROFILE_SPECIFIER[sdk=iphoneos*]" = StudySphere_Profile;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

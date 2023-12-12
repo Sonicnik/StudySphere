@@ -17,24 +17,29 @@ struct SelectionOFSubject: View {
             VStack {
                 Text("Set your subject choice!")
                 List(Subject.allCases, id: \.self) { subjectIB in
+                    
                     HStack {
-                        Text(subjectIB.name)
-                            .padding(.leading)
-                        
-                        Spacer()
-                        
-                        if saveSettings.selectedSubject.contains(subjectIB) {
-                            Button("Hide") {
-                                saveSettings.selectedSubject.remove(subjectIB)
-                                saveSettings.saveSettings()
+                        if subjectIB != .noChoice {
+                            
+                            
+                            Text(subjectIB.name)
+                                .padding(.leading)
+                            
+                            Spacer()
+                            
+                            if saveSettings.selectedSubject.contains(subjectIB) {
+                                Button("Hide") {
+                                    saveSettings.selectedSubject.remove(subjectIB)
+                                    saveSettings.saveSettings()
+                                }
+                                .padding(.trailing)
+                            } else {
+                                Button("Select") {
+                                    saveSettings.selectedSubject.insert(subjectIB)
+                                    saveSettings.saveSettings()
+                                }
+                                .padding(.trailing)
                             }
-                            .padding(.trailing)
-                        } else {
-                            Button("Select") {
-                                saveSettings.selectedSubject.insert(subjectIB)
-                                saveSettings.saveSettings()
-                            }
-                            .padding(.trailing)
                         }
                     }
                 }
