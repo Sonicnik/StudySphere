@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingPage: View {
     @Binding var period: [PeriodInfo]
-    @State var avaliableTime: String
+    @Binding var avaliableTime: String
     @Binding var selectedSubject: Set<Subject>
     @Binding var preIntro: Bool
     
@@ -45,6 +45,6 @@ struct SettingPage: View {
 
 struct SettingView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingPage(period: .constant(PeriodInfo.samplePeriods), avaliableTime: "1", selectedSubject: .constant([.BM, .Chemistry, .Chinese, .Economics, .Mathematics, .Physics]), preIntro: .constant(false))
+        SettingPage(period: .constant(PeriodInfo.samplePeriods), avaliableTime: .constant("1"), selectedSubject: .constant([.BM, .Chemistry, .Chinese, .Economics, .Mathematics, .Physics]), preIntro: .constant(false))
     }
 }

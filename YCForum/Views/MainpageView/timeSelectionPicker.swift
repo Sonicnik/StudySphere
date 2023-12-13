@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct timeSelectionPicker: View {
-    @State private var eTimeH = 1
+    @State private var eTimeH = 0
     @State private var eTimeM = 30
     
     @Binding var eTime: Int

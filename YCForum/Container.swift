@@ -12,23 +12,24 @@ import SwiftUI
 struct Container: View {
     @StateObject private var infoss = storePageInfo()
     @ObservedObject var saveSettings = SaveSettings()
+    @ObservedObject private var avaliableTime = saveTime()
     @State var preIntro = false
     @State private var showIntroDelayed = false
     let defaults = UserDefaults.standard
     
     var body: some View {
         TabView {
-            Mainpage(info: $infoss.infoData, selectedSubject: $saveSettings.selectedSubject, preIntro: $preIntro){
+            Mainpage(info: $infoss.infoData, selectedSubject: $saveSettings.selectedSubject, preIntro: $preIntro, avaliableTime: $avaliableTime.avaliableTime){
             
             }
             
             
             .tabItem {
                 Image(systemName: "tray.full")
-                Text("Today's")
+                Text("ALL")
             }
             
-            SettingPage(period: .constant([]), avaliableTime: "1", selectedSubject: $saveSettings.selectedSubject, preIntro: $preIntro)
+            SettingPage(period: .constant([]), avaliableTime: $avaliableTime.avaliableTime, selectedSubject: $saveSettings.selectedSubject, preIntro: $preIntro)
                 .tabItem {
                     Image(systemName: "gear")
                     Text("Settings")

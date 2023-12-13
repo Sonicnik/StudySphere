@@ -41,6 +41,8 @@ struct TimeSelectorView: View {
     func SaveAvaliableTime() {
         defaults.set(avaliableTime, forKey: "AvaliableTime")
     }
+    
+    
         
 }
 
