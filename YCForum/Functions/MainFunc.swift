@@ -39,8 +39,10 @@ extension Mainpage {
             }
             i -= 1
         }
+        
+        print(info)
         //Second Loop used to organize the available time for the scheduled task.
-        i = info.count - 1
+        i = 0
         while(i > 0) {
             if timeLeft > info[i].eTime{
                 info[i].isHidden = false
@@ -51,7 +53,6 @@ extension Mainpage {
             i -= 1
 
         }
-        print(info)
 
 
     }

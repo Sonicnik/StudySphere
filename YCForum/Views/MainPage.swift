@@ -15,6 +15,7 @@ struct Mainpage: View {
     @Binding var selectedSubject: Set<Subject>
     @Binding var preIntro: Bool
     @ObservedObject var saveSettings = SaveSettings()
+    @Binding var avaliableTime: String
     let saveAction: () -> ()
     let notificationManag = NotificationManager.instance
     let defaults = UserDefaults.standard
@@ -48,7 +49,7 @@ struct Mainpage: View {
                                 
                                 
                                 .onAppear(perform: {
-                                    sortData(avaible: "1")
+                                    sortData(avaible: avaliableTime)
                                     
                                 
                                     
@@ -145,7 +146,7 @@ struct Mainpage_Previews: PreviewProvider {
     static var previews: some View {
         Mainpage(info: .constant(PageInfo.sampleData), 
                  selectedSubject: .constant([.BM, .Chemistry]),
-                 preIntro: .constant(false), saveAction: {})
+                 preIntro: .constant(false), avaliableTime: .constant("1"), saveAction: {})
     }
 }
 
