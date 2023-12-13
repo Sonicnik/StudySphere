@@ -26,7 +26,7 @@ struct Container: View {
             
             .tabItem {
                 Image(systemName: "tray.full")
-                Text("Today's")
+                Text("ALL")
             }
             
             SettingPage(period: .constant([]), avaliableTime: $avaliableTime.avaliableTime, selectedSubject: $saveSettings.selectedSubject, preIntro: $preIntro)
