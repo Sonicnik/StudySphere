@@ -12,6 +12,7 @@ struct SettingPage: View {
     @Binding var avaliableTime: String
     @Binding var selectedSubject: Set<Subject>
     @Binding var preIntro: Bool
+    let feedBackURL = URL(string: "https://forms.office.com/r/K1mGqhGQN8")!
     
     var body: some View {
         NavigationView {
@@ -35,6 +36,10 @@ struct SettingPage: View {
                         preIntro = true
                     }
                     .padding()
+                    
+                    Link("Give us feedback to improve🌹", destination: feedBackURL)
+                        .font(.headline)
+                        .padding()
                 }
                 
             }
