@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct BioPage: View {
-    let DefaultURL = URL(string: "https://github.com/Sonicnik/StudySphere")!
+    let GITURL = URL(string: "https://github.com/Sonicnik/StudySphere")!
+    let IGURL = URL(string: "https://www.instagram.com/studysphere__/")!
+    
     let DefaultEmail = URL(string: "200037618@hkstudent.ycis.com")!
     
     
@@ -30,13 +32,15 @@ struct BioPage: View {
                     }
                     .padding(.vertical)
                     
-                    Link("Check out our Github Repository! 🤩", destination: DefaultURL)
-                        .font(.headline)
+                    
                     
                 }
                 
-                Section(header: Text("Problems")) {
-                    Text("Feel free to contact us!")
+                Section(header: Text("FeedBack")) {
+                    Link("Check out our Github Repository 🤩", destination: GITURL)
+                        .font(.headline)
+                    Link("Follow us on Instagram ❤️", destination: IGURL)
+                        .font(.headline)
                     
                 }
                 
