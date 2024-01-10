@@ -62,7 +62,7 @@ struct Container: View {
         }
         
         .sheet(isPresented: $preIntro) {
-            introPages(preIntro: $preIntro)
+            introPages(preIntro: $preIntro,avaliableTime: $avaliableTime.avaliableTime, selectedSubject: $saveSettings.selectedSubject)
                 .onDisappear{
                     defaults.set(false, forKey: "preIntro")
                 }
