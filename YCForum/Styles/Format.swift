@@ -13,6 +13,7 @@ enum Format: String, CaseIterable, Codable {
     case Test
     case Project
     case Event
+    case Coursework
     
     var name: String {
         rawValue.capitalized
