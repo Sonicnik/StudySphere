@@ -131,8 +131,9 @@ struct Mainpage: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 notificationManag.requestAuthorization()
             }
-            notificationManag.askingNewWork()
-            notificationManag.sendDailyNotificationForUnfinishedWork(info)
+//          Calling notification everyday at 3pm for users to input more works
+//            notificationManag.askingNewWork()
+//            notificationManag.sendDailyNotificationForUnfinishedWork(info)
             saveSettings.loadSettings()
             print(saveSettings.selectedSubject)
         }
