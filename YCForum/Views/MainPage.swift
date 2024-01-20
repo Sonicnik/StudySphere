@@ -38,26 +38,16 @@ struct Mainpage: View {
                     
                     VStack {
                         List{
-                            
-
                             ForEach($info) {$info in
                                 NavigationLink(destination: DetailPage(info: $info, selectedSubject: $saveSettings.selectedSubject)) {
                                     CardView(info: info)
-                                    
-                                    
                                 }
-                                
-                                
                                 .onAppear(perform: {
                                     sortData(avaible: avaliableTime)
-                                    
-                                
-                                    
                                 })
                                 .listRowBackground(subjectColor(subject: info.subjects))
                                 
                             }
-                            
                             .onDelete(perform: deleteItem)
                             .onChange(of: info) { _ in
                                 Task {
@@ -79,9 +69,6 @@ struct Mainpage: View {
                                     }
                                 }
                             })
-
-
-                            
                         }
                         .listStyle(InsetGroupedListStyle())
                         
@@ -100,11 +87,6 @@ struct Mainpage: View {
                         }
                         .padding(.horizontal, 50)
                     }
-                    
-                    
-                    
-                    
-                    
                 }
                 
             }
