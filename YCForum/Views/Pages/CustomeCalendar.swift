@@ -17,83 +17,87 @@ struct CustomeCalendar: View {
     
     var body: some View {
         
-        VStack(spacing: 35){
-            
-            // Days per week
-            let days: [String] = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
-            
-            //Heading part
-            HStack(spacing: 20) {
+        NavigationView {
+            VStack(spacing: 35){
                 
-                Button {
-                    withAnimation(){
-                        currentMonth -= 1
+                // Days per week
+                let days: [String] = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+                
+                //Heading part
+                HStack(spacing: 20) {
+                    
+                    Button {
+                        withAnimation(){
+                            currentMonth -= 1
+                        }
+                    } label: {
+                        Image(systemName: "chevron.left")
+                            .font(.title2)
                     }
-                } label: {
-                    Image(systemName: "chevron.left")
-                        .font(.title2)
+                    
+                    Spacer()
+                    
+                    VStack(alignment: .leading) {
+                        
+                        Text(extraData()[1])
+                            .font(.caption)
+                            .fontWeight(.semibold)
+                        Text(extraData()[0])
+                            .font(.title.bold())
+                    }
+                    
+                    Spacer()
+                    
+                    Button {
+                        withAnimation(){
+                            currentMonth += 1
+                        }
+                    } label: {
+                        Image(systemName: "chevron.right")
+                            .font(.title2)
+                    }
+                    
+                    
+                }
+                .padding(.horizontal)
+                
+                // Day View
+                HStack(spacing: 20) {
+                    ForEach(days, id: \.self) {dayday in
+                        Text(dayday)
+                            .font(.callout)
+                            .fontWeight(.semibold)
+                            .frame(maxWidth: .infinity)
+                    }
+                }
+                
+                // Dates
+                let columns = Array(repeating: GridItem(.flexible()), count: 7)
+                
+                LazyVGrid(columns: columns, spacing: 15) {
+                    
+                    ForEach(extractDate()){value in
+                        NavigationLink(destination: datePage(metaInfo: .constant(sampleMetaPageInfo[0]))){
+                            dateCardView(value: value)
+                                .background(
+                                    Capsule()
+                                        .fill(Color(.indigo))
+                                        .padding(.horizontal, 8)
+                                        .opacity(isSameDay(date1: value.date, date2: absoluteDate) ? 1: 0)
+                                    
+                                )
+                        }
+                        
+                    }
                 }
                 
                 Spacer()
-                
-                VStack(alignment: .leading) {
-                    
-                    Text(extraData()[1])
-                        .font(.caption)
-                        .fontWeight(.semibold)
-                    Text(extraData()[0])
-                        .font(.title.bold())
-                }
-                
-                Spacer()
-                
-                Button {
-                    withAnimation(){
-                        currentMonth += 1
-                    }
-                } label: {
-                    Image(systemName: "chevron.right")
-                        .font(.title2)
-                }
-                
-                
             }
-            .padding(.horizontal)
-            
-            // Day View
-            HStack(spacing: 20) {
-                ForEach(days, id: \.self) {dayday in
-                    Text(dayday)
-                        .font(.callout)
-                        .fontWeight(.semibold)
-                        .frame(maxWidth: .infinity)
-                }
-            }
-            
-            // Dates
-            let columns = Array(repeating: GridItem(.flexible()), count: 7)
-            
-            LazyVGrid(columns: columns, spacing: 15) {
+            .onChange(of: currentMonth){ newValue in
                 
-                ForEach(extractDate()){value in
-                    
-                    dateCardView(value: value)
-                        .background(
-                            Capsule()
-                                .fill(Color(.indigo))
-                                .padding(.horizontal, 8)
-                                .opacity(isSameDay(date1: value.date, date2: absoluteDate) ? 1: 0)
-                            
-                        )
-                }
-            }
-            
-            Spacer()
+                //Update Month
+                currentDate = getCurrentMonth()
         }
-        .onChange(of: currentMonth){ newValue in
-            
-            //Update Month
-            currentDate = getCurrentMonth()
         }
     }
     
@@ -125,11 +129,8 @@ struct CustomeCalendar: View {
                         .font(.callout.bold())
                         .foregroundColor(isSameDay(date1: value.date, date2: absoluteDate) ? .white: .black)
                         .frame(maxWidth: .infinity)
-                        .onAppear(perform: {
-                            print(absoluteDate)
-                        })
                     
-                    Spacer()
+                    
                 }
             }
         }

@@ -29,7 +29,9 @@ func getSampleDate(offset: Int) -> Date {
 
 var sampleMetaPageInfo: [MetaPageInfo] = [
     MetaPageInfo(pageinfo: [
-        PageInfo.sampleData[1]]
+        PageInfo.sampleData[1],
+        PageInfo.sampleData[2],
+        PageInfo.sampleData[0]]
     , pageDate: getSampleDate(offset: 0)),
     
     MetaPageInfo(pageinfo: [

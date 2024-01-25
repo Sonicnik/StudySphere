@@ -32,6 +32,9 @@
 		7A5965512B5BE29A0047F426 /* CustomeCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5965502B5BE29A0047F426 /* CustomeCalendar.swift */; };
 		7A5965542B5BE63C0047F426 /* CalendarExtensionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5965532B5BE63C0047F426 /* CalendarExtensionPage.swift */; };
 		7A5965562B5BE81E0047F426 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5965552B5BE81E0047F426 /* DateValue.swift */; };
+		7A59655B2B5D34E20047F426 /* pagenewpage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A59655A2B5D34E20047F426 /* pagenewpage.swift */; };
+		7A59655E2B5D37350047F426 /* datePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A59655D2B5D37350047F426 /* datePage.swift */; };
+		7A5965612B5D3A740047F426 /* dateCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5965602B5D3A740047F426 /* dateCardView.swift */; };
 		7A599A4A2B08578700D87AAD /* SetSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A599A492B08578700D87AAD /* SetSubject.swift */; };
 		7A599A4E2B08587800D87AAD /* SelectionOFSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A599A4D2B08587800D87AAD /* SelectionOFSubject.swift */; };
 		7A599A502B08672600D87AAD /* SaveSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A599A4F2B08672600D87AAD /* SaveSettings.swift */; };
@@ -80,6 +83,9 @@
 		7A5965502B5BE29A0047F426 /* CustomeCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeCalendar.swift; sourceTree = "<group>"; };
 		7A5965532B5BE63C0047F426 /* CalendarExtensionPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtensionPage.swift; sourceTree = "<group>"; };
 		7A5965552B5BE81E0047F426 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
+		7A59655A2B5D34E20047F426 /* pagenewpage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pagenewpage.swift; sourceTree = "<group>"; };
+		7A59655D2B5D37350047F426 /* datePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datePage.swift; sourceTree = "<group>"; };
+		7A5965602B5D3A740047F426 /* dateCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateCardView.swift; sourceTree = "<group>"; };
 		7A599A492B08578700D87AAD /* SetSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSubject.swift; sourceTree = "<group>"; };
 		7A599A4D2B08587800D87AAD /* SelectionOFSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionOFSubject.swift; sourceTree = "<group>"; };
 		7A599A4F2B08672600D87AAD /* SaveSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveSettings.swift; sourceTree = "<group>"; };
@@ -155,6 +161,7 @@
 		7A568DB82A58F46200F907CA /* YCForum */ = {
 			isa = PBXGroup;
 			children = (
+				7A5965592B5D34D70047F426 /* Debug */,
 				7A5965522B5BE5F80047F426 /* CalendarEx */,
 				7A1257F92AC03832007D371E /* Other */,
 				7A977F762AB3164F0033062D /* Pages */,
@@ -205,9 +212,27 @@
 		7A5965522B5BE5F80047F426 /* CalendarEx */ = {
 			isa = PBXGroup;
 			children = (
+				7A59655F2B5D3A560047F426 /* CalendarView */,
 				7A5965532B5BE63C0047F426 /* CalendarExtensionPage.swift */,
+				7A59655D2B5D37350047F426 /* datePage.swift */,
 			);
 			path = CalendarEx;
+			sourceTree = "<group>";
+		};
+		7A5965592B5D34D70047F426 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				7A59655A2B5D34E20047F426 /* pagenewpage.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		7A59655F2B5D3A560047F426 /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				7A5965602B5D3A740047F426 /* dateCardView.swift */,
+			);
+			path = CalendarView;
 			sourceTree = "<group>";
 		};
 		7A599A4B2B08579200D87AAD /* AvaliableTime */ = {
@@ -387,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A5965612B5D3A740047F426 /* dateCardView.swift in Sources */,
 				7AEACC0C2B18471000387C6E /* choiceOfSubject.swift in Sources */,
 				7A568DBA2A58F46200F907CA /* Agenda.swift in Sources */,
 				7AA2BA3B2AF50CFD00FEC478 /* Settings.swift in Sources */,
@@ -419,12 +445,14 @@
 				7A568DD82A5901A300F907CA /* ThemeView.swift in Sources */,
 				7A24B84E2B29D4A600CB2AA0 /* saveTime.swift in Sources */,
 				7A995AEC2AE37A0D00A29AE8 /* Setinfo.swift in Sources */,
+				7A59655B2B5D34E20047F426 /* pagenewpage.swift in Sources */,
 				7A0615162ABFD3EF00779D31 /* Notificaton.swift in Sources */,
 				7AFECE752A5AA4B900256CA2 /* NewSheet.swift in Sources */,
 				7A995AEE2AE3F41700A29AE8 /* TimeSelectorView.swift in Sources */,
 				7AEACC172B1868D500387C6E /* introPages.swift in Sources */,
 				7A24B8542B2ACD1300CB2AA0 /* askReview.swift in Sources */,
 				7A995AE52AE3701000A29AE8 /* Container.swift in Sources */,
+				7A59655E2B5D37350047F426 /* datePage.swift in Sources */,
 				7A599A4A2B08578700D87AAD /* SetSubject.swift in Sources */,
 				7A568DC92A58F53C00F907CA /* MainPage.swift in Sources */,
 				7AB2A3562AA196E5003722E9 /* SaveData.swift in Sources */,

@@ -73,19 +73,6 @@ struct Mainpage: View {
                         .listStyle(InsetGroupedListStyle())
                         
                         Spacer()
-                        
-                        Button {
-                            isPresentingNewEditView = true
-                        } label: {
-                            Text("Add Works 🤛")
-                                .foregroundColor(.white)
-                                .font(.headline)
-                                .frame(height: 55)
-                                .frame(maxWidth: .infinity)
-                                .background(Color.accentColor)
-                                .cornerRadius(10)
-                        }
-                        .padding(.horizontal, 50)
                     }
                 }
                 
