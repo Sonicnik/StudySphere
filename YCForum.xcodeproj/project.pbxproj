@@ -16,7 +16,7 @@
 		7A14ED7B2A9A0E6B00835B76 /* FormatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A14ED7A2A9A0E6B00835B76 /* FormatView.swift */; };
 		7A1E1A202B26B6020032F631 /* normalNoti.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1E1A1F2B26B6020032F631 /* normalNoti.swift */; };
 		7A24B84E2B29D4A600CB2AA0 /* saveTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24B84D2B29D4A600CB2AA0 /* saveTime.swift */; };
-		7A24B8522B29E07300CB2AA0 /* TodayPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24B8512B29E07300CB2AA0 /* TodayPage.swift */; };
+		7A24B8542B2ACD1300CB2AA0 /* askReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A24B8532B2ACD1300CB2AA0 /* askReview.swift */; };
 		7A568DBA2A58F46200F907CA /* Agenda.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A568DB92A58F46200F907CA /* Agenda.swift */; };
 		7A568DBE2A58F46200F907CA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A568DBD2A58F46200F907CA /* Assets.xcassets */; };
 		7A568DC12A58F46200F907CA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A568DC02A58F46200F907CA /* Preview Assets.xcassets */; };
@@ -29,6 +29,12 @@
 		7A568DD62A59016B00F907CA /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A568DD52A59016B00F907CA /* PickerView.swift */; };
 		7A568DD82A5901A300F907CA /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A568DD72A5901A300F907CA /* ThemeView.swift */; };
 		7A58AD762AF7CA55002F3C44 /* timeSelectionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A58AD752AF7CA55002F3C44 /* timeSelectionPicker.swift */; };
+		7A5965512B5BE29A0047F426 /* CustomeCalendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5965502B5BE29A0047F426 /* CustomeCalendar.swift */; };
+		7A5965542B5BE63C0047F426 /* CalendarExtensionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5965532B5BE63C0047F426 /* CalendarExtensionPage.swift */; };
+		7A5965562B5BE81E0047F426 /* DateValue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5965552B5BE81E0047F426 /* DateValue.swift */; };
+		7A59655B2B5D34E20047F426 /* pagenewpage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A59655A2B5D34E20047F426 /* pagenewpage.swift */; };
+		7A59655E2B5D37350047F426 /* datePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A59655D2B5D37350047F426 /* datePage.swift */; };
+		7A5965612B5D3A740047F426 /* dateCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A5965602B5D3A740047F426 /* dateCardView.swift */; };
 		7A599A4A2B08578700D87AAD /* SetSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A599A492B08578700D87AAD /* SetSubject.swift */; };
 		7A599A4E2B08587800D87AAD /* SelectionOFSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A599A4D2B08587800D87AAD /* SelectionOFSubject.swift */; };
 		7A599A502B08672600D87AAD /* SaveSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A599A4F2B08672600D87AAD /* SaveSettings.swift */; };
@@ -60,7 +66,7 @@
 		7A14ED7A2A9A0E6B00835B76 /* FormatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatView.swift; sourceTree = "<group>"; };
 		7A1E1A1F2B26B6020032F631 /* normalNoti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = normalNoti.swift; sourceTree = "<group>"; };
 		7A24B84D2B29D4A600CB2AA0 /* saveTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saveTime.swift; sourceTree = "<group>"; };
-		7A24B8512B29E07300CB2AA0 /* TodayPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayPage.swift; sourceTree = "<group>"; };
+		7A24B8532B2ACD1300CB2AA0 /* askReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = askReview.swift; sourceTree = "<group>"; };
 		7A568DB62A58F46200F907CA /* YCForum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YCForum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A568DB92A58F46200F907CA /* Agenda.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Agenda.swift; sourceTree = "<group>"; };
 		7A568DBD2A58F46200F907CA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,6 +80,12 @@
 		7A568DD52A59016B00F907CA /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		7A568DD72A5901A300F907CA /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
 		7A58AD752AF7CA55002F3C44 /* timeSelectionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = timeSelectionPicker.swift; sourceTree = "<group>"; };
+		7A5965502B5BE29A0047F426 /* CustomeCalendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomeCalendar.swift; sourceTree = "<group>"; };
+		7A5965532B5BE63C0047F426 /* CalendarExtensionPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtensionPage.swift; sourceTree = "<group>"; };
+		7A5965552B5BE81E0047F426 /* DateValue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateValue.swift; sourceTree = "<group>"; };
+		7A59655A2B5D34E20047F426 /* pagenewpage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = pagenewpage.swift; sourceTree = "<group>"; };
+		7A59655D2B5D37350047F426 /* datePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datePage.swift; sourceTree = "<group>"; };
+		7A5965602B5D3A740047F426 /* dateCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dateCardView.swift; sourceTree = "<group>"; };
 		7A599A492B08578700D87AAD /* SetSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSubject.swift; sourceTree = "<group>"; };
 		7A599A4D2B08587800D87AAD /* SelectionOFSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionOFSubject.swift; sourceTree = "<group>"; };
 		7A599A4F2B08672600D87AAD /* SaveSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveSettings.swift; sourceTree = "<group>"; };
@@ -106,6 +118,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A0CF4432B4EC7F600516A15 /* Selection */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Selection;
+			sourceTree = "<group>";
+		};
 		7A1257F92AC03832007D371E /* Other */ = {
 			isa = PBXGroup;
 			children = (
@@ -142,6 +161,8 @@
 		7A568DB82A58F46200F907CA /* YCForum */ = {
 			isa = PBXGroup;
 			children = (
+				7A5965592B5D34D70047F426 /* Debug */,
+				7A5965522B5BE5F80047F426 /* CalendarEx */,
 				7A1257F92AC03832007D371E /* Other */,
 				7A977F762AB3164F0033062D /* Pages */,
 				7AB2A3542AA196CD003722E9 /* Functions */,
@@ -183,8 +204,35 @@
 				7A995AEB2AE37A0D00A29AE8 /* Setinfo.swift */,
 				7A14ED6E2A99FB1E00835B76 /* Subjects.swift */,
 				7A568DCF2A58FBB300F907CA /* Theme.swift */,
+				7A5965552B5BE81E0047F426 /* DateValue.swift */,
 			);
 			path = Styles;
+			sourceTree = "<group>";
+		};
+		7A5965522B5BE5F80047F426 /* CalendarEx */ = {
+			isa = PBXGroup;
+			children = (
+				7A59655F2B5D3A560047F426 /* CalendarView */,
+				7A5965532B5BE63C0047F426 /* CalendarExtensionPage.swift */,
+				7A59655D2B5D37350047F426 /* datePage.swift */,
+			);
+			path = CalendarEx;
+			sourceTree = "<group>";
+		};
+		7A5965592B5D34D70047F426 /* Debug */ = {
+			isa = PBXGroup;
+			children = (
+				7A59655A2B5D34E20047F426 /* pagenewpage.swift */,
+			);
+			path = Debug;
+			sourceTree = "<group>";
+		};
+		7A59655F2B5D3A560047F426 /* CalendarView */ = {
+			isa = PBXGroup;
+			children = (
+				7A5965602B5D3A740047F426 /* dateCardView.swift */,
+			);
+			path = CalendarView;
 			sourceTree = "<group>";
 		};
 		7A599A4B2B08579200D87AAD /* AvaliableTime */ = {
@@ -212,7 +260,7 @@
 				7A568DC82A58F53C00F907CA /* MainPage.swift */,
 				7A568DD12A58FCF700F907CA /* DetailPage.swift */,
 				7A995AE62AE3711E00A29AE8 /* SettingPage.swift */,
-				7A24B8512B29E07300CB2AA0 /* TodayPage.swift */,
+				7A5965502B5BE29A0047F426 /* CustomeCalendar.swift */,
 			);
 			name = Pages;
 			path = Views/Pages;
@@ -262,6 +310,7 @@
 				7AC6ED3F2B0CD50900FF43DC /* EmailSend */,
 				7AC6ED3B2B0CC95C00FF43DC /* BioPage.swift */,
 				7AC6ED3D2B0CCF2100FF43DC /* BioView.swift */,
+				7A24B8532B2ACD1300CB2AA0 /* askReview.swift */,
 			);
 			path = BIO;
 			sourceTree = "<group>";
@@ -284,6 +333,7 @@
 		7AEACC0D2B185E6B00387C6E /* Introduction */ = {
 			isa = PBXGroup;
 			children = (
+				7A0CF4432B4EC7F600516A15 /* Selection */,
 				7AEACC102B18622D00387C6E /* IntroPageType.swift */,
 				7AEACC142B18669F00387C6E /* IntroPageView.swift */,
 				7AEACC162B1868D500387C6E /* introPages.swift */,
@@ -362,6 +412,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A5965612B5D3A740047F426 /* dateCardView.swift in Sources */,
 				7AEACC0C2B18471000387C6E /* choiceOfSubject.swift in Sources */,
 				7A568DBA2A58F46200F907CA /* Agenda.swift in Sources */,
 				7AA2BA3B2AF50CFD00FEC478 /* Settings.swift in Sources */,
@@ -372,6 +423,7 @@
 				7A995AE72AE3711E00A29AE8 /* SettingPage.swift in Sources */,
 				7A05D83A2ABDA49D00BE37C9 /* MainFunc.swift in Sources */,
 				7A568DCC2A58F5FA00F907CA /* PageStyle.swift in Sources */,
+				7A5965542B5BE63C0047F426 /* CalendarExtensionPage.swift in Sources */,
 				7A14ED6F2A99FB1E00835B76 /* Subjects.swift in Sources */,
 				7AC6ED3C2B0CC95C00FF43DC /* BioPage.swift in Sources */,
 				7A568DD02A58FBB300F907CA /* Theme.swift in Sources */,
@@ -386,17 +438,21 @@
 				7A1E1A202B26B6020032F631 /* normalNoti.swift in Sources */,
 				7AC6ED3E2B0CCF2100FF43DC /* BioView.swift in Sources */,
 				7A14ED792A9A0B5D00835B76 /* SubjectView.swift in Sources */,
+				7A5965512B5BE29A0047F426 /* CustomeCalendar.swift in Sources */,
 				7A58AD762AF7CA55002F3C44 /* timeSelectionPicker.swift in Sources */,
 				7A568DCE2A58FAF000F907CA /* CardView.swift in Sources */,
+				7A5965562B5BE81E0047F426 /* DateValue.swift in Sources */,
 				7A568DD82A5901A300F907CA /* ThemeView.swift in Sources */,
 				7A24B84E2B29D4A600CB2AA0 /* saveTime.swift in Sources */,
 				7A995AEC2AE37A0D00A29AE8 /* Setinfo.swift in Sources */,
+				7A59655B2B5D34E20047F426 /* pagenewpage.swift in Sources */,
 				7A0615162ABFD3EF00779D31 /* Notificaton.swift in Sources */,
-				7A24B8522B29E07300CB2AA0 /* TodayPage.swift in Sources */,
 				7AFECE752A5AA4B900256CA2 /* NewSheet.swift in Sources */,
 				7A995AEE2AE3F41700A29AE8 /* TimeSelectorView.swift in Sources */,
 				7AEACC172B1868D500387C6E /* introPages.swift in Sources */,
+				7A24B8542B2ACD1300CB2AA0 /* askReview.swift in Sources */,
 				7A995AE52AE3701000A29AE8 /* Container.swift in Sources */,
+				7A59655E2B5D37350047F426 /* datePage.swift in Sources */,
 				7A599A4A2B08578700D87AAD /* SetSubject.swift in Sources */,
 				7A568DC92A58F53C00F907CA /* MainPage.swift in Sources */,
 				7AB2A3562AA196E5003722E9 /* SaveData.swift in Sources */,
@@ -531,7 +587,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"YCForum/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Y3FSZSGKX5;
@@ -569,7 +625,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 11;
 				DEVELOPMENT_ASSET_PATHS = "\"YCForum/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Y3FSZSGKX5;

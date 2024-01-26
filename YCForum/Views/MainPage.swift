@@ -38,26 +38,16 @@ struct Mainpage: View {
                     
                     VStack {
                         List{
-                            
-
                             ForEach($info) {$info in
                                 NavigationLink(destination: DetailPage(info: $info, selectedSubject: $saveSettings.selectedSubject)) {
                                     CardView(info: info)
-                                    
-                                    
                                 }
-                                
-                                
                                 .onAppear(perform: {
                                     sortData(avaible: avaliableTime)
-                                    
-                                
-                                    
                                 })
                                 .listRowBackground(subjectColor(subject: info.subjects))
                                 
                             }
-                            
                             .onDelete(perform: deleteItem)
                             .onChange(of: info) { _ in
                                 Task {
@@ -79,32 +69,11 @@ struct Mainpage: View {
                                     }
                                 }
                             })
-
-
-                            
                         }
                         .listStyle(InsetGroupedListStyle())
                         
                         Spacer()
-                        
-                        Button {
-                            isPresentingNewEditView = true
-                        } label: {
-                            Text("Add Works 🤛")
-                                .foregroundColor(.white)
-                                .font(.headline)
-                                .frame(height: 55)
-                                .frame(maxWidth: .infinity)
-                                .background(Color.accentColor)
-                                .cornerRadius(10)
-                        }
-                        .padding(.horizontal, 50)
                     }
-                    
-                    
-                    
-                    
-                    
                 }
                 
             }
@@ -131,8 +100,9 @@ struct Mainpage: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 notificationManag.requestAuthorization()
             }
-            notificationManag.askingNewWork()
-            notificationManag.sendDailyNotificationForUnfinishedWork(info)
+//          Calling notification everyday at 3pm for users to input more works
+//            notificationManag.askingNewWork()
+//            notificationManag.sendDailyNotificationForUnfinishedWork(info)
             saveSettings.loadSettings()
             print(saveSettings.selectedSubject)
         }

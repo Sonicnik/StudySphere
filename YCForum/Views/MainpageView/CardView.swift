@@ -37,7 +37,7 @@ struct CardView: View {
             
             HStack {
                 Text("Est Time: " + calculatedTime(eTime: info.eTime))
-                    .font(.caption2)
+                    .font(.caption)
                     .multilineTextAlignment(.leading)
                 Text(info.duedate.formatted(date: .abbreviated, time: .omitted))
                     .font(.caption2)

@@ -42,7 +42,7 @@ extension Mainpage {
         }
         
         //Second Loop used to organize the available time for the scheduled task.
-        i = info.count - 1
+        i = info.count
         var x = 0
         while(timeLeft > 0) {
             if x == i {
