@@ -15,7 +15,7 @@ struct dateCardView: View {
         if !metaInfo.pageinfo.isEmpty {
             Group {                    
                 ForEach(metaInfo.pageinfo) {info in
-                    NavigationLink(destination: DetailPage(info: .constant(PageInfo.sampleData[0]), selectedSubject: .constant([.BM, .Chinese, .Economics]))){
+                    NavigationLink(destination: DetailPage(info: info, selectedSubject: .constant([.BM, .Chemistry])){
                             VStack(alignment: .leading, spacing: 10) {
                                 
                                 

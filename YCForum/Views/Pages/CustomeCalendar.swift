@@ -74,10 +74,12 @@ struct CustomeCalendar: View {
                 // Dates
                 let columns = Array(repeating: GridItem(.flexible()), count: 7)
                 
+                
+                
                 LazyVGrid(columns: columns, spacing: 15) {
                     
                     ForEach(extractDate()){value in
-                        NavigationLink(destination: datePage(metaInfo: .constant(sampleMetaPageInfo[0]))){
+                        NavigationLink(destination: datePage(metaInfo: .constant([sampleMetaPageInfo[0], sampleMetaPageInfo[1], sampleMetaPageInfo[2]]), dates: value.date)){
                             dateCardView(value: value)
                                 .background(
                                     Capsule()
