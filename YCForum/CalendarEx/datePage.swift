@@ -54,5 +54,5 @@ struct datePage: View {
 }
 
 #Preview {
-    datePage(metaInfo: .constant([sampleMetaPageInfo[0], sampleMetaPageInfo[1], sampleMetaPageInfo[2]]), dates: Date())
+    datePage(metaInfo: .constant(MetaPageInfo.sampleMetaPageInfo), dates: Date())
 }

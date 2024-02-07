@@ -9,6 +9,8 @@ import SwiftUI
 
 struct CustomeCalendar: View {
     
+    @Binding var info: [MetaPageInfo]
+    
     @State var currentDate: Date = Date()
     
     @State var currentMonth: Int = 0
@@ -79,7 +81,7 @@ struct CustomeCalendar: View {
                 LazyVGrid(columns: columns, spacing: 15) {
                     
                     ForEach(extractDate()){value in
-                        NavigationLink(destination: datePage(metaInfo: .constant([sampleMetaPageInfo[0], sampleMetaPageInfo[1], sampleMetaPageInfo[2]]), dates: value.date)){
+                        NavigationLink(destination: datePage(metaInfo: $info, dates: value.date)){
                             dateCardView(value: value)
                                 .background(
                                     Capsule()
@@ -109,7 +111,7 @@ struct CustomeCalendar: View {
         VStack{
             
             if value.day != -1 {
-                if let task = sampleMetaPageInfo.first(where: { task in
+                if let task = info.first(where: { task in
                     
                     return isSameDay(date1: task.pageDate, date2: value.date)
                 }) {
@@ -144,5 +146,5 @@ struct CustomeCalendar: View {
 }
 
 #Preview {
-    CustomeCalendar()
+    CustomeCalendar(info: .constant(MetaPageInfo.sampleMetaPageInfo))
 }

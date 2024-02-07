@@ -20,27 +20,27 @@ struct Container: View {
     var body: some View {
         TabView {
             //Calendar
-            CustomeCalendar()
+            CustomeCalendar(info: $infoss.infoData)
                 .tabItem {
                     Image(systemName: "calendar")
                     Text("Calendar")
                 }
             
             //Main
-            Mainpage(info: $infoss.infoData, selectedSubject: $saveSettings.selectedSubject, preIntro: $preIntro, avaliableTime: $avaliableTime.avaliableTime){
-            
-            }
-            .tabItem {
-                Image(systemName: "tray.full")
-                Text("ALL")
-            }
-            
-            //Settings
-            SettingPage(period: .constant([]), avaliableTime: $avaliableTime.avaliableTime, selectedSubject: $saveSettings.selectedSubject, preIntro: $preIntro)
-                .tabItem {
-                    Image(systemName: "gear")
-                    Text("Settings")
-                }
+//            Mainpage(info: $infoss.infoData, selectedSubject: $saveSettings.selectedSubject, preIntro: $preIntro, avaliableTime: $avaliableTime.avaliableTime){
+//            
+//            }
+//            .tabItem {
+//                Image(systemName: "tray.full")
+//                Text("ALL")
+//            }
+//            
+//            //Settings
+//            SettingPage(period: .constant([]), avaliableTime: $avaliableTime.avaliableTime, selectedSubject: $saveSettings.selectedSubject, preIntro: $preIntro)
+//                .tabItem {
+//                    Image(systemName: "gear")
+//                    Text("Settings")
+//                }
         }
         .onAppear {
             Task {

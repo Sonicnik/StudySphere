@@ -13,11 +13,39 @@ struct DateValue: Identifiable{
     var date: Date
 }
 
-struct MetaPageInfo: Identifiable{
+struct MetaPageInfo: Identifiable, Encodable, Decodable{
     var id = UUID().uuidString
     var pageinfo: [PageInfo]
     var pageDate: Date
+    
+    init(id: String = UUID().uuidString, pageinfo: [PageInfo], pageDate: Date) {
+        self.id = id
+        self.pageinfo = pageinfo
+        self.pageDate = pageDate
+    }
 }
+
+extension MetaPageInfo{
+    static var sampleMetaPageInfo: [MetaPageInfo] = [
+        MetaPageInfo(pageinfo: [
+            PageInfo.sampleData[1],
+            PageInfo.sampleData[2],
+            PageInfo.sampleData[0]]
+        , pageDate: getSampleDate(offset: 0)),
+        
+        MetaPageInfo(pageinfo: [
+            PageInfo.sampleData[2]]
+        , pageDate: getSampleDate(offset: -3)),
+        
+        MetaPageInfo(pageinfo: [
+            PageInfo.sampleData[0]]
+        , pageDate: getSampleDate(offset: -8)),
+        
+    ]
+}
+
+
+
 
 func getSampleDate(offset: Int) -> Date {
     let calendar = Calendar.current
@@ -26,20 +54,3 @@ func getSampleDate(offset: Int) -> Date {
     
     return date ?? Date()
 }
-
-var sampleMetaPageInfo: [MetaPageInfo] = [
-    MetaPageInfo(pageinfo: [
-        PageInfo.sampleData[1],
-        PageInfo.sampleData[2],
-        PageInfo.sampleData[0]]
-    , pageDate: getSampleDate(offset: 0)),
-    
-    MetaPageInfo(pageinfo: [
-        PageInfo.sampleData[2]]
-    , pageDate: getSampleDate(offset: -3)),
-    
-    MetaPageInfo(pageinfo: [
-        PageInfo.sampleData[0]]
-    , pageDate: getSampleDate(offset: -8)),
-    
-]
