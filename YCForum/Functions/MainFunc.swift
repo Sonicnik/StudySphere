@@ -125,4 +125,32 @@ extension Mainpage {
         return color.mainColor
 
     }
+    
+
+    func groupPageInfoByDate(pageInfos: [PageInfo]) -> [MetaPageInfo] {
+        // Dictionary to hold grouping of PageInfo by a common attribute, e.g., duedate
+        var groupedByDate: [Date: [PageInfo]] = [:]
+
+        for pageInfo in pageInfos {
+            let date = pageInfo.duedate.startOfDay() // Assuming you have an extension to normalize the date to the start of the day
+            groupedByDate[date, default: []].append(pageInfo)
+        }
+
+        // Convert the dictionary into an array of MetaPageInfo
+        return groupedByDate.map { date, pageInfos in
+            MetaPageInfo(pageinfo: pageInfos, pageDate: date)
+        }
+    }
+    
+    
+
+    
+
+}
+
+extension Date {
+    // Helper function to normalize dates to the start of the day
+    func startOfDay() -> Date {
+        return Calendar.current.startOfDay(for: self)
+    }
 }

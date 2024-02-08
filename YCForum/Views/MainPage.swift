@@ -10,12 +10,14 @@ import SwiftUI
 struct Mainpage: View {
     @StateObject private var stores = storePageInfo()
     @Binding var info: [PageInfo]
+    @Binding var metapageinfo: [MetaPageInfo]
     @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewEditView = false
     @Binding var selectedSubject: Set<Subject>
     @Binding var preIntro: Bool
     @ObservedObject var saveSettings = SaveSettings()
     @Binding var avaliableTime: String
+    
     let saveAction: () -> ()
     let notificationManag = NotificationManager.instance
     let defaults = UserDefaults.standard
@@ -52,23 +54,35 @@ struct Mainpage: View {
                             .onChange(of: info) { _ in
                                 Task {
                                     do {
-                                        try await stores.SaveInfo(infos: info)
+                                        // Convert PageInfo to MetaPageInfo
+                                        let metaPageInfos = groupPageInfoByDate(pageInfos: info)
+                                        // Assuming SaveInfo function or equivalent can handle [MetaPageInfo]
+                                        metapageinfo = metaPageInfos
+                                        
+                                        try await stores.SaveInfo(infos: metaPageInfos)
                                     } catch {
                                         // Handle errors appropriately
-                                        print("Failed to save info: \(error)")
+                                        print("Failed to save MetaPageInfo: \(error.localizedDescription)")
                                     }
                                 }
                             }
-                            .onDisappear( perform: {
+                            .onDisappear {
                                 Task {
                                     do {
-                                        try await stores.SaveInfo(infos: info)
+                                        // Convert PageInfo to MetaPageInfo
+                                        let metaPageInfos = groupPageInfoByDate(pageInfos: info)
+                                        // Assuming SaveInfo function or equivalent can handle [MetaPageInfo]
+                                        
+                                        metapageinfo = metaPageInfos
+                                        
+                                        try await stores.SaveInfo(infos: metaPageInfos)
                                     } catch {
                                         // Handle errors appropriately
-                                        print("Failed to save info: \(error)")
+                                        print("Failed to save MetaPageInfo on disappear: \(error.localizedDescription)")
                                     }
                                 }
-                            })
+                            }
+
                         }
                         .listStyle(InsetGroupedListStyle())
                         
@@ -114,7 +128,7 @@ struct Mainpage: View {
 
 struct Mainpage_Previews: PreviewProvider {
     static var previews: some View {
-        Mainpage(info: .constant(PageInfo.sampleData), 
+        Mainpage(info: .constant(PageInfo.sampleData), metapageinfo: .constant(MetaPageInfo.sampleMetaPageInfo),
                  selectedSubject: .constant([.BM, .Chemistry]),
                  preIntro: .constant(false), avaliableTime: .constant("1"), saveAction: {})
     }
