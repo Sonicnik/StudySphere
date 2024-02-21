@@ -21,7 +21,7 @@ struct Container: View {
     var body: some View {
         TabView {
             //Calendar
-            CustomeCalendar(info: $infoss.infoData)
+            CustomeCalendar(info: $infoss.infoData, saveAction: {})
                 .tabItem {
                     Image(systemName: "calendar")
                     Text("Calendar")

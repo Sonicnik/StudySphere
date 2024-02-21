@@ -38,6 +38,7 @@
 		7A599A4A2B08578700D87AAD /* SetSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A599A492B08578700D87AAD /* SetSubject.swift */; };
 		7A599A4E2B08587800D87AAD /* SelectionOFSubject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A599A4D2B08587800D87AAD /* SelectionOFSubject.swift */; };
 		7A599A502B08672600D87AAD /* SaveSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A599A4F2B08672600D87AAD /* SaveSettings.swift */; };
+		7A64C9202B84B2310025FF0E /* EmptyDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A64C91F2B84B2310025FF0E /* EmptyDate.swift */; };
 		7A995AE52AE3701000A29AE8 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A995AE42AE3701000A29AE8 /* Container.swift */; };
 		7A995AE72AE3711E00A29AE8 /* SettingPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A995AE62AE3711E00A29AE8 /* SettingPage.swift */; };
 		7A995AEC2AE37A0D00A29AE8 /* Setinfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A995AEB2AE37A0D00A29AE8 /* Setinfo.swift */; };
@@ -89,6 +90,7 @@
 		7A599A492B08578700D87AAD /* SetSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetSubject.swift; sourceTree = "<group>"; };
 		7A599A4D2B08587800D87AAD /* SelectionOFSubject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionOFSubject.swift; sourceTree = "<group>"; };
 		7A599A4F2B08672600D87AAD /* SaveSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveSettings.swift; sourceTree = "<group>"; };
+		7A64C91F2B84B2310025FF0E /* EmptyDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyDate.swift; sourceTree = "<group>"; };
 		7A995AE42AE3701000A29AE8 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		7A995AE62AE3711E00A29AE8 /* SettingPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingPage.swift; sourceTree = "<group>"; };
 		7A995AEB2AE37A0D00A29AE8 /* Setinfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setinfo.swift; sourceTree = "<group>"; };
@@ -231,6 +233,7 @@
 			isa = PBXGroup;
 			children = (
 				7A5965602B5D3A740047F426 /* dateCardView.swift */,
+				7A64C91F2B84B2310025FF0E /* EmptyDate.swift */,
 			);
 			path = CalendarView;
 			sourceTree = "<group>";
@@ -443,6 +446,7 @@
 				7A568DCE2A58FAF000F907CA /* CardView.swift in Sources */,
 				7A5965562B5BE81E0047F426 /* DateValue.swift in Sources */,
 				7A568DD82A5901A300F907CA /* ThemeView.swift in Sources */,
+				7A64C9202B84B2310025FF0E /* EmptyDate.swift in Sources */,
 				7A24B84E2B29D4A600CB2AA0 /* saveTime.swift in Sources */,
 				7A995AEC2AE37A0D00A29AE8 /* Setinfo.swift in Sources */,
 				7A59655B2B5D34E20047F426 /* pagenewpage.swift in Sources */,
@@ -587,7 +591,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"YCForum/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Y3FSZSGKX5;
@@ -605,7 +609,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.elo.YCForum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -625,7 +629,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 11;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"YCForum/Preview Content\"";
 				DEVELOPMENT_TEAM = "";
 				"DEVELOPMENT_TEAM[sdk=iphoneos*]" = Y3FSZSGKX5;
@@ -643,7 +647,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.1;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.elo.YCForum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";

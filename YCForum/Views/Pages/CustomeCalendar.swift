@@ -13,9 +13,17 @@ struct CustomeCalendar: View {
     
     @State var currentDate: Date = Date()
     
+    @Environment(\.scenePhase) private var scenePhase
+    
     @State var currentMonth: Int = 0
     
+    @Environment(\.colorScheme) var colorScheme
+    
+    @StateObject private var stores = storePageInfo()
+    
     var absoluteDate: Date = Date()
+    
+    let saveAction: () -> ()
     
     var body: some View {
         
@@ -70,6 +78,7 @@ struct CustomeCalendar: View {
                             .font(.callout)
                             .fontWeight(.semibold)
                             .frame(maxWidth: .infinity)
+                            
                     }
                 }
                 
@@ -92,17 +101,24 @@ struct CustomeCalendar: View {
                                 )
                         }
                         
+                        
                     }
                 }
                 
                 Spacer()
             }
+            .padding()
             .onChange(of: currentMonth){ newValue in
                 
                 //Update Month
                 currentDate = getCurrentMonth()
+            }
+            
         }
-        }
+        
+        
+        
+        
     }
     
     @ViewBuilder
@@ -117,13 +133,14 @@ struct CustomeCalendar: View {
                 }) {
                     Text("\(value.day)")
                         .font(.callout.bold())
-                        .foregroundColor(isSameDay(date1: value.date, date2: absoluteDate) ? .white: .black)
+                        .foregroundColor(isSameDay(date1: value.date, date2: absoluteDate) ? .white : (colorScheme == .dark ? .white : .black))
                         .frame(maxWidth: .infinity)
+
                     
                     Spacer()
                     //Add matching colors to the circle of the day and subjects
                     Circle()
-                        .fill(isSameDay(date1: task.pageDate, date2: currentDate) ? .white : Color(.indigo))
+                        .fill(isSameDay(date1: task.pageDate, date2: currentDate) ? .white : Color(.sky))
                         .frame(width: 8, height: 8)
                         
                 }
@@ -131,7 +148,7 @@ struct CustomeCalendar: View {
                     
                     Text("\(value.day)")
                         .font(.callout.bold())
-                        .foregroundColor(isSameDay(date1: value.date, date2: absoluteDate) ? .white: .black)
+                        .foregroundColor(isSameDay(date1: value.date, date2: absoluteDate) ? .white : (colorScheme == .dark ? .white : .black))
                         .frame(maxWidth: .infinity)
                     
                     
@@ -146,5 +163,5 @@ struct CustomeCalendar: View {
 }
 
 #Preview {
-    CustomeCalendar(info: .constant(MetaPageInfo.sampleMetaPageInfo))
+    CustomeCalendar(info: .constant(MetaPageInfo.sampleMetaPageInfo), saveAction: {})
 }

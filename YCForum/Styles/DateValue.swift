@@ -13,7 +13,7 @@ struct DateValue: Identifiable{
     var date: Date
 }
 
-struct MetaPageInfo: Identifiable, Encodable, Decodable{
+struct MetaPageInfo: Identifiable, Encodable, Decodable, Equatable{
     var id = UUID().uuidString
     var pageinfo: [PageInfo]
     var pageDate: Date

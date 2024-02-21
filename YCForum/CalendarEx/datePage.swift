@@ -13,6 +13,8 @@ struct datePage: View {
     let dates: Date
     let targetDate = Date()
     var indexs = 0
+    @State private var isPresentingNewEditView = false
+    @ObservedObject var saveSettings = SaveSettings()
     
     var body: some View {
         
@@ -38,16 +40,33 @@ struct datePage: View {
 //                    Text("no task found")
 //                }
                 
-                if metaInfo.first(where: { info in
+                if let index = metaInfo.firstIndex(where: { info in
                     return isSameDay(date1: info.pageDate, date2: dates)
-                }) != nil {
-                    dateCardView(metaInfo: $metaInfo[indexs])
-                        .foregroundColor(.black)
+                }) {
+                    VStack {
+                        dateCardView(metaInfo: $metaInfo[index])
+                            .foregroundColor(.black)
+                            
+                        Spacer()
+                        Button(action: {
+                            isPresentingNewEditView = true
+                        }) {
+                            Text("Add New Task")
+                        }
+                        .sheet(isPresented: $isPresentingNewEditView) {
+                            // Assuming NewSheet is a view that is presented as a sheet
+                            // You might need to adjust this part based on how NewSheet is structured
+                            NewSheet(infos:$metaInfo[indexs].pageinfo, isPresentingNewEditView: $isPresentingNewEditView, selectedSubject: $saveSettings.selectedSubject)
+                        }
+
+                    }
+                    
                 }  else {
-                    Text("no task found")
+                    EmptyDate(dates: dates, metaInfo: $metaInfo)
                 }
                 
-                Spacer()
+                
+
             }
             .frame(maxWidth: .infinity)
             .onAppear(perform: {
