@@ -75,6 +75,8 @@ struct Mainpage: View {
                                         
                                         metapageinfo = metaPageInfos
                                         
+                                        
+                                        
                                         try await stores.SaveInfo(infos: metaPageInfos)
                                     } catch {
                                         // Handle errors appropriately
@@ -104,7 +106,7 @@ struct Mainpage: View {
         }
         
         .sheet(isPresented: $isPresentingNewEditView) {
-            NewSheet(infos: $info, isPresentingNewEditView: $isPresentingNewEditView, selectedSubject: $saveSettings.selectedSubject)
+            NewSheet(infos: $info, isPresentingNewEditView: $isPresentingNewEditView, selectedSubject: $saveSettings.selectedSubject, currentDate: Date())
         }
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { saveAction() }
@@ -117,8 +119,11 @@ struct Mainpage: View {
 //          Calling notification everyday at 3pm for users to input more works
 //            notificationManag.askingNewWork()
 //            notificationManag.sendDailyNotificationForUnfinishedWork(info)
+            Task {
+                info = convertMetaPageInfoToPageInfo(metaPageInfoArray: metapageinfo)
+            }
             saveSettings.loadSettings()
-            print(saveSettings.selectedSubject)
+            
         }
     }
     

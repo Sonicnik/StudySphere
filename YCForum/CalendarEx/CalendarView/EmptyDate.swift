@@ -30,7 +30,7 @@ struct EmptyDate: View {
                 .sheet(isPresented: $isPresentingNewEditView) {
                     // Assuming NewSheet is a view that is presented as a sheet
                     // You might need to adjust this part based on how NewSheet is structured
-                    NewSheet(infos:$metaInfo[metaInfo.count - 1].pageinfo, isPresentingNewEditView: $isPresentingNewEditView, selectedSubject: $saveSettings.selectedSubject)
+                    NewSheet(infos:$metaInfo[metaInfo.count - 1].pageinfo, isPresentingNewEditView: $isPresentingNewEditView, selectedSubject: $saveSettings.selectedSubject, currentDate: Date())
                 }
 
             }

@@ -84,6 +84,9 @@ struct Container: View {
 
 extension Container {
     func extractPageInfo(from metaPageInfos: [MetaPageInfo]) -> [PageInfo] {
+        
+        
+        
         var allPageInfos: [PageInfo] = []
         for metaPageInfo in metaPageInfos {
             allPageInfos.append(contentsOf: metaPageInfo.pageinfo)

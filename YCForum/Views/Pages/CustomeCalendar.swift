@@ -115,6 +115,16 @@ struct CustomeCalendar: View {
             }
             
         }
+        .onDisappear( perform: {
+            Task {
+                do {
+                    try await stores.SaveInfo(infos: info)
+                    print(info)
+                } catch {
+                    print("Failed to save MetaPageInfo: \(error.localizedDescription)")
+                }
+            }
+        })
         
         
         

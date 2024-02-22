@@ -26,7 +26,7 @@ extension Mainpage {
         }
         // The time passed on is in hours so convert into minutes first
         
-        print(timeLeft)
+        
         // First loop used to organize the lists
         
         var i = info.count - 1
@@ -57,7 +57,7 @@ extension Mainpage {
             x += 1
 
         }
-        print(info)
+        
 
 
 
@@ -140,6 +140,18 @@ extension Mainpage {
         return groupedByDate.map { date, pageInfos in
             MetaPageInfo(pageinfo: pageInfos, pageDate: date)
         }
+    }
+    
+    func convertMetaPageInfoToPageInfo(metaPageInfoArray: [MetaPageInfo]) -> [PageInfo] {
+        var allPageInfo: [PageInfo] = []
+
+        // Iterate over the array of MetaPageInfo objects
+        for metaPageInfo in metaPageInfoArray {
+            // Append all PageInfo objects from the current MetaPageInfo to the allPageInfo array
+            allPageInfo.append(contentsOf: metaPageInfo.pageinfo)
+        }
+
+        return allPageInfo
     }
     
     
