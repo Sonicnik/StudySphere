@@ -16,7 +16,7 @@ struct timeSelectionPicker: View {
     var body: some View {
         HStack {
             Picker("Estimated Time", selection: $eTimeH){
-                ForEach(0..<3) { indexs in
+                ForEach(0..<24) { indexs in
                     Text("\(indexs)").tag(indexs)
                 }
             }
@@ -24,12 +24,13 @@ struct timeSelectionPicker: View {
             
             Text("Hours")
             
-            Picker("", selection: $eTimeM){
-                ForEach(0..<60) { indexs in
-                    Text("\(indexs)").tag(indexs)
+            Picker("", selection: $eTimeM) {
+                ForEach(Array(stride(from: 0, to: 60, by: 5)), id: \.self) { index in
+                    Text("\(index)").tag(index)
                 }
             }
             .pickerStyle(.wheel)
+
             
             Text("Minutes")
             

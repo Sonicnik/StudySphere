@@ -46,6 +46,7 @@
 		7AA2BA392AF4FF4800FEC478 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2BA382AF4FF4800FEC478 /* TimeView.swift */; };
 		7AA2BA3B2AF50CFD00FEC478 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2BA3A2AF50CFD00FEC478 /* Settings.swift */; };
 		7AB2A3562AA196E5003722E9 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2A3552AA196E5003722E9 /* SaveData.swift */; };
+		7AC0EF0E2B89920D00B5A26F /* MyDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0EF0D2B89920D00B5A26F /* MyDatePicker.swift */; };
 		7AC6ED3C2B0CC95C00FF43DC /* BioPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC6ED3B2B0CC95C00FF43DC /* BioPage.swift */; };
 		7AC6ED3E2B0CCF2100FF43DC /* BioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC6ED3D2B0CCF2100FF43DC /* BioView.swift */; };
 		7ADFC3C02ABDBB0100732D5B /* EmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ADFC3BF2ABDBB0100732D5B /* EmptyView.swift */; };
@@ -98,6 +99,7 @@
 		7AA2BA382AF4FF4800FEC478 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		7AA2BA3A2AF50CFD00FEC478 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		7AB2A3552AA196E5003722E9 /* SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
+		7AC0EF0D2B89920D00B5A26F /* MyDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDatePicker.swift; sourceTree = "<group>"; };
 		7AC6ED3B2B0CC95C00FF43DC /* BioPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioPage.swift; sourceTree = "<group>"; };
 		7AC6ED3D2B0CCF2100FF43DC /* BioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioView.swift; sourceTree = "<group>"; };
 		7ADFC3BF2ABDBB0100732D5B /* EmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyView.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				7A14ED7A2A9A0E6B00835B76 /* FormatView.swift */,
 				7AF5871C2AAD68D100D2071B /* datePicker.swift */,
 				7A58AD752AF7CA55002F3C44 /* timeSelectionPicker.swift */,
+				7AC0EF0D2B89920D00B5A26F /* MyDatePicker.swift */,
 			);
 			path = MainpageView;
 			sourceTree = "<group>";
@@ -452,6 +455,7 @@
 				7A59655B2B5D34E20047F426 /* pagenewpage.swift in Sources */,
 				7A0615162ABFD3EF00779D31 /* Notificaton.swift in Sources */,
 				7AFECE752A5AA4B900256CA2 /* NewSheet.swift in Sources */,
+				7AC0EF0E2B89920D00B5A26F /* MyDatePicker.swift in Sources */,
 				7A995AEE2AE3F41700A29AE8 /* TimeSelectorView.swift in Sources */,
 				7AEACC172B1868D500387C6E /* introPages.swift in Sources */,
 				7A24B8542B2ACD1300CB2AA0 /* askReview.swift in Sources */,
@@ -609,7 +613,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.elo.YCForum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -647,7 +651,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.elo.YCForum;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
