@@ -16,13 +16,10 @@ struct datePage: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 5) {
-            Text("Task")
-                .font(.title2.bold())
-                .multilineTextAlignment(.leading)
-                .padding(.horizontal)
+            
             
             Text(dates, style: .date)
-                .font(.callout)
+                .font(.title2.bold())
                 .multilineTextAlignment(.leading)
                 .padding(.horizontal)
             

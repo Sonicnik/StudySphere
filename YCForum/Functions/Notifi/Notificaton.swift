@@ -38,7 +38,7 @@ class NotificationManager {
         if timeUntilAdjustedDueDate > 0 {
             // Create content for the notification
             let content = UNMutableNotificationContent()
-            content.title = "Due Date Coming😱"
+            content.title = "Deadline Coming😱"
             content.body = description
             content.sound = .default
 

@@ -17,23 +17,41 @@ struct EmptyDate: View {
         NavigationView{
             
             VStack {
-                Text("No task found")
-                Spacer()
+                Text("There are no work to do!!")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    .padding(.bottom, 25)
+                    
+                
+                Text("Are you working towards your goals?")
+                
                 Button(action: {
                     metaInfo.append(
                     MetaPageInfo(pageinfo: [], pageDate: dates)
                     )
                     isPresentingNewEditView = true
                 }) {
-                    Text("Add New Task")
+                    Text("Add New Task ✊")
+                        .foregroundColor(.white)
+                        .font(.headline.bold())
+                        .frame(height: 55)
+                        .frame(maxWidth: .infinity)
+                        .background(Color.accentColor)
+                        .cornerRadius(10)
                 }
+                .padding(.horizontal,50)
+                
+                Spacer()
+                
                 .sheet(isPresented: $isPresentingNewEditView) {
                     // Assuming NewSheet is a view that is presented as a sheet
                     // You might need to adjust this part based on how NewSheet is structured
                     NewSheet(infos:$metaInfo[metaInfo.count - 1].pageinfo, isPresentingNewEditView: $isPresentingNewEditView, selectedSubject: $saveSettings.selectedSubject, currentDate: Date())
                 }
+                
 
             }
+            .padding(.vertical,50)
             
             
         }

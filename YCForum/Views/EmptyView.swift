@@ -23,7 +23,7 @@ struct EmptyView: View {
                 Button {
                     isPresentingNewEditView = true
                 } label: {
-                    Text("Push, Push, PUSH!! ✊")
+                    Text("Add New Task ✊")
                         .foregroundColor(.white)
                         .font(.headline)
                         .frame(height: 55)
