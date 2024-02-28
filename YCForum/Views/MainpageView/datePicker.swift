@@ -16,7 +16,7 @@ struct datePicker: View {
     var body: some View {
         HStack {
             Text("Due Date")
-            MyDatePicker(selection: $dueDates, minuteInterval: 5)
+            MyDatePicker(selection: $selectedDate, minuteInterval: 5)
         }
     }
     
