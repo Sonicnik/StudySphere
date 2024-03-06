@@ -40,7 +40,10 @@ struct NewSheet: View {
                                 notificationMag.scheduleNotification(for: newPage,
                                                                      at: newPage.duedate,
                                                                      subtitle: "\(newPage.subjects) \(newPage.formats) is due tomorrow!",
-                                                                     identifier: newPage.id)
+                                                                     identifier: newPage.id + "tmr", timeInterval: 1)
+                                notificationMag.scheduleNotification(for: newPage, at: newPage.duedate,
+                                                                     subtitle: "\(newPage.subjects) \(newPage.formats) is due RIGHTNOW!",
+                                                                     identifier: newPage.id + "td", timeInterval: 0)
                             } else if newPage.subjects == .noChoice {
                                 subjectError = true
                                

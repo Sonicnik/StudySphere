@@ -25,9 +25,9 @@ class NotificationManager {
         }
     }
     
-    func scheduleNotification(for work: PageInfo, at duedate: Date, subtitle description: String, identifier id: String) {
+    func scheduleNotification(for work: PageInfo, at duedate: Date, subtitle description: String, identifier id: String, timeInterval: Int) {
         // Calculate the adjusted due date (one day before the original due date)
-        let oneDayInSeconds: TimeInterval = 24 * 60 * 60 // One day in seconds
+        let oneDayInSeconds = TimeInterval(24 * 60 * 60 * timeInterval) // One day in seconds
         let adjustedDueDate = duedate.addingTimeInterval(-oneDayInSeconds)
 
         // Calculate the time interval between the adjusted due date and the current time
@@ -38,7 +38,7 @@ class NotificationManager {
         if timeUntilAdjustedDueDate > 0 {
             // Create content for the notification
             let content = UNMutableNotificationContent()
-            content.title = "Deadline Coming😱"
+            content.title = "Deadline😱"
             content.body = description
             content.sound = .default
 
@@ -59,10 +59,10 @@ class NotificationManager {
     }
 
     //func to update notification time
-    func updateDueDate(for work: PageInfo, newDueDate: Date, subtitle description: String, identifier id: String) {
+    func updateDueDate(for work: PageInfo, newDueDate: Date, subtitle description: String, identifier id: String, timeInterval: Int) {
         let currentTime = Date()
         let newDueDate = work.duedate
-        let oneDayInSeconds: TimeInterval = 24 * 60 * 60 // One day in seconds
+        let oneDayInSeconds = TimeInterval(24 * 60 * 60 * timeInterval) // One day in seconds
         let adjustedDueDate = newDueDate.addingTimeInterval(-oneDayInSeconds)
         let timeUntilNewDueDate = adjustedDueDate.timeIntervalSince(currentTime)
 
@@ -75,7 +75,7 @@ class NotificationManager {
         // Schedule a new notification if the new due date is in the future
         if timeUntilNewDueDate > 0 {
             let content = UNMutableNotificationContent()
-            content.title = "Work Due Soon"
+            content.title = "Work Due"
             content.body = description
 
             let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeUntilNewDueDate, repeats: false)
