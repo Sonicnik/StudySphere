@@ -17,14 +17,14 @@ struct BioPage: View {
     var body: some View {
         NavigationStack {
             List {
-                Section(header: Text("INFO")) {
+                Section(header: Text("Setting.secInfo-String")) {
                     VStack {
                         Image("LaunchScreen")
                             .resizable()
                             .frame(width: 100, height: 100)
                             .clipShape(RoundedRectangle(cornerRadius: 15))
                         
-                        Text("StudySphere is an application that's developed by a small group of the students in YCIS year 12. With this app, we hope to help students keep up with their deadlines without spending time organizing what to do.")
+                        Text("Bio.Intro-String")
                             .font(.callout)
                             .foregroundColor(.gray)
                         
@@ -35,10 +35,10 @@ struct BioPage: View {
                     
                 }
                 
-                Section(header: Text("FeedBack")) {
-                    Link("Check out our Github Repository 🤩", destination: GITURL)
+                Section(header: Text("Bio.secFeb")) {
+                    Link("Bio.Git-String", destination: GITURL)
                         .font(.headline)
-                    Link("Follow us on Instagram ❤️", destination: IGURL)
+                    Link("Bio.ins-String", destination: IGURL)
                         .font(.headline)
                     
                 }
@@ -47,7 +47,7 @@ struct BioPage: View {
                 
             }
         }
-        .navigationBarTitle(Text("Who are we?"), displayMode: .inline)
+        .navigationBarTitle(Text("Bio.title-String"), displayMode: .inline)
 
         
         

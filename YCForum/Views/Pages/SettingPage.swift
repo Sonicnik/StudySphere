@@ -17,7 +17,7 @@ struct SettingPage: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Basics")) {
+                Section(header: Text("Setting.secBasic-String")) {
                     NavigationLink(destination: TimeSelectorView(avaliableTime: $avaliableTime)) {
                         TimeView(avaliableTime: $avaliableTime)
                     }
@@ -27,23 +27,23 @@ struct SettingPage: View {
                     }
                 }
                 
-                Section(header: Text("INFO")) {
+                Section(header: Text("Setting.secInfo-String")) {
                     NavigationLink(destination: BioPage()) {
                         BioView()
                     }
                     
-                    Button("Introduction Page") {
+                    Button("Setting.introPage-String") {
                         preIntro = true
                     }
                     .padding()
                     
-                    Link("Give us feedback to improve🌹", destination: feedBackURL)
+                    Link("Setting.feedback-String", destination: feedBackURL)
                         .font(.headline)
                         .padding()
                 }
                 
             }
-            .navigationTitle(Text("Settings"))
+            .navigationTitle(Text("Setting.title-String"))
         }
     }
 }
