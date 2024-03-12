@@ -13,7 +13,7 @@ struct SetSubject: View {
     var body: some View {
         
         HStack {
-            Text("Subjects")
+            Text("Setting.subjectsChoice-String")
             Spacer()
         }
         .accentColor(.blue)

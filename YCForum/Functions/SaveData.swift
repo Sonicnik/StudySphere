@@ -9,7 +9,7 @@ import SwiftUI
 
 @MainActor
 class storePageInfo: ObservableObject {
-    @Published var infoData: [PageInfo] = []
+    @Published var infoData: [MetaPageInfo] = []
     private static func fetchDirectory() throws -> URL {
         try FileManager.default.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: false)
             .appendingPathComponent("info.data")
@@ -17,7 +17,7 @@ class storePageInfo: ObservableObject {
     
 
     // Method to save data
-    func SaveInfo(infos:[PageInfo]) async throws {
+    func SaveInfo(infos:[MetaPageInfo]) async throws {
         let task = Task {
             let data = try JSONEncoder().encode(infos)
             let outfile = try Self.fetchDirectory()
@@ -32,12 +32,12 @@ class storePageInfo: ObservableObject {
 
     // Method to load data
     func LoadInfo() async throws {
-        let task = Task<[PageInfo], Error> {
+        let task = Task<[MetaPageInfo], Error> {
             let directory = try Self.fetchDirectory()
             guard let data = try? Data(contentsOf: directory) else {
                 return []
             }
-            let pageInfo = try JSONDecoder().decode([PageInfo].self, from: data)
+            let pageInfo = try JSONDecoder().decode([MetaPageInfo].self, from: data)
             return pageInfo
         }
         let info = try await task.value

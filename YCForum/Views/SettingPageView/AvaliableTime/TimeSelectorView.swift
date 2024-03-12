@@ -28,7 +28,6 @@ struct TimeSelectorView: View {
                         Text("6").tag("6")
                 }
                 .pickerStyle(.wheel)
-                Spacer()
             }
             .onDisappear(perform: {
                 SaveAvaliableTime()

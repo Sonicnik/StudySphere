@@ -9,13 +9,13 @@ import SwiftUI
 
 struct dateCardView: View {
     
-    var metaInfo: MetaPageInfo
+    @Binding var metaInfo: MetaPageInfo
     var body: some View {
         
         if !metaInfo.pageinfo.isEmpty {
-            Group {                    
-                ForEach(metaInfo.pageinfo) {info in
-                    NavigationLink(destination: DetailPage(info: .constant(PageInfo.sampleData[0]), selectedSubject: .constant([.BM, .Chinese, .Economics]))){
+            Group {
+                ForEach($metaInfo.pageinfo) {$info in
+                    NavigationLink(destination: DetailPage(info: $info, selectedSubject: .constant([.BM, .Chemistry]))){
                             VStack(alignment: .leading, spacing: 10) {
                                 
                                 
@@ -56,5 +56,5 @@ struct dateCardView: View {
 }
 
 #Preview {
-    dateCardView(metaInfo: sampleMetaPageInfo[1])
+    dateCardView(metaInfo: .constant(MetaPageInfo.sampleMetaPageInfo[1]))
 }

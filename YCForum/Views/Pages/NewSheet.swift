@@ -18,6 +18,8 @@ struct NewSheet: View {
     
     @Binding var selectedSubject: Set<Subject>
     
+    var currentDate: Date
+    
     let notificationMag = NotificationManager.instance
     
     
@@ -38,7 +40,10 @@ struct NewSheet: View {
                                 notificationMag.scheduleNotification(for: newPage,
                                                                      at: newPage.duedate,
                                                                      subtitle: "\(newPage.subjects) \(newPage.formats) is due tomorrow!",
-                                                                     identifier: newPage.id)
+                                                                     identifier: newPage.id + "tmr", timeInterval: 1)
+                                notificationMag.scheduleNotification(for: newPage, at: newPage.duedate,
+                                                                     subtitle: "\(newPage.subjects) \(newPage.formats) is due RIGHTNOW!",
+                                                                     identifier: newPage.id + "td", timeInterval: 0)
                             } else if newPage.subjects == .noChoice {
                                 subjectError = true
                                
@@ -52,6 +57,9 @@ struct NewSheet: View {
                         }
                     }
                 }
+                .onAppear(perform: {
+                    newPage.duedate = currentDate
+                })
                 .navigationTitle("Add More Work 😤")
         }
         
@@ -60,6 +68,6 @@ struct NewSheet: View {
 
 struct NewSheet_Previews: PreviewProvider {
     static var previews: some View {
-        NewSheet(infos: .constant(PageInfo.sampleData), isPresentingNewEditView: .constant(true), selectedSubject: .constant([.BM, .Chemistry]))
+        NewSheet(infos: .constant(PageInfo.sampleData), isPresentingNewEditView: .constant(true), selectedSubject: .constant([.BM, .Chemistry]), currentDate: Date())
     }
 }

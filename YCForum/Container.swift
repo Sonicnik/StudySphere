@@ -15,19 +15,20 @@ struct Container: View {
     @ObservedObject private var avaliableTime = saveTime()
     @State var preIntro = false
     @State private var showIntroDelayed = false
+    @State private var extractedPageInfos: [PageInfo] = []
     let defaults = UserDefaults.standard
     
     var body: some View {
         TabView {
             //Calendar
-            CustomeCalendar()
+            CustomeCalendar(info: $infoss.infoData, saveAction: {})
                 .tabItem {
                     Image(systemName: "calendar")
                     Text("Calendar")
                 }
             
             //Main
-            Mainpage(info: $infoss.infoData, selectedSubject: $saveSettings.selectedSubject, preIntro: $preIntro, avaliableTime: $avaliableTime.avaliableTime){
+            Mainpage(info: $extractedPageInfos, metapageinfo: $infoss.infoData ,selectedSubject: $saveSettings.selectedSubject, preIntro: $preIntro, avaliableTime: $avaliableTime.avaliableTime){
             
             }
             .tabItem {
@@ -46,6 +47,9 @@ struct Container: View {
             Task {
                 do {
                     try await infoss.LoadInfo()
+                    
+                    self.extractedPageInfos = extractPageInfo(from: infoss.infoData)
+                    
                 } catch {
                     // Handle errors appropriately
                     print("Error loading data: \(error.localizedDescription)")
@@ -75,6 +79,19 @@ struct Container: View {
                 }
             
         }
+    }
+}
+
+extension Container {
+    func extractPageInfo(from metaPageInfos: [MetaPageInfo]) -> [PageInfo] {
+        
+        
+        
+        var allPageInfos: [PageInfo] = []
+        for metaPageInfo in metaPageInfos {
+            allPageInfos.append(contentsOf: metaPageInfo.pageinfo)
+        }
+        return allPageInfos
     }
 }
 

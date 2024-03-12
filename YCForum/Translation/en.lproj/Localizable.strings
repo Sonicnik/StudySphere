@@ -1,0 +1,23 @@
+// EmptyView.swift
+"EmptyView.title-String" = "There are no work to do!!";
+"EmptyView.Intro-String" = "Are you working towards your goals?";
+"EmptyView.button-String" = "Add New Task ✊";
+
+// SettingPage.swift
+"Setting.title-String" = "Settings";
+"Setting.workHour-String" = "Working hours each day:";
+"Setting.subjectsChoice-String" = "My subject choices";
+"Setting.abtUs-String" = "About Us";
+"Setting.introPage-String" = "Introduction Page";
+"Setting.feedback-String" = "Give us feedback!🌹";
+"Setting.secBasic-String" = "Basic";
+"Setting.secInfo-String" = "info";
+
+// Abt Us
+"Bio.Intro-String" = "StudySphere is an application that's developed by a small group of the students in YCIS year 12. With this app, we hope to help students keep up with their deadlines without spending time organizing what to do.";
+"Bio.secFeb-String" = "FeedBack";
+"Bio.Git-String" = "Check out our Github Repository 🤩";
+"Bio.ins-String" = "Follow us on Instagram ❤️";
+"Bio.title-String" = "Who are we?";
+
+

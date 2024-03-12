@@ -9,11 +9,21 @@ import SwiftUI
 
 struct CustomeCalendar: View {
     
+    @Binding var info: [MetaPageInfo]
+    
     @State var currentDate: Date = Date()
     
-    @State var currentMonth: Int = 0
+    @Environment(\.scenePhase) private var scenePhase
+    
+    @State var currentMonth: Int = 0 
+    
+    @Environment(\.colorScheme) var colorScheme
+    
+    @StateObject private var stores = storePageInfo()
     
     var absoluteDate: Date = Date()
+    
+    let saveAction: () -> ()
     
     var body: some View {
         
@@ -59,6 +69,7 @@ struct CustomeCalendar: View {
                     
                     
                 }
+                
                 .padding(.horizontal)
                 
                 // Day View
@@ -68,16 +79,19 @@ struct CustomeCalendar: View {
                             .font(.callout)
                             .fontWeight(.semibold)
                             .frame(maxWidth: .infinity)
+                            
                     }
                 }
                 
                 // Dates
                 let columns = Array(repeating: GridItem(.flexible()), count: 7)
                 
+                
+                
                 LazyVGrid(columns: columns, spacing: 15) {
                     
                     ForEach(extractDate()){value in
-                        NavigationLink(destination: datePage(metaInfo: .constant(sampleMetaPageInfo[0]))){
+                        NavigationLink(destination: datePage(metaInfo: $info, dates: value.date)){
                             dateCardView(value: value)
                                 .background(
                                     Capsule()
@@ -88,17 +102,53 @@ struct CustomeCalendar: View {
                                 )
                         }
                         
+                        
                     }
                 }
+                .transition(.asymmetric(insertion: .move(edge: .trailing).combined(with: .opacity), removal: .move(edge: .leading).combined(with: .opacity)))
+                .animation(.easeInOut(duration: 0.5), value: currentMonth)
                 
                 Spacer()
             }
+            .gesture(
+                DragGesture()
+                    .onEnded { value in
+                        if value.translation.width > 100 {
+                            // Swipe right, previous month
+                            withAnimation {
+                                currentMonth -= 1
+                            }
+                        } else if value.translation.width < -100 {
+                            // Swipe left, next month
+                            withAnimation {
+                                currentMonth += 1
+                            }
+                        }
+                    }
+            )
+            .padding()
+            
             .onChange(of: currentMonth){ newValue in
                 
                 //Update Month
                 currentDate = getCurrentMonth()
+            }
+            
         }
-        }
+        .onDisappear( perform: {
+            Task {
+                do {
+                    try await stores.SaveInfo(infos: info)
+                    print(info)
+                } catch {
+                    print("Failed to save MetaPageInfo: \(error.localizedDescription)")
+                }
+            }
+        })
+        
+        
+        
+        
     }
     
     @ViewBuilder
@@ -107,19 +157,20 @@ struct CustomeCalendar: View {
         VStack{
             
             if value.day != -1 {
-                if let task = sampleMetaPageInfo.first(where: { task in
+                if let task = info.first(where: { task in
                     
                     return isSameDay(date1: task.pageDate, date2: value.date)
                 }) {
                     Text("\(value.day)")
                         .font(.callout.bold())
-                        .foregroundColor(isSameDay(date1: value.date, date2: absoluteDate) ? .white: .black)
+                        .foregroundColor(isSameDay(date1: value.date, date2: absoluteDate) ? .white : (colorScheme == .dark ? .white : .black))
                         .frame(maxWidth: .infinity)
+
                     
                     Spacer()
                     //Add matching colors to the circle of the day and subjects
                     Circle()
-                        .fill(isSameDay(date1: task.pageDate, date2: currentDate) ? .white : Color(.indigo))
+                        .fill(isSameDay(date1: task.pageDate, date2: currentDate) ? .white : Color(.sky))
                         .frame(width: 8, height: 8)
                         
                 }
@@ -127,7 +178,7 @@ struct CustomeCalendar: View {
                     
                     Text("\(value.day)")
                         .font(.callout.bold())
-                        .foregroundColor(isSameDay(date1: value.date, date2: absoluteDate) ? .white: .black)
+                        .foregroundColor(isSameDay(date1: value.date, date2: absoluteDate) ? .white : (colorScheme == .dark ? .white : .black))
                         .frame(maxWidth: .infinity)
                     
                     
@@ -142,5 +193,5 @@ struct CustomeCalendar: View {
 }
 
 #Preview {
-    CustomeCalendar()
+    CustomeCalendar(info: .constant(MetaPageInfo.sampleMetaPageInfo), saveAction: {})
 }

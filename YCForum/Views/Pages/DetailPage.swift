@@ -28,7 +28,8 @@ struct DetailPage: View {
                             notificationMag.updateDueDate(for: editingInfo,
                                                           newDueDate: editingInfo.duedate,
                                                           subtitle: "Your \(editingInfo.subjects)'s \(editingInfo.formats) is marked done and due tomorrow, double check if you finished the work.",
-                                                          identifier: editingInfo.id)
+                                                          identifier: editingInfo.id + "tmr", timeInterval: 1)
+                            notificationMag.updateDueDate(for: editingInfo, newDueDate: editingInfo.duedate, subtitle: "Did you finish your work? \(editingInfo.title) \(editingInfo.subjects) is due.", identifier: editingInfo.id + "td", timeInterval: 0)
                         }) {
                             Label("Done?", systemImage: info.isDone ? "checkmark.circle.fill" : "circle")
                         }
@@ -139,7 +140,8 @@ struct DetailPage: View {
                                 notificationMag.updateDueDate(for: editingInfo,
                                                               newDueDate: editingInfo.duedate,
                                                               subtitle: "Your \(editingInfo.subjects)'s \(editingInfo.formats) is due tomorrow!!",
-                                                              identifier: editingInfo.id)
+                                                              identifier: editingInfo.id, timeInterval: 1)
+                                notificationMag.updateDueDate(for: editingInfo, newDueDate: editingInfo.duedate, subtitle: "Did you finish your work? \(editingInfo.title) \(editingInfo.subjects) is due.", identifier: editingInfo.id + "td", timeInterval: 0)
                                 
                             }
                         }
@@ -153,7 +155,7 @@ extension DetailPage {
     func shortenString(_ input: String) -> String {
         if input.count > 10 {
             let shortenedString = String(input.prefix(10)) + "..."
-            print(shortenedString)
+            
             return shortenedString
         } else {
             return input
