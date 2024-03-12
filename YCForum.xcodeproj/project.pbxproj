@@ -56,6 +56,8 @@
 		7AEACC152B18669F00387C6E /* IntroPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEACC142B18669F00387C6E /* IntroPageView.swift */; };
 		7AEACC172B1868D500387C6E /* introPages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEACC162B1868D500387C6E /* introPages.swift */; };
 		7AF5871D2AAD68D100D2071B /* datePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF5871C2AAD68D100D2071B /* datePicker.swift */; };
+		7AFC06E52B9F0A7D004E86D0 /* UIMainpage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC06E42B9F0A7D004E86D0 /* UIMainpage.swift */; };
+		7AFC06E82B9F0BF9004E86D0 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFC06E72B9F0BF9004E86D0 /* UINavigationBar.swift */; };
 		7AFECE752A5AA4B900256CA2 /* NewSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AFECE742A5AA4B900256CA2 /* NewSheet.swift */; };
 /* End PBXBuildFile section */
 
@@ -110,6 +112,8 @@
 		7AEACC142B18669F00387C6E /* IntroPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageView.swift; sourceTree = "<group>"; };
 		7AEACC162B1868D500387C6E /* introPages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = introPages.swift; sourceTree = "<group>"; };
 		7AF5871C2AAD68D100D2071B /* datePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datePicker.swift; sourceTree = "<group>"; };
+		7AFC06E42B9F0A7D004E86D0 /* UIMainpage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIMainpage.swift; sourceTree = "<group>"; };
+		7AFC06E72B9F0BF9004E86D0 /* UINavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
 		7AFECE742A5AA4B900256CA2 /* NewSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewSheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -272,6 +276,7 @@
 		7A977F762AB3164F0033062D /* Pages */ = {
 			isa = PBXGroup;
 			children = (
+				7AFC06E32B9F0A62004E86D0 /* MainPage */,
 				7AFECE742A5AA4B900256CA2 /* NewSheet.swift */,
 				7A568DC82A58F53C00F907CA /* MainPage.swift */,
 				7A568DD12A58FCF700F907CA /* DetailPage.swift */,
@@ -358,6 +363,23 @@
 			path = Introduction;
 			sourceTree = "<group>";
 		};
+		7AFC06E32B9F0A62004E86D0 /* MainPage */ = {
+			isa = PBXGroup;
+			children = (
+				7AFC06E62B9F0A93004E86D0 /* ViewInMainPage */,
+				7AFC06E42B9F0A7D004E86D0 /* UIMainpage.swift */,
+			);
+			path = MainPage;
+			sourceTree = "<group>";
+		};
+		7AFC06E62B9F0A93004E86D0 /* ViewInMainPage */ = {
+			isa = PBXGroup;
+			children = (
+				7AFC06E72B9F0BF9004E86D0 /* UINavigationBar.swift */,
+			);
+			path = ViewInMainPage;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -433,6 +455,7 @@
 				7A5965612B5D3A740047F426 /* dateCardView.swift in Sources */,
 				7AEACC0C2B18471000387C6E /* choiceOfSubject.swift in Sources */,
 				7A568DBA2A58F46200F907CA /* Agenda.swift in Sources */,
+				7AFC06E82B9F0BF9004E86D0 /* UINavigationBar.swift in Sources */,
 				7AA2BA3B2AF50CFD00FEC478 /* Settings.swift in Sources */,
 				7AA2BA392AF4FF4800FEC478 /* TimeView.swift in Sources */,
 				7AEACC152B18669F00387C6E /* IntroPageView.swift in Sources */,
@@ -460,6 +483,7 @@
 				7A58AD762AF7CA55002F3C44 /* timeSelectionPicker.swift in Sources */,
 				7A568DCE2A58FAF000F907CA /* CardView.swift in Sources */,
 				7A5965562B5BE81E0047F426 /* DateValue.swift in Sources */,
+				7AFC06E52B9F0A7D004E86D0 /* UIMainpage.swift in Sources */,
 				7A568DD82A5901A300F907CA /* ThemeView.swift in Sources */,
 				7A64C9202B84B2310025FF0E /* EmptyDate.swift in Sources */,
 				7A24B84E2B29D4A600CB2AA0 /* saveTime.swift in Sources */,

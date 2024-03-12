@@ -42,13 +42,17 @@ struct introPages: View {
                     }
                     
                     if page == pages[2] {
-                        SelectionOFSubject()
-                        Spacer()
-                        Button("Next") {
-                            incrementPage()
+                        ZStack{
+                            VStack{
+                                SelectionOFSubject()
+                            }
+                            Button("Next") {
+                                incrementPage()
+                            }
+                            .buttonStyle(.borderedProminent)
+                            
                         }
-                        .buttonStyle(.borderedProminent)
-                        Spacer()
+                        
                     }
                     
                     if page == pages.last {
