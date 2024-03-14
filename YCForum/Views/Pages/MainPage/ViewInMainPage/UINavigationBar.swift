@@ -11,12 +11,21 @@ struct UINavigationBar: View {
     var body: some View {
         HStack{
             Text("Home")
-                .font(.title)
+                .font(.title).bold()
                 .foregroundStyle(.primary)
-                .padding()
+                
             Spacer()
+            Image(systemName: "info.circle.fill")
+                .font(.system(size: 28))
+                .frame(width: 44, height: 44, alignment: .trailing)
         }
-        .frame(height: 44)
+        .frame(height: 52)
+        .padding()
+        .padding(.top, 49)
+        .backgroundBlur(radius: 20, opaque: true)
+        .background()
+        .frame(maxHeight: .infinity, alignment: .top)
+        .ignoresSafeArea()
     }
 }
 
