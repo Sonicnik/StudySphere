@@ -47,6 +47,7 @@
 		7AA2BA392AF4FF4800FEC478 /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2BA382AF4FF4800FEC478 /* TimeView.swift */; };
 		7AA2BA3B2AF50CFD00FEC478 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA2BA3A2AF50CFD00FEC478 /* Settings.swift */; };
 		7AB2A3562AA196E5003722E9 /* SaveData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB2A3552AA196E5003722E9 /* SaveData.swift */; };
+		7AB88EFC2BA2B93900CD04A8 /* datecardViewUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AB88EFB2BA2B93900CD04A8 /* datecardViewUI.swift */; };
 		7AC0EF0E2B89920D00B5A26F /* MyDatePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC0EF0D2B89920D00B5A26F /* MyDatePicker.swift */; };
 		7AC6ED3C2B0CC95C00FF43DC /* BioPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC6ED3B2B0CC95C00FF43DC /* BioPage.swift */; };
 		7AC6ED3E2B0CCF2100FF43DC /* BioView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC6ED3D2B0CCF2100FF43DC /* BioView.swift */; };
@@ -106,6 +107,7 @@
 		7AA2BA382AF4FF4800FEC478 /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
 		7AA2BA3A2AF50CFD00FEC478 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		7AB2A3552AA196E5003722E9 /* SaveData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveData.swift; sourceTree = "<group>"; };
+		7AB88EFB2BA2B93900CD04A8 /* datecardViewUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datecardViewUI.swift; sourceTree = "<group>"; };
 		7AC0EF0D2B89920D00B5A26F /* MyDatePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyDatePicker.swift; sourceTree = "<group>"; };
 		7AC6ED3B2B0CC95C00FF43DC /* BioPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioPage.swift; sourceTree = "<group>"; };
 		7AC6ED3D2B0CCF2100FF43DC /* BioView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BioView.swift; sourceTree = "<group>"; };
@@ -393,6 +395,7 @@
 			children = (
 				7AFC06E72B9F0BF9004E86D0 /* UINavigationBar.swift */,
 				7AC9600D2BA1E82F00831A2F /* MiniCalendar.swift */,
+				7AB88EFB2BA2B93900CD04A8 /* datecardViewUI.swift */,
 			);
 			path = ViewInMainPage;
 			sourceTree = "<group>";
@@ -509,6 +512,7 @@
 				7A995AEC2AE37A0D00A29AE8 /* Setinfo.swift in Sources */,
 				7A59655B2B5D34E20047F426 /* pagenewpage.swift in Sources */,
 				7A0615162ABFD3EF00779D31 /* Notificaton.swift in Sources */,
+				7AB88EFC2BA2B93900CD04A8 /* datecardViewUI.swift in Sources */,
 				7AFECE752A5AA4B900256CA2 /* NewSheet.swift in Sources */,
 				7AC0EF0E2B89920D00B5A26F /* MyDatePicker.swift in Sources */,
 				7A995AEE2AE3F41700A29AE8 /* TimeSelectorView.swift in Sources */,

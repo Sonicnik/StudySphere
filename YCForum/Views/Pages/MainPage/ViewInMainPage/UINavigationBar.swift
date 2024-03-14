@@ -24,7 +24,6 @@ struct UINavigationBar: View {
         .padding(.top, 49)
         .backgroundBlur(radius: 20, opaque: true)
         .background()
-        .frame(maxHeight: .infinity, alignment: .top)
         .ignoresSafeArea()
     }
 }

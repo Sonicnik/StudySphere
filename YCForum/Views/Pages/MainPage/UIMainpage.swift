@@ -8,9 +8,13 @@
 import SwiftUI
 
 struct UIMainpage: View {
+    @Binding var info: [MetaPageInfo]
+    
     var body: some View {
         VStack {
             UINavigationBar()
+            MiniCalendar(info: $info)
+            Spacer()
             
             
         }
@@ -18,5 +22,5 @@ struct UIMainpage: View {
 }
 
 #Preview {
-    UIMainpage()
+    UIMainpage(info: .constant(MetaPageInfo.sampleMetaPageInfo))
 }
