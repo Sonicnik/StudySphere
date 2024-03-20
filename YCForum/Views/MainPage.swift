@@ -43,11 +43,13 @@ struct Mainpage: View {
                             ForEach($info) {$info in
                                 NavigationLink(destination: DetailPage(info: $info, selectedSubject: $saveSettings.selectedSubject)) {
                                     CardView(info: info)
+                                        .padding(.vertical, 5)
                                 }
                                 .onAppear(perform: {
                                     sortData(avaible: avaliableTime)
                                 })
-                                .listRowBackground(subjectColor(subject: info.subjects))
+                                
+                                .listRowSeparator(.hidden)
                                 
                             }
                             .onDelete(perform: deleteItem)
@@ -86,7 +88,7 @@ struct Mainpage: View {
                             }
 
                         }
-                        .listStyle(InsetGroupedListStyle())
+                        .listStyle(.plain)
                         
                         Spacer()
                     }

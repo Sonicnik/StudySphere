@@ -12,10 +12,11 @@ struct CardView: View {
     let info: PageInfo
     
     var body: some View {
-        VStack(alignment: .leading) {
+        VStack(alignment: .leading, spacing: 15) {
             HStack {
                 Image(systemName: info.isDone ? "checkmark.circle.fill" : "circle")
-                    .font(.title2)
+                    .font(.title)
+                
                 
                 Text(shortenString(info.title))
                     .font(.title2)
@@ -23,32 +24,30 @@ struct CardView: View {
                     .padding(.leading)
                     .accessibilityAddTraits(.isHeader)
                 
+                Spacer()
                 
+                Text(info.duedate.formatted(date: .abbreviated, time: .omitted))
+                    .font(.caption)
+                    .fontWeight(.medium)
+                    .foregroundColor(Color.secondary)
                 
             }
-            .padding(.top)
             
-            //+ " - " + info.subjects.name
             Text(info.subjects.name + " - " + info.formats.name)
-                .font(.callout)
-                .fontWeight(.medium)
-                .accessibilityAddTraits(.isHeader)
-                .padding()
+                .font(.footnote)
+                .fontWeight(.regular)
             
             HStack {
                 Text("Est Time: " + calculatedTime(eTime: info.eTime))
                     .font(.caption)
-                    .multilineTextAlignment(.leading)
-                Text(info.duedate.formatted(date: .abbreviated, time: .omitted))
-                    .font(.caption2)
-                    .padding(.horizontal)
-                }
-            .padding([.leading, .bottom, .trailing])
-
-                        
+                    .fontWeight(.regular)
+                
+            }
         }
         .padding()
-        .foregroundColor(info.isHidden ? Color(.gray) : info.theme.accentColor)
+        .background(LinearGradient(gradient: Gradient(colors: [info.theme.mainColor.opacity(1), info.theme.accentColor.opacity(0.5)]), startPoint: .topLeading, endPoint: .bottomTrailing))
+        .cornerRadius(10)
+        .shadow(color: .gray, radius: 5, x: 0, y: 2)
     }
 }
 
@@ -73,6 +72,71 @@ extension CardView {
             return input
         }
     }
+    
+    
+    
+    func subjectColor(subject: Subject) -> Color{
+        var color: Theme = .bubblegum
+        
+        switch subject{
+        case .Economics:
+            color = .purple
+            
+        case .BM:
+            color = .bubblegum
+            
+        case .Chemistry:
+            color = .periwinkle
+            
+        case .CS:
+            color = .magenta
+            
+        case .Mathematics:
+            color = .seafoam
+            
+        case .Physics:
+            color = .sky
+            
+        case .Chinese:
+            color = .tan
+            
+        case .English:
+            color = .teal
+            
+        case .VA:
+            color = .buttercup
+            
+        case .DT:
+            color = .sky
+            
+        case .Psychology:
+            color = .magenta
+            
+        case .ESS:
+            color = .sky
+            
+        case .TOK:
+            color = .poppy
+            
+        case .CAS:
+            color = .periwinkle
+            
+        case .EE:
+            color = .tan
+            
+        case .Biology:
+            color = .seafoam
+        case .noChoice:
+            color = .sky
+        case .History:
+            color = .bubblegum
+        case .Geography:
+            color = .magenta
+        }
+        
+        return color.mainColor
+
+    }
 
     
 }
@@ -81,7 +145,6 @@ struct CardView_Previews: PreviewProvider {
     static var info = PageInfo.sampleData[0]
     static var previews: some View {
         CardView(info: info)
-            .background(info.theme.mainColor)
             .previewLayout(.fixed(width: 400, height: 60))
     }
 }
