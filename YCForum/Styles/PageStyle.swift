@@ -45,7 +45,7 @@ struct PageInfo: Identifiable, Codable, Equatable {
 
 extension PageInfo {
     static var emptyPage: PageInfo {
-        PageInfo(title: "", subjects: .noChoice, formats: .Exam, detail:"", theme: .sky, duedate: Date(), isDone: false, isHidden: false, eTime: 0)
+        PageInfo(title: "", subjects: .noChoice, formats: .exam, detail:"", theme: .sky, duedate: Date(), isDone: false, isHidden: false, eTime: 0)
     }
 
 }
@@ -56,7 +56,7 @@ extension PageInfo {
     [
         PageInfo(title: "Paper 1 Revision",
                  subjects: .Chinese,
-                 formats: .Exam,
+                 formats: .exam,
                  detail: "90mins",
                  theme: .lavender,
                  duedate: Date(),
@@ -66,7 +66,7 @@ extension PageInfo {
                  
         PageInfo(title:"Writing a reflection",
                  subjects: .English,
-                 formats: .Homework,
+                 formats: .homework,
                  detail: " ",
                  theme: .sky,
                  duedate: Date(),
@@ -76,7 +76,7 @@ extension PageInfo {
         
         PageInfo(title:"Test Revision",
                  subjects: .Mathematics,
-                 formats: .Test,
+                 formats: .test,
                  detail: "Unit1-3",
                  theme: .indigo,
                  duedate: Date(),

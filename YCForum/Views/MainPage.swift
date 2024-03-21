@@ -31,7 +31,7 @@ struct Mainpage: View {
                     
                     VStack {
                         EmptyView(isPresentingNewEditView: $isPresentingNewEditView)
-                        Button("Don't know what to do?") {
+                        Button("Mainpage.Introprompt-String") {
                             preIntro = true
                         }
                     }
@@ -93,7 +93,7 @@ struct Mainpage: View {
                 }
                 
             }
-            .navigationTitle("All")
+            .navigationTitle("Mainpage.All-String")
             .toolbar {
                 EditButton()
                 Button(action: {
@@ -101,7 +101,7 @@ struct Mainpage: View {
                 }) {
                     Image(systemName: "plus")
                 }
-                .accessibilityLabel("New")
+                .accessibilityLabel("Mainpage.New-string")
             }
         }
         

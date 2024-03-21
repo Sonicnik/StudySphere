@@ -37,6 +37,6 @@ struct PickerView: View {
 
 struct ThemePicker_Previews: PreviewProvider {
     static var previews: some View {
-        PickerView(selectTheme: .constant(.periwinkle), selectSubject: .constant(.Mathematics), selectFormat: .constant(.Exam), selectedSubject: .constant([.BM,.Chinese,.Economics,.English]))
+        PickerView(selectTheme: .constant(.periwinkle), selectSubject: .constant(.Mathematics), selectFormat: .constant(.exam), selectedSubject: .constant([.BM,.Chinese,.Economics,.English]))
     }
 }

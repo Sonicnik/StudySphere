@@ -29,7 +29,7 @@ struct CardView: View {
             .padding(.top)
             
             //+ " - " + info.subjects.name
-            Text(info.subjects.name + " - " + info.formats.name)
+            Text(info.subjects.name + " - " + info.formats.localizedName)
                 .font(.callout)
                 .fontWeight(.medium)
                 .accessibilityAddTraits(.isHeader)

@@ -8,18 +8,18 @@
 import SwiftUI
 
 enum Format: String, CaseIterable, Codable {
-    case Homework
-    case Exam
-    case Test
-    case Project
-    case Event
-    case Coursework
+    case homework = "Homework"
+    case exam = "Exam"
+    case test = "Test"
+    case project = "Project"
+    case event = "Event"
+    case coursework = "Coursework"
     
-    var name: String {
-        rawValue.capitalized
+    var localizedName: String {
+        NSLocalizedString(self.rawValue + "-String", tableName: nil, bundle: .main, value: "**\(self.rawValue)**", comment: "")
     }
-    
 }
+
 
 extension Format: Identifiable {
     var id:RawValue{

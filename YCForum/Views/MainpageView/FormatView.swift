@@ -10,7 +10,7 @@ import SwiftUI
 struct FormatView: View {
     let format : Format
     var body: some View {
-        Text(format.name)
+        Text(format.localizedName)
             .padding(4)
             .frame(maxWidth: .infinity)
             .clipShape(RoundedRectangle(cornerRadius: 4))
@@ -19,6 +19,6 @@ struct FormatView: View {
 
 struct FormatView_Previews: PreviewProvider {
     static var previews: some View {
-        FormatView(format: .Exam)
+        FormatView(format: .exam)
     }
 }
