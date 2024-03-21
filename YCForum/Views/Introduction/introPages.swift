@@ -47,8 +47,7 @@ struct introPages: View {
                         Button("Next") {
                             incrementPage()
                         }
-                        .buttonStyle(.borderedProminent)
-                        Spacer()
+                        
                     }
                     
                     if page == pages.last {

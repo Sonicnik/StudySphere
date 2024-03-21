@@ -15,7 +15,7 @@ struct CustomeCalendar: View {
     
     @Environment(\.scenePhase) private var scenePhase
     
-    @State var currentMonth: Int = 0
+    @State var currentMonth: Int = 0 
     
     @Environment(\.colorScheme) var colorScheme
     
@@ -69,6 +69,7 @@ struct CustomeCalendar: View {
                     
                     
                 }
+                
                 .padding(.horizontal)
                 
                 // Day View
@@ -104,10 +105,29 @@ struct CustomeCalendar: View {
                         
                     }
                 }
+                .transition(.asymmetric(insertion: .move(edge: .trailing).combined(with: .opacity), removal: .move(edge: .leading).combined(with: .opacity)))
+                .animation(.easeInOut(duration: 0.5), value: currentMonth)
                 
                 Spacer()
             }
+            .gesture(
+                DragGesture()
+                    .onEnded { value in
+                        if value.translation.width > 100 {
+                            // Swipe right, previous month
+                            withAnimation {
+                                currentMonth -= 1
+                            }
+                        } else if value.translation.width < -100 {
+                            // Swipe left, next month
+                            withAnimation {
+                                currentMonth += 1
+                            }
+                        }
+                    }
+            )
             .padding()
+            
             .onChange(of: currentMonth){ newValue in
                 
                 //Update Month

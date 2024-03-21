@@ -15,8 +15,7 @@ struct CardView: View {
         VStack(alignment: .leading, spacing: 15) {
             HStack {
                 Image(systemName: info.isDone ? "checkmark.circle.fill" : "circle")
-                    .font(.title)
-                
+                    .font(.title2)
                 
                 Text(shortenString(info.title))
                     .font(.title2)

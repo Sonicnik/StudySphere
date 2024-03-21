@@ -10,7 +10,7 @@
 "Setting.abtUs-String" = "About Us";
 "Setting.introPage-String" = "Introduction Page";
 "Setting.feedback-String" = "Give us feedback!🌹";
-"Setting.secBasic-String" = "Basics";
+"Setting.secBasic-String" = "Basic";
 "Setting.secInfo-String" = "info";
 
 // Abt Us
@@ -19,5 +19,37 @@
 "Bio.Git-String" = "Check out our Github Repository 🤩";
 "Bio.ins-String" = "Follow us on Instagram ❤️";
 "Bio.title-String" = "Who are we?";
+
+// Mainpage.swift
+"Mainpage.Introprompt-String" = "Don't know what to do?";
+"Mainpage.All-String" = "All";
+"Mainpage.New-String" = "New";
+
+// Newsheet.swift
+"Newsheet.Dismiss-String" = "Dismiss";
+"Newsheet.Post-String" = "Post";
+"Newsheet.SubjectReq-String" = "Subject Required";
+"Newsheet.AddWork-String" = "Add More Work 😤";
+"%@ %@ Newsheet.DueNowNotification-String" = "%@ %@ is due RIGHTNOW!";
+"%@ %@ Newsheet.DueTmrNotification-String" = "%@ %@ is due tomorrow!";
+
+
+// Format.swift
+"Homework-String" = "Homework";
+"Exam-String" = "Exam";
+"Test-String" = "Test";
+"Project-String" = "Project";
+"Event-String" = "Event";
+"Coursework-String" = "Coursework";
+
+//datePage.swift
+"Format.AddTask-String" = "Add New Task";
+
+//DetailPage.swift
+"DetailPage.WorkFinished-String" = "Let's Go!!😎";
+"DetailPage.WorkUnfinished-String" = "Almost there! 🤯";
+"DetailPage.WorkUndue-String" = "Not for today (Chill bro)";
+"DetailPage.WorkDue-String" = "Needed to be finished Today!!";
+"DetailPage.CheckForStats-String" = "Done?";
 
 

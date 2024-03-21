@@ -31,11 +31,11 @@ struct DetailPage: View {
                                                           identifier: editingInfo.id + "tmr", timeInterval: 1)
                             notificationMag.updateDueDate(for: editingInfo, newDueDate: editingInfo.duedate, subtitle: "Did you finish your work? \(editingInfo.title) \(editingInfo.subjects) is due.", identifier: editingInfo.id + "td", timeInterval: 0)
                         }) {
-                            Label("Done?", systemImage: info.isDone ? "checkmark.circle.fill" : "circle")
+                            Label("DetailPage.CheckForStats-String", systemImage: info.isDone ? "checkmark.circle.fill" : "circle")
                         }
                         
                         Spacer()
-                        Text(info.isDone ? "Let's Go!!😎": "Almost there! 🤯")
+                        Text(info.isDone ? "DetailPage.WorkFinished-String": "DetailPage.WorkUnfinished-String")
                             .padding(.trailing)
                         
                     }
@@ -46,7 +46,7 @@ struct DetailPage: View {
                         
                         
                         Spacer()
-                        Text(info.isHidden ? "Not for today (Chill bro)": "Needed to be finished Today!!")
+                        Text(info.isHidden ? "DetailPage.WorkUndue-string": "DetailPage.WorkDue-string")
                             .padding(.trailing)
                     }
                     .padding()
