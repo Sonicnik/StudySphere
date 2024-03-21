@@ -80,6 +80,7 @@
 "Format.project" = "Project";
 "Format.event" = "Event";
 "Format.coursework" = "Coursework";
+"Format.Customize" = "Customize...";
 
 // Section headers
 "Section" = "Section";

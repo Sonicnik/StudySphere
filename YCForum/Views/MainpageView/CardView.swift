@@ -12,43 +12,48 @@ struct CardView: View {
     let info: PageInfo
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 15) {
-            HStack {
-                Image(systemName: info.isDone ? "checkmark.circle.fill" : "circle")
-                    .font(.title2)
+            VStack(alignment: .leading, spacing: 15) {
+                HStack {
+                    Image(systemName: info.isDone ? "checkmark.circle.fill" : "circle")
+                        .font(.title2)
+                    
+                    Text(shortenString(info.title))
+                        .font(.title2)
+                        .fontWeight(.black)
+                        .padding(.leading)
+                        .accessibilityAddTraits(.isHeader)
+                    
+                    Spacer()
+                    
+                    Text(info.duedate.formatted(date: .abbreviated, time: .omitted))
+                        .font(.caption)
+                        .fontWeight(.medium)
+                        .foregroundColor(Color.secondary)
+                }
                 
-                Text(shortenString(info.title))
-                    .font(.title2)
-                    .fontWeight(.black)
-                    .padding(.leading)
-                    .accessibilityAddTraits(.isHeader)
+                if info.formats == .customize && !info.customFormat.isEmpty {
+                    Text(info.subjects.name + " - " + info.customFormat)
+                        .font(.footnote)
+                        .fontWeight(.regular)
+                } else {
+                    Text(info.subjects.name + " - " + info.formats.localizedName)
+                        .font(.footnote)
+                        .fontWeight(.regular)
+                }
                 
-                Spacer()
-                
-                Text(info.duedate.formatted(date: .abbreviated, time: .omitted))
-                    .font(.caption)
-                    .fontWeight(.medium)
-                    .foregroundColor(Color.secondary)
-                
+                HStack {
+                    Text(NSLocalizedString("CardView.EstTime-String", comment: "Estimated time") + ": " + calculatedTime(eTime: info.eTime))
+                        .font(.caption)
+                        .fontWeight(.regular)
+                }
             }
-            
-            Text(info.subjects.name + " - " + info.formats.rawValue)
-                .font(.footnote)
-                .fontWeight(.regular)
-            
-            HStack {
-                Text(NSLocalizedString("CardView.EstTime-String", comment: "Estimated time") + ": " + calculatedTime(eTime: info.eTime))
-                    .font(.caption)
-                    .fontWeight(.regular)
-                
-            }
+            .padding()
+            .background(LinearGradient(gradient: Gradient(colors: [subjectColor(subject: info.subjects).opacity(1), info.theme.accentColor.opacity(0.5)]), startPoint: .topLeading, endPoint: .bottomTrailing))
+            .cornerRadius(10)
+            .shadow(color: .gray, radius: 5, x: 0, y: 2)
         }
-        .padding()
-        .background(LinearGradient(gradient: Gradient(colors: [subjectColor(subject: info.subjects).opacity(1), info.theme.accentColor.opacity(0.5)]), startPoint: .topLeading, endPoint: .bottomTrailing))
-        .cornerRadius(10)
-        .shadow(color: .gray, radius: 5, x: 0, y: 2)
     }
-}
+
 
 extension CardView {
     func calculatedTime(eTime time: Int)-> String{

@@ -10,6 +10,7 @@ import SwiftUI
 struct EditView: View {
     @Binding var info: PageInfo
     @Binding var selectedSubject: Set<Subject>
+    @State private var customFormat: String = ""
     
     var body: some View {
         Form {
@@ -17,7 +18,13 @@ struct EditView: View {
                 
                 TextField(NSLocalizedString("EditView.TitlePlaceholder-String", comment: "Title placeholder"), text: $info.title)
                 
-                PickerView(selectTheme: $info.theme, selectSubject: $info.subjects, selectFormat: $info.formats, selectedSubject: $selectedSubject)
+                PickerView(
+                    selectTheme: $info.theme,
+                    selectSubject: $info.subjects,
+                    selectFormat: $info.formats,
+                    selectedSubject: $selectedSubject,
+                    customFormat: $customFormat
+                )
                 datePicker(selectedDate: $info.duedate)
                 
             }
@@ -34,6 +41,12 @@ struct EditView: View {
                     .multilineTextAlignment(.leading) //Left-align the text
             }
                 
+        }
+        .onAppear {
+            customFormat = info.customFormat // Set the initial value of customFormat
+        }
+        .onChange(of: customFormat) { newValue in
+            info.customFormat = newValue // Update the customFormat property of info
         }
     }
 }
