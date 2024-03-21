@@ -18,7 +18,7 @@ struct introPageType: Identifiable, Equatable {
     
     static var PreIntroPage: [introPageType] =  [
         introPageType(name: "Welcome to StudySphere!",
-                      description: "Welcome! StudySphere is an app helping IB students organise tests, assignments, and more. Our app gives you only what’s necessary to do for each day, helping you on your IB journey.",
+                      description: "Welcome! StudySphere is an app helping students to organise tests, assignments, and more. Our app gives you only what’s necessary to do for each day, streamlining your planning process.",
                       imageUrl: "IntroPage1", tag: 0),
         introPageType(name: "Get started!",
                       description: "Select your subjects and avaliable time you have each day:",
