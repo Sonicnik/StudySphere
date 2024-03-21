@@ -15,7 +15,7 @@
 // Abt Us
 "Bio.Intro-String" = "StudySphere是由YCIS 12年级的一小组学生开发的应用程序。通过这个应用程序，我们希望帮助学生在不花时间组织要做什么的情况下跟上截止日期。";
 "Bio.secFeb-String" = "反馈";
-"Bio.Git-String" = "查看我们的Github仓库🤩";
+"Bio.Git-String" = "查看我们的Github🤩";
 "Bio.ins-String" = "在Instagram上关注我们❤️";
 "Bio.title-String" = "我们是谁？";
 
@@ -27,8 +27,8 @@
 // Newsheet.swift
 "Newsheet.Dismiss-String" = "关闭";
 "Newsheet.Post-String" = "发布";
-"Newsheet.DueTmrNotification-Format" = "%@ %@明天到期";
-"Newsheet.DueNowNotification-Format" = "%@ %@现在到期";
+"Newsheet.DueTmrNotification-Format" = "%@ %@明天需要上交";
+"Newsheet.DueNowNotification-Format" = "%@ %@现在需要上交";
 "Newsheet.SubjectReq-String" = "需要选择科目";
 "Newsheet.AddWork-String" = "添加作业";
 
@@ -100,7 +100,7 @@
 // Notification subtitles
 "Your %@'s %@ is marked done and due tomorrow, double check if you finished the work." = "你的%1$@的%2$@标记为已完成并在明天到期，请仔细检查你是否完成了作业。";
 "Did you finish your work? %@ %@ is due." = "你完成作业了吗？%1$@ %2$@已到期。";
-"Your %@'s %@ is due tomorrow!!" = "你的%1$@的%2$@明天到期！！";
+"Your %@'s %@ is due tomorrow!!" = "你的%1$@的%2$@明天上交！！";
 
 //IntroPage.swift
 "IntroPage.Example-String" = "示例";
