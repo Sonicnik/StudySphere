@@ -1,0 +1,84 @@
+
+
+// Localizable.strings (Traditional Chinese)
+// EmptyView.swift
+"EmptyView.title-String" = "沒有工作要做！！";
+"EmptyView.Intro-String" = "你正在朝著你的目標努力嗎？";
+"EmptyView.button-String" = "添加新任務 ✊";
+
+// SettingPage.swift
+"Setting.title-String" = "設置";
+"Setting.workHour-String" = "每天工作時間：";
+"Setting.subjectsChoice-String" = "我的學科選擇";
+"Setting.abtUs-String" = "關於我們";
+"Setting.introPage-String" = "介紹頁";
+"Setting.feedback-String" = "給我們反饋！🌹";
+"Setting.secBasic-String" = "基本";
+"Setting.secInfo-String" = "信息";
+
+// Abt Us
+"Bio.Intro-String" = "StudySphere是由YCIS 12年級的一小組學生開發的應用程序。通過這個應用程序，我們希望幫助學生跟上截止日期，而無需花時間組織要做什麼。";
+"Bio.secFeb-String" = "反饋";
+"Bio.Git-String" = "查看我們的Github Repository 🤩";
+"Bio.ins-String" = "在Instagram上關注我們 ❤️";
+"Bio.title-String" = "我們是誰？";
+
+// Mainpage.swift
+"Mainpage.Introprompt-String" = "不知道要做什麼？";
+"Mainpage.All-String" = "全部";
+"Mainpage.New-String" = "新";
+
+// Newsheet.swift
+"Newsheet.Dismiss-String" = "關閉";
+"Newsheet.Post-String" = "發布";
+"Newsheet.SubjectReq-String" = "需要學科";
+"Newsheet.AddWork-String" = "添加更多工作 😤";
+"%@ %@ Newsheet.DueNowNotification-String" = "%@ %@ 現在到期！";
+"%@ %@ Newsheet.DueTmrNotification-String" = "%@ %@ 明天到期！";
+
+// Format.swift
+"Homework-String" = "家庭作業";
+"Exam-String" = "考試";
+"Test-String" = "測驗";
+"Project-String" = "項目";
+"Event-String" = "活動";
+"Coursework-String" = "課程作業";
+
+//datePage.swift
+"Format.AddTask-String" = "添加新任務";
+
+//DetailPage.swift
+"DetailPage.WorkFinished-String" = "讓我們開始吧！！😎";
+"DetailPage.WorkUnfinished-String" = "快完成了！ 🤯";
+"DetailPage.WorkUndue-String" = "今天不用（放輕鬆，兄弟）";
+"DetailPage.WorkDue-String" = "今天需要完成！！";
+"DetailPage.CheckForStats-String" = "完成了嗎？";
+
+// Subjects
+"Subjects.Mathematics" = "數學";
+"Subjects.Chinese" = "中文";
+"Subjects.English" = "英語";
+"Subjects.Physics" = "物理";
+"Subjects.CS" = "計算機科學";
+"Subjects.Economics" = "經濟學";
+"Subjects.Chemistry" = "化學";
+"Subjects.BM" = "商業管理";
+"Subjects.VA" = "視覺藝術";
+"Subjects.DT" = "設計技術";
+"Subjects.Psychology" = "心理學";
+"Subjects.ESS" = "環境系統與社會";
+"Subjects.TOK" = "知識論";
+"Subjects.CAS" = "創意、行動與服務";
+"Subjects.EE" = "延伸論文";
+"Subjects.Biology" = "生物學";
+"Subjects.History" = "歷史";
+"Subjects.Geography" = "地理";
+"Subjects.noChoice" = "未選擇";
+
+// Format
+"Format.homework" = "家庭作業";
+"Format.exam" = "考試";
+"Format.test" = "測驗";
+"Format.project" = "項目";
+"Format.event" = "活動";
+"Format.coursework" = "課程作業";
