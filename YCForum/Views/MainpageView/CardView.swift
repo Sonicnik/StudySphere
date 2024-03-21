@@ -44,7 +44,7 @@ struct CardView: View {
             }
         }
         .padding()
-        .background(LinearGradient(gradient: Gradient(colors: [info.theme.mainColor.opacity(1), info.theme.accentColor.opacity(0.5)]), startPoint: .topLeading, endPoint: .bottomTrailing))
+        .background(LinearGradient(gradient: Gradient(colors: [subjectColor(subject: info.subjects).opacity(1), info.theme.accentColor.opacity(0.5)]), startPoint: .topLeading, endPoint: .bottomTrailing))
         .cornerRadius(10)
         .shadow(color: .gray, radius: 5, x: 0, y: 2)
     }

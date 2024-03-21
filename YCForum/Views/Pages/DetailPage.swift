@@ -64,7 +64,6 @@ struct DetailPage: View {
                     
                 }
                 .padding()
-                .accessibilityElement(children: .combine)
                 
                 
                 HStack {
@@ -74,7 +73,6 @@ struct DetailPage: View {
                         .padding(.trailing)
                 }
                 .padding()
-                .accessibilityElement(children: .combine)
             }
                 
             Section(header: Text("Time & Date")) {
