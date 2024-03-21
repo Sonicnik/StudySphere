@@ -59,7 +59,7 @@ struct DetailPage: View {
                 HStack {
                     Label("Type", systemImage: "square.dashed.inset.filled")
                     Spacer()
-                    Text(info.formats.name)
+                    Text(info.formats.localizedName)
                         .padding(.trailing)
                     
                 }
@@ -116,7 +116,7 @@ struct DetailPage: View {
             }
         }
         //pass the subject name on using .name variable
-        .navigationTitle(info.subjects.name + "-" + info.formats.name)
+        .navigationTitle(info.subjects.name + "-" + info.formats.localizedName)
         .toolbar {
             Button("Edit") {
                 isPresentingEditView = true

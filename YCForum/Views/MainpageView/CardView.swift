@@ -32,7 +32,7 @@ struct CardView: View {
                 
             }
             
-            Text(info.subjects.name + " - " + info.formats.name)
+            Text(info.subjects.name + " - " + info.formats.rawValue)
                 .font(.footnote)
                 .fontWeight(.regular)
             
