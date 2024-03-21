@@ -24,7 +24,7 @@ struct introPages: View {
                     if page == pages[0] {
                         introPageView(introPage: page)
                         Spacer()
-                        Button("Next") {
+                        Button(NSLocalizedString("IntroPages.Next-String", comment: "Next button")) {
                             incrementPage()
                         }
                         .buttonStyle(.borderedProminent)
@@ -34,7 +34,7 @@ struct introPages: View {
                     if page == pages[1] {
                         TimeSelectorView(avaliableTime: $avaliableTime)
                         Spacer()
-                        Button("Next") {
+                        Button(NSLocalizedString("IntroPages.Next-String", comment: "Next button")) {
                             incrementPage()
                         }
                         .buttonStyle(.borderedProminent)
@@ -44,7 +44,7 @@ struct introPages: View {
                     if page == pages[2] {
                         SelectionOFSubject()
                         Spacer()
-                        Button("Next") {
+                        Button(NSLocalizedString("IntroPages.Next-String", comment: "Next button")) {
                             incrementPage()
                         }
                         
@@ -53,7 +53,7 @@ struct introPages: View {
                     if page == pages.last {
                         introPageView(introPage: page)
                         Spacer()
-                        Button("Lets Go!") {
+                        Button(NSLocalizedString("IntroPages.LetsGo-String", comment: "Let's Go button")) {
                             preIntro = false
                             defaults.set(preIntro, forKey: "preIntro")
                         }

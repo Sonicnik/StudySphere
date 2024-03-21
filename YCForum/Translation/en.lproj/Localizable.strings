@@ -1,17 +1,14 @@
 // EmptyView.swift
-"EmptyView.title-String" = "There are no work to do!!";
+"EmptyView.Title-String" = "There are no work to do!!";
 "EmptyView.Intro-String" = "Are you working towards your goals?";
-"EmptyView.button-String" = "Add New Task ✊";
+"EmptyView.Button-String" = "Add New Task ✊";
 
 // SettingPage.swift
-"Setting.title-String" = "Settings";
-"Setting.workHour-String" = "Working hours each day:";
-"Setting.subjectsChoice-String" = "My subject choices";
-"Setting.abtUs-String" = "About Us";
-"Setting.introPage-String" = "Introduction Page";
-"Setting.feedback-String" = "Give us feedback!🌹";
 "Setting.secBasic-String" = "Basic";
-"Setting.secInfo-String" = "info";
+"Setting.secInfo-String" = "Info";
+"Setting.introPage-String" = "Intro Page";
+"Setting.feedback-String" = "Feedback";
+"Setting.title-String" = "Settings";
 
 // Abt Us
 "Bio.Intro-String" = "StudySphere is an application that's developed by a small group of the students in YCIS year 12. With this app, we hope to help students keep up with their deadlines without spending time organizing what to do.";
@@ -20,18 +17,19 @@
 "Bio.ins-String" = "Follow us on Instagram ❤️";
 "Bio.title-String" = "Who are we?";
 
+
 // Mainpage.swift
-"Mainpage.Introprompt-String" = "Don't know what to do?";
+"Mainpage.Introprompt-String" = "Intro Prompt";
 "Mainpage.All-String" = "All";
-"Mainpage.New-String" = "New";
+"Mainpage.New-string" = "New";
 
 // Newsheet.swift
 "Newsheet.Dismiss-String" = "Dismiss";
 "Newsheet.Post-String" = "Post";
-"Newsheet.SubjectReq-String" = "Subject Required";
-"Newsheet.AddWork-String" = "Add More Work 😤";
-"%@ %@ Newsheet.DueNowNotification-String" = "%@ %@ is due RIGHTNOW!";
-"%@ %@ Newsheet.DueTmrNotification-String" = "%@ %@ is due tomorrow!";
+"Newsheet.DueTmrNotification-Format" = "%@ %@ is due tomorrow";
+"Newsheet.DueNowNotification-Format" = "%@ %@ is due now";
+"Newsheet.SubjectReq-String" = "Subject is required";
+"Newsheet.AddWork-String" = "Add Work";
 
 
 // Format.swift
@@ -43,14 +41,14 @@
 "Coursework-String" = "Coursework";
 
 //datePage.swift
-"Format.AddTask-String" = "Add New Task";
+"Format.AddTask-String" = "Add task";
 
 //DetailPage.swift
-"DetailPage.WorkFinished-String" = "Let's Go!!😎";
-"DetailPage.WorkUnfinished-String" = "Almost there! 🤯";
-"DetailPage.WorkUndue-String" = "Not for today (Chill bro)";
-"DetailPage.WorkDue-String" = "Needed to be finished Today!!";
-"DetailPage.CheckForStats-String" = "Done?";
+"DetailPage.CheckForStats-String" = "Check for stats";
+"DetailPage.WorkFinished-String" = "Work finished";
+"DetailPage.WorkUnfinished-String" = "Work unfinished";
+"DetailPage.WorkUndue-String" = "Work undue";
+"DetailPage.WorkDue-String" = "Work due";
 
 
 // Localizable.strings (English)
@@ -82,3 +80,86 @@
 "Format.project" = "Project";
 "Format.event" = "Event";
 "Format.coursework" = "Coursework";
+
+// Section headers
+"Section" = "Section";
+"Time & Date" = "Time & Date";
+"Details" = "Details";
+
+// Labels
+"Work is" = "Work is";
+"Type" = "Type";
+"Subject" = "Subject";
+"Due Date" = "Due Date";
+"Due Time" = "Due Time";
+"Notes" = "Notes";
+
+// Buttons
+"Edit" = "Edit";
+"Cancel" = "Cancel";
+"Done" = "Done";
+
+// Notification subtitles
+"Your %@'s %@ is marked done and due tomorrow, double check if you finished the work." = "Your %1$@'s %2$@ is marked done and due tomorrow, double check if you finished the work.";
+"Did you finish your work? %@ %@ is due." = "Did you finish your work? %1$@ %2$@ is due.";
+"Your %@'s %@ is due tomorrow!!" = "Your %1$@'s %2$@ is due tomorrow!!";
+
+//IntroPage.swift
+"IntroPage.Example-String" = "Example";
+"IntroPage.ExampleDesc-String" = "Description will appear in here";
+"IntroPage.Welcome-String" = "Welcome to StudySphere!";
+"IntroPage.WelcomeDesc-String" = "Welcome! StudySphere is an app helping students to organise tests, assignments, and more. Our app gives you only what's necessary to do for each day, streamlining your planning process.";
+"IntroPage.GetStarted-String" = "Get started!";
+"IntroPage.GetStartedDesc-String" = "Select your subjects and avaliable time you have each day:";
+"IntroPage.SelectSubject-String" = "Select subject";
+"IntroPage.SelectSubjectDesc-String" = "subject";
+"IntroPage.Ready-String" = "Are you ready?";
+"IntroPage.ReadyDesc-String" = "So what are you waiting for? Let's get started!";
+"IntroPages.Next-String" = "Next";
+"IntroPages.LetsGo-String" = "Let's Go!";
+
+//choiceOfSubject.swift
+"ChoiceOfSubject.Title-String" = "Please Select a Subject";
+"ChoiceOfSubject.OK-String" = "OK";
+
+//TimeSelectorView.swift
+"TimeSelectorView.HoursPerDay-String" = "Number of hours per day";
+"TimeSelectorView.AvailableTime-String" = "Available Time";
+"TimeSelectorView.SelectedHours-String" = "Selected Hours";
+
+//TimeView.swift
+"TimeView.WorkHour-String" = "Work Hour";
+
+//SetSubject
+"SetSubject.SubjectsChoice-String" = "Subjects Choice";
+
+//SelectionOfSubject.swift
+"SelectionOFSubject.SetSubjectChoice-String" = "Set your subject choice!";
+"SelectionOFSubject.Hide-String" = "Hide";
+"SelectionOFSubject.Select-String" = "Select";
+"SelectionOFSubject.SelectedSubjects-String" = "Selected Subjects";
+
+//CardView.swift
+"CardView.EstTime-String" = "Est Time";
+
+//EditView.swift
+"EditView.Info-String" = "Info";
+"EditView.TitlePlaceholder-String" = "Enter the title";
+"EditView.TimeEstimated-String" = "Time Estimated";
+"EditView.Notes-String" = "Notes";
+
+//datePicker.swift
+"datePicker.DueDate-String" = "Due Date";
+
+//timeSelectionPicker.swift
+"timeSelectionPicker.EstimatedTime-String" = "Estimated Time";
+"timeSelectionPicker.Hours-String" = "Hours";
+"timeSelectionPicker.Minutes-String" = "Minutes";
+
+//Container.swift
+"Container.Calendar-String" = "Calendar";
+"Container.All-String" = "ALL";
+"Container.Settings-String" = "Settings";
+
+//Settings.swift
+"Setting.abtUs-String" = "About Us";

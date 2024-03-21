@@ -12,11 +12,11 @@ struct choiceOfSubject: View {
 
     var body: some View {
         VStack(spacing: 20) {
-            Text("Please Select a Subject")
+            Text(NSLocalizedString("ChoiceOfSubject.Title-String", comment: "Please select a subject"))
                 .font(.title3)
                 .fontWeight(.bold)
             
-            Button("OK") {
+            Button(NSLocalizedString("ChoiceOfSubject.OK-String", comment: "OK button")) {
                 subjectError = false
             }
             .padding()

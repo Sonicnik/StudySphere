@@ -13,28 +13,24 @@ struct SelectionOFSubject: View {
     
     var body: some View {
         NavigationStack {
-            
             VStack {
-                Text("Set your subject choice!")
+                Text(NSLocalizedString("SelectionOFSubject.SetSubjectChoice-String", comment: "Set your subject choice"))
                 List(Subject.allCases, id: \.self) { subjectIB in
-                    
                     HStack {
                         if subjectIB != .noChoice {
-                            
-                            
                             Text(subjectIB.name)
                                 .padding(.leading)
                             
                             Spacer()
                             
                             if saveSettings.selectedSubject.contains(subjectIB) {
-                                Button("Hide") {
+                                Button(NSLocalizedString("SelectionOFSubject.Hide-String", comment: "Hide button")) {
                                     saveSettings.selectedSubject.remove(subjectIB)
                                     saveSettings.saveSettings()
                                 }
                                 .padding(.trailing)
                             } else {
-                                Button("Select") {
+                                Button(NSLocalizedString("SelectionOFSubject.Select-String", comment: "Select button")) {
                                     saveSettings.selectedSubject.insert(subjectIB)
                                     saveSettings.saveSettings()
                                 }
@@ -44,22 +40,15 @@ struct SelectionOFSubject: View {
                     }
                 }
             }
-            
-            
-            
         }
-        .navigationBarTitle(Text("Selected Subjects"), displayMode: .inline)
-        .onAppear{
+        .navigationBarTitle(Text(NSLocalizedString("SelectionOFSubject.SelectedSubjects-String", comment: "Selected Subjects")), displayMode: .inline)
+        .onAppear {
             saveSettings.loadSettings()
         }
         .onDisappear {
             saveSettings.saveSettings() // Save settings when the view disappears
         }
-        
     }
-    
-    
-    
 }
 
 #Preview {

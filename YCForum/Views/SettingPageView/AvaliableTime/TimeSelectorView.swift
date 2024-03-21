@@ -12,20 +12,18 @@ struct TimeSelectorView: View {
     let defaults = UserDefaults.standard
     
     var body: some View {
-        
-        
-         NavigationStack {
+        NavigationStack {
             VStack {
-                Text("Number of hours per day: \(avaliableTime)")
+                Text(NSLocalizedString("TimeSelectorView.HoursPerDay-String", comment: "Number of hours per day") + ": \(avaliableTime)")
                     .padding()
                 
-                Picker("Avaliable Time", selection: $avaliableTime){
-                        Text("1").tag("1")
-                        Text("2").tag("2")
-                        Text("3").tag("3")
-                        Text("4").tag("4")
-                        Text("5").tag("5")
-                        Text("6").tag("6")
+                Picker(NSLocalizedString("TimeSelectorView.AvailableTime-String", comment: "Available Time"), selection: $avaliableTime) {
+                    Text("1").tag("1")
+                    Text("2").tag("2")
+                    Text("3").tag("3")
+                    Text("4").tag("4")
+                    Text("5").tag("5")
+                    Text("6").tag("6")
                 }
                 .pickerStyle(.wheel)
                 Spacer()
@@ -33,20 +31,14 @@ struct TimeSelectorView: View {
             .onDisappear(perform: {
                 SaveAvaliableTime()
             })
-            
         }
-         .navigationBarTitle(Text("Selected Hours"), displayMode: .inline)
+        .navigationBarTitle(Text(NSLocalizedString("TimeSelectorView.SelectedHours-String", comment: "Selected Hours")), displayMode: .inline)
     }
     
     func SaveAvaliableTime() {
         defaults.set(avaliableTime, forKey: "AvaliableTime")
     }
-    
-    
-        
 }
-
-
 
 struct TimeSelectorView_Previews: PreviewProvider {
     static var previews: some View {

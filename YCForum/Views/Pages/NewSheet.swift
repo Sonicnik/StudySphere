@@ -28,21 +28,21 @@ struct NewSheet: View {
             EditView(info: $newPage, selectedSubject: $selectedSubject)
                 .toolbar {
                     ToolbarItem(placement: .cancellationAction) {
-                        Button("Newsheet.Dismiss-String") {
+                        Button(NSLocalizedString("Newsheet.Dismiss-String", comment: "Dismiss button")) {
                             isPresentingNewEditView = false
                         }
                     }
                     ToolbarItem(placement: .confirmationAction) {
-                        Button("Newsheet.Post-String") {
+                        Button(NSLocalizedString("Newsheet.Post-String", comment: "Post button")) {
                             if newPage.subjects != .noChoice {
                                 infos.append(newPage)
                                 isPresentingNewEditView = false
                                 notificationMag.scheduleNotification(for: newPage,
                                                                      at: newPage.duedate,
-                                                                     subtitle: "\(newPage.subjects) \(newPage.formats) Newsheet.DueTmrNotification-string",
+                                                                     subtitle: NSLocalizedString("Newsheet.DueTmrNotification-Format", comment: "Due tomorrow notification format"),
                                                                      identifier: newPage.id + "tmr", timeInterval: 1)
                                 notificationMag.scheduleNotification(for: newPage, at: newPage.duedate,
-                                                                     subtitle: "\(newPage.subjects) \(newPage.formats) Newsheet.DueNowNotification-string",
+                                                                     subtitle: NSLocalizedString("Newsheet.DueNowNotification-Format", comment: "Due now notification format"),
                                                                      identifier: newPage.id + "td", timeInterval: 0)
                             } else if newPage.subjects == .noChoice {
                                 subjectError = true
@@ -52,7 +52,7 @@ struct NewSheet: View {
                             
                         }
                         .alert(isPresented: $subjectError){
-                            Alert(title: Text("Newsheet.SubjectReq-String"),
+                            Alert(title: Text(NSLocalizedString("Newsheet.SubjectReq-String", comment: "Subject required alert")),
                                   dismissButton: .default(Text("OK")))
                         }
                     }
@@ -60,7 +60,7 @@ struct NewSheet: View {
                 .onAppear(perform: {
                     newPage.duedate = currentDate
                 })
-                .navigationTitle("Newsheet.AddWork-String")
+                .navigationTitle(NSLocalizedString("Newsheet.AddWork-String", comment: "Add work navigation title"))
         }
         
     }

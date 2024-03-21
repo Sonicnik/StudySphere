@@ -17,7 +17,7 @@ struct SettingPage: View {
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Setting.secBasic-String")) {
+                Section(header: Text(NSLocalizedString("Setting.secBasic-String", comment: "Basic settings section header"))) {
                     NavigationLink(destination: TimeSelectorView(avaliableTime: $avaliableTime)) {
                         TimeView(avaliableTime: $avaliableTime)
                     }
@@ -27,23 +27,23 @@ struct SettingPage: View {
                     }
                 }
                 
-                Section(header: Text("Setting.secInfo-String")) {
+                Section(header: Text(NSLocalizedString("Setting.secInfo-String", comment: "Info section header"))) {
                     NavigationLink(destination: BioPage()) {
                         BioView()
                     }
                     
-                    Button("Setting.introPage-String") {
+                    Button(NSLocalizedString("Setting.introPage-String", comment: "Intro page button")) {
                         preIntro = true
                     }
                     .padding()
                     
-                    Link("Setting.feedback-String", destination: feedBackURL)
+                    Link(NSLocalizedString("Setting.feedback-String", comment: "Feedback link"), destination: feedBackURL)
                         .font(.headline)
                         .padding()
                 }
                 
             }
-            .navigationTitle(Text("Setting.title-String"))
+            .navigationTitle(Text(NSLocalizedString("Setting.title-String", comment: "Settings page title")))
         }
     }
 }

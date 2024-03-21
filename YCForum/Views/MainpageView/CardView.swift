@@ -1,6 +1,6 @@
 //
 //  CardView.swift
-//  
+//
 //
 //  Created by Sonic Liu on 4/7/2023.
 //
@@ -37,7 +37,7 @@ struct CardView: View {
                 .fontWeight(.regular)
             
             HStack {
-                Text("Est Time: " + calculatedTime(eTime: info.eTime))
+                Text(NSLocalizedString("CardView.EstTime-String", comment: "Estimated time") + ": " + calculatedTime(eTime: info.eTime))
                     .font(.caption)
                     .fontWeight(.regular)
                 
@@ -71,8 +71,6 @@ extension CardView {
             return input
         }
     }
-    
-    
     
     func subjectColor(subject: Subject) -> Color{
         var color: Theme = .bubblegum
