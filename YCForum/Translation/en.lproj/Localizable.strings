@@ -53,3 +53,32 @@
 "DetailPage.CheckForStats-String" = "Done?";
 
 
+// Localizable.strings (English)
+"Subjects.Mathematics" = "Mathematics";
+"Subjects.Chinese" = "Chinese";
+"Subjects.English" = "English";
+"Subjects.Physics" = "Physics";
+"Subjects.CS" = "Computer Science";
+"Subjects.Economics" = "Economics";
+"Subjects.Chemistry" = "Chemistry";
+"Subjects.BM" = "Business Management";
+"Subjects.VA" = "Visual Arts";
+"Subjects.DT" = "Design Technology";
+"Subjects.Psychology" = "Psychology";
+"Subjects.ESS" = "Environmental Systems and Societies";
+"Subjects.TOK" = "Theory of Knowledge";
+"Subjects.CAS" = "Creativity, Activity, Service";
+"Subjects.EE" = "Extended Essay";
+"Subjects.Biology" = "Biology";
+"Subjects.History" = "History";
+"Subjects.Geography" = "Geography";
+"Subjects.noChoice" = "No choice selected";
+
+
+// Localizable.strings (English)
+"Format.homework" = "Homework";
+"Format.exam" = "Exam";
+"Format.test" = "Test";
+"Format.project" = "Project";
+"Format.event" = "Event";
+"Format.coursework" = "Coursework";
