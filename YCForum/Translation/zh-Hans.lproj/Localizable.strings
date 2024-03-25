@@ -98,8 +98,8 @@
 "Done" = "完成";
 
 // Notification subtitles
-"Your %@'s %@ is marked done and due tomorrow, double check if you finished the work." = "你的%1$@的%2$@标记为已完成并在明天到期，请仔细检查你是否完成了作业。";
-"Did you finish your work? %@ %@ is due." = "你完成作业了吗？%1$@ %2$@已到期。";
+"Your %@'s %@ is marked done and due tomorrow, double check if you finished the work." = "你的%1$@的%2$@标记为已完成并在明天需要上交，请仔细检查你是否完成了作业。";
+"Did you finish your work? %@ %@ is due." = "你完成作业了吗？%1$@ %2$@已需要上交。";
 "Your %@'s %@ is due tomorrow!!" = "你的%1$@的%2$@明天上交！！";
 
 //IntroPage.swift

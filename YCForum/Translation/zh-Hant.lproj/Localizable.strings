@@ -13,7 +13,7 @@
 // Abt Us
 "Bio.Intro-String" = "StudySphere是由YCIS 12年級的一小組學生開發的應用程序。通過這個應用程序，我們希望幫助學生在不花時間組織要做什麼的情況下跟上截止日期。";
 "Bio.secFeb-String" = "反饋";
-"Bio.Git-String" = "查看我們的Github倉庫🤩";
+"Bio.Git-String" = "查看我們的Github🤩";
 "Bio.ins-String" = "在Instagram上關注我們❤️";
 "Bio.title-String" = "我們是誰？";
 
@@ -25,8 +25,8 @@
 // Newsheet.swift
 "Newsheet.Dismiss-String" = "關閉";
 "Newsheet.Post-String" = "發佈";
-"Newsheet.DueTmrNotification-Format" = "%@ %@明天到期";
-"Newsheet.DueNowNotification-Format" = "%@ %@現在到期";
+"Newsheet.DueTmrNotification-Format" = "%@ %@明天需要上交";
+"Newsheet.DueNowNotification-Format" = "%@ %@現在需要上交";
 "Newsheet.SubjectReq-String" = "需要選擇科目";
 "Newsheet.AddWork-String" = "添加作業";
 
@@ -45,8 +45,8 @@
 "DetailPage.CheckForStats-String" = "查看統計";
 "DetailPage.WorkFinished-String" = "工作已完成";
 "DetailPage.WorkUnfinished-String" = "工作未完成";
-"DetailPage.WorkUndue-String" = "工作未到期";
-"DetailPage.WorkDue-String" = "工作到期";
+"DetailPage.WorkUndue-String" = "工作暫時無需上交";
+"DetailPage.WorkDue-String" = "工作需要上交";
 
 // Localizable.strings (Traditional Chinese)
 "Subjects.Mathematics" = "數學";
@@ -96,9 +96,9 @@
 "Done" = "完成";
 
 // Notification subtitles
-"Your %@'s %@ is marked done and due tomorrow, double check if you finished the work." = "你的%1$@的%2$@標記為已完成並在明天到期，請仔細檢查你是否完成了作業。";
-"Did you finish your work? %@ %@ is due." = "你完成作業了嗎？%1$@ %2$@已到期。";
-"Your %@'s %@ is due tomorrow!!" = "你的%1$@的%2$@明天到期！！";
+"Your %@'s %@ is marked done and due tomorrow, double check if you finished the work." = "你的%1$@的%2$@標記為已完成並在需要在明天，請仔細檢查你是否完成了作業。";
+"Did you finish your work? %@ %@ is due." = "你完成作業了嗎？%1$@ %2$@需要上交。";
+"Your %@'s %@ is due tomorrow!!" = "你的%1$@的%2$@明天需要上交！！";
 
 //IntroPage.swift
 "IntroPage.Example-String" = "示例";
