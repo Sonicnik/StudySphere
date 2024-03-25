@@ -12,17 +12,12 @@ struct datePicker: View {
     
     @State private var dueDates = Date()
     
-    
     var body: some View {
         HStack {
-            Text("Due Date")
+            Text(NSLocalizedString("datePicker.DueDate-String", comment: "Due Date"))
             MyDatePicker(selection: $selectedDate, minuteInterval: 5)
         }
     }
-    
-    
-    
-    
 }
 
 struct datePicker_Previews: PreviewProvider {

@@ -14,20 +14,27 @@ struct introPageType: Identifiable, Equatable {
     var imageUrl: String
     var tag: Int
     
-    static var sampleIntroPage = introPageType(name: "Example", description: "Description will appear in here", imageUrl: "LaunchScreen", tag: 0)
+    static var sampleIntroPage = introPageType(name: NSLocalizedString("IntroPage.Example-String", comment: "Example intro page name"),
+                                               description: NSLocalizedString("IntroPage.ExampleDesc-String", comment: "Example intro page description"),
+                                               imageUrl: "LaunchScreen",
+                                               tag: 0)
     
-    static var PreIntroPage: [introPageType] =  [
-        introPageType(name: "Welcome to StudySphere!",
-                      description: "Welcome! StudySphere is an app helping students to organise tests, assignments, and more. Our app gives you only what’s necessary to do for each day, streamlining your planning process.",
-                      imageUrl: "IntroPage1", tag: 0),
-        introPageType(name: "Get started!",
-                      description: "Select your subjects and avaliable time you have each day:",
-                      imageUrl: "IntroPage2", tag: 1),
-        introPageType(name: "Select subject", description: "subject", imageUrl: "a", tag: 2),
-        introPageType(name: "Are you ready?", description: "So what are you waiting for? Let’s get started!",
-                      imageUrl: "IntroPage3", tag: 3)
-        
+    static var PreIntroPage: [introPageType] = [
+        introPageType(name: NSLocalizedString("IntroPage.Welcome-String", comment: "Welcome intro page name"),
+                      description: NSLocalizedString("IntroPage.WelcomeDesc-String", comment: "Welcome intro page description"),
+                      imageUrl: "IntroPage1",
+                      tag: 0),
+        introPageType(name: NSLocalizedString("IntroPage.GetStarted-String", comment: "Get started intro page name"),
+                      description: NSLocalizedString("IntroPage.GetStartedDesc-String", comment: "Get started intro page description"),
+                      imageUrl: "IntroPage2",
+                      tag: 1),
+        introPageType(name: NSLocalizedString("IntroPage.SelectSubject-String", comment: "Select subject intro page name"),
+                      description: NSLocalizedString("IntroPage.SelectSubjectDesc-String", comment: "Select subject intro page description"),
+                      imageUrl: "a",
+                      tag: 2),
+        introPageType(name: NSLocalizedString("IntroPage.Ready-String", comment: "Ready intro page name"),
+                      description: NSLocalizedString("IntroPage.ReadyDesc-String", comment: "Ready intro page description"),
+                      imageUrl: "IntroPage3",
+                      tag: 3)
     ]
-    
 }
-

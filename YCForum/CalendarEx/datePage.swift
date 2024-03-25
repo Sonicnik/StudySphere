@@ -34,7 +34,7 @@ struct datePage: View {
                     Button(action: {
                         isPresentingNewEditView = true
                     }) {
-                        Text("Format.AddTask-string")
+                        Text(NSLocalizedString("Format.AddTask-String", comment: "Add task button"))
                     }
                     .sheet(isPresented: $isPresentingNewEditView) {
                         NewSheet(infos: $metaInfo[index].pageinfo, isPresentingNewEditView: $isPresentingNewEditView, selectedSubject: $saveSettings.selectedSubject, currentDate: dates)

@@ -14,6 +14,7 @@ enum Format: String, CaseIterable, Codable {
     case project
     case event
     case coursework
+    case customize
     
     var localizedName: String {
         switch self {
@@ -29,6 +30,8 @@ enum Format: String, CaseIterable, Codable {
             return NSLocalizedString("Format.event", comment: "Event format")
         case .coursework:
             return NSLocalizedString("Format.coursework", comment: "Coursework format")
+        case .customize:
+            return NSLocalizedString("Format.Customize", comment: "Customizable format")
         }
     }
 }

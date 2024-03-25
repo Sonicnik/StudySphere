@@ -1,6 +1,6 @@
 //
 //  EditView.swift
-//  
+//
 //
 //  Created by Sonic Liu on 5/7/2023.
 //
@@ -10,35 +10,43 @@ import SwiftUI
 struct EditView: View {
     @Binding var info: PageInfo
     @Binding var selectedSubject: Set<Subject>
+    @State private var customFormat: String = ""
     
     var body: some View {
         Form {
-            Section(header: Text("Info ")) {
+            Section(header: Text(NSLocalizedString("EditView.Info-String", comment: "Info section header"))) {
                 
-                TextField("Enter the title", text: $info.title)
+                TextField(NSLocalizedString("EditView.TitlePlaceholder-String", comment: "Title placeholder"), text: $info.title)
                 
-                
-                
-                PickerView(selectTheme: $info.theme, selectSubject: $info.subjects, selectFormat: $info.formats, selectedSubject: $selectedSubject)
+                PickerView(
+                    selectTheme: $info.theme,
+                    selectSubject: $info.subjects,
+                    selectFormat: $info.formats,
+                    selectedSubject: $selectedSubject,
+                    customFormat: $customFormat
+                )
                 datePicker(selectedDate: $info.duedate)
-                
-                
                 
             }
             
-            Section(header: Text("Time Estimated")) {
+            Section(header: Text(NSLocalizedString("EditView.TimeEstimated-String", comment: "Time Estimated section header"))) {
                 timeSelectionPicker(eTime: $info.eTime)
             }
 
-            Section(header: Text("Notes")) {
-            // Switched to textEditor for the drop of text boxes to display all of the texts at once.
+            Section(header: Text(NSLocalizedString("EditView.Notes-String", comment: "Notes section header"))) {
+                // Switched to textEditor for the drop of text boxes to display all of the texts at once.
                 TextEditor(text: $info.detail)
                     .frame(minHeight: 240) // Set a minimum height for the TextEditor
                     .lineLimit(nil)       // Allow unlimited lines
                     .multilineTextAlignment(.leading) //Left-align the text
             }
                 
-                
+        }
+        .onAppear {
+            customFormat = info.customFormat // Set the initial value of customFormat
+        }
+        .onChange(of: customFormat) { newValue in
+            info.customFormat = newValue // Update the customFormat property of info
         }
     }
 }

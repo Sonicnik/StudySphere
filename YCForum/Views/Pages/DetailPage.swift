@@ -27,26 +27,26 @@ struct DetailPage: View {
                             info.isDone.toggle()
                             notificationMag.updateDueDate(for: editingInfo,
                                                           newDueDate: editingInfo.duedate,
-                                                          subtitle: "Your \(editingInfo.subjects)'s \(editingInfo.formats) is marked done and due tomorrow, double check if you finished the work.",
+                                                          subtitle: NSLocalizedString("Your %@'s %@ is marked done and due tomorrow, double check if you finished the work.", comment: "Notification subtitle"),
                                                           identifier: editingInfo.id + "tmr", timeInterval: 1)
-                            notificationMag.updateDueDate(for: editingInfo, newDueDate: editingInfo.duedate, subtitle: "Did you finish your work? \(editingInfo.title) \(editingInfo.subjects) is due.", identifier: editingInfo.id + "td", timeInterval: 0)
+                            notificationMag.updateDueDate(for: editingInfo, newDueDate: editingInfo.duedate, subtitle: NSLocalizedString("Did you finish your work? %@ %@ is due.", comment: "Notification subtitle"), identifier: editingInfo.id + "td", timeInterval: 0)
                         }) {
-                            Label("DetailPage.CheckForStats-String", systemImage: info.isDone ? "checkmark.circle.fill" : "circle")
+                            Label(NSLocalizedString("DetailPage.CheckForStats-String", comment: "Check for stats label"), systemImage: info.isDone ? "checkmark.circle.fill" : "circle")
                         }
                         
                         Spacer()
-                        Text(info.isDone ? "DetailPage.WorkFinished-String": "DetailPage.WorkUnfinished-String")
-                            .padding(.trailing)
+                        Text(info.isDone ? NSLocalizedString("DetailPage.WorkFinished-String", comment: "Work finished text") : NSLocalizedString("DetailPage.WorkUnfinished-String", comment: "Work unfinished text"))
+                                                    .padding(.trailing)
                         
                     }
                     .padding()
                     
                     HStack {
-                        Label("Work is", systemImage: "chart.bar.doc.horizontal.fill")
+                        Label(NSLocalizedString("Work is", comment: "Work is label"), systemImage: "chart.bar.doc.horizontal.fill")
                         
                         
                         Spacer()
-                        Text(info.isHidden ? "DetailPage.WorkUndue-string": "DetailPage.WorkDue-string")
+                        Text(info.isHidden ? NSLocalizedString("DetailPage.WorkUndue-String", comment: "Work undue text") : NSLocalizedString("DetailPage.WorkDue-String", comment: "Work due text"))
                             .padding(.trailing)
                     }
                     .padding()
@@ -55,50 +55,50 @@ struct DetailPage: View {
             }
             
             
-            Section(header: Text("Section")) {
-                HStack {
-                    Label("Type", systemImage: "square.dashed.inset.filled")
-                    Spacer()
-                    Text(info.formats.localizedName)
-                        .padding(.trailing)
+            Section(header: Text(NSLocalizedString("Section", comment: "Section header"))) {
+                            HStack {
+                                Label(NSLocalizedString("Type", comment: "Type label"), systemImage: "square.dashed.inset.filled")
+                                Spacer()
+                                Text(NSLocalizedString(info.formats.rawValue, comment: "Format name"))
+                                    .padding(.trailing)
                     
                 }
                 .padding()
                 
                 
                 HStack {
-                    Label("Subject", systemImage: "slider.horizontal.below.square.filled.and.square")
-                    Spacer()
-                    Text(info.subjects.name)
-                        .padding(.trailing)
+                                Label(NSLocalizedString("Subject", comment: "Subject label"), systemImage: "slider.horizontal.below.square.filled.and.square")
+                                Spacer()
+                                Text(NSLocalizedString("Subjects.\(info.subjects.rawValue)", comment: "Subject name"))
+                                            .padding(.trailing)
                 }
                 .padding()
             }
                 
-            Section(header: Text("Time & Date")) {
-                HStack {
-                    Label("Due Date", systemImage: "calendar.badge.exclamationmark")
-                    Spacer()
-                    Text(info.duedate.formatted(date: .abbreviated, time: .omitted))
-                        .padding(.trailing)
+            Section(header: Text(NSLocalizedString("Time & Date", comment: "Time and date header"))) {
+                            HStack {
+                                Label(NSLocalizedString("Due Date", comment: "Due date label"), systemImage: "calendar.badge.exclamationmark")
+                                Spacer()
+                                Text(info.duedate.formatted(date: .abbreviated, time: .omitted))
+                                    .padding(.trailing)
                 }
                 .padding()
                 
                 HStack {
-                    Label("Due Time", systemImage: "clock.badge.exclamationmark")
-                    Spacer()
-                    Text(info.duedate.formatted(date: .omitted, time: .shortened))
-                        .padding(.trailing)
+                                    Label(NSLocalizedString("Due Time", comment: "Due time label"), systemImage: "clock.badge.exclamationmark")
+                                    Spacer()
+                                    Text(info.duedate.formatted(date: .omitted, time: .shortened))
+                                        .padding(.trailing)
                 }
                 .padding()
             }
             
-            Section(header: Text("Details")) {
+            Section(header: Text(NSLocalizedString("Details", comment: "Details header"))) {
                 
                 VStack {
                     
                     HStack {
-                        Label("Notes", systemImage: "rectangle.and.pencil.and.ellipsis")
+                                            Label(NSLocalizedString("Notes", comment: "Notes label"), systemImage: "rectangle.and.pencil.and.ellipsis")
                         Spacer()
                     }
                     HStack {
@@ -114,32 +114,35 @@ struct DetailPage: View {
             }
         }
         //pass the subject name on using .name variable
-        .navigationTitle(info.subjects.name + "-" + info.formats.localizedName)
-        .toolbar {
-            Button("Edit") {
-                isPresentingEditView = true
-                editingInfo = info
+        navigationTitle(NSLocalizedString("Subjects.\(info.subjects.rawValue)", comment: "Subject name") + "-" + NSLocalizedString(info.formats.rawValue, comment: "Format name"))
+                .toolbar {
+                    Button(NSLocalizedString("Edit", comment: "Edit button")) {
+                        isPresentingEditView = true
+                        editingInfo = info
             }
         }
-        .sheet(isPresented: $isPresentingEditView) {
-            NavigationStack {
-                EditView(info: $editingInfo, selectedSubject: $selectedSubject)
-                    .navigationTitle(info.subjects.name)
-                    .toolbar {
-                        ToolbarItem(placement: .cancellationAction) {
-                            Button("Cancel") {
+                .sheet(isPresented: $isPresentingEditView) {
+                            NavigationStack {
+                                EditView(info: $editingInfo, selectedSubject: $selectedSubject)
+                                    .navigationTitle(NSLocalizedString("Subjects.\(info.subjects.rawValue)", comment: "Subject name"))
+                                    .toolbar {
+                                        ToolbarItem(placement: .cancellationAction) {
+                                            Button(NSLocalizedString("Cancel", comment: "Cancel button")) {
                                 isPresentingEditView = false
                             }
                         }
-                        ToolbarItem(placement: .confirmationAction) {
-                            Button("Done") {
-                                isPresentingEditView = false
-                                info = editingInfo
-                                notificationMag.updateDueDate(for: editingInfo,
-                                                              newDueDate: editingInfo.duedate,
-                                                              subtitle: "Your \(editingInfo.subjects)'s \(editingInfo.formats) is due tomorrow!!",
-                                                              identifier: editingInfo.id, timeInterval: 1)
-                                notificationMag.updateDueDate(for: editingInfo, newDueDate: editingInfo.duedate, subtitle: "Did you finish your work? \(editingInfo.title) \(editingInfo.subjects) is due.", identifier: editingInfo.id + "td", timeInterval: 0)
+                                        ToolbarItem(placement: .confirmationAction) {
+                                                                    Button(NSLocalizedString("Done", comment: "Done button")) {
+                                                                        isPresentingEditView = false
+                                                                        info = editingInfo
+                                                                        notificationMag.updateDueDate(for: editingInfo,
+                                                                                                      newDueDate: editingInfo.duedate,
+                                                                                                      subtitle: NSLocalizedString("Your %@'s %@ is due tomorrow!!", comment: "Notification subtitle"),
+                                                                                                      identifier: editingInfo.id, timeInterval: 1)
+                                                                        notificationMag.updateDueDate(for: editingInfo,
+                                                                                                      newDueDate: editingInfo.duedate,
+                                                                                                      subtitle: NSLocalizedString("Did you finish your work? %@ %@ is due.", comment: "Notification subtitle"),
+                                                                                                      identifier: editingInfo.id + "td", timeInterval: 0)
                                 
                             }
                         }
