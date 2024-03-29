@@ -26,17 +26,16 @@
 // Newsheet.swift
 "Newsheet.Dismiss-String" = "Dismiss";
 "Newsheet.Post-String" = "Post";
-<<<<<<< HEAD
+
 "Newsheet.SubjectReq-String" = "Subject Required, please selected from Setting";
 "Newsheet.AddWork-String" = "Add More Work 😤";
 "%@ %@ Newsheet.DueNowNotification-String" = "%@ %@ is due RIGHTNOW!";
 "%@ %@ Newsheet.DueTmrNotification-String" = "%@ %@ is due tomorrow!";
-=======
+
 "Newsheet.DueTmrNotification-Format" = "%@ %@ is due tomorrow";
 "Newsheet.DueNowNotification-Format" = "%@ %@ is due now";
-"Newsheet.SubjectReq-String" = "Subject is required";
+"Newsheet.SubjectReq-String" = "Subject is required, please add them in the settings";
 "Newsheet.AddWork-String" = "Add Work";
->>>>>>> 1
 
 
 // Format.swift
