@@ -1,6 +1,6 @@
 //
 //  PageStyle.swift
-//  
+//
 //
 //  Created by Sonic Liu on 8/7/2023.
 //
@@ -47,9 +47,7 @@ extension PageInfo {
     static var emptyPage: PageInfo {
         PageInfo(title: "", subjects: .noChoice, formats: .exam, detail:"", theme: .sky, duedate: Date(), isDone: false, isHidden: false, eTime: 0)
     }
-
 }
-
 
 extension PageInfo {
     static let sampleData: [PageInfo] =
@@ -64,7 +62,7 @@ extension PageInfo {
                  isHidden: true,
                  eTime: 60),
                  
-        PageInfo(title:"Writing a reflection",
+        PageInfo(title: "Writing a reflection",
                  subjects: .English,
                  formats: .homework,
                  detail: " ",
@@ -74,7 +72,7 @@ extension PageInfo {
                  isHidden: false,
                  eTime: 45),
         
-        PageInfo(title:"Test Revision",
+        PageInfo(title: "Test Revision",
                  subjects: .Mathematics,
                  formats: .test,
                  detail: "Unit1-3",

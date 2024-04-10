@@ -15,14 +15,14 @@ struct timeSelectionPicker: View {
     
     var body: some View {
         HStack {
-            Picker("Estimated Time", selection: $eTimeH){
+            Picker(NSLocalizedString("timeSelectionPicker.EstimatedTime-String", comment: "Estimated Time"), selection: $eTimeH){
                 ForEach(0..<24) { indexs in
                     Text("\(indexs)").tag(indexs)
                 }
             }
             .pickerStyle(.wheel)
             
-            Text("Hours")
+            Text(NSLocalizedString("timeSelectionPicker.Hours-String", comment: "Hours"))
             
             Picker("", selection: $eTimeM) {
                 ForEach(Array(stride(from: 0, to: 60, by: 5)), id: \.self) { index in
@@ -32,7 +32,7 @@ struct timeSelectionPicker: View {
             .pickerStyle(.wheel)
 
             
-            Text("Minutes")
+            Text(NSLocalizedString("timeSelectionPicker.Minutes-String", comment: "Minutes"))
             
             
         }

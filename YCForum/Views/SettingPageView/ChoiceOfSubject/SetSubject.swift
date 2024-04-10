@@ -11,9 +11,8 @@ struct SetSubject: View {
     @Binding var selectedSubjects: Set<Subject>
     
     var body: some View {
-        
         HStack {
-            Text("Setting.subjectsChoice-String")
+            Text(NSLocalizedString("SetSubject.SubjectsChoice-String", comment: "Subjects choice"))
             Spacer()
         }
         .accentColor(.blue)

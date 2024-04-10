@@ -12,15 +12,12 @@ struct TimeView: View {
     
     var body: some View {
         HStack {
-            Text("Setting.workHour-String")
+            Text(NSLocalizedString("TimeView.WorkHour-String", comment: "Work hour"))
             Spacer()
             Text(avaliableTime)
-            
         }
         .accentColor(.blue)
         .padding()
-        
-        
     }
 }
 

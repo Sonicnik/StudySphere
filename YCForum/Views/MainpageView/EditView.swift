@@ -1,6 +1,6 @@
 //
 //  EditView.swift
-//  
+//
 //
 //  Created by Sonic Liu on 5/7/2023.
 //
@@ -22,16 +22,14 @@ struct EditView: View {
                 PickerView(selectTheme: $info.theme, selectSubject: $info.subjects, selectFormat: $info.formats, selectedSubject: $selectedSubject)
                 datePicker(selectedDate: $info.duedate)
                 
-                
-                
             }
             
-            Section(header: Text("Time Estimated")) {
+            Section(header: Text(NSLocalizedString("EditView.TimeEstimated-String", comment: "Time Estimated section header"))) {
                 timeSelectionPicker(eTime: $info.eTime)
             }
 
-            Section(header: Text("Notes")) {
-            // Switched to textEditor for the drop of text boxes to display all of the texts at once.
+            Section(header: Text(NSLocalizedString("EditView.Notes-String", comment: "Notes section header"))) {
+                // Switched to textEditor for the drop of text boxes to display all of the texts at once.
                 TextEditor(text: $info.detail)
                     .frame(minHeight: 240) // Set a minimum height for the TextEditor
                     .lineLimit(nil)       // Allow unlimited lines

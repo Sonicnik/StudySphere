@@ -1,4 +1,3 @@
-
 //  Created by Sonic Liu on 21/10/2023.
 //
 //  SelectionOFSubject.swift
@@ -24,7 +23,7 @@ struct Container: View {
             CustomeCalendar(info: $infoss.infoData, saveAction: {})
                 .tabItem {
                     Image(systemName: "calendar")
-                    Text("Calendar")
+                    Text(NSLocalizedString("Container.Calendar-String", comment: "Calendar tab title"))
                 }
             
             //Main
@@ -33,14 +32,14 @@ struct Container: View {
             }
             .tabItem {
                 Image(systemName: "tray.full")
-                Text("ALL")
+                Text(NSLocalizedString("Container.All-String", comment: "All tab title"))
             }
             
             //Settings
             SettingPage(period: .constant([]), avaliableTime: $avaliableTime.avaliableTime, selectedSubject: $saveSettings.selectedSubject, preIntro: $preIntro)
                 .tabItem {
                     Image(systemName: "gear")
-                    Text("Settings")
+                    Text(NSLocalizedString("Container.Settings-String", comment: "Settings tab title"))
                 }
         }
         .onAppear {

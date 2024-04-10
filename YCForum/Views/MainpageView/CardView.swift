@@ -1,6 +1,6 @@
 //
 //  CardView.swift
-//  
+//
 //
 //  Created by Sonic Liu on 4/7/2023.
 //
@@ -71,8 +71,6 @@ extension CardView {
             return input
         }
     }
-    
-    
     
     func subjectColor(subject: Subject) -> Color{
         var color: Theme = .bubblegum

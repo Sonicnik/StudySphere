@@ -1,6 +1,6 @@
 //
 //  DetailView.swift
-//  
+//
 //
 //  Created by Sonic Liu on 5/7/2023.
 //
@@ -85,7 +85,7 @@ struct DetailPage: View {
                 .padding()
                 
                 HStack {
-                    Label("Due Time", systemImage: "clock.badge.exclamationmark")
+                    Label(NSLocalizedString("Due Time", comment: "Due time label"), systemImage: "clock.badge.exclamationmark")
                     Spacer()
                     Text(info.duedate.formatted(date: .omitted, time: .shortened))
                         .padding(.trailing)
@@ -93,19 +93,16 @@ struct DetailPage: View {
                 .padding()
             }
             
-            Section(header: Text("Details")) {
-                
+            Section(header: Text(NSLocalizedString("Details", comment: "Details header"))) {
                 VStack {
-                    
                     HStack {
-                        Label("Notes", systemImage: "rectangle.and.pencil.and.ellipsis")
+                        Label(NSLocalizedString("Notes", comment: "Notes label"), systemImage: "rectangle.and.pencil.and.ellipsis")
                         Spacer()
                     }
                     HStack {
                         Text(info.detail)
                             .font(.body)
                             .multilineTextAlignment(.leading)
-                        
                             .padding()
                         Spacer()
                     }
@@ -116,7 +113,7 @@ struct DetailPage: View {
         //pass the subject name on using .name variable
         .navigationTitle(info.subjects.name + "-" + info.formats.localizedName)
         .toolbar {
-            Button("Edit") {
+            Button(NSLocalizedString("Edit", comment: "Edit button")) {
                 isPresentingEditView = true
                 editingInfo = info
             }
@@ -124,23 +121,25 @@ struct DetailPage: View {
         .sheet(isPresented: $isPresentingEditView) {
             NavigationStack {
                 EditView(info: $editingInfo, selectedSubject: $selectedSubject)
-                    .navigationTitle(info.subjects.name)
+                    .navigationTitle(NSLocalizedString("Subjects.\(info.subjects.rawValue)", comment: "Subject name"))
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
-                            Button("Cancel") {
+                            Button(NSLocalizedString("Cancel", comment: "Cancel button")) {
                                 isPresentingEditView = false
                             }
                         }
                         ToolbarItem(placement: .confirmationAction) {
-                            Button("Done") {
+                            Button(NSLocalizedString("Done", comment: "Done button")) {
                                 isPresentingEditView = false
                                 info = editingInfo
                                 notificationMag.updateDueDate(for: editingInfo,
                                                               newDueDate: editingInfo.duedate,
-                                                              subtitle: "Your \(editingInfo.subjects)'s \(editingInfo.formats) is due tomorrow!!",
+                                                              subtitle: NSLocalizedString("Your %@'s %@ is due tomorrow!!", comment: "Notification subtitle"),
                                                               identifier: editingInfo.id, timeInterval: 1)
-                                notificationMag.updateDueDate(for: editingInfo, newDueDate: editingInfo.duedate, subtitle: "Did you finish your work? \(editingInfo.title) \(editingInfo.subjects) is due.", identifier: editingInfo.id + "td", timeInterval: 0)
-                                
+                                notificationMag.updateDueDate(for: editingInfo,
+                                                              newDueDate: editingInfo.duedate,
+                                                              subtitle: NSLocalizedString("Did you finish your work? %@ %@ is due.", comment: "Notification subtitle"),
+                                                              identifier: editingInfo.id + "td", timeInterval: 0)
                             }
                         }
                     }

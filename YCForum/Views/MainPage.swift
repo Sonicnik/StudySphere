@@ -31,7 +31,7 @@ struct Mainpage: View {
                     
                     VStack {
                         EmptyView(isPresentingNewEditView: $isPresentingNewEditView)
-                        Button("Mainpage.Introprompt-String") {
+                        Button(NSLocalizedString("Mainpage.Introprompt-String", comment: "Intro prompt button")) {
                             preIntro = true
                         }
                     }
@@ -95,7 +95,7 @@ struct Mainpage: View {
                 }
                 
             }
-            .navigationTitle("Mainpage.All-String")
+            .navigationTitle(NSLocalizedString("Mainpage.All-String", comment: "All navigation title"))
             .toolbar {
                 EditButton()
                 Button(action: {
@@ -103,7 +103,7 @@ struct Mainpage: View {
                 }) {
                     Image(systemName: "plus")
                 }
-                .accessibilityLabel("Mainpage.New-string")
+                .accessibilityLabel(NSLocalizedString("Mainpage.New-string", comment: "New button accessibility label"))
             }
         }
         
@@ -140,4 +140,3 @@ struct Mainpage_Previews: PreviewProvider {
                  preIntro: .constant(false), avaliableTime: .constant("1"), saveAction: {})
     }
 }
-

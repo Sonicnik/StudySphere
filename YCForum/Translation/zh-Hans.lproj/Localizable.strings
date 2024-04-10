@@ -1,61 +1,58 @@
+//Simplified Chinese (zh-Hans):
 
-// Localizable.strings (Simplified Chinese)
 // EmptyView.swift
-"EmptyView.title-String" = "没有工作要做！！";
-"EmptyView.Intro-String" = "你正在朝着你的目标努力吗？";
-"EmptyView.button-String" = "添加新任务 ✊";
+"EmptyView.title-String" = "没有任何工作要做！！";
+"EmptyView.Intro-String" = "你在为你的目标努力吗？";
+"EmptyView.button-String" = "添加新任务✊";
 
 // SettingPage.swift
-"Setting.title-String" = "设置";
-"Setting.workHour-String" = "每天工作时间：";
-"Setting.subjectsChoice-String" = "我的学科选择";
-"Setting.abtUs-String" = "关于我们";
-"Setting.introPage-String" = "介绍页";
-"Setting.feedback-String" = "给我们反馈！🌹";
 "Setting.secBasic-String" = "基本";
 "Setting.secInfo-String" = "信息";
+"Setting.introPage-String" = "介绍页面";
+"Setting.feedback-String" = "反馈";
+"Setting.title-String" = "设置";
 
 // Abt Us
-"Bio.Intro-String" = "StudySphere是由YCIS 12年级的一小组学生开发的应用程序。通过这个应用程序，我们希望帮助学生跟上截止日期，而无需花时间组织要做什么。";
+"Bio.Intro-String" = "StudySphere是由YCIS 12年级的一小组学生开发的应用程序。通过这个应用程序，我们希望帮助学生在不花时间组织要做什么的情况下跟上截止日期。";
 "Bio.secFeb-String" = "反馈";
-"Bio.Git-String" = "查看我们的Github Repository 🤩";
-"Bio.ins-String" = "在Instagram上关注我们 ❤️";
+"Bio.Git-String" = "查看我们的Github🤩";
+"Bio.ins-String" = "在Instagram上关注我们❤️";
 "Bio.title-String" = "我们是谁？";
 
 // Mainpage.swift
-"Mainpage.Introprompt-String" = "不知道要做什么？";
+"Mainpage.Introprompt-String" = "介绍提示";
 "Mainpage.All-String" = "全部";
-"Mainpage.New-String" = "新";
+"Mainpage.New-string" = "新建";
 
 // Newsheet.swift
 "Newsheet.Dismiss-String" = "关闭";
 "Newsheet.Post-String" = "发布";
-"Newsheet.SubjectReq-String" = "需要学科";
-"Newsheet.AddWork-String" = "添加更多工作 😤";
-"%@ %@ Newsheet.DueNowNotification-String" = "%@ %@ 现在到期！";
-"%@ %@ Newsheet.DueTmrNotification-String" = "%@ %@ 明天到期！";
+"Newsheet.DueTmrNotification-Format" = "%@ %@明天需要上交";
+"Newsheet.DueNowNotification-Format" = "%@ %@现在需要上交";
+"Newsheet.SubjectReq-String" = "需要选择科目";
+"Newsheet.AddWork-String" = "添加作业";
 
 // Format.swift
 "Homework-String" = "家庭作业";
 "Exam-String" = "考试";
-"Test-String" = "测验";
+"Test-String" = "测试";
 "Project-String" = "项目";
 "Event-String" = "活动";
 "Coursework-String" = "课程作业";
 
 //datePage.swift
-"Format.AddTask-String" = "添加新任务";
+"Format.AddTask-String" = "添加任务";
 
 //DetailPage.swift
-"DetailPage.WorkFinished-String" = "让我们开始吧！！😎";
-"DetailPage.WorkUnfinished-String" = "快完成了！ 🤯";
-"DetailPage.WorkUndue-String" = "今天不用（放轻松，兄弟）";
-"DetailPage.WorkDue-String" = "今天需要完成！！";
-"DetailPage.CheckForStats-String" = "完成了吗？";
+"DetailPage.CheckForStats-String" = "查看统计";
+"DetailPage.WorkFinished-String" = "工作已完成";
+"DetailPage.WorkUnfinished-String" = "工作未完成";
+"DetailPage.WorkUndue-String" = "工作未到期";
+"DetailPage.WorkDue-String" = "工作到期";
 
-// Subjects
+// Localizable.strings (Simplified Chinese)
 "Subjects.Mathematics" = "数学";
-"Subjects.Chinese" = "语文";
+"Subjects.Chinese" = "中文";
 "Subjects.English" = "英语";
 "Subjects.Physics" = "物理";
 "Subjects.CS" = "计算机科学";
@@ -67,17 +64,100 @@
 "Subjects.Psychology" = "心理学";
 "Subjects.ESS" = "环境系统与社会";
 "Subjects.TOK" = "知识论";
-"Subjects.CAS" = "创意、行动与服务";
-"Subjects.EE" = "延伸论文";
+"Subjects.CAS" = "创造、活动、服务";
+"Subjects.EE" = "论文";
 "Subjects.Biology" = "生物学";
 "Subjects.History" = "历史";
 "Subjects.Geography" = "地理";
 "Subjects.noChoice" = "未选择";
 
-// Format
+// Localizable.strings (Simplified Chinese)
 "Format.homework" = "家庭作业";
 "Format.exam" = "考试";
-"Format.test" = "测验";
+"Format.test" = "测试";
 "Format.project" = "项目";
 "Format.event" = "活动";
 "Format.coursework" = "课程作业";
+
+// Section headers
+"Section" = "部分";
+"Time & Date" = "时间和日期";
+"Details" = "详情";
+
+// Labels
+"Work is" = "作业是";
+"Type" = "类型";
+"Subject" = "科目";
+"Due Date" = "截止日期";
+"Due Time" = "截止时间";
+"Notes" = "备注";
+
+// Buttons
+"Edit" = "编辑";
+"Cancel" = "取消";
+"Done" = "完成";
+
+// Notification subtitles
+"Your %@'s %@ is marked done and due tomorrow, double check if you finished the work." = "你的%1$@的%2$@标记为已完成并在明天需要上交，请仔细检查你是否完成了作业。";
+"Did you finish your work? %@ %@ is due." = "你完成作业了吗？%1$@ %2$@已需要上交。";
+"Your %@'s %@ is due tomorrow!!" = "你的%1$@的%2$@明天上交！！";
+
+//IntroPage.swift
+"IntroPage.Example-String" = "示例";
+"IntroPage.ExampleDesc-String" = "描述将在此处显示";
+"IntroPage.Welcome-String" = "欢迎来到StudySphere！";
+"IntroPage.WelcomeDesc-String" = "欢迎！StudySphere是一款帮助学生组织考试、作业等的应用程序。我们的应用程序只为你提供每天必须完成的任务，简化了你的规划过程。";
+"IntroPage.GetStarted-String" = "开始吧！";
+"IntroPage.GetStartedDesc-String" = "选择你的科目和每天可用的时间：";
+"IntroPage.SelectSubject-String" = "选择科目";
+"IntroPage.SelectSubjectDesc-String" = "科目";
+"IntroPage.Ready-String" = "准备好了吗？";
+"IntroPage.ReadyDesc-String" = "你还在等什么？让我们开始吧！";
+"IntroPages.Next-String" = "下一步";
+"IntroPages.LetsGo-String" = "让我们开始吧！";
+
+//choiceOfSubject.swift
+"ChoiceOfSubject.Title-String" = "请选择一个科目";
+"ChoiceOfSubject.OK-String" = "确定";
+
+//TimeSelectorView.swift
+"TimeSelectorView.HoursPerDay-String" = "每天的小时数";
+"TimeSelectorView.AvailableTime-String" = "可用时间";
+"TimeSelectorView.SelectedHours-String" = "选择的小时数";
+
+//TimeView.swift
+"TimeView.WorkHour-String" = "工作时间";
+
+//SetSubject
+"SetSubject.SubjectsChoice-String" = "科目选择";
+
+//SelectionOfSubject.swift
+"SelectionOFSubject.SetSubjectChoice-String" = "设置你的科目选择！";
+"SelectionOFSubject.Hide-String" = "隐藏";
+"SelectionOFSubject.Select-String" = "选择";
+"SelectionOFSubject.SelectedSubjects-String" = "已选科目";
+
+//CardView.swift
+"CardView.EstTime-String" = "预计时间";
+
+//EditView.swift
+"EditView.Info-String" = "信息";
+"EditView.TitlePlaceholder-String" = "输入标题";
+"EditView.TimeEstimated-String" = "预计时间";
+"EditView.Notes-String" = "备注";
+
+//datePicker.swift
+"datePicker.DueDate-String" = "截止日期";
+
+//timeSelectionPicker.swift
+"timeSelectionPicker.EstimatedTime-String" = "预计时间";
+"timeSelectionPicker.Hours-String" = "小时";
+"timeSelectionPicker.Minutes-String" = "分钟";
+
+//Container.swift
+"Container.Calendar-String" = "日历";
+"Container.All-String" = "全部";
+"Container.Settings-String" = "设置";
+
+//Settings.swift
+"Setting.abtUs-String" = "关于我们";
