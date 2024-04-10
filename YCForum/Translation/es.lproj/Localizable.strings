@@ -1,0 +1,168 @@
+// EmptyView.swift
+"EmptyView.Title-String" = "¡No hay trabajo por hacer!";
+"EmptyView.Intro-String" = "¿Estás trabajando hacia tus metas?";
+"EmptyView.Button-String" = "Añadir nueva tarea ✊";
+
+// SettingPage.swift
+"Setting.secBasic-String" = "Básico";
+"Setting.secInfo-String" = "Información";
+"Setting.introPage-String" = "Página de introducción";
+"Setting.feedback-String" = "Retroalimentación";
+"Setting.title-String" = "Configuración";
+
+// Abt Us
+"Bio.Intro-String" = "StudySphere es una aplicación desarrollada por un pequeño grupo de estudiantes de YCIS año 12. Con esta app, esperamos ayudar a los estudiantes a mantenerse al día con sus plazos sin gastar tiempo organizando qué hacer.";
+"Bio.secFeb-String" = "Retroalimentación";
+"Bio.Git-String" = "Consulta nuestro Repositorio de Github 🤩";
+"Bio.ins-String" = "Síguenos en Instagram ❤️";
+"Bio.title-String" = "¿Quiénes somos?";
+
+// Mainpage.swift
+"Mainpage.Introprompt-String" = "Introducción";
+"Mainpage.All-String" = "Todo";
+"Mainpage.New-string" = "Nuevo";
+
+// Newsheet.swift
+"Newsheet.Dismiss-String" = "Descartar";
+"Newsheet.Post-String" = "Publicar";
+
+"Newsheet.SubjectReq-String" = "Asignatura requerida, por favor selecciona desde Configuración";
+"Newsheet.AddWork-String" = "Agregar más trabajo 😤";
+"%@ %@ Newsheet.DueNowNotification-String" = "¡%@ %@ vence justo AHORA!";
+"%@ %@ Newsheet.DueTmrNotification-String" = "¡%@ %@ vence mañana!";
+
+"Newsheet.DueTmrNotification-Format" = "%@ %@ vence mañana";
+"Newsheet.DueNowNotification-Format" = "%@ %@ vence ahora";
+"Newsheet.SubjectReq-String" = "Se requiere una asignatura, por favor agrégala en las configuraciones";
+"Newsheet.AddWork-String" = "Agregar trabajo";
+
+// Format.swift
+"Homework-String" = "Tarea";
+"Exam-String" = "Examen";
+"Test-String" = "Prueba";
+"Project-String" = "Proyecto";
+"Event-String" = "Evento";
+"Coursework-String" = "Trabajo de curso";
+
+//datePage.swift
+"Format.AddTask-String" = "Agregar tarea";
+
+//DetailPage.swift
+"DetailPage.CheckForStats-String" = "Ver estadísticas";
+"DetailPage.WorkFinished-String" = "Trabajo terminado";
+"DetailPage.WorkUnfinished-String" = "Trabajo sin terminar";
+"DetailPage.WorkUndue-String" = "Trabajo no vencido";
+"DetailPage.WorkDue-String" = "Trabajo vencido";
+
+// Localizable.strings (Spanish)
+"Subjects.Mathematics" = "Matemáticas";
+"Subjects.Chinese" = "Chino";
+"Subjects.English" = "Inglés";
+"Subjects.Physics" = "Física";
+"Subjects.CS" = "Ciencias de la Computación";
+"Subjects.Economics" = "Economía";
+"Subjects.Chemistry" = "Química";
+"Subjects.BM" = "Gestión Empresarial";
+"Subjects.VA" = "Artes Visuales";
+"Subjects.DT" = "Tecnología de Diseño";
+"Subjects.Psychology" = "Psicología";
+"Subjects.ESS" = "Sistemas y Sociedades Ambientales";
+"Subjects.TOK" = "Teoría del Conocimiento";
+"Subjects.CAS" = "Creatividad, Actividad, Servicio";
+"Subjects.EE" = "Ensayo Extendido";
+"Subjects.Biology" = "Biología";
+"Subjects.History" = "Historia";
+"Subjects.Geography" = "Geografía";
+"Subjects.noChoice" = "Ninguna selección";
+
+// Localizable.strings (Spanish)
+"Format.homework" = "Tarea";
+"Format.exam" = "Examen";
+"Format.test" = "Prueba";
+"Format.project" = "Proyecto";
+"Format.event" = "Evento";
+"Format.coursework" = "Trabajo de curso";
+"Format.Customize" = "Personalizar...";
+
+// Section headers
+"Section" = "Sección";
+"Time & Date" = "Hora y Fecha";
+"Details" = "Detalles";
+
+// Labels
+"Work is" = "El trabajo es";
+"Type" = "Tipo";
+"Subject" = "Asignatura";
+"Due Date" = "Fecha de vencimiento";
+"Due Time" = "Hora de vencimiento";
+"Notes" = "Notas";
+
+// Buttons
+"Edit" = "Editar";
+"Cancel" = "Cancelar";
+"Done" = "Hecho";
+
+// Notification subtitles
+"Your %@'s %@ is marked done and due tomorrow, double check if you finished the work." = "Tu %@ de %@ está marcado como hecho y vence mañana, verifica si terminaste el trabajo.";
+"Did you finish your work? %@ %@ is due." = "¿Terminaste tu trabajo? %@ %@ vence.";
+"Your %@'s %@ is due tomorrow!!" = "¡Tu %@ de %@ vence mañana!!";
+
+//IntroPage.swift
+"IntroPage.Example-String" = "Ejemplo";
+"IntroPage.ExampleDesc-String" = "La descripción aparecerá aquí";
+"IntroPage.Welcome-String" = "¡Bienvenido a StudySphere!";
+"IntroPage.WelcomeDesc-String" = "¡Bienvenido! StudySphere es una app que ayuda a los estudiantes a organizar exámenes, tareas y más. Nuestra app te da solo lo necesario para cada día, simplificando tu proceso de planificación.";
+"IntroPage.GetStarted-String" = "¡Empezar!";
+"IntroPage.GetStartedDesc-String" = "Selecciona tus asignaturas y el tiempo disponible que tienes cada día:";
+"IntroPage.SelectSubject-String" = "Seleccionar asignatura";
+"IntroPage.SelectSubjectDesc-String" = "asignatura";
+"IntroPage.Ready-String" = "¿Estás listo?";
+"IntroPage.ReadyDesc-String" = "¿Entonces qué esperas? ¡Vamos a empezar!";
+"IntroPages.Next-String" = "Siguiente";
+"IntroPages.LetsGo-String" = "¡Vamos!";
+
+//choiceOfSubject.swift
+"ChoiceOfSubject.Title-String" = "Por favor, selecciona una asignatura";
+"ChoiceOfSubject.OK-String" = "OK";
+
+//TimeSelectorView.swift
+"TimeSelectorView.HoursPerDay-String" = "Número de horas por día";
+"TimeSelectorView.AvailableTime-String" = "Tiempo Disponible";
+"TimeSelectorView.SelectedHours-String" = "Horas Seleccionadas";
+
+//TimeView.swift
+"TimeView.WorkHour-String" = "Hora de Trabajo";
+
+//SetSubject
+"SetSubject.SubjectsChoice-String" = "Elección de Asignaturas";
+
+//SelectionOfSubject.swift
+"SelectionOFSubject.SetSubjectChoice-String" = "¡Establece tu elección de asignatura!";
+"SelectionOFSubject.Hide-String" = "Ocultar";
+"SelectionOFSubject.Select-String" = "Seleccionar";
+"SelectionOFSubject.SelectedSubjects-String" = "Asignaturas Seleccionadas";
+
+//CardView.swift
+"CardView.EstTime-String" = "Tiempo Est.";
+
+//EditView.swift
+"EditView.Info-String" = "Info";
+"EditView.TitlePlaceholder-String" = "Introduce el título";
+"EditView.TimeEstimated-String" = "Tiempo Estimado";
+"EditView.Notes-String" = "Notas";
+
+//datePicker.swift
+"datePicker.DueDate-String" = "Fecha de Vencimiento";
+
+//timeSelectionPicker.swift
+"timeSelectionPicker.EstimatedTime-String" = "Tiempo Estimado";
+"timeSelectionPicker.Hours-String" = "Horas";
+"timeSelectionPicker.Minutes-String" = "Minutos";
+
+//Container.swift
+"Container.Calendar-String" = "Calendario";
+"Container.All-String" = "TODO";
+"Container.Settings-String" = "Configuraciones";
+
+//Settings.swift
+"Setting.abtUs-String" = "Acerca de Nosotros";

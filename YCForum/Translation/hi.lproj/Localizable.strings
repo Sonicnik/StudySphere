@@ -1,0 +1,168 @@
+// EmptyView.swift
+"EmptyView.Title-String" = "करने के लिए कोई काम नहीं है!";
+"EmptyView.Intro-String" = "क्या आप अपने लक्ष्यों की ओर काम कर रहे हैं?";
+"EmptyView.Button-String" = "नया कार्य जोड़ें ✊";
+
+// SettingPage.swift
+"Setting.secBasic-String" = "मूल";
+"Setting.secInfo-String" = "जानकारी";
+"Setting.introPage-String" = "परिचय पृष्ठ";
+"Setting.feedback-String" = "प्रतिक्रिया";
+"Setting.title-String" = "सेटिंग्स";
+
+// Abt Us
+"Bio.Intro-String" = "StudySphere एक एप्लिकेशन है जो YCIS वर्ष 12 के छात्रों के एक छोटे समूह द्वारा विकसित की गई है। इस ऐप के साथ, हम छात्रों को उनकी समय सीमा के साथ अद्यतित रखने में मदद करने की उम्मीद करते हैं बिना यह तय करने में समय व्यतीत किए कि क्या करना है।";
+"Bio.secFeb-String" = "प्रतिक्रिया";
+"Bio.Git-String" = "हमारे Github रिपॉजिटरी देखें 🤩";
+"Bio.ins-String" = "Instagram पर हमें फॉलो करें ❤️";
+"Bio.title-String" = "हम कौन हैं?";
+
+// Mainpage.swift
+"Mainpage.Introprompt-String" = "परिचय";
+"Mainpage.All-String" = "सभी";
+"Mainpage.New-string" = "नया";
+
+// Newsheet.swift
+"Newsheet.Dismiss-String" = "खारिज";
+"Newsheet.Post-String" = "पोस्ट";
+
+"Newsheet.SubjectReq-String" = "विषय आवश्यक है, कृपया सेटिंग से चुनें";
+"Newsheet.AddWork-String" = "अधिक कार्य जोड़ें 😤";
+"%@ %@ Newsheet.DueNowNotification-String" = "%@ %@ अभी समय सीमा पर है!";
+"%@ %@ Newsheet.DueTmrNotification-String" = "%@ %@ कल समय सीमा पर है!";
+
+"Newsheet.DueTmrNotification-Format" = "%@ %@ कल समय सीमा पर है";
+"Newsheet.DueNowNotification-Format" = "%@ %@ अभी समय सीमा पर है";
+"Newsheet.SubjectReq-String" = "विषय आवश्यक है, कृपया उन्हें सेटिंग्स में जोड़ें";
+"Newsheet.AddWork-String" = "कार्य जोड़ें";
+
+// Format.swift
+"Homework-String" = "होमवर्क";
+"Exam-String" = "परीक्षा";
+"Test-String" = "टेस्ट";
+"Project-String" = "प्रोजेक्ट";
+"Event-String" = "इवेंट";
+"Coursework-String" = "कोर्सवर्क";
+
+//datePage.swift
+"Format.AddTask-String" = "कार्य जोड़ें";
+
+//DetailPage.swift
+"DetailPage.CheckForStats-String" = "सांख्यिकी की जाँच करें";
+"DetailPage.WorkFinished-String" = "कार्य समाप्त";
+"DetailPage.WorkUnfinished-String" = "कार्य असमाप्त";
+"DetailPage.WorkUndue-String" = "कार्य अनिर्धारित";
+"DetailPage.WorkDue-String" = "कार्य नियत";
+
+// Localizable.strings (Hindi)
+"Subjects.Mathematics" = "गणित";
+"Subjects.Chinese" = "चीनी";
+"Subjects.English" = "अंग्रेज़ी";
+"Subjects.Physics" = "भौतिक विज्ञान";
+"Subjects.CS" = "कंप्यूटर विज्ञान";
+"Subjects.Economics" = "अर्थशास्त्र";
+"Subjects.Chemistry" = "रसायन विज्ञान";
+"Subjects.BM" = "व्यावसायिक प्रबंधन";
+"Subjects.VA" = "दृश्य कला";
+"Subjects.DT" = "डिजाइन प्रौद्योगिकी";
+"Subjects.Psychology" = "मनोविज्ञान";
+"Subjects.ESS" = "पर्यावरण प्रणाली और समाज";
+"Subjects.TOK" = "ज्ञान का सिद्धांत";
+"Subjects.CAS" = "सृजनात्मकता, गतिविधि, सेवा";
+"Subjects.EE" = "विस्तृत निबंध";
+"Subjects.Biology" = "जीव विज्ञान";
+"Subjects.History" = "इतिहास";
+"Subjects.Geography" = "भूगोल";
+"Subjects.noChoice" = "कोई चयन नहीं";
+
+// Localizable.strings (Hindi)
+"Format.homework" = "होमवर्क";
+"Format.exam" = "परीक्षा";
+"Format.test" = "टेस्ट";
+"Format.project" = "प्रोजेक्ट";
+"Format.event" = "इवेंट";
+"Format.coursework" = "कोर्सवर्क";
+"Format.Customize" = "अनुकूलित करें...";
+
+// Section headers
+"Section" = "अनुभाग";
+"Time & Date" = "समय और दिनांक";
+"Details" = "विवरण";
+
+// Labels
+"Work is" = "काम है";
+"Type" = "प्रकार";
+"Subject" = "विषय";
+"Due Date" = "नियत तारीख";
+"Due Time" = "नियत समय";
+"Notes" = "नोट्स";
+
+// Buttons
+"Edit" = "संपादित करें";
+"Cancel" = "रद्द करें";
+"Done" = "पूर्ण";
+
+// Notification subtitles
+"Your %@'s %@ is marked done and due tomorrow, double check if you finished the work." = "आपके %@ का %@ कल के लिए नियत है और पूर्ण चिह्नित है, जाँच लें कि क्या आपने काम समाप्त किया।";
+"Did you finish your work? %@ %@ is due." = "क्या आपने अपना काम समाप्त किया? %@ %@ नियत है।";
+"Your %@'s %@ is due tomorrow!!" = "आपके %@ का %@ कल नियत है!!";
+
+//IntroPage.swift
+"IntroPage.Example-String" = "उदाहरण";
+"IntroPage.ExampleDesc-String" = "विवरण यहाँ दिखाई देगा";
+"IntroPage.Welcome-String" = "StudySphere में आपका स्वागत है!";
+"IntroPage.WelcomeDesc-String" = "स्वागत है! StudySphere एक ऐप है जो छात्रों को परीक्षण, असाइनमेंट्स, और अधिक को व्यवस्थित करने में मदद करता है। हमारा ऐप आपको प्रत्येक दिन के लिए केवल वही देता है जो आवश्यक है, आपकी योजना प्रक्रिया को सरलीकृत करता है।";
+"IntroPage.GetStarted-String" = "शुरू करें!";
+"IntroPage.GetStartedDesc-String" = "अपने विषयों का चयन करें और प्रत्येक दिन आपके पास उपलब्ध समय:";
+"IntroPage.SelectSubject-String" = "विषय चुनें";
+"IntroPage.SelectSubjectDesc-String" = "विषय";
+"IntroPage.Ready-String" = "क्या आप तैयार हैं?";
+"IntroPage.ReadyDesc-String" = "तो आप किसका इंतजार कर रहे हैं? चलिए शुरू करते हैं!";
+"IntroPages.Next-String" = "अगला";
+"IntroPages.LetsGo-String" = "चलो शुरू करते हैं!";
+
+//choiceOfSubject.swift
+"ChoiceOfSubject.Title-String" = "कृपया एक विषय चुनें";
+"ChoiceOfSubject.OK-String" = "ठीक है";
+
+//TimeSelectorView.swift
+"TimeSelectorView.HoursPerDay-String" = "प्रति दिन घंटे";
+"TimeSelectorView.AvailableTime-String" = "उपलब्ध समय";
+"TimeSelectorView.SelectedHours-String" = "चयनित घंटे";
+
+//TimeView.swift
+"TimeView.WorkHour-String" = "कार्य घंटा";
+
+//SetSubject
+"SetSubject.SubjectsChoice-String" = "विषयों का चयन";
+
+//SelectionOfSubject.swift
+"SelectionOFSubject.SetSubjectChoice-String" = "अपना विषय चयन सेट करें!";
+"SelectionOFSubject.Hide-String" = "छुपाएं";
+"SelectionOFSubject.Select-String" = "चुनें";
+"SelectionOFSubject.SelectedSubjects-String" = "चयनित विषय";
+
+//CardView.swift
+"CardView.EstTime-String" = "अनुमानित समय";
+
+//EditView.swift
+"EditView.Info-String" = "जानकारी";
+"EditView.TitlePlaceholder-String" = "शीर्षक दर्ज करें";
+"EditView.TimeEstimated-String" = "अनुमानित समय";
+"EditView.Notes-String" = "नोट्स";
+
+//datePicker.swift
+"datePicker.DueDate-String" = "नियत तारीख";
+
+//timeSelectionPicker.swift
+"timeSelectionPicker.EstimatedTime-String" = "अनुमानित समय";
+"timeSelectionPicker.Hours-String" = "घंटे";
+"timeSelectionPicker.Minutes-String" = "मिनट";
+
+//Container.swift
+"Container.Calendar-String" = "कैलेंडर";
+"Container.All-String" = "सभी";
+"Container.Settings-String" = "सेटिंग्स";
+
+//Settings.swift
+"Setting.abtUs-String" = "हमारे बारे में";

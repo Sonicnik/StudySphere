@@ -69,6 +69,10 @@
 		7A14ED762A9A07EE00835B76 /* Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Format.swift; sourceTree = "<group>"; };
 		7A14ED782A9A0B5D00835B76 /* SubjectView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectView.swift; sourceTree = "<group>"; };
 		7A14ED7A2A9A0E6B00835B76 /* FormatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatView.swift; sourceTree = "<group>"; };
+		7A1E11FD2BB6B84500307008 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7A1E11FE2BB6B85200307008 /* hi */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = hi; path = hi.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7A1E11FF2BB6B85C00307008 /* ar */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ar; path = ar.lproj/Localizable.strings; sourceTree = "<group>"; };
+		7A1E12002BB6B86700307008 /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/Localizable.strings; sourceTree = "<group>"; };
 		7A1E1A1F2B26B6020032F631 /* normalNoti.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = normalNoti.swift; sourceTree = "<group>"; };
 		7A24B84D2B29D4A600CB2AA0 /* saveTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = saveTime.swift; sourceTree = "<group>"; };
 		7A24B8532B2ACD1300CB2AA0 /* askReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = askReview.swift; sourceTree = "<group>"; };
@@ -426,6 +430,10 @@
 				Base,
 				"zh-Hans",
 				"zh-Hant",
+				es,
+				hi,
+				ar,
+				fr,
 			);
 			mainGroup = 7A568DAD2A58F46200F907CA;
 			productRefGroup = 7A568DB72A58F46200F907CA /* Products */;
@@ -516,6 +524,10 @@
 				7A6E70652B99EB3700B63081 /* en */,
 				7AA890E32BABF43100D2BF80 /* zh-Hans */,
 				7AA890E42BABF4F900D2BF80 /* zh-Hant */,
+				7A1E11FD2BB6B84500307008 /* es */,
+				7A1E11FE2BB6B85200307008 /* hi */,
+				7A1E11FF2BB6B85C00307008 /* ar */,
+				7A1E12002BB6B86700307008 /* fr */,
 			);
 			name = Localizable.strings;
 			sourceTree = "<group>";
