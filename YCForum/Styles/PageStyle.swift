@@ -82,16 +82,5 @@ extension PageInfo {
                  isDone: false,
                  isHidden: false,
                  eTime: 30),
-        
-        PageInfo(title: "Custom Format Example",
-                 subjects: .Mathematics,
-                 formats: .customize,
-                 detail: "Custom format details",
-                 theme: .seafoam,
-                 duedate: Date(),
-                 isDone: false,
-                 isHidden: false,
-                 eTime: 60,
-                 customFormat: "Custom Format Value")
     ]
 }

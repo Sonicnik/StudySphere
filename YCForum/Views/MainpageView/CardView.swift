@@ -31,15 +31,11 @@ struct CardView: View {
                         .foregroundColor(Color.secondary)
                 }
                 
-                if info.formats == .customize && !info.customFormat.isEmpty {
-                    Text(info.subjects.name + " - " + info.customFormat)
-                        .font(.footnote)
-                        .fontWeight(.regular)
-                } else {
+                
                     Text(info.subjects.name + " - " + info.formats.localizedName)
                         .font(.footnote)
                         .fontWeight(.regular)
-                }
+                
                 
                 HStack {
                     Text(NSLocalizedString("CardView.EstTime-String", comment: "Estimated time") + ": " + calculatedTime(eTime: info.eTime))

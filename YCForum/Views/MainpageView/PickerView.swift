@@ -29,11 +29,7 @@ struct PickerView: View {
                 }
             }
             
-            if selectFormat == .customize {
-                TextField("Enter Custom Work Type", text: $customFormat)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding()
-            }
+            
         }
     }
 }
