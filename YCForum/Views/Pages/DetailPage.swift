@@ -111,13 +111,14 @@ struct DetailPage: View {
                 .padding()
             }
         }
-        //pass the subject name on using .name variable
-        navigationTitle(NSLocalizedString("Subjects.\(info.subjects.rawValue)", comment: "Subject name") + "-" + NSLocalizedString(info.formats.rawValue, comment: "Format name"))
-                .toolbar {
-                    Button(NSLocalizedString("Edit", comment: "Edit button")) {
-                        isPresentingEditView = true
-                        editingInfo = info
-            }
+        .navigationTitle(NSLocalizedString("Subjects.\(info.subjects.rawValue)", comment: "Subject name"))
+        .toolbar{
+            Button(action: {
+                isPresentingEditView = true
+                editingInfo = info
+            }, label: {
+                Image(systemName: "square.and.pencil")
+            })
         }
         .sheet(isPresented: $isPresentingEditView) {
             NavigationStack {
@@ -125,12 +126,15 @@ struct DetailPage: View {
                     .navigationTitle(NSLocalizedString("Subjects.\(info.subjects.rawValue)", comment: "Subject name"))
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
-                            Button(NSLocalizedString("Cancel", comment: "Cancel button")) {
+                            Button(action: {
                                 isPresentingEditView = false
+                            }) {
+                                Image(systemName: "xmark.circle") // Color can be customized
                             }
+                            .padding()
                         }
                         ToolbarItem(placement: .confirmationAction) {
-                            Button(NSLocalizedString("Done", comment: "Done button")) {
+                            Button(action: {
                                 isPresentingEditView = false
                                 info = editingInfo
                                 notificationMag.updateDueDate(for: editingInfo,
@@ -141,6 +145,8 @@ struct DetailPage: View {
                                                               newDueDate: editingInfo.duedate,
                                                               subtitle: NSLocalizedString("Did you finish your work? %@ %@ is due.", comment: "Notification subtitle"),
                                                               identifier: editingInfo.id + "td", timeInterval: 0)
+                            }) {
+                                Image(systemName: "checkmark.gobackward")
                             }
                         }
                     }
