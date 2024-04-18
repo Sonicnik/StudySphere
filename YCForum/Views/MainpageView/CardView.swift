@@ -40,11 +40,7 @@ struct CardView: View {
                         .font(.footnote)
                         .fontWeight(.regular)
                 }
-                
-                
-                    Text(info.subjects.name + " - " + info.formats.localizedName)
-                        .font(.footnote)
-                        .fontWeight(.regular)
+            
                 
                 
                 HStack {
