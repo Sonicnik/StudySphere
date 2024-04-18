@@ -42,11 +42,11 @@
 "Format.AddTask-String" = "添加任務";
 
 //DetailPage.swift
-"DetailPage.CheckForStats-String" = "查看統計";
-"DetailPage.WorkFinished-String" = "工作已完成";
-"DetailPage.WorkUnfinished-String" = "工作未完成";
-"DetailPage.WorkUndue-String" = "工作暫時無需上交";
-"DetailPage.WorkDue-String" = "工作需要上交";
+"DetailPage.CheckForStats-String" = "作業狀態";
+"DetailPage.WorkFinished-String" = "已完成";
+"DetailPage.WorkUnfinished-String" = "未完成";
+"DetailPage.WorkUndue-String" = "暫時無需上交";
+"DetailPage.WorkDue-String" = "需要上交";
 
 // Localizable.strings (Traditional Chinese)
 "Subjects.Mathematics" = "數學";

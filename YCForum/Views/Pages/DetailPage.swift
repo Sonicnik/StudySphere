@@ -103,7 +103,7 @@ struct DetailPage: View {
             }
         }
         //pass the subject name on using .name variable
-        navigationTitle(NSLocalizedString("Subjects.\(info.subjects.rawValue)", comment: "Subject name") + "-" + (info.formats == .customize ? info.customFormat : NSLocalizedString(info.formats.rawValue, comment: "Format name")))
+        .navigationTitle(info.title)
         .toolbar {
             Button(NSLocalizedString("Edit", comment: "Edit button")) {
                 isPresentingEditView = true

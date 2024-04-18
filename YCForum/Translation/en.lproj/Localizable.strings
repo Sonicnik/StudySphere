@@ -30,6 +30,10 @@
 "Newsheet.DueNowNotification-Format" = "%@ %@ is due now";
 "Newsheet.SubjectReq-String" = "Subject is required";
 "Newsheet.AddWork-String" = "Add Work";
+"Newsheet.DueTmrNotification-Format" = "%@ %@ is due tomorrow";
+"Newsheet.DueNowNotification-Format" = "%@ %@ is due now";
+"Newsheet.SubjectReq-String" = "Subject is required, please add them in the settings";
+"Newsheet.AddWork-String" = "Add Work";
 
 
 // Format.swift
@@ -44,11 +48,11 @@
 "Format.AddTask-String" = "Add task";
 
 //DetailPage.swift
-"DetailPage.CheckForStats-String" = "Check for stats";
-"DetailPage.WorkFinished-String" = "Work finished";
-"DetailPage.WorkUnfinished-String" = "Work unfinished";
-"DetailPage.WorkUndue-String" = "Work undue";
-"DetailPage.WorkDue-String" = "Work due";
+"DetailPage.CheckForStats-String" = "Work Status";
+"DetailPage.WorkFinished-String" = "Finished";
+"DetailPage.WorkUnfinished-String" = "Unfinished";
+"DetailPage.WorkUndue-String" = "Undue";
+"DetailPage.WorkDue-String" = "Due";
 
 
 // Localizable.strings (English)

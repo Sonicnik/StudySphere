@@ -44,9 +44,9 @@
 "Format.AddTask-String" = "添加任务";
 
 //DetailPage.swift
-"DetailPage.CheckForStats-String" = "查看统计";
-"DetailPage.WorkFinished-String" = "工作已完成";
-"DetailPage.WorkUnfinished-String" = "工作未完成";
+"DetailPage.CheckForStats-String" = "工作状态";
+"DetailPage.WorkFinished-String" = "已完成";
+"DetailPage.WorkUnfinished-String" = "未完成";
 "DetailPage.WorkUndue-String" = "工作未到期";
 "DetailPage.WorkDue-String" = "工作到期";
 

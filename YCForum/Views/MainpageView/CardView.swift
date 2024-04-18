@@ -41,6 +41,12 @@ struct CardView: View {
                         .fontWeight(.regular)
                 }
                 
+                
+                    Text(info.subjects.name + " - " + info.formats.localizedName)
+                        .font(.footnote)
+                        .fontWeight(.regular)
+                
+                
                 HStack {
                     Text(NSLocalizedString("CardView.EstTime-String", comment: "Estimated time") + ": " + calculatedTime(eTime: info.eTime))
                         .font(.caption)
