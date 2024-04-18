@@ -10,7 +10,7 @@ import SwiftUI
 struct BioView: View {
     var body: some View {
         HStack {
-            Text("About US")
+            Text("Setting.abtUs-String")
             Spacer()
         }
         .accentColor(.blue)

@@ -22,8 +22,6 @@ struct introPageView: View {
                 .cornerRadius(10)
                 .padding()
             
-            
-            
             Text(introPage.name)
                 .font(.title)
             

@@ -12,6 +12,8 @@ struct introPages: View {
     private let pages: [introPageType] = introPageType.PreIntroPage
     private let dotAppearance = UIPageControl.appearance()
     @Binding var preIntro: Bool
+    @Binding var avaliableTime: String
+    @Binding var selectedSubject: Set<Subject>
     let defaults = UserDefaults.standard
     
     var body: some View {
@@ -19,12 +21,39 @@ struct introPages: View {
             ForEach(pages) { page in
                 VStack {
                     Spacer()
-                    introPageView(introPage: page)
+                    if page == pages[0] {
+                        introPageView(introPage: page)
+                        Spacer()
+                        Button(NSLocalizedString("IntroPages.Next-String", comment: "Next button")) {
+                            incrementPage()
+                        }
+                        .buttonStyle(.borderedProminent)
+                    }
+                    
                 
-                    Spacer()
+                    if page == pages[1] {
+                        TimeSelectorView(avaliableTime: $avaliableTime)
+                        Spacer()
+                        Button(NSLocalizedString("IntroPages.Next-String", comment: "Next button")) {
+                            incrementPage()
+                        }
+                        .buttonStyle(.borderedProminent)
+                        Spacer()
+                    }
+                    
+                    if page == pages[2] {
+                        SelectionOFSubject()
+                        Spacer()
+                        Button(NSLocalizedString("IntroPages.Next-String", comment: "Next button")) {
+                            incrementPage()
+                        }
+                        
+                    }
                     
                     if page == pages.last {
-                        Button("Lets Go!") {
+                        introPageView(introPage: page)
+                        Spacer()
+                        Button(NSLocalizedString("IntroPages.LetsGo-String", comment: "Let's Go button")) {
                             preIntro = false
                             defaults.set(preIntro, forKey: "preIntro")
                         }
@@ -49,5 +78,5 @@ struct introPages: View {
 }
 
 #Preview {
-    introPages(preIntro: .constant(true))
+    introPages(preIntro: .constant(true), avaliableTime: .constant("1"), selectedSubject: .constant([.BM,.Biology,.CAS]))
 }

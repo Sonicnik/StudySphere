@@ -10,12 +10,14 @@ import SwiftUI
 struct Mainpage: View {
     @StateObject private var stores = storePageInfo()
     @Binding var info: [PageInfo]
+    @Binding var metapageinfo: [MetaPageInfo]
     @Environment(\.scenePhase) private var scenePhase
     @State private var isPresentingNewEditView = false
     @Binding var selectedSubject: Set<Subject>
     @Binding var preIntro: Bool
     @ObservedObject var saveSettings = SaveSettings()
     @Binding var avaliableTime: String
+    
     let saveAction: () -> ()
     let notificationManag = NotificationManager.instance
     let defaults = UserDefaults.standard
@@ -29,7 +31,7 @@ struct Mainpage: View {
                     
                     VStack {
                         EmptyView(isPresentingNewEditView: $isPresentingNewEditView)
-                        Button("Don't know what to do?") {
+                        Button(NSLocalizedString("Mainpage.Introprompt-String", comment: "Intro prompt button")) {
                             preIntro = true
                         }
                     }
@@ -38,77 +40,62 @@ struct Mainpage: View {
                     
                     VStack {
                         List{
-                            
-
                             ForEach($info) {$info in
                                 NavigationLink(destination: DetailPage(info: $info, selectedSubject: $saveSettings.selectedSubject)) {
                                     CardView(info: info)
-                                    
-                                    
+                                        .padding(.vertical, 5)
                                 }
-                                
-                                
                                 .onAppear(perform: {
                                     sortData(avaible: avaliableTime)
-                                    
-                                
-                                    
                                 })
-                                .listRowBackground(subjectColor(subject: info.subjects))
+                                
+                                .listRowSeparator(.hidden)
                                 
                             }
-                            
                             .onDelete(perform: deleteItem)
                             .onChange(of: info) { _ in
                                 Task {
                                     do {
-                                        try await stores.SaveInfo(infos: info)
+                                        // Convert PageInfo to MetaPageInfo
+                                        let metaPageInfos = groupPageInfoByDate(pageInfos: info)
+                                        // Assuming SaveInfo function or equivalent can handle [MetaPageInfo]
+                                        metapageinfo = metaPageInfos
+                                        
+                                        try await stores.SaveInfo(infos: metaPageInfos)
                                     } catch {
                                         // Handle errors appropriately
-                                        print("Failed to save info: \(error)")
+                                        print("Failed to save MetaPageInfo: \(error.localizedDescription)")
                                     }
                                 }
                             }
-                            .onDisappear( perform: {
+                            .onDisappear {
                                 Task {
                                     do {
-                                        try await stores.SaveInfo(infos: info)
+                                        // Convert PageInfo to MetaPageInfo
+                                        let metaPageInfos = groupPageInfoByDate(pageInfos: info)
+                                        // Assuming SaveInfo function or equivalent can handle [MetaPageInfo]
+                                        
+                                        metapageinfo = metaPageInfos
+                                        
+                                        
+                                        
+                                        try await stores.SaveInfo(infos: metaPageInfos)
                                     } catch {
                                         // Handle errors appropriately
-                                        print("Failed to save info: \(error)")
+                                        print("Failed to save MetaPageInfo on disappear: \(error.localizedDescription)")
                                     }
                                 }
-                            })
+                            }
 
-
-                            
                         }
-                        .listStyle(InsetGroupedListStyle())
+                        .listStyle(.plain)
                         
                         Spacer()
-                        
-                        Button {
-                            isPresentingNewEditView = true
-                        } label: {
-                            Text("Add Works 🤛")
-                                .foregroundColor(.white)
-                                .font(.headline)
-                                .frame(height: 55)
-                                .frame(maxWidth: .infinity)
-                                .background(Color.accentColor)
-                                .cornerRadius(10)
-                        }
-                        .padding(.horizontal, 50)
                     }
-                    
-                    
-                    
-                    
-                    
                 }
                 
             }
-            .navigationTitle("All")
+            .navigationTitle(NSLocalizedString("Mainpage.All-String", comment: "All navigation title"))
             .toolbar {
                 EditButton()
                 Button(action: {
@@ -116,12 +103,12 @@ struct Mainpage: View {
                 }) {
                     Image(systemName: "plus")
                 }
-                .accessibilityLabel("New")
+                .accessibilityLabel(NSLocalizedString("Mainpage.New-string", comment: "New button accessibility label"))
             }
         }
         
         .sheet(isPresented: $isPresentingNewEditView) {
-            NewSheet(infos: $info, isPresentingNewEditView: $isPresentingNewEditView, selectedSubject: $saveSettings.selectedSubject)
+            NewSheet(infos: $info, isPresentingNewEditView: $isPresentingNewEditView, selectedSubject: $saveSettings.selectedSubject, currentDate: Date())
         }
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { saveAction() }
@@ -131,10 +118,14 @@ struct Mainpage: View {
             DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
                 notificationManag.requestAuthorization()
             }
-            notificationManag.askingNewWork()
-            notificationManag.sendDailyNotificationForUnfinishedWork(info)
+//          Calling notification everyday at 3pm for users to input more works
+//            notificationManag.askingNewWork()
+//            notificationManag.sendDailyNotificationForUnfinishedWork(info)
+            Task {
+                info = convertMetaPageInfoToPageInfo(metaPageInfoArray: metapageinfo)
+            }
             saveSettings.loadSettings()
-            print(saveSettings.selectedSubject)
+            
         }
     }
     
@@ -144,9 +135,8 @@ struct Mainpage: View {
 
 struct Mainpage_Previews: PreviewProvider {
     static var previews: some View {
-        Mainpage(info: .constant(PageInfo.sampleData), 
+        Mainpage(info: .constant(PageInfo.sampleData), metapageinfo: .constant(MetaPageInfo.sampleMetaPageInfo),
                  selectedSubject: .constant([.BM, .Chemistry]),
                  preIntro: .constant(false), avaliableTime: .constant("1"), saveAction: {})
     }
 }
-

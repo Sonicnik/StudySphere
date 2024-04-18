@@ -1,6 +1,6 @@
 //
 //  PageStyle.swift
-//  
+//
 //
 //  Created by Sonic Liu on 8/7/2023.
 //
@@ -18,7 +18,7 @@ struct PageInfo: Identifiable, Codable, Equatable {
     var isDone: Bool
     var isHidden: Bool
     var eTime: Int
-    
+    var customFormat: String
     
     init(id: String = UUID().uuidString,
          title: String,
@@ -29,7 +29,8 @@ struct PageInfo: Identifiable, Codable, Equatable {
          duedate: Date,
          isDone: Bool,
          isHidden: Bool,
-         eTime: Int){
+         eTime: Int,
+         customFormat: String = "") {
         self.id = id
         self.title = title
         self.subjects = subjects
@@ -40,23 +41,21 @@ struct PageInfo: Identifiable, Codable, Equatable {
         self.isDone = isDone
         self.isHidden = isHidden
         self.eTime = eTime
+        self.customFormat = customFormat
     }
 }
 
 extension PageInfo {
     static var emptyPage: PageInfo {
-        PageInfo(title: "", subjects: .noChoice, formats: .Exam, detail:"", theme: .sky, duedate: Date(), isDone: false, isHidden: false, eTime: 0)
+        PageInfo(title: "", subjects: .noChoice, formats: .exam, detail: "", theme: .sky, duedate: Date(), isDone: false, isHidden: false, eTime: 0)
     }
-
 }
 
-
 extension PageInfo {
-    static let sampleData: [PageInfo] =
-    [
+    static let sampleData: [PageInfo] = [
         PageInfo(title: "Paper 1 Revision",
                  subjects: .Chinese,
-                 formats: .Exam,
+                 formats: .exam,
                  detail: "90mins",
                  theme: .lavender,
                  duedate: Date(),
@@ -64,9 +63,9 @@ extension PageInfo {
                  isHidden: true,
                  eTime: 60),
                  
-        PageInfo(title:"Writing a reflection",
+        PageInfo(title: "Writing a reflection",
                  subjects: .English,
-                 formats: .Homework,
+                 formats: .homework,
                  detail: " ",
                  theme: .sky,
                  duedate: Date(),
@@ -74,13 +73,14 @@ extension PageInfo {
                  isHidden: false,
                  eTime: 45),
         
-        PageInfo(title:"Test Revision",
+        PageInfo(title: "Test Revision",
                  subjects: .Mathematics,
-                 formats: .Test,
+                 formats: .test,
                  detail: "Unit1-3",
                  theme: .indigo,
                  duedate: Date(),
                  isDone: false,
                  isHidden: false,
-                 eTime: 30)]
+                 eTime: 30),
+    ]
 }

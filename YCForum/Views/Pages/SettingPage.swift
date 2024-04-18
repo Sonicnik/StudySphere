@@ -12,11 +12,12 @@ struct SettingPage: View {
     @Binding var avaliableTime: String
     @Binding var selectedSubject: Set<Subject>
     @Binding var preIntro: Bool
+    let feedBackURL = URL(string: "https://forms.office.com/r/K1mGqhGQN8")!
     
     var body: some View {
         NavigationView {
             List {
-                Section(header: Text("Basics")) {
+                Section(header: Text(NSLocalizedString("Setting.secBasic-String", comment: "Basic settings section header"))) {
                     NavigationLink(destination: TimeSelectorView(avaliableTime: $avaliableTime)) {
                         TimeView(avaliableTime: $avaliableTime)
                     }
@@ -26,19 +27,23 @@ struct SettingPage: View {
                     }
                 }
                 
-                Section(header: Text("INFO")) {
+                Section(header: Text(NSLocalizedString("Setting.secInfo-String", comment: "Info section header"))) {
                     NavigationLink(destination: BioPage()) {
                         BioView()
                     }
                     
-                    Button("Introduction Page") {
+                    Button(NSLocalizedString("Setting.introPage-String", comment: "Intro page button")) {
                         preIntro = true
                     }
                     .padding()
+                    
+                    Link(NSLocalizedString("Setting.feedback-String", comment: "Feedback link"), destination: feedBackURL)
+                        .font(.headline)
+                        .padding()
                 }
                 
             }
-            .navigationTitle(Text("Settings"))
+            .navigationTitle(Text(NSLocalizedString("Setting.title-String", comment: "Settings page title")))
         }
     }
 }

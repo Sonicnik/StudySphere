@@ -1,6 +1,6 @@
 //
 //  DetailView.swift
-//  
+//
 //
 //  Created by Sonic Liu on 5/7/2023.
 //
@@ -27,25 +27,26 @@ struct DetailPage: View {
                             info.isDone.toggle()
                             notificationMag.updateDueDate(for: editingInfo,
                                                           newDueDate: editingInfo.duedate,
-                                                          subtitle: "Your \(editingInfo.subjects)'s \(editingInfo.formats) is marked done and due tomorrow, double check if you finished the work.",
-                                                          identifier: editingInfo.id)
+                                                          subtitle: NSLocalizedString("Your %@'s %@ is marked done and due tomorrow, double check if you finished the work.", comment: "Notification subtitle"),
+                                                          identifier: editingInfo.id + "tmr", timeInterval: 1)
+                            notificationMag.updateDueDate(for: editingInfo, newDueDate: editingInfo.duedate, subtitle: NSLocalizedString("Did you finish your work? %@ %@ is due.", comment: "Notification subtitle"), identifier: editingInfo.id + "td", timeInterval: 0)
                         }) {
-                            Label("Done?", systemImage: info.isDone ? "checkmark.circle.fill" : "circle")
+                            Label(NSLocalizedString("DetailPage.CheckForStats-String", comment: "Check for stats label"), systemImage: info.isDone ? "checkmark.circle.fill" : "circle")
                         }
                         
                         Spacer()
-                        Text(info.isDone ? "Let's Go!!😎": "Almost there! 🤯")
-                            .padding(.trailing)
+                        Text(info.isDone ? NSLocalizedString("DetailPage.WorkFinished-String", comment: "Work finished text") : NSLocalizedString("DetailPage.WorkUnfinished-String", comment: "Work unfinished text"))
+                                                    .padding(.trailing)
                         
                     }
                     .padding()
                     
                     HStack {
-                        Label("Work is", systemImage: "chart.bar.doc.horizontal.fill")
+                        Label(NSLocalizedString("Work is", comment: "Work is label"), systemImage: "chart.bar.doc.horizontal.fill")
                         
                         
                         Spacer()
-                        Text(info.isHidden ? "Not for today (Chill bro)": "Needed to be finished Today!!")
+                        Text(info.isHidden ? NSLocalizedString("DetailPage.WorkUndue-String", comment: "Work undue text") : NSLocalizedString("DetailPage.WorkDue-String", comment: "Work due text"))
                             .padding(.trailing)
                     }
                     .padding()
@@ -54,39 +55,37 @@ struct DetailPage: View {
             }
             
             
-            Section(header: Text("Section")) {
-                HStack {
-                    Label("Type", systemImage: "square.dashed.inset.filled")
-                    Spacer()
-                    Text(info.formats.name)
-                        .padding(.trailing)
+            Section(header: Text(NSLocalizedString("Section", comment: "Section header"))) {
+                            HStack {
+                                Label(NSLocalizedString("Type", comment: "Type label"), systemImage: "square.dashed.inset.filled")
+                                Spacer()
+                                Text(NSLocalizedString(info.formats.rawValue, comment: "Format name"))
+                                    .padding(.trailing)
                     
                 }
                 .padding()
-                .accessibilityElement(children: .combine)
                 
                 
                 HStack {
-                    Label("Subject", systemImage: "slider.horizontal.below.square.filled.and.square")
-                    Spacer()
-                    Text(info.subjects.name)
-                        .padding(.trailing)
+                                Label(NSLocalizedString("Subject", comment: "Subject label"), systemImage: "slider.horizontal.below.square.filled.and.square")
+                                Spacer()
+                                Text(NSLocalizedString("Subjects.\(info.subjects.rawValue)", comment: "Subject name"))
+                                            .padding(.trailing)
                 }
                 .padding()
-                .accessibilityElement(children: .combine)
             }
                 
-            Section(header: Text("Time & Date")) {
-                HStack {
-                    Label("Due Date", systemImage: "calendar.badge.exclamationmark")
-                    Spacer()
-                    Text(info.duedate.formatted(date: .abbreviated, time: .omitted))
-                        .padding(.trailing)
+            Section(header: Text(NSLocalizedString("Time & Date", comment: "Time and date header"))) {
+                            HStack {
+                                Label(NSLocalizedString("Due Date", comment: "Due date label"), systemImage: "calendar.badge.exclamationmark")
+                                Spacer()
+                                Text(info.duedate.formatted(date: .abbreviated, time: .omitted))
+                                    .padding(.trailing)
                 }
                 .padding()
                 
                 HStack {
-                    Label("Due Time", systemImage: "clock.badge.exclamationmark")
+                    Label(NSLocalizedString("Due Time", comment: "Due time label"), systemImage: "clock.badge.exclamationmark")
                     Spacer()
                     Text(info.duedate.formatted(date: .omitted, time: .shortened))
                         .padding(.trailing)
@@ -94,19 +93,17 @@ struct DetailPage: View {
                 .padding()
             }
             
-            Section(header: Text("Details")) {
+            Section(header: Text(NSLocalizedString("Details", comment: "Details header"))) {
                 
                 VStack {
-                    
                     HStack {
-                        Label("Notes", systemImage: "rectangle.and.pencil.and.ellipsis")
+                        Label(NSLocalizedString("Notes", comment: "Notes label"), systemImage: "rectangle.and.pencil.and.ellipsis")
                         Spacer()
                     }
                     HStack {
                         Text(info.detail)
                             .font(.body)
                             .multilineTextAlignment(.leading)
-                        
                             .padding()
                         Spacer()
                     }
@@ -114,33 +111,42 @@ struct DetailPage: View {
                 .padding()
             }
         }
-        //pass the subject name on using .name variable
-        .navigationTitle(info.subjects.name + "-" + info.formats.name)
-        .toolbar {
-            Button("Edit") {
+        .navigationTitle(NSLocalizedString("Subjects.\(info.subjects.rawValue)", comment: "Subject name"))
+        .toolbar{
+            Button(action: {
                 isPresentingEditView = true
                 editingInfo = info
-            }
+            }, label: {
+                Image(systemName: "square.and.pencil")
+            })
         }
         .sheet(isPresented: $isPresentingEditView) {
             NavigationStack {
                 EditView(info: $editingInfo, selectedSubject: $selectedSubject)
-                    .navigationTitle(info.subjects.name)
+                    .navigationTitle(NSLocalizedString("Subjects.\(info.subjects.rawValue)", comment: "Subject name"))
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
-                            Button("Cancel") {
+                            Button(action: {
                                 isPresentingEditView = false
+                            }) {
+                                Image(systemName: "xmark.circle") // Color can be customized
                             }
+                            .padding()
                         }
                         ToolbarItem(placement: .confirmationAction) {
-                            Button("Done") {
+                            Button(action: {
                                 isPresentingEditView = false
                                 info = editingInfo
                                 notificationMag.updateDueDate(for: editingInfo,
                                                               newDueDate: editingInfo.duedate,
-                                                              subtitle: "Your \(editingInfo.subjects)'s \(editingInfo.formats) is due tomorrow!!",
-                                                              identifier: editingInfo.id)
-                                
+                                                              subtitle: NSLocalizedString("Your %@'s %@ is due tomorrow!!", comment: "Notification subtitle"),
+                                                              identifier: editingInfo.id, timeInterval: 1)
+                                notificationMag.updateDueDate(for: editingInfo,
+                                                              newDueDate: editingInfo.duedate,
+                                                              subtitle: NSLocalizedString("Did you finish your work? %@ %@ is due.", comment: "Notification subtitle"),
+                                                              identifier: editingInfo.id + "td", timeInterval: 0)
+                            }) {
+                                Image(systemName: "checkmark.gobackward")
                             }
                         }
                     }
@@ -153,7 +159,7 @@ extension DetailPage {
     func shortenString(_ input: String) -> String {
         if input.count > 10 {
             let shortenedString = String(input.prefix(10)) + "..."
-            print(shortenedString)
+            
             return shortenedString
         } else {
             return input

@@ -1,4 +1,3 @@
-
 //  Created by Sonic Liu on 21/10/2023.
 //
 //  SelectionOFSubject.swift
@@ -15,30 +14,41 @@ struct Container: View {
     @ObservedObject private var avaliableTime = saveTime()
     @State var preIntro = false
     @State private var showIntroDelayed = false
+    @State private var extractedPageInfos: [PageInfo] = []
     let defaults = UserDefaults.standard
     
     var body: some View {
         TabView {
-            Mainpage(info: $infoss.infoData, selectedSubject: $saveSettings.selectedSubject, preIntro: $preIntro, avaliableTime: $avaliableTime.avaliableTime){
+            //Calendar
+            CustomeCalendar(info: $infoss.infoData, saveAction: {})
+                .tabItem {
+                    Image(systemName: "calendar")
+                    Text(NSLocalizedString("Container.Calendar-String", comment: "Calendar tab title"))
+                }
+            
+            //Main
+            Mainpage(info: $extractedPageInfos, metapageinfo: $infoss.infoData ,selectedSubject: $saveSettings.selectedSubject, preIntro: $preIntro, avaliableTime: $avaliableTime.avaliableTime){
             
             }
-            
-            
             .tabItem {
                 Image(systemName: "tray.full")
-                Text("ALL")
+                Text(NSLocalizedString("Container.All-String", comment: "All tab title"))
             }
             
+            //Settings
             SettingPage(period: .constant([]), avaliableTime: $avaliableTime.avaliableTime, selectedSubject: $saveSettings.selectedSubject, preIntro: $preIntro)
                 .tabItem {
                     Image(systemName: "gear")
-                    Text("Settings")
+                    Text(NSLocalizedString("Container.Settings-String", comment: "Settings tab title"))
                 }
         }
         .onAppear {
             Task {
                 do {
                     try await infoss.LoadInfo()
+                    
+                    self.extractedPageInfos = extractPageInfo(from: infoss.infoData)
+                    
                 } catch {
                     // Handle errors appropriately
                     print("Error loading data: \(error.localizedDescription)")
@@ -62,12 +72,25 @@ struct Container: View {
         }
         
         .sheet(isPresented: $preIntro) {
-            introPages(preIntro: $preIntro)
+            introPages(preIntro: $preIntro,avaliableTime: $avaliableTime.avaliableTime, selectedSubject: $saveSettings.selectedSubject)
                 .onDisappear{
                     defaults.set(false, forKey: "preIntro")
                 }
             
         }
+    }
+}
+
+extension Container {
+    func extractPageInfo(from metaPageInfos: [MetaPageInfo]) -> [PageInfo] {
+        
+        
+        
+        var allPageInfos: [PageInfo] = []
+        for metaPageInfo in metaPageInfos {
+            allPageInfos.append(contentsOf: metaPageInfo.pageinfo)
+        }
+        return allPageInfos
     }
 }
 

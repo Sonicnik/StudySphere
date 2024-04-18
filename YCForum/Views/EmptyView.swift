@@ -13,17 +13,17 @@ struct EmptyView: View {
     var body: some View {
         ScrollView {
             VStack {
-                Text("There are no work to do!!")
+                Text(NSLocalizedString("EmptyView.Title-String", comment: "Empty view title"))
                     .font(.title)
                     .fontWeight(.semibold)
                 
-                Text("Are you working towards your goals?")
+                Text(NSLocalizedString("EmptyView.Intro-String", comment: "Empty view introduction"))
                     .padding(.bottom)
                 
                 Button {
                     isPresentingNewEditView = true
                 } label: {
-                    Text("Push, Push, PUSH!! ✊")
+                    Text(NSLocalizedString("EmptyView.Button-String", comment: "Empty view button"))
                         .foregroundColor(.white)
                         .font(.headline)
                         .frame(height: 55)
