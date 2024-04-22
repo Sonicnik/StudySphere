@@ -69,49 +69,34 @@ extension Mainpage {
         switch subject{
         case .Economics:
             color = .purple
-            
         case .BM:
             color = .bubblegum
-            
         case .Chemistry:
             color = .periwinkle
-            
         case .CS:
             color = .magenta
-            
         case .Mathematics:
             color = .seafoam
-            
         case .Physics:
             color = .sky
-            
         case .Chinese:
             color = .tan
-            
         case .English:
             color = .teal
-            
         case .VA:
             color = .buttercup
-            
         case .DT:
             color = .sky
-            
         case .Psychology:
             color = .magenta
-            
         case .ESS:
             color = .sky
-            
         case .TOK:
             color = .poppy
-            
         case .CAS:
             color = .periwinkle
-            
         case .EE:
             color = .tan
-            
         case .Biology:
             color = .seafoam
         case .noChoice:
